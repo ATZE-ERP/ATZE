@@ -3,21 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#0b1428">
+  <meta name="theme-color" content="#070d19">
 
   <title>ATZE | Inteligencia y control para tu planta</title>
-
-  <meta
-    name="description"
-    content="ATZE ayuda a las empresas manufactureras a visualizar información, localizar componentes, consultar bases de datos y gestionar órdenes y alertas."
-  >
+  <meta name="description" content="ATZE ayuda a las empresas manufactureras a visualizar información, localizar componentes y mejorar el control de sus operaciones.">
 
   <style>
     :root {
       --bg: #070d19;
       --bg-soft: #0c1528;
       --panel: #101d33;
-      --panel-light: #172740;
       --blue: #2878f0;
       --blue-light: #60a5fa;
       --white: #f8fafc;
@@ -50,18 +45,8 @@
       text-decoration: none;
     }
 
-    button,
-    input,
-    textarea,
-    select {
+    button, input, textarea, select {
       font: inherit;
-    }
-
-    button,
-    a,
-    input,
-    textarea {
-      -webkit-tap-highlight-color: transparent;
     }
 
     .container {
@@ -69,13 +54,11 @@
       margin: 0 auto;
     }
 
-    /* HEADER */
-
     header {
       position: sticky;
       top: 0;
       z-index: 1000;
-      background: rgba(7, 13, 25, 0.95);
+      background: rgba(7, 13, 25, 0.96);
       border-bottom: 1px solid var(--border);
       backdrop-filter: blur(14px);
     }
@@ -107,14 +90,15 @@
       letter-spacing: 3px;
     }
 
-    .brand-name span {
+    .brand-name span,
+    .footer-brand span {
       color: var(--blue-light);
     }
 
     .nav-actions {
       display: flex;
       align-items: center;
-      gap: 14px;
+      gap: 12px;
     }
 
     .btn {
@@ -122,13 +106,13 @@
       align-items: center;
       justify-content: center;
       gap: 8px;
+      padding: 12px 18px;
       border: 1px solid transparent;
       border-radius: 9px;
-      padding: 12px 18px;
       font-weight: 700;
       cursor: pointer;
-      transition: 0.2s ease;
       text-align: center;
+      transition: 0.2s ease;
     }
 
     .btn-primary {
@@ -218,31 +202,25 @@
       background: #1b2d49;
     }
 
-    /* HERO */
+    /* PANTALLA PRINCIPAL SIN FOTOGRAFÍA */
 
     .hero {
-      padding: 76px 0 82px;
-      overflow: hidden;
+      padding: 100px 0 105px;
+      text-align: center;
       background:
-        radial-gradient(
-          ellipse at 80% 15%,
-          rgba(40, 120, 240, 0.17),
-          transparent 42%
-        ),
+        radial-gradient(ellipse at 50% 15%, rgba(40,120,240,0.20), transparent 55%),
         linear-gradient(180deg, #0b1426 0%, var(--bg) 100%);
     }
 
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      align-items: center;
-      gap: 48px;
+    .hero-content {
+      max-width: 850px;
+      margin: 0 auto;
     }
 
     .eyebrow {
       display: inline-block;
-      margin-bottom: 20px;
-      padding: 7px 12px;
+      margin-bottom: 22px;
+      padding: 7px 13px;
       border: 1px solid #315180;
       border-radius: 100px;
       color: #9bc4ff;
@@ -255,52 +233,29 @@
 
     h1 {
       margin-bottom: 22px;
-      font-size: clamp(36px, 5vw, 58px);
+      font-size: clamp(40px, 6vw, 68px);
       line-height: 1.08;
       letter-spacing: -1.8px;
     }
 
-    h1 span {
+    h1 span,
+    .accent {
       color: var(--blue-light);
     }
 
     .hero-copy {
-      max-width: 560px;
-      margin-bottom: 28px;
+      max-width: 700px;
+      margin: 0 auto 30px;
       color: var(--text);
-      font-size: 17px;
+      font-size: 18px;
     }
 
     .hero-buttons {
       display: flex;
+      justify-content: center;
       flex-wrap: wrap;
       gap: 12px;
     }
-
-    .hero-image-wrap {
-      padding: 12px;
-      border: 1px solid #31415a;
-      border-radius: 18px;
-      background: linear-gradient(145deg, #15233a, #090f1c);
-      box-shadow: 0 25px 65px rgba(0, 0, 0, 0.35);
-    }
-
-    .hero-image {
-      display: block;
-      width: 100%;
-      max-height: 430px;
-      object-fit: cover;
-      border-radius: 10px;
-    }
-
-    .hero-caption {
-      padding: 13px 5px 3px;
-      color: var(--muted);
-      font-size: 12px;
-      text-align: center;
-    }
-
-    /* GENERAL SECTIONS */
 
     section {
       padding: 76px 0;
@@ -322,11 +277,7 @@
       color: var(--muted);
     }
 
-    .accent {
-      color: var(--blue-light);
-    }
-
-    /* BENEFITS */
+    /* BENEFICIOS */
 
     .benefits {
       background: #0a1221;
@@ -370,27 +321,22 @@
       font-size: 14px;
     }
 
-    /* FEATURES */
+    /* FUNCIONALIDADES */
 
     .features {
-      background:
-        radial-gradient(
-          ellipse at 50% 0%,
-          rgba(40, 120, 240, 0.08),
-          transparent 55%
-        );
+      background: radial-gradient(ellipse at 50% 0%, rgba(40,120,240,0.08), transparent 55%);
     }
 
     .feature-intro {
       max-width: 760px;
       margin: 0 auto 30px;
-      text-align: center;
       color: var(--muted);
+      text-align: center;
     }
 
     .feature-panel {
       display: none;
-      max-width: 900px;
+      max-width: 950px;
       margin: 0 auto;
       padding: 34px;
       border: 1px solid #344761;
@@ -409,7 +355,6 @@
         opacity: 0;
         transform: translateY(8px);
       }
-
       to {
         opacity: 1;
         transform: translateY(0);
@@ -424,7 +369,7 @@
       justify-content: center;
       margin-bottom: 15px;
       border-radius: 12px;
-      background: rgba(40, 120, 240, 0.16);
+      background: rgba(40,120,240,0.16);
       color: #a6cbff;
       font-size: 27px;
     }
@@ -460,42 +405,175 @@
       text-align: center;
     }
 
-    /* COMPONENT LAYOUT IMAGE */
+    /* DEMOSTRACIÓN DE UBICACIÓN */
 
-    .component-layout {
-      margin-top: 28px;
-      padding: 12px;
-      background: #0b1428;
+    .demo-box {
+      margin-top: 32px;
+      padding: 22px;
       border: 1px solid #35445e;
-      border-radius: 14px;
-      overflow: hidden;
+      border-radius: 15px;
+      background: #091222;
     }
 
-    .component-layout img {
+    .demo-heading {
+      margin-bottom: 8px;
+      font-size: 21px;
+    }
+
+    .demo-description {
+      color: var(--muted) !important;
+      font-size: 14px;
+    }
+
+    .search-form {
+      display: flex;
+      gap: 10px;
+      margin: 20px 0 12px;
+    }
+
+    .search-form input {
+      flex: 1;
+      min-width: 0;
+      padding: 13px 14px;
+      border: 1px solid #40536e;
+      border-radius: 8px;
+      outline: none;
+      background: #070d19;
+      color: white;
+    }
+
+    .search-form input:focus {
+      border-color: var(--blue-light);
+      box-shadow: 0 0 0 3px rgba(96,165,250,0.12);
+    }
+
+    .sample-parts {
+      margin-bottom: 20px;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .sample-parts button {
+      margin: 4px 3px 0 0;
+      padding: 5px 9px;
+      border: 1px solid #344761;
+      border-radius: 6px;
+      background: #13223a;
+      color: #cbd5e1;
+      cursor: pointer;
+    }
+
+    .sample-parts button:hover {
+      border-color: var(--blue-light);
+      color: white;
+    }
+
+    .search-result {
+      display: none;
+      margin: 15px 0;
+      padding: 13px 15px;
+      border: 1px solid #285c46;
+      border-radius: 8px;
+      background: rgba(37,211,102,0.08);
+      color: #b7f7ce;
+      font-size: 14px;
+    }
+
+    .search-result.visible {
+      display: block;
+    }
+
+    .search-result.error {
+      border-color: #854343;
+      background: rgba(239,68,68,0.08);
+      color: #fecaca;
+    }
+
+    .layout-frame {
+      position: relative;
+      margin-top: 18px;
+      overflow: hidden;
+      border: 1px solid #35445e;
+      border-radius: 10px;
+      background: #111827;
+    }
+
+    .layout-image {
       display: block;
       width: 100%;
       height: auto;
-      border-radius: 8px;
+      min-height: 180px;
+      object-fit: contain;
     }
 
-    .component-caption {
+    /* FOCO QUE SE MUEVE SEGÚN EL NÚMERO DE PARTE */
+
+    .location-marker {
+      position: absolute;
+      z-index: 5;
+      left: 25%;
+      top: 30%;
+      display: none;
+      width: 46px;
+      height: 46px;
+      align-items: center;
+      justify-content: center;
+      transform: translate(-50%, -50%);
+      border: 2px solid #fff4a3;
+      border-radius: 50%;
+      background: #ffcf33;
+      box-shadow:
+        0 0 0 7px rgba(255,207,51,0.22),
+        0 0 20px 9px rgba(255,207,51,0.75);
+      font-size: 25px;
+      animation: bulbPulse 1.3s infinite;
+      pointer-events: none;
+    }
+
+    .location-marker.visible {
+      display: flex;
+    }
+
+    @keyframes bulbPulse {
+      0%, 100% {
+        box-shadow:
+          0 0 0 5px rgba(255,207,51,0.20),
+          0 0 16px 6px rgba(255,207,51,0.65);
+      }
+      50% {
+        box-shadow:
+          0 0 0 11px rgba(255,207,51,0.10),
+          0 0 27px 12px rgba(255,207,51,0.95);
+      }
+    }
+
+    .layout-caption {
       margin-top: 12px;
-      margin-bottom: 2px !important;
-      color: #cbd5e1 !important;
+      margin-bottom: 0 !important;
+      color: var(--muted) !important;
+      font-size: 12px;
       text-align: center;
-      font-size: 13px;
     }
 
-    /* TRIAL */
+    .reset-location {
+      margin-top: 12px;
+      padding: 8px 12px;
+      border: 1px solid #40536e;
+      border-radius: 7px;
+      background: transparent;
+      color: var(--text);
+      cursor: pointer;
+    }
+
+    .reset-location:hover {
+      border-color: var(--blue-light);
+      color: white;
+    }
+
+    /* PRUEBA GRATUITA */
 
     .trial {
-      background:
-        radial-gradient(
-          ellipse at 50% 50%,
-          rgba(40, 120, 240, 0.17),
-          transparent 65%
-        ),
-        #0a1221;
+      background: radial-gradient(ellipse at 50% 50%, rgba(40,120,240,0.17), transparent 65%), #0a1221;
       border-top: 1px solid #1c2b42;
       border-bottom: 1px solid #1c2b42;
     }
@@ -506,7 +584,7 @@
       padding: 44px 30px;
       border: 1px solid #35527b;
       border-radius: 18px;
-      background: rgba(15, 29, 50, 0.86);
+      background: rgba(15,29,50,0.86);
       text-align: center;
     }
 
@@ -521,7 +599,7 @@
       color: var(--text);
     }
 
-    /* CONTACT */
+    /* CONTACTO */
 
     .contact-grid {
       display: grid;
@@ -591,7 +669,7 @@
     .form-group textarea:focus,
     .form-group select:focus {
       border-color: var(--blue-light);
-      box-shadow: 0 0 0 3px rgba(96, 165, 250, 0.12);
+      box-shadow: 0 0 0 3px rgba(96,165,250,0.12);
     }
 
     .form-group textarea {
@@ -609,7 +687,7 @@
       font-size: 12px;
     }
 
-    /* FOOTER */
+    /* PIE DE PÁGINA */
 
     footer {
       padding: 28px 0;
@@ -631,10 +709,6 @@
       letter-spacing: 2px;
     }
 
-    .footer-brand span {
-      color: var(--blue-light);
-    }
-
     .footer-copy {
       color: var(--muted);
       font-size: 12px;
@@ -653,7 +727,7 @@
       background: var(--success);
       color: #06240f;
       font-weight: 800;
-      box-shadow: 0 8px 28px rgba(0, 0, 0, 0.35);
+      box-shadow: 0 8px 28px rgba(0,0,0,0.35);
       transition: 0.2s ease;
     }
 
@@ -661,30 +735,17 @@
       transform: translateY(-3px);
     }
 
-    /* RESPONSIVE */
-
     @media (max-width: 850px) {
-      .hero-grid {
-        grid-template-columns: 1fr;
-        gap: 32px;
-      }
-
-      .hero {
-        padding: 55px 0;
-      }
-
-      .hero-image-wrap {
-        max-width: 650px;
-        width: 100%;
-        margin: 0 auto;
-      }
-
       .benefits-grid {
         grid-template-columns: repeat(2, 1fr);
       }
 
       .contact-grid {
         grid-template-columns: 1fr;
+      }
+
+      .hero {
+        padding: 80px 0;
       }
     }
 
@@ -731,7 +792,7 @@
       }
 
       .hero {
-        padding: 45px 0 55px;
+        padding: 65px 0;
       }
 
       h1 {
@@ -739,7 +800,7 @@
       }
 
       .hero-copy {
-        font-size: 15px;
+        font-size: 16px;
       }
 
       .hero-buttons {
@@ -756,6 +817,24 @@
 
       .feature-panel {
         padding: 22px 18px;
+      }
+
+      .demo-box {
+        padding: 15px;
+      }
+
+      .search-form {
+        flex-direction: column;
+      }
+
+      .search-form .btn {
+        width: 100%;
+      }
+
+      .location-marker {
+        width: 36px;
+        height: 36px;
+        font-size: 21px;
       }
 
       .trial-box {
@@ -793,7 +872,7 @@
 
 <body>
 
-  <!-- HEADER -->
+  <!-- ENCABEZADO -->
   <header>
     <div class="container navbar">
 
@@ -825,30 +904,12 @@
 
           <nav class="dropdown" id="featureMenu" aria-label="Funcionalidades">
             <div class="dropdown-label">Explora ATZE</div>
-
-            <button type="button" data-feature="dashboards">
-              ▦ Dashboards en tiempo real
-            </button>
-
-            <button type="button" data-feature="componentes">
-              ⌖ Ubicación de componentes
-            </button>
-
-            <button type="button" data-feature="sql">
-              ⌘ Consultas SQL
-            </button>
-
-            <button type="button" data-feature="compras">
-              ⇩ Órdenes de compra
-            </button>
-
-            <button type="button" data-feature="ventas">
-              ⇧ Órdenes de venta
-            </button>
-
-            <button type="button" data-feature="whatsapp">
-              ◉ Alertas por WhatsApp
-            </button>
+            <button type="button" data-feature="dashboards">▦ Dashboards en tiempo real</button>
+            <button type="button" data-feature="componentes">⌖ Ubicación de componentes</button>
+            <button type="button" data-feature="sql">⌘ Consultas SQL</button>
+            <button type="button" data-feature="compras">⇩ Órdenes de compra</button>
+            <button type="button" data-feature="ventas">⇧ Órdenes de venta</button>
+            <button type="button" data-feature="whatsapp">◉ Alertas por WhatsApp</button>
           </nav>
         </div>
 
@@ -858,48 +919,32 @@
 
   <main>
 
-    <!-- INICIO -->
+    <!-- INICIO: SIN INICIO.JPEG -->
     <section class="hero" id="inicio">
-      <div class="container hero-grid">
+      <div class="container hero-content">
 
-        <div>
-          <span class="eyebrow">
-            Información conectada con tu operación
-          </span>
+        <span class="eyebrow">Información conectada con tu operación</span>
 
-          <h1>
-            Más visibilidad.<br>
-            Más control.<br>
-            <span>Mejores decisiones.</span>
-          </h1>
+        <h1>
+          Más visibilidad.<br>
+          Más control.<br>
+          <span>Mejores decisiones.</span>
+        </h1>
 
-          <p class="hero-copy">
-            ATZE ayuda a tu empresa a visualizar información operativa,
-            localizar componentes en planta, consultar datos y gestionar
-            órdenes y alertas desde una plataforma centralizada.
-          </p>
+        <p class="hero-copy">
+          ATZE ayuda a tu empresa a visualizar información operativa,
+          localizar componentes en planta, consultar datos y gestionar
+          órdenes y alertas desde una plataforma centralizada.
+        </p>
 
-          <div class="hero-buttons">
-            <a class="btn btn-primary" href="#prueba">
-              Solicitar prueba gratuita de 30 días
-            </a>
+        <div class="hero-buttons">
+          <a class="btn btn-primary" href="#prueba">
+            Solicitar prueba gratuita de 30 días
+          </a>
 
-            <a class="btn btn-outline" href="#funcionalidades">
-              Conocer funcionalidades
-            </a>
-          </div>
-        </div>
-
-        <div class="hero-image-wrap">
-          <img
-            class="hero-image"
-            src="https://raw.githubusercontent.com/ATZE-ERP/ATZE-ERP.github.io/main/INICIO.jpeg"
-            alt="Vista de las instalaciones y operación industrial"
-          >
-
-          <p class="hero-caption">
-            Información y herramientas para apoyar las operaciones de tu planta.
-          </p>
+          <a class="btn btn-outline" href="#funcionalidades">
+            Conocer funcionalidades
+          </a>
         </div>
 
       </div>
@@ -922,55 +967,37 @@
           <article class="benefit">
             <div class="benefit-icon">▦</div>
             <h3>Visibilidad operativa</h3>
-            <p>
-              Consulta indicadores y datos importantes para comprender
-              el estado de la operación.
-            </p>
+            <p>Consulta indicadores y datos importantes para comprender el estado de la operación.</p>
           </article>
 
           <article class="benefit">
             <div class="benefit-icon">⌖</div>
             <h3>Localización visual</h3>
-            <p>
-              Facilita la identificación de componentes dentro del layout
-              de las instalaciones.
-            </p>
+            <p>Facilita la identificación de componentes dentro del layout de las instalaciones.</p>
           </article>
 
           <article class="benefit">
             <div class="benefit-icon">⌘</div>
             <h3>Acceso a información</h3>
-            <p>
-              Realiza consultas y encuentra información relevante
-              para apoyar tus decisiones.
-            </p>
+            <p>Realiza consultas y encuentra información relevante para apoyar tus decisiones.</p>
           </article>
 
           <article class="benefit">
             <div class="benefit-icon">⇄</div>
             <h3>Seguimiento de órdenes</h3>
-            <p>
-              Consulta información relacionada con las órdenes de compra
-              y venta.
-            </p>
+            <p>Consulta información relacionada con las órdenes de compra y venta.</p>
           </article>
 
           <article class="benefit">
             <div class="benefit-icon">◉</div>
             <h3>Alertas operativas</h3>
-            <p>
-              Recibe notificaciones por WhatsApp cuando se registren
-              eventos importantes, según la configuración disponible.
-            </p>
+            <p>Recibe notificaciones por WhatsApp cuando se registren eventos importantes, según la configuración disponible.</p>
           </article>
 
           <article class="benefit">
             <div class="benefit-icon">↗</div>
             <h3>Mejores decisiones</h3>
-            <p>
-              Utiliza información organizada para detectar situaciones
-              y responder con mayor oportunidad.
-            </p>
+            <p>Utiliza información organizada para detectar situaciones y responder con mayor oportunidad.</p>
           </article>
 
         </div>
@@ -983,28 +1010,18 @@
 
         <div class="section-heading">
           <h2>Conoce las <span class="accent">funcionalidades</span></h2>
-          <p>
-            Selecciona una función en el menú superior para conocer
-            cómo puede apoyar a tu operación.
-          </p>
+          <p>Selecciona una función en el menú superior para conocer cómo puede apoyar a tu operación.</p>
         </div>
 
         <p class="feature-intro">
-          Cada herramienta está orientada a facilitar el acceso a información
-          y mejorar la visibilidad de los procesos de tu empresa.
+          Explora las herramientas de ATZE y prueba la demostración de ubicación visual.
         </p>
 
         <!-- DASHBOARDS -->
         <article class="feature-panel" id="feature-dashboards">
           <div class="feature-icon">▦</div>
-
           <h3>Dashboards en tiempo real</h3>
-
-          <p>
-            Visualiza indicadores y datos operativos en paneles diseñados
-            para facilitar el seguimiento de la actividad de tu empresa.
-          </p>
-
+          <p>Visualiza indicadores y datos operativos en paneles diseñados para facilitar el seguimiento de la actividad de tu empresa.</p>
           <ul>
             <li>Consulta indicadores relevantes desde una vista centralizada.</li>
             <li>Identifica tendencias y situaciones que requieren atención.</li>
@@ -1013,56 +1030,89 @@
           </ul>
         </article>
 
-        <!-- UBICACIÓN DE COMPONENTES -->
+        <!-- UBICACIÓN DE COMPONENTES + DEMOSTRACIÓN -->
         <article class="feature-panel" id="feature-componentes">
           <div class="feature-icon">⌖</div>
-
           <h3>Ubicación visual de componentes en planta</h3>
 
           <p>
-            ATZE permite identificar visualmente dónde se encuentra un
-            componente dentro de las instalaciones. Al buscar un componente,
-            un foco se enciende en el layout de la planta para señalar
-            su ubicación.
+            Busca un número de parte y visualiza su ubicación dentro del layout.
+            En esta demostración, un foco luminoso aparece sobre el plano para
+            señalar dónde se encontraría el componente.
           </p>
 
           <ul>
-            <li>Busca el componente que necesitas localizar.</li>
+            <li>Busca el número de parte que necesitas localizar.</li>
             <li>Visualiza el layout de la planta.</li>
-            <li>
-              Identifica la ubicación del componente mediante un foco
-              que se ilumina en el plano.
-            </li>
-            <li>
-              Facilita la orientación del personal dentro de las instalaciones.
-            </li>
+            <li>Identifica la ubicación mediante un foco que se ilumina.</li>
+            <li>Facilita la orientación del personal dentro de las instalaciones.</li>
           </ul>
 
-          <div class="component-layout">
-            <img
-              src="https://raw.githubusercontent.com/ATZE-ERP/ATZE-ERP.github.io/main/UBI%20COMP.jpeg"
-              alt="Layout de planta utilizado para señalar visualmente la ubicación de componentes"
-              loading="lazy"
-            >
+          <div class="demo-box">
+            <h4 class="demo-heading">Prueba la búsqueda de componentes</h4>
 
-            <p class="component-caption">
-              Ejemplo del layout de planta utilizado para identificar
-              la ubicación de un componente.
+            <p class="demo-description">
+              Escribe un número de parte de ejemplo y pulsa Buscar para ver
+              cómo se ilumina una ubicación en el layout.
             </p>
+
+            <form class="search-form" id="partSearchForm">
+              <input
+                type="text"
+                id="partNumberInput"
+                placeholder="Ej. 607-7435"
+                aria-label="Número de parte"
+                autocomplete="off"
+                required
+              >
+              <button class="btn btn-primary" type="submit">Buscar componente</button>
+            </form>
+
+            <div class="sample-parts">
+              Prueba con:
+              <button type="button" data-part="607-7435">607-7435</button>
+              <button type="button" data-part="9310300">9310300</button>
+              <button type="button" data-part="COMP-001">COMP-001</button>
+            </div>
+
+            <div
+              class="search-result"
+              id="searchResult"
+              role="status"
+              aria-live="polite"
+            ></div>
+
+            <div class="layout-frame" id="layoutFrame">
+              <img
+                class="layout-image"
+                id="layoutImage"
+                src="https://raw.githubusercontent.com/ATZE-ERP/ATZE-ERP.github.io/main/UBI%20COMP.jpeg"
+                alt="Layout de planta para demostración de ubicación de componentes"
+              >
+
+              <div
+                class="location-marker"
+                id="locationMarker"
+                aria-label="Ubicación de demostración del componente"
+              >💡</div>
+            </div>
+
+            <p class="layout-caption">
+              Demostración visual: las posiciones mostradas son ejemplos y
+              no representan ubicaciones verificadas de componentes reales.
+            </p>
+
+            <button class="reset-location" id="resetLocation" type="button">
+              Limpiar búsqueda
+            </button>
           </div>
         </article>
 
         <!-- SQL -->
         <article class="feature-panel" id="feature-sql">
           <div class="feature-icon">⌘</div>
-
           <h3>Consultas SQL y acceso a datos</h3>
-
-          <p>
-            Consulta información de bases de datos para facilitar
-            el análisis de la operación y el acceso a datos relevantes.
-          </p>
-
+          <p>Consulta información de bases de datos para facilitar el análisis de la operación y el acceso a datos relevantes.</p>
           <ul>
             <li>Consulta información de acuerdo con las necesidades del negocio.</li>
             <li>Facilita el análisis de datos operativos.</li>
@@ -1074,14 +1124,8 @@
         <!-- COMPRAS -->
         <article class="feature-panel" id="feature-compras">
           <div class="feature-icon">⇩</div>
-
           <h3>Órdenes de compra</h3>
-
-          <p>
-            Facilita la consulta y el seguimiento de información relacionada
-            con las órdenes de compra y los procesos de abastecimiento.
-          </p>
-
+          <p>Facilita la consulta y el seguimiento de información relacionada con las órdenes de compra y los procesos de abastecimiento.</p>
           <ul>
             <li>Consulta información de órdenes de compra.</li>
             <li>Apoya el seguimiento de compras y materiales.</li>
@@ -1093,14 +1137,8 @@
         <!-- VENTAS -->
         <article class="feature-panel" id="feature-ventas">
           <div class="feature-icon">⇧</div>
-
           <h3>Órdenes de venta</h3>
-
-          <p>
-            Consulta información relacionada con las órdenes de venta
-            para dar seguimiento a los compromisos comerciales y operativos.
-          </p>
-
+          <p>Consulta información relacionada con las órdenes de venta para dar seguimiento a los compromisos comerciales y operativos.</p>
           <ul>
             <li>Consulta información de órdenes de venta.</li>
             <li>Facilita la revisión de datos relacionados con los pedidos.</li>
@@ -1112,15 +1150,8 @@
         <!-- WHATSAPP -->
         <article class="feature-panel" id="feature-whatsapp">
           <div class="feature-icon">◉</div>
-
           <h3>Alertas configurables por WhatsApp</h3>
-
-          <p>
-            Recibe notificaciones cuando se registren eventos operativos
-            que requieren atención. Las alertas pueden organizarse para
-            informar a los responsables correspondientes.
-          </p>
-
+          <p>Recibe notificaciones cuando se registren eventos operativos que requieren atención.</p>
           <ul>
             <li>Notificaciones de eventos definidos por la empresa.</li>
             <li>Alertas relacionadas con paros o tiempos muertos.</li>
@@ -1130,8 +1161,7 @@
         </article>
 
         <p class="feature-hint">
-          Selecciona otra funcionalidad en el menú superior para cambiar
-          la información que se muestra.
+          Selecciona otra funcionalidad en el menú superior para cambiar la información que se muestra.
         </p>
 
       </div>
@@ -1141,17 +1171,11 @@
     <section class="trial" id="prueba">
       <div class="container">
         <div class="trial-box">
-
           <span class="eyebrow">Conoce ATZE</span>
-
-          <h2>
-            Prueba ATZE durante <span class="accent">30 días</span>
-          </h2>
-
+          <h2>Prueba ATZE durante <span class="accent">30 días</span></h2>
           <p>
             Conoce las funcionalidades, evalúa su utilidad para tu operación
-            y descubre cómo pueden ayudarte a mejorar la visibilidad
-            de tus procesos.
+            y descubre cómo pueden ayudarte a mejorar la visibilidad de tus procesos.
           </p>
 
           <a
@@ -1162,7 +1186,6 @@
           >
             Solicitar prueba gratuita
           </a>
-
         </div>
       </div>
     </section>
@@ -1173,16 +1196,13 @@
 
         <div class="section-heading">
           <h2>Hablemos de <span class="accent">tu operación</span></h2>
-          <p>
-            Cuéntanos qué necesitas y nos pondremos en contacto contigo.
-          </p>
+          <p>Cuéntanos qué necesitas y nos pondremos en contacto contigo.</p>
         </div>
 
         <div class="contact-grid">
 
           <div class="contact-info">
             <h3>Conoce cómo ATZE puede ayudarte</h3>
-
             <p>
               Comparte tus necesidades, las herramientas que te interesan
               o los retos operativos que deseas atender.
@@ -1190,18 +1210,12 @@
 
             <div class="contact-detail">
               <strong>Correo electrónico</strong>
-              <a href="mailto:juanpasolisc@gmail.com">
-                juanpasolisc@gmail.com
-              </a>
+              <a href="mailto:juanpasolisc@gmail.com">juanpasolisc@gmail.com</a>
             </div>
 
             <div class="contact-detail">
               <strong>WhatsApp</strong>
-              <a
-                href="https://wa.me/528448588733"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
+              <a href="https://wa.me/528448588733" target="_blank" rel="noopener noreferrer">
                 844 858 8733
               </a>
             </div>
@@ -1216,43 +1230,21 @@
 
             <div class="form-group">
               <label for="nombre">Nombre</label>
-              <input
-                type="text"
-                id="nombre"
-                name="nombre"
-                placeholder="Tu nombre"
-                autocomplete="name"
-                required
-              >
+              <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" autocomplete="name" required>
             </div>
 
             <div class="form-group">
               <label for="empresa">Empresa</label>
-              <input
-                type="text"
-                id="empresa"
-                name="empresa"
-                placeholder="Nombre de tu empresa"
-                autocomplete="organization"
-                required
-              >
+              <input type="text" id="empresa" name="empresa" placeholder="Nombre de tu empresa" autocomplete="organization" required>
             </div>
 
             <div class="form-group">
               <label for="correo">Correo electrónico</label>
-              <input
-                type="email"
-                id="correo"
-                name="correo"
-                placeholder="tucorreo@empresa.com"
-                autocomplete="email"
-                required
-              >
+              <input type="email" id="correo" name="correo" placeholder="tucorreo@empresa.com" autocomplete="email" required>
             </div>
 
             <div class="form-group">
               <label for="interes">¿Qué funcionalidad te interesa?</label>
-
               <select id="interes" name="interes" required>
                 <option value="">Selecciona una opción</option>
                 <option>Dashboards en tiempo real</option>
@@ -1268,11 +1260,7 @@
 
             <div class="form-group">
               <label for="mensaje">Cuéntanos qué necesitas</label>
-              <textarea
-                id="mensaje"
-                name="mensaje"
-                placeholder="Describe brevemente lo que buscas..."
-              ></textarea>
+              <textarea id="mensaje" name="mensaje" placeholder="Describe brevemente lo que buscas..."></textarea>
             </div>
 
             <button class="btn btn-primary" type="submit">
@@ -1280,34 +1268,22 @@
             </button>
 
             <p class="form-note">
-              Al enviar, se abrirá WhatsApp con tu solicitud preparada
-              para que puedas revisarla y enviarla.
+              Se abrirá WhatsApp con tu solicitud preparada para que puedas revisarla y enviarla.
             </p>
 
           </form>
-
         </div>
       </div>
     </section>
 
   </main>
 
-  <!-- FOOTER -->
+  <!-- PIE DE PÁGINA -->
   <footer>
     <div class="container footer-inner">
-
-      <a class="footer-brand" href="#inicio">
-        AT<span>ZE</span>
-      </a>
-
-      <p class="footer-copy">
-        © <span id="currentYear"></span> ATZE. Todos los derechos reservados.
-      </p>
-
-      <a href="#contacto" class="footer-copy">
-        Contacto
-      </a>
-
+      <a class="footer-brand" href="#inicio">AT<span>ZE</span></a>
+      <p class="footer-copy">© <span id="currentYear"></span> ATZE. Todos los derechos reservados.</p>
+      <a href="#contacto" class="footer-copy">Contacto</a>
     </div>
   </footer>
 
@@ -1319,12 +1295,11 @@
     rel="noopener noreferrer"
     aria-label="Contactar con ATZE por WhatsApp"
   >
-    <span aria-hidden="true">◉</span>
-    Contactar
+    <span aria-hidden="true">◉</span> Contactar
   </a>
 
   <script>
-    // AÑO AUTOMÁTICO DEL FOOTER
+    // AÑO DEL PIE DE PÁGINA
     document.getElementById("currentYear").textContent =
       new Date().getFullYear();
 
@@ -1336,7 +1311,6 @@
       event.stopPropagation();
 
       const isOpen = featureMenu.classList.toggle("open");
-
       menuButton.setAttribute("aria-expanded", String(isOpen));
     });
 
@@ -1356,7 +1330,7 @@
       }
     });
 
-    // MOSTRAR SOLO LA FUNCIONALIDAD SELECCIONADA
+    // MOSTRAR SOLAMENTE LA FUNCIÓN SELECCIONADA
     const featureButtons = document.querySelectorAll("[data-feature]");
     const featurePanels = document.querySelectorAll(".feature-panel");
 
@@ -1388,9 +1362,92 @@
       });
     });
 
-    // FORMULARIO DE CONTACTO
-    // Abre WhatsApp con los datos capturados.
-    // Este formulario no almacena información en una base de datos.
+    // DEMOSTRACIÓN DE BÚSQUEDA DE NÚMERO DE PARTE
+    // Coordenadas de ejemplo en porcentajes sobre la imagen.
+    // Sustituir estas ubicaciones por las coordenadas reales de cada componente.
+    const demoParts = {
+      "607-7435": {
+        x: 24,
+        y: 32,
+        location: "Zona de producción A"
+      },
+      "9310300": {
+        x: 68,
+        y: 42,
+        location: "Zona de producción B"
+      },
+      "COMP-001": {
+        x: 45,
+        y: 72,
+        location: "Zona de materiales"
+      }
+    };
+
+    const partSearchForm = document.getElementById("partSearchForm");
+    const partNumberInput = document.getElementById("partNumberInput");
+    const locationMarker = document.getElementById("locationMarker");
+    const searchResult = document.getElementById("searchResult");
+    const resetLocation = document.getElementById("resetLocation");
+
+    function searchPart(partNumber) {
+      const normalizedPart = partNumber.trim().toUpperCase();
+      const part = demoParts[normalizedPart];
+
+      searchResult.classList.remove("error");
+      searchResult.classList.add("visible");
+
+      if (!normalizedPart) {
+        locationMarker.classList.remove("visible");
+        searchResult.classList.add("error");
+        searchResult.textContent = "Escribe un número de parte para buscar.";
+        return;
+      }
+
+      if (!part) {
+        locationMarker.classList.remove("visible");
+        searchResult.classList.add("error");
+        searchResult.textContent =
+          "No se encontró ese número en la demostración. Prueba con 607-7435, 9310300 o COMP-001.";
+        return;
+      }
+
+      locationMarker.style.left = part.x + "%";
+      locationMarker.style.top = part.y + "%";
+      locationMarker.classList.add("visible");
+
+      searchResult.textContent =
+        "Componente encontrado: " + normalizedPart +
+        ". Ubicación de ejemplo: " + part.location + ".";
+
+      document.getElementById("layoutFrame").scrollIntoView({
+        behavior: "smooth",
+        block: "nearest"
+      });
+    }
+
+    partSearchForm.addEventListener("submit", function (event) {
+      event.preventDefault();
+      searchPart(partNumberInput.value);
+    });
+
+    document.querySelectorAll("[data-part]").forEach(function (button) {
+      button.addEventListener("click", function () {
+        const partNumber = button.dataset.part;
+        partNumberInput.value = partNumber;
+        searchPart(partNumber);
+      });
+    });
+
+    resetLocation.addEventListener("click", function () {
+      partNumberInput.value = "";
+      locationMarker.classList.remove("visible");
+      searchResult.classList.remove("visible", "error");
+      searchResult.textContent = "";
+      partNumberInput.focus();
+    });
+
+    // FORMULARIO DE CONTACTO: ABRE WHATSAPP
+    // No almacena datos en una base de datos.
     const contactForm = document.getElementById("contactForm");
 
     contactForm.addEventListener("submit", function (event) {
@@ -1403,14 +1460,15 @@
       const mensaje = document.getElementById("mensaje").value.trim();
 
       const texto =
-        "Hola, me interesa conocer ATZE.%0A%0A" +
-        "Nombre: " + encodeURIComponent(nombre) + "%0A" +
-        "Empresa: " + encodeURIComponent(empresa) + "%0A" +
-        "Correo: " + encodeURIComponent(correo) + "%0A" +
-        "Funcionalidad de interés: " + encodeURIComponent(interes) + "%0A" +
-        "Mensaje: " + encodeURIComponent(mensaje);
+        "Hola, me interesa conocer ATZE.\n\n" +
+        "Nombre: " + nombre + "\n" +
+        "Empresa: " + empresa + "\n" +
+        "Correo: " + correo + "\n" +
+        "Funcionalidad de interés: " + interes + "\n" +
+        "Mensaje: " + mensaje;
 
-      const url = "https://wa.me/528448588733?text=" + texto;
+      const url = "https://wa.me/528448588733?text=" +
+        encodeURIComponent(texto);
 
       window.open(url, "_blank", "noopener,noreferrer");
     });
