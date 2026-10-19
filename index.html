@@ -6,6 +6,68 @@
   <meta name="theme-color" content="#101b32">
   <meta name="description" content="ATZE ERP: dashboards en tiempo real, ubicación visual de componentes, consultas de datos, administración de órdenes y alertas operativas por WhatsApp.">
   <title>ATZE ERP | Control inteligente de tu operación</title>
+  
+/* Menú desplegable ATZE ERP */
+.menu-wrap {
+  position: relative;
+}
+
+.menu-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border: 1px solid #e2e8f0;
+  border-radius: 9px;
+  background: white;
+  color: #101b32;
+  font-size: 26px;
+  cursor: pointer;
+}
+
+.menu-panel {
+  display: none;
+  position: absolute;
+  top: 54px;
+  right: 0;
+  width: 290px;
+  max-width: calc(100vw - 32px);
+  padding: 10px;
+  background: white;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  box-shadow: 0 16px 45px #101b3220;
+  z-index: 100;
+}
+
+.menu-panel.open {
+  display: block;
+}
+
+.menu-panel a {
+  display: block;
+  padding: 11px 12px;
+  border-radius: 7px;
+  color: #101b32;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.menu-panel a:hover {
+  background: #eaf0ff;
+  color: #3267ee;
+}
+
+.menu-panel .menu-heading {
+  padding: 9px 12px 5px;
+  color: #64748b;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
   <style>
     :root {
       --navy: #101b32;
@@ -190,13 +252,27 @@
       <a class="brand" href="#" aria-label="ATZE ERP, inicio">
         <img src="logo.png" alt="Logo de ATZE ERP">
       </a>
-      <div class="navlinks">
-        <a href="#funcionalidades">Funcionalidades</a>
-        <a href="#paros">Alertas operativas</a>
-        <a class="btn" href="#contacto">Solicitar demo</a>
-      </div>
-    </nav>
+      
+<div class="menu-wrap">
+  <button class="menu-toggle" id="menuToggle"
+          type="button" aria-label="Abrir menú"
+          aria-expanded="false" aria-controls="menuPanel">
+    ☰
+  </button>
+
+  <div class="menu-panel" id="menuPanel">
+    <div class="menu-heading">Funcionalidades de ATZE</div>
+    <a href="#dashboards">Dashboards en tiempo real</a>
+    <a href="#componentes">Ubicación de componentes</a>
+    <a href="#consultas">Consultas SQL</a>
+    <a href="#compras">Órdenes de compra</a>
+    <a href="#ventas">Órdenes de venta</a>
+    <a href="#paros">Paros y alertas por WhatsApp</a>
+    <div class="menu-heading">Contacto</div>
+    <a href="#contacto">Solicitar demo o prueba gratuita</a>
   </div>
+</div>
+
 </header>
 
 <main>
