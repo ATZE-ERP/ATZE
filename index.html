@@ -1,1 +1,592 @@
 
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>ATZE ERP | Controla tu negocio</title>
+  <meta name="description" content="Conoce ATZE ERP y descubre cómo mejorar el control de tu empresa. Solicita una demostración y conoce nuestra prueba de 30 días.">
+
+  <style>
+    :root {
+      --navy: #10233f;
+      --blue: #2457e6;
+      --light: #f4f7fb;
+      --text: #334155;
+      --muted: #64748b;
+      --white: #ffffff;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--text);
+      line-height: 1.6;
+      background: var(--white);
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(1120px, 90%);
+      margin: auto;
+    }
+
+    header {
+      padding: 22px 0;
+      border-bottom: 1px solid #e8edf5;
+      background: var(--white);
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .logo {
+      font-size: 27px;
+      font-weight: 800;
+      letter-spacing: -1px;
+      color: var(--navy);
+    }
+
+    .logo span {
+      color: var(--blue);
+    }
+
+    .nav-link {
+      color: var(--navy);
+      font-weight: 600;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 13px 22px;
+      border-radius: 8px;
+      background: var(--blue);
+      color: var(--white);
+      font-weight: 700;
+      transition: 0.2s;
+    }
+
+    .button:hover {
+      background: #1944c4;
+      transform: translateY(-1px);
+    }
+
+    .button-outline {
+      background: transparent;
+      color: var(--navy);
+      border: 1px solid #cbd5e1;
+    }
+
+    .button-outline:hover {
+      background: var(--light);
+      color: var(--navy);
+    }
+
+    .hero {
+      padding: 90px 0 80px;
+      background:
+        radial-gradient(circle at 85% 20%, #e3ebff 0, transparent 28%),
+        linear-gradient(180deg, #ffffff, #f8faff);
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      align-items: center;
+      gap: 60px;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      color: var(--blue);
+      background: #eaf0ff;
+      border-radius: 30px;
+      padding: 7px 13px;
+      font-size: 13px;
+      font-weight: 700;
+      margin-bottom: 22px;
+    }
+
+    h1 {
+      font-size: clamp(38px, 5vw, 60px);
+      line-height: 1.08;
+      letter-spacing: -2px;
+      color: var(--navy);
+      margin-bottom: 22px;
+    }
+
+    .hero p {
+      font-size: 18px;
+      color: var(--muted);
+      max-width: 550px;
+      margin-bottom: 28px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .dashboard {
+      background: var(--white);
+      padding: 24px;
+      border: 1px solid #e2e8f0;
+      border-radius: 18px;
+      box-shadow: 0 25px 65px #10233f14;
+    }
+
+    .dashboard-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 24px;
+    }
+
+    .dashboard-title {
+      color: var(--navy);
+      font-weight: 800;
+    }
+
+    .status {
+      background: #dcfce7;
+      color: #166534;
+      border-radius: 20px;
+      padding: 5px 10px;
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .metric-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+
+    .metric {
+      background: var(--light);
+      border-radius: 12px;
+      padding: 18px;
+    }
+
+    .metric small {
+      color: var(--muted);
+    }
+
+    .metric strong {
+      display: block;
+      color: var(--navy);
+      font-size: 25px;
+      margin-top: 5px;
+    }
+
+    .chart {
+      margin-top: 16px;
+      padding: 18px;
+      border: 1px solid #e2e8f0;
+      border-radius: 12px;
+    }
+
+    .chart-bars {
+      display: flex;
+      align-items: end;
+      gap: 12px;
+      height: 105px;
+      margin-top: 15px;
+    }
+
+    .bar {
+      flex: 1;
+      background: #b9cbff;
+      border-radius: 5px 5px 0 0;
+    }
+
+    .bar:nth-child(2),
+    .bar:nth-child(4) {
+      background: var(--blue);
+    }
+
+    section {
+      padding: 80px 0;
+    }
+
+    .section-heading {
+      text-align: center;
+      max-width: 680px;
+      margin: 0 auto 45px;
+    }
+
+    .section-heading h2 {
+      color: var(--navy);
+      font-size: clamp(29px, 4vw, 40px);
+      line-height: 1.2;
+      margin-bottom: 14px;
+    }
+
+    .section-heading p {
+      color: var(--muted);
+      font-size: 17px;
+    }
+
+    .features {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .feature {
+      padding: 28px;
+      border: 1px solid #e2e8f0;
+      border-radius: 14px;
+      background: var(--white);
+    }
+
+    .feature-icon {
+      display: grid;
+      place-items: center;
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      background: #eaf0ff;
+      color: var(--blue);
+      font-size: 23px;
+      margin-bottom: 20px;
+    }
+
+    .feature h3 {
+      color: var(--navy);
+      margin-bottom: 10px;
+      font-size: 19px;
+    }
+
+    .feature p {
+      color: var(--muted);
+    }
+
+    .trial {
+      background: var(--navy);
+      color: var(--white);
+      text-align: center;
+    }
+
+    .trial h2 {
+      font-size: clamp(30px, 4vw, 42px);
+      line-height: 1.2;
+      margin-bottom: 18px;
+    }
+
+    .trial p {
+      color: #cbd5e1;
+      max-width: 650px;
+      margin: 0 auto 28px;
+      font-size: 17px;
+    }
+
+    .trial .button {
+      background: var(--white);
+      color: var(--navy);
+    }
+
+    .trial .button:hover {
+      background: #eaf0ff;
+    }
+
+    .contact {
+      background: var(--light);
+      text-align: center;
+    }
+
+    .contact h2 {
+      color: var(--navy);
+      font-size: 35px;
+      margin-bottom: 15px;
+    }
+
+    .contact p {
+      color: var(--muted);
+      margin-bottom: 25px;
+    }
+
+    footer {
+      padding: 25px 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .footer-content {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    @media (max-width: 800px) {
+      .hero-grid {
+        grid-template-columns: 1fr;
+        gap: 38px;
+      }
+
+      .features {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        padding: 60px 0;
+      }
+
+      section {
+        padding: 60px 0;
+      }
+
+      .nav-link {
+        display: none;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="container">
+      <nav>
+        <a class="logo" href="#">ATZE<span> ERP</span></a>
+        <a class="nav-link" href="#solucion">Nuestra solución</a>
+        <a class="button" href="#contacto">Solicitar información</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <span class="eyebrow">GESTIÓN EMPRESARIAL MÁS SIMPLE</span>
+          <h1>Tu operación.<br>Más clara. Más simple.</h1>
+          <p>
+            Conoce ATZE ERP, una solución para ayudarte a organizar
+            la información de tu empresa y tomar decisiones con mayor claridad.
+          </p>
+          <div class="hero-buttons">
+            <a class="button" href="#contacto">Solicitar prueba gratis</a>
+            <a class="button button-outline" href="#solucion">Conocer la solución</a>
+          </div>
+        </div>
+
+        <div class="dashboard">
+          <div class="dashboard-top">
+            <span class="dashboard-title">Panel de operación</span>
+            <span class="status">Vista ilustrativa</span>
+          </div>
+
+          <div class="metric-grid">
+            <div class="metric">
+              <small>Inventario</small>
+              <strong>Control</strong>
+            </div>
+            <div class="metric">
+              <small>Operación</small>
+              <strong>Seguimiento</strong>
+            </div>
+            <div class="metric">
+              <small>Información</small>
+              <strong>Centralizada</strong>
+            </div>
+            <div class="metric">
+              <small>Decisiones</small>
+              <strong>Con datos</strong>
+            </div>
+          </div>
+
+          <div class="chart">
+            <strong>Una visión más clara del negocio</strong>
+            <div class="chart-bars">
+              <div class="bar" style="height: 42%"></div>
+              <div class="bar" style="height: 76%"></div>
+              <div class="bar" style="height: 55%"></div>
+              <div class="bar" style="height: 92%"></div>
+              <div class="bar" style="height: 68%"></div>
+              <div class="bar" style="height: 83%"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="solucion">
+      <div class="container">
+        <div class="section-heading">
+          <h2>Más control. Menos complicaciones.</h2>
+          <p>
+            Una plataforma pensada para ayudarte a visualizar y gestionar
+            mejor los procesos de tu negocio.
+          </p>
+        </div>
+
+        <div class="features">
+          <article class="feature">
+            <div class="feature-icon">▦</div>
+            <h3>Control de inventario</h3>
+            <p>Organiza la información de tus materiales y existencias para mejorar su seguimiento.</p>
+          </article>
+
+          <article class="feature">
+            <div class="feature-icon">↗</div>
+            <h3>Seguimiento operativo</h3>
+            <p>Facilita la consulta de información relevante para dar seguimiento a las actividades.</p>
+          </article>
+
+          <article class="feature">
+            <div class="feature-icon">◫</div>
+            <h3>Información para decidir</h3>
+            <p>Busca tener una visión más clara de tu negocio y detectar oportunidades de mejora.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="trial">
+      <div class="container">
+        <h2>Conoce ATZE ERP durante 30 días</h2>
+        <p>
+          Descubre si ATZE ERP se adapta a las necesidades de tu empresa.
+          Contáctanos para conocer las condiciones de la prueba gratuita.
+        </p>
+        <a class="button" href="#contacto">Quiero conocer ATZE ERP</a>
+      </div>
+    </section>
+
+    
+<section class="contact" id="contacto">
+  <div class="container">
+    <h2>Conoce ATZE ERP</h2>
+
+    <p>
+      Cuéntanos un poco sobre tu empresa y tus necesidades.
+      Nos pondremos en contacto contigo para conocer tu proyecto.
+    </p>
+
+    <form id="leadForm"
+      style="max-width: 600px; margin: 30px auto 0; text-align: left; background: white; padding: 28px; border-radius: 14px; border: 1px solid #e2e8f0;">
+
+      <label for="nombre">Nombre completo *</label>
+      <input id="nombre" name="nombre" type="text" required
+        placeholder="Tu nombre"
+        style="width: 100%; padding: 12px; margin: 7px 0 18px; border: 1px solid #cbd5e1; border-radius: 7px;">
+
+      <label for="empresa">Empresa *</label>
+      <input id="empresa" name="empresa" type="text" required
+        placeholder="Nombre de tu empresa"
+        style="width: 100%; padding: 12px; margin: 7px 0 18px; border: 1px solid #cbd5e1; border-radius: 7px;">
+
+      <label for="telefono">Teléfono de contacto *</label>
+      <input id="telefono" name="telefono" type="tel" required
+        placeholder="Tu número de teléfono"
+        style="width: 100%; padding: 12px; margin: 7px 0 18px; border: 1px solid #cbd5e1; border-radius: 7px;">
+
+      <label for="correo">Correo electrónico</label>
+      <input id="correo" name="correo" type="email"
+        placeholder="nombre@empresa.com"
+        style="width: 100%; padding: 12px; margin: 7px 0 18px; border: 1px solid #cbd5e1; border-radius: 7px;">
+
+      <label for="interes">¿Qué te interesa de ATZE ERP? *</label>
+      <select id="interes" name="interes" required
+        style="width: 100%; padding: 12px; margin: 7px 0 18px; border: 1px solid #cbd5e1; border-radius: 7px;">
+        <option value="">Selecciona una opción</option>
+        <option>Control de inventarios</option>
+        <option>Producción y operaciones</option>
+        <option>Reportes e indicadores</option>
+        <option>Administración de mi empresa</option>
+        <option>Quiero conocer todas las funciones</option>
+        <option>Otro</option>
+      </select>
+
+      <label for="mensaje">Cuéntanos más sobre tus necesidades</label>
+      <textarea id="mensaje" name="mensaje" rows="4"
+        placeholder="¿Qué problema te gustaría resolver?"
+        style="width: 100%; padding: 12px; margin: 7px 0 22px; border: 1px solid #cbd5e1; border-radius: 7px; resize: vertical;"></textarea>
+
+      <button type="submit" class="button"
+        style="width: 100%; border: 0; cursor: pointer; font-size: 16px;">
+        Enviar solicitud por WhatsApp
+      </button>
+
+      <p style="font-size: 12px; margin: 15px 0 0; color: #64748b;">
+        Al continuar, se abrirá WhatsApp con los datos que proporcionaste
+        para que puedas revisar y enviar tu solicitud.
+      </p>
+    </form>
+    
+<div style="margin-top: 32px; text-align: center;">
+  <p style="margin-bottom: 18px; color: #64748b;">
+    ¿Prefieres contactarnos directamente?
+  </p>
+
+  <p style="margin-bottom: 12px;">
+    <strong>Correo electrónico</strong><br>
+    <a href="mailto:juanpasolisc@gmail.com"
+       style="color: #2457e6; font-weight: 600;">
+      juanpasolisc@gmail.com
+    </a>
+  </p>
+
+  <p style="margin-bottom: 18px;">
+    <strong>Celular y WhatsApp</strong><br>
+    <a href="https://wa.me/528448588733"
+       target="_blank"
+       rel="noopener noreferrer"
+       style="color: #2457e6; font-weight: 600;">
+      844 858 8733
+    </a>
+  </p>
+
+  <a class="button button-outline"
+     href="tel:+528448588733">
+    Llamar directamente
+  </a>
+</div>
+
+  </div>
+</section>
+
+<script>
+  document.getElementById("leadForm").addEventListener("submit", function(event) {
+    event.preventDefault();
+
+    const nombre = document.getElementById("nombre").value.trim();
+    const empresa = document.getElementById("empresa").value.trim();
+    const telefono = document.getElementById("telefono").value.trim();
+    const correo = document.getElementById("correo").value.trim();
+    const interes = document.getElementById("interes").value;
+    const mensaje = document.getElementById("mensaje").value.trim();
+
+    const texto =
+      "Hola, quiero solicitar información sobre ATZE ERP.\n\n" +
+      "Nombre: " + nombre + "\n" +
+      "Empresa: " + empresa + "\n" +
+      "Teléfono: " + telefono + "\n" +
+      "Correo: " + (correo || "No proporcionado") + "\n" +
+      "Interés: " + interes + "\n" +
+      "Necesidades: " + (mensaje || "No especificadas");
+
+    const url = "https://wa.me/528448588733?text=" + encodeURIComponent(texto);
+
+    window.open(url, "_blank", "noopener,noreferrer");
+  });
+</script>
