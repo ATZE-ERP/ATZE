@@ -5,8 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#070d19">
 
-  <title>ATZE | Inteligencia y control para tu planta</title>
-  <meta name="description" content="ATZE ofrece visibilidad operativa en tiempo real, localización visual de componentes y herramientas para mejorar el control de tu planta. Soluciones adaptadas a tu operación y presupuesto.">
+  <title>ATZE | Inteligencia y control para tu negocio</title>
+  <meta name="description" content="ATZE conecta la información de tu negocio para ayudarte a monitorear operaciones en tiempo real, consultar datos, localizar productos y materiales, dar seguimiento a órdenes y recibir alertas. Soluciones para PYMES, startups y empresas de todos los sectores.">
+
+  <meta property="og:title" content="ATZE | Inteligencia y control para tu negocio">
+  <meta property="og:description" content="Más visibilidad, más control y mejores decisiones. Tecnología adaptable a las necesidades y presupuesto de tu empresa.">
+  <meta property="og:type" content="website">
 
   <style>
     :root {
@@ -47,6 +51,15 @@
 
     button, input, textarea, select {
       font: inherit;
+    }
+
+    button:focus-visible,
+    a:focus-visible,
+    input:focus-visible,
+    textarea:focus-visible,
+    select:focus-visible {
+      outline: 2px solid var(--blue-light);
+      outline-offset: 3px;
     }
 
     .container {
@@ -213,7 +226,7 @@
     }
 
     .hero-content {
-      max-width: 850px;
+      max-width: 880px;
       margin: 0 auto;
     }
 
@@ -244,10 +257,16 @@
     }
 
     .hero-copy {
-      max-width: 720px;
+      max-width: 760px;
       margin: 0 auto 30px;
       color: var(--text);
       font-size: 18px;
+    }
+
+    .hero-audience {
+      margin: 0 auto 28px;
+      color: var(--muted);
+      font-size: 14px;
     }
 
     .hero-buttons {
@@ -319,6 +338,44 @@
     .benefit p {
       color: var(--muted);
       font-size: 14px;
+    }
+
+    /* TIPOS DE NEGOCIO */
+
+    .audiences {
+      background: #0c1528;
+      border-bottom: 1px solid #17243a;
+    }
+
+    .audiences-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+
+    .audience-card {
+      padding: 22px 17px;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      background: linear-gradient(145deg, #12213a, #0b1424);
+      text-align: center;
+    }
+
+    .audience-icon {
+      display: block;
+      margin-bottom: 12px;
+      color: var(--blue-light);
+      font-size: 29px;
+    }
+
+    .audience-card h3 {
+      margin-bottom: 7px;
+      font-size: 16px;
+    }
+
+    .audience-card p {
+      color: var(--muted);
+      font-size: 13px;
     }
 
     /* PRECIO FLEXIBLE */
@@ -821,6 +878,10 @@
         grid-template-columns: repeat(2, 1fr);
       }
 
+      .audiences-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
       .contact-grid {
         grid-template-columns: 1fr;
       }
@@ -892,7 +953,8 @@
         width: 100%;
       }
 
-      .benefits-grid {
+      .benefits-grid,
+      .audiences-grid {
         grid-template-columns: 1fr;
       }
 
@@ -987,7 +1049,7 @@
           <nav class="dropdown" id="featureMenu" aria-label="Funcionalidades">
             <div class="dropdown-label">Explora ATZE</div>
             <button type="button" data-feature="dashboards">▦ Dashboards en tiempo real</button>
-            <button type="button" data-feature="componentes">⌖ Ubicación y seguimiento de componentes</button>
+            <button type="button" data-feature="componentes">⌖ Ubicación visual de productos y materiales</button>
             <button type="button" data-feature="sql">⌘ Consultas SQL</button>
             <button type="button" data-feature="compras">⇩ Órdenes de compra</button>
             <button type="button" data-feature="ventas">⇧ Órdenes de venta</button>
@@ -1005,7 +1067,7 @@
     <section class="hero" id="inicio">
       <div class="container hero-content">
 
-        <span class="eyebrow">Información conectada con tu operación</span>
+        <span class="eyebrow">Tecnología adaptable a tu negocio</span>
 
         <h1>
           Más visibilidad.<br>
@@ -1014,9 +1076,14 @@
         </h1>
 
         <p class="hero-copy">
-          ATZE conecta información operativa para ayudarte a monitorear
-          tu planta en tiempo real, localizar componentes, consultar datos
-          y dar seguimiento a órdenes y alertas desde una plataforma centralizada.
+          ATZE conecta la información de tu negocio para ayudarte a monitorear
+          operaciones en tiempo real, consultar datos, localizar productos,
+          materiales o componentes, dar seguimiento a órdenes y recibir alertas
+          desde una plataforma centralizada.
+        </p>
+
+        <p class="hero-audience">
+          Para startups, PYMES, comercios y empresas de distintos sectores.
         </p>
 
         <div class="hero-buttons">
@@ -1037,10 +1104,10 @@
       <div class="container">
 
         <div class="section-heading">
-          <h2>Información útil para <span class="accent">tu operación</span></h2>
+          <h2>Información útil para <span class="accent">tu negocio</span></h2>
           <p>
-            Centraliza información, monitorea procesos y facilita el seguimiento
-            de las actividades de tu empresa.
+            Conecta información, visualiza tus operaciones y facilita el seguimiento
+            de las actividades importantes de tu empresa.
           </p>
         </div>
 
@@ -1049,37 +1116,79 @@
           <article class="benefit">
             <div class="benefit-icon">◉</div>
             <h3>Monitoreo en tiempo real</h3>
-            <p>Consulta información operativa actualizada para identificar situaciones y actuar oportunamente.</p>
+            <p>Consulta información actualizada de tus operaciones para identificar situaciones y actuar oportunamente.</p>
           </article>
 
           <article class="benefit">
             <div class="benefit-icon">⌖</div>
             <h3>Localización visual</h3>
-            <p>Identifica dónde se encuentran los componentes dentro del layout de tus instalaciones.</p>
+            <p>Ubica productos, materiales, componentes o artículos en una representación visual adaptada a tu negocio.</p>
           </article>
 
           <article class="benefit">
             <div class="benefit-icon">⌘</div>
-            <h3>Acceso a información</h3>
-            <p>Realiza consultas y encuentra información relevante para apoyar tus decisiones.</p>
+            <h3>Información centralizada</h3>
+            <p>Consulta datos relevantes de distintas fuentes para apoyar las decisiones de tu equipo.</p>
           </article>
 
           <article class="benefit">
             <div class="benefit-icon">⇄</div>
             <h3>Seguimiento de órdenes</h3>
-            <p>Consulta información relacionada con órdenes de compra y venta para mejorar su seguimiento.</p>
+            <p>Facilita el seguimiento de compras, ventas, pedidos y otras actividades relevantes para tu negocio.</p>
           </article>
 
           <article class="benefit">
             <div class="benefit-icon">◉</div>
             <h3>Alertas operativas</h3>
-            <p>Recibe notificaciones por WhatsApp ante eventos importantes, según las reglas de configuración.</p>
+            <p>Recibe notificaciones por WhatsApp ante eventos importantes, según las reglas que se configuren.</p>
           </article>
 
           <article class="benefit">
             <div class="benefit-icon">↗</div>
             <h3>Decisiones oportunas</h3>
-            <p>Utiliza información organizada y actualizada para responder con mayor rapidez a las necesidades de la operación.</p>
+            <p>Utiliza información organizada para detectar oportunidades y responder con mayor rapidez.</p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- NEGOCIOS A LOS QUE PUEDE ADAPTARSE -->
+    <section class="audiences" id="sectores">
+      <div class="container">
+
+        <div class="section-heading">
+          <h2>Una solución para distintos <span class="accent">tipos de negocio</span></h2>
+          <p>
+            ATZE no está limitado a un solo sector. Las funcionalidades y la forma
+            de presentar la información pueden adaptarse a las necesidades de cada empresa.
+          </p>
+        </div>
+
+        <div class="audiences-grid">
+
+          <article class="audience-card">
+            <span class="audience-icon" aria-hidden="true">↗</span>
+            <h3>Startups</h3>
+            <p>Organiza información y construye procesos que acompañen tu crecimiento.</p>
+          </article>
+
+          <article class="audience-card">
+            <span class="audience-icon" aria-hidden="true">▦</span>
+            <h3>PYMES</h3>
+            <p>Mejora la visibilidad de tus operaciones sin perder de vista tus recursos.</p>
+          </article>
+
+          <article class="audience-card">
+            <span class="audience-icon" aria-hidden="true">⌖</span>
+            <h3>Ferreterías y comercios</h3>
+            <p>Explora opciones para localizar artículos, consultar información y dar seguimiento a pedidos.</p>
+          </article>
+
+          <article class="audience-card">
+            <span class="audience-icon" aria-hidden="true">⚙</span>
+            <h3>Empresas industriales</h3>
+            <p>Conecta datos operativos y facilita el seguimiento de materiales y procesos.</p>
           </article>
 
         </div>
@@ -1087,27 +1196,27 @@
     </section>
 
     <!-- PRECIO A LA MEDIDA -->
-    <section class="pricing" id="presupuesto">
+    <section class="pricing" id="precios">
       <div class="container">
         <div class="pricing-box">
           <div class="pricing-icon">⚙</div>
           <h2>Una solución que se adapta a <span class="accent">tu presupuesto</span></h2>
           <p>
-            Cada empresa tiene procesos y necesidades diferentes.
-            En ATZE nos ajustamos a tu presupuesto para proponerte una solución
-            de acuerdo con tus objetivos, las funcionalidades que necesitas
-            y el alcance de tu operación.
+            Cada negocio tiene objetivos, procesos y recursos diferentes.
+            En ATZE buscamos una propuesta que se adapte a tus necesidades,
+            al tamaño de tu empresa y a las funcionalidades que realmente necesitas.
+            No necesitas partir de un paquete único para todos.
           </p>
 
           <div class="pricing-points">
             <span>✓ Propuesta personalizada</span>
-            <span>✓ Alcance según tus necesidades</span>
-            <span>✓ Sin tarifa única predefinida</span>
+            <span>✓ Funcionalidades según tus necesidades</span>
+            <span>✓ Presupuesto a tu medida</span>
           </div>
 
           <a
             class="btn btn-primary"
-            href="https://wa.me/528448588733?text=Hola%2C%20me%20interesa%20ATZE.%20Quisiera%20conocer%20una%20propuesta%20adaptada%20a%20las%20necesidades%20y%20presupuesto%20de%20mi%20empresa."
+            href="https://wa.me/528448588733?text=Hola%2C%20me%20interesa%20ATZE.%20Quisiera%20conocer%20una%20propuesta%20adaptada%20a%20las%20necesidades%20y%20presupuesto%20de%20mi%20negocio."
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -1123,11 +1232,15 @@
 
         <div class="section-heading">
           <h2>Conoce las <span class="accent">funcionalidades</span></h2>
-          <p>Selecciona una función en el menú superior para conocer cómo puede apoyar a tu operación.</p>
+          <p>
+            Explora las herramientas que pueden adaptarse a los procesos y necesidades
+            de tu negocio, sin importar su tamaño o sector.
+          </p>
         </div>
 
         <p class="feature-intro">
-          Explora las herramientas de ATZE, incluyendo la demostración de ubicación visual de componentes.
+          Selecciona una función en el menú superior. El ejemplo visual de ubicación
+          muestra una posible aplicación y no limita ATZE a un tipo de empresa.
         </p>
 
         <!-- DASHBOARDS -->
@@ -1141,51 +1254,57 @@
           </div>
 
           <p>
-            Visualiza indicadores y datos operativos en paneles diseñados para
-            conocer el estado de tu operación y detectar situaciones que requieren atención.
+            Visualiza indicadores y datos importantes de tu negocio en paneles
+            diseñados para conocer el estado de tus operaciones e identificar
+            situaciones que requieren atención.
           </p>
+
           <ul>
             <li>Consulta indicadores relevantes desde una vista centralizada.</li>
-            <li>Monitorea datos operativos actualizados según la conexión configurada.</li>
+            <li>Monitorea datos actualizados según la conexión configurada.</li>
             <li>Identifica tendencias, atrasos y situaciones que requieren atención.</li>
             <li>Facilita el seguimiento de la operación y la toma de decisiones.</li>
+            <li>Adapta los indicadores al contexto de tu empresa.</li>
           </ul>
+
           <p style="margin-top:20px;color:var(--muted);font-size:13px;">
             La actualización en tiempo real depende de la conexión con los sistemas
-            y fuentes de datos de cada cliente.
+            y las fuentes de datos de cada cliente.
           </p>
         </article>
 
-        <!-- UBICACIÓN Y SEGUIMIENTO DE COMPONENTES -->
+        <!-- UBICACIÓN VISUAL -->
         <article class="feature-panel" id="feature-componentes">
           <div class="feature-icon">⌖</div>
-          <h3>Ubicación y seguimiento de componentes en tiempo real</h3>
+          <h3>Localización visual de productos, materiales y componentes</h3>
 
           <div class="live-label">
             <span class="live-dot"></span>
-            Visibilidad de la ubicación en planta
+            Ubicación visual adaptable
           </div>
 
           <p>
-            Además de localizar un componente en el layout, ATZE puede plantearse
-            para dar seguimiento a su ubicación y estado operativo, ayudando a
-            saber dónde buscarlo y facilitando el flujo de materiales dentro de la planta.
+            Imagina encontrar un producto en una ferretería, localizar materiales
+            en un almacén, identificar componentes en una empresa industrial o
+            ubicar artículos dentro de un espacio de trabajo. ATZE puede plantearse
+            para representar visualmente la distribución de estos espacios y ayudar
+            a encontrar lo que buscas.
           </p>
 
           <ul>
-            <li>Busca el número de parte que necesitas localizar.</li>
-            <li>Visualiza su ubicación en el layout de la planta.</li>
-            <li>Identifica el punto mediante un foco luminoso.</li>
-            <li>Consulta el estado del componente cuando la fuente de datos esté integrada.</li>
-            <li>Facilita la coordinación de materiales y la reducción de búsquedas manuales.</li>
+            <li>Busca un producto, artículo, material o componente por su identificador.</li>
+            <li>Visualiza su ubicación en una representación del espacio.</li>
+            <li>Resalta el punto correspondiente para facilitar su localización.</li>
+            <li>Adapta el layout visual al espacio y a las necesidades de tu negocio.</li>
+            <li>Consulta información de ubicación y estado cuando la fuente de datos esté integrada.</li>
           </ul>
 
           <div class="demo-box">
-            <h4 class="demo-heading">Prueba la búsqueda de componentes</h4>
+            <h4 class="demo-heading">Prueba la búsqueda visual</h4>
 
             <p class="demo-description">
-              Escribe un número de parte de ejemplo y pulsa Buscar para ver
-              cómo se ilumina una ubicación en el layout.
+              Esta demostración utiliza artículos y ubicaciones ficticias.
+              Escribe uno de los identificadores de ejemplo y pulsa Buscar.
             </p>
 
             <form class="search-form" id="partSearchForm">
@@ -1193,11 +1312,11 @@
                 type="text"
                 id="partNumberInput"
                 placeholder="Ej. 607-7435"
-                aria-label="Número de parte"
+                aria-label="Identificador de producto o componente"
                 autocomplete="off"
                 required
               >
-              <button class="btn btn-primary" type="submit">Buscar componente</button>
+              <button class="btn btn-primary" type="submit">Buscar</button>
             </form>
 
             <div class="sample-parts">
@@ -1219,20 +1338,21 @@
                 class="layout-image"
                 id="layoutImage"
                 src="https://raw.githubusercontent.com/ATZE-ERP/ATZE-ERP.github.io/main/UBI2.png"
-                alt="Layout de planta para demostración de ubicación de componentes"
+                alt="Ejemplo ilustrativo de una distribución visual de áreas y ubicaciones"
+                loading="lazy"
               >
 
               <div
                 class="location-marker"
                 id="locationMarker"
-                aria-label="Ubicación de demostración del componente"
+                aria-label="Ubicación de demostración del artículo"
               >💡</div>
             </div>
 
             <p class="layout-caption">
-              Demostración interactiva con ubicaciones de ejemplo.
-              Para mostrar posiciones y estados reales en tiempo real,
-              es necesario conectar ATZE con la fuente de datos de la planta.
+              Este layout es solo un ejemplo visual. Puede adaptarse a una ferretería,
+              comercio, almacén, oficina, planta industrial u otro espacio.
+              La ubicación y el estado reales requieren integrar la fuente de datos correspondiente.
             </p>
 
             <button class="reset-location" id="resetLocation" type="button">
@@ -1245,10 +1365,13 @@
         <article class="feature-panel" id="feature-sql">
           <div class="feature-icon">⌘</div>
           <h3>Consultas SQL y acceso a datos</h3>
-          <p>Consulta información de bases de datos para facilitar el análisis de la operación y el acceso a datos relevantes.</p>
+          <p>
+            Consulta información de bases de datos autorizadas para facilitar
+            el análisis y el acceso a datos relevantes para tu negocio.
+          </p>
           <ul>
-            <li>Consulta información de acuerdo con las necesidades del negocio.</li>
-            <li>Facilita el análisis de datos operativos.</li>
+            <li>Consulta información de acuerdo con las necesidades de la empresa.</li>
+            <li>Facilita el análisis de datos operativos y comerciales.</li>
             <li>Apoya la creación de reportes y vistas de información.</li>
             <li>Permite diseñar consultas para fuentes de datos autorizadas.</li>
           </ul>
@@ -1258,24 +1381,30 @@
         <article class="feature-panel" id="feature-compras">
           <div class="feature-icon">⇩</div>
           <h3>Órdenes de compra</h3>
-          <p>Facilita la consulta y el seguimiento de información relacionada con las órdenes de compra y los procesos de abastecimiento.</p>
+          <p>
+            Facilita la consulta y el seguimiento de información relacionada con
+            las órdenes de compra, los proveedores y los procesos de abastecimiento.
+          </p>
           <ul>
             <li>Consulta información de órdenes de compra.</li>
-            <li>Apoya el seguimiento de compras y materiales.</li>
-            <li>Facilita el acceso a información para los responsables.</li>
-            <li>Ayuda a mantener mayor visibilidad del abastecimiento.</li>
+            <li>Apoya el seguimiento de compras, artículos y materiales.</li>
+            <li>Facilita el acceso a información para las personas responsables.</li>
+            <li>Mejora la visibilidad del proceso de abastecimiento.</li>
           </ul>
         </article>
 
         <!-- VENTAS -->
         <article class="feature-panel" id="feature-ventas">
           <div class="feature-icon">⇧</div>
-          <h3>Órdenes de venta</h3>
-          <p>Consulta información relacionada con las órdenes de venta para dar seguimiento a los compromisos comerciales y operativos.</p>
+          <h3>Órdenes de venta y pedidos</h3>
+          <p>
+            Consulta información relacionada con pedidos y órdenes de venta
+            para facilitar el seguimiento de compromisos comerciales.
+          </p>
           <ul>
             <li>Consulta información de órdenes de venta.</li>
             <li>Facilita la revisión de datos relacionados con los pedidos.</li>
-            <li>Apoya la coordinación entre áreas.</li>
+            <li>Apoya la coordinación entre las áreas involucradas.</li>
             <li>Mejora la visibilidad de la información comercial.</li>
           </ul>
         </article>
@@ -1284,17 +1413,24 @@
         <article class="feature-panel" id="feature-whatsapp">
           <div class="feature-icon">◉</div>
           <h3>Alertas configurables por WhatsApp</h3>
-          <p>Recibe notificaciones cuando se registren eventos operativos que requieren atención.</p>
+          <p>
+            Recibe notificaciones cuando se registren eventos definidos por tu empresa
+            que requieran atención, seguimiento o una respuesta oportuna.
+          </p>
           <ul>
-            <li>Notificaciones de eventos definidos por la empresa.</li>
-            <li>Alertas relacionadas con paros o tiempos muertos.</li>
-            <li>Escalamiento a líderes o gerentes según las reglas configuradas.</li>
-            <li>Mayor oportunidad para responder ante incidencias.</li>
+            <li>Notificaciones de eventos configurados por la empresa.</li>
+            <li>Alertas relacionadas con incidencias, atrasos o interrupciones de operación.</li>
+            <li>Escalamiento a responsables o gerentes según las reglas configuradas.</li>
+            <li>Mayor oportunidad para responder ante situaciones importantes.</li>
           </ul>
+          <p style="margin-top:20px;color:var(--muted);font-size:13px;">
+            La disponibilidad de las alertas depende de la integración de datos
+            y de la configuración de los servicios de mensajería correspondientes.
+          </p>
         </article>
 
         <p class="feature-hint">
-          Selecciona otra funcionalidad en el menú superior para cambiar la información que se muestra.
+          Selecciona otra funcionalidad en el menú superior para consultar su descripción.
         </p>
 
       </div>
@@ -1307,9 +1443,9 @@
           <span class="eyebrow">Conoce ATZE</span>
           <h2>Solicita tu <span class="accent">prueba de 30 días</span></h2>
           <p>
-            Conoce las funcionalidades, evalúa su utilidad para tu operación
-            y descubre cómo pueden ayudarte a mejorar la visibilidad de tus procesos.
-            También podemos conversar sobre una propuesta ajustada a tus necesidades y presupuesto.
+            Explora las funcionalidades y evalúa cómo podrían ayudarte a mejorar
+            la visibilidad, organización y seguimiento de tu negocio.
+            Podemos conversar sobre una propuesta ajustada a tus necesidades y presupuesto.
           </p>
 
           <a
@@ -1329,8 +1465,11 @@
       <div class="container">
 
         <div class="section-heading">
-          <h2>Hablemos de <span class="accent">tu operación</span></h2>
-          <p>Cuéntanos qué necesitas y prepara con nosotros una propuesta adecuada para tu empresa.</p>
+          <h2>Hablemos de <span class="accent">tu negocio</span></h2>
+          <p>
+            Cuéntanos qué necesitas y exploremos una solución que se adapte
+            a los objetivos, procesos y presupuesto de tu empresa.
+          </p>
         </div>
 
         <div class="contact-grid">
@@ -1338,9 +1477,10 @@
           <div class="contact-info">
             <h3>Una solución a tu medida</h3>
             <p>
-              Comparte tus necesidades, las herramientas que te interesan,
-              tu presupuesto estimado o los retos operativos que deseas atender.
-              Revisaremos contigo el alcance que mejor se adapte a tu empresa.
+              Ya tengas una startup, una PYME, una ferretería, un comercio
+              o una empresa industrial, comparte tus necesidades y los retos
+              que buscas resolver. Revisaremos contigo las funcionalidades
+              y el alcance que mejor se adapten a tu negocio.
             </p>
 
             <div class="contact-detail">
@@ -1357,7 +1497,7 @@
 
             <div class="contact-detail">
               <strong>Precio personalizado</strong>
-              Nos ajustamos a las necesidades, alcance y presupuesto de tu empresa.
+              La propuesta se prepara de acuerdo con tus necesidades, alcance y presupuesto.
             </div>
           </div>
 
@@ -1369,8 +1509,8 @@
             </div>
 
             <div class="form-group">
-              <label for="empresa">Empresa</label>
-              <input type="text" id="empresa" name="empresa" placeholder="Nombre de tu empresa" autocomplete="organization" required>
+              <label for="empresa">Empresa o negocio</label>
+              <input type="text" id="empresa" name="empresa" placeholder="Nombre de tu empresa o negocio" autocomplete="organization" required>
             </div>
 
             <div class="form-group">
@@ -1379,11 +1519,25 @@
             </div>
 
             <div class="form-group">
+              <label for="tipoNegocio">¿Qué tipo de negocio tienes?</label>
+              <select id="tipoNegocio" name="tipoNegocio" required>
+                <option value="">Selecciona una opción</option>
+                <option>Startup</option>
+                <option>PYME</option>
+                <option>Ferretería o comercio</option>
+                <option>Almacén o centro de distribución</option>
+                <option>Empresa industrial</option>
+                <option>Empresa de servicios</option>
+                <option>Otro sector</option>
+              </select>
+            </div>
+
+            <div class="form-group">
               <label for="interes">¿Qué funcionalidad te interesa?</label>
               <select id="interes" name="interes" required>
                 <option value="">Selecciona una opción</option>
                 <option>Dashboards y monitoreo en tiempo real</option>
-                <option>Ubicación y seguimiento de componentes</option>
+                <option>Ubicación visual de productos y materiales</option>
                 <option>Consultas SQL</option>
                 <option>Órdenes de compra</option>
                 <option>Órdenes de venta</option>
@@ -1394,8 +1548,8 @@
             </div>
 
             <div class="form-group">
-              <label for="presupuesto">Presupuesto estimado (opcional)</label>
-              <select id="presupuesto" name="presupuesto">
+              <label for="presupuestoCliente">Presupuesto estimado (opcional)</label>
+              <select id="presupuestoCliente" name="presupuesto">
                 <option value="">Prefiero conversarlo</option>
                 <option>Menos de $5,000 MXN</option>
                 <option>$5,000 a $15,000 MXN</option>
@@ -1406,8 +1560,8 @@
             </div>
 
             <div class="form-group">
-              <label for="mensaje">Cuéntanos qué necesitas</label>
-              <textarea id="mensaje" name="mensaje" placeholder="Describe brevemente lo que buscas..."></textarea>
+              <label for="mensaje">¿Qué necesitas resolver?</label>
+              <textarea id="mensaje" name="mensaje" placeholder="Cuéntanos qué información, procesos o actividades te gustaría mejorar..."></textarea>
             </div>
 
             <button class="btn btn-primary" type="submit">
@@ -1510,23 +1664,23 @@
       });
     });
 
-    // DEMOSTRACIÓN VISUAL CON UBICACIONES DE EJEMPLO
+    // DEMOSTRACIÓN VISUAL CON UBICACIONES FICTICIAS
     // No representa una conexión en vivo con datos reales.
     const demoParts = {
       "607-7435": {
         x: 24,
         y: 32,
-        location: "Zona de producción A"
+        location: "Área de ejemplo A"
       },
       "9310300": {
         x: 68,
         y: 42,
-        location: "Zona de producción B"
+        location: "Área de ejemplo B"
       },
       "COMP-001": {
         x: 45,
         y: 72,
-        location: "Zona de materiales"
+        location: "Área de ejemplo C"
       }
     };
 
@@ -1546,7 +1700,7 @@
       if (!normalizedPart) {
         locationMarker.classList.remove("visible");
         searchResult.classList.add("error");
-        searchResult.textContent = "Escribe un número de parte para buscar.";
+        searchResult.textContent = "Escribe un identificador para buscar.";
         return;
       }
 
@@ -1554,7 +1708,7 @@
         locationMarker.classList.remove("visible");
         searchResult.classList.add("error");
         searchResult.textContent =
-          "No se encontró ese número en la demostración. Prueba con 607-7435, 9310300 o COMP-001.";
+          "No se encontró ese identificador en la demostración. Prueba con 607-7435, 9310300 o COMP-001.";
         return;
       }
 
@@ -1563,8 +1717,8 @@
       locationMarker.classList.add("visible");
 
       searchResult.textContent =
-        "Componente de demostración: " + normalizedPart +
-        ". Ubicación de ejemplo: " + part.location +
+        "Artículo de demostración: " + normalizedPart +
+        ". Ubicación ficticia: " + part.location +
         ". Esta búsqueda no consulta datos reales en tiempo real.";
 
       document.getElementById("layoutFrame").scrollIntoView({
@@ -1604,18 +1758,20 @@
       const nombre = document.getElementById("nombre").value.trim();
       const empresa = document.getElementById("empresa").value.trim();
       const correo = document.getElementById("correo").value.trim();
+      const tipoNegocio = document.getElementById("tipoNegocio").value;
       const interes = document.getElementById("interes").value;
-      const presupuesto = document.getElementById("presupuesto").value;
+      const presupuesto = document.getElementById("presupuestoCliente").value;
       const mensaje = document.getElementById("mensaje").value.trim();
 
       const texto =
         "Hola, me interesa conocer ATZE.\n\n" +
         "Nombre: " + nombre + "\n" +
-        "Empresa: " + empresa + "\n" +
+        "Empresa o negocio: " + empresa + "\n" +
         "Correo: " + correo + "\n" +
+        "Tipo de negocio: " + tipoNegocio + "\n" +
         "Funcionalidad de interés: " + interes + "\n" +
         "Presupuesto estimado: " + (presupuesto || "Prefiero conversarlo") + "\n" +
-        "Mensaje: " + mensaje;
+        "Necesidad o mensaje: " + (mensaje || "Sin mensaje adicional");
 
       const url = "https://wa.me/528448588733?text=" +
         encodeURIComponent(texto);
