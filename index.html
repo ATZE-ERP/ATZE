@@ -295,7 +295,7 @@ h1{
   background:linear-gradient(135deg,#edf5ff,#f8fbff);
 }
 
-/* CARRUSEL DE CLIENTES */
+/* CLIENTES: LOGO ÚNICO */
 
 .clients-section{
   padding:85px 0;
@@ -305,7 +305,7 @@ h1{
 
 .clients-heading{
   text-align:center;
-  margin-bottom:45px;
+  margin-bottom:40px;
 }
 
 .clients-heading h2{
@@ -319,74 +319,59 @@ h1{
   margin:auto;
 }
 
-.clients-window{
-  width:100%;
-  overflow:hidden;
-  position:relative;
-  -webkit-mask-image:linear-gradient(
-    to right,
-    transparent,
-    black 10%,
-    black 90%,
-    transparent
-  );
-  mask-image:linear-gradient(
-    to right,
-    transparent,
-    black 10%,
-    black 90%,
-    transparent
-  );
-}
-
-.clients-track{
-  display:flex;
-  width:max-content;
-  animation:conveyor 25s linear infinite;
-  will-change:transform;
-}
-
-.clients-group{
-  display:flex;
-  align-items:center;
-  gap:30px;
-  padding-right:30px;
-  flex-shrink:0;
-}
-
-.client-logo{
-  width:240px;
-  height:140px;
-  flex-shrink:0;
+.client-showcase{
   display:flex;
   justify-content:center;
   align-items:center;
-  padding:22px;
-  border:1px solid var(--line);
-  border-radius:17px;
-  background:white;
-  box-shadow:0 8px 25px #14213d0b;
 }
 
-.client-logo img{
+.client-card{
+  width:min(390px,100%);
+  min-height:225px;
+  padding:38px 30px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap:20px;
+  border:1px solid var(--line);
+  border-radius:22px;
+  background:white;
+  box-shadow:0 15px 45px #14213d0d;
+  opacity:0;
+  transform:translateY(25px);
+  transition:
+    opacity .8s ease,
+    transform .8s ease,
+    box-shadow .3s ease;
+}
+
+.client-card.visible{
+  opacity:1;
+  transform:translateY(0);
+}
+
+.client-card:hover{
+  box-shadow:0 20px 50px #14213d18;
+}
+
+.client-card img{
   display:block;
-  max-width:100%;
-  max-height:100%;
+  width:100%;
+  max-width:285px;
+  max-height:125px;
   object-fit:contain;
 }
 
-.clients-window:hover .clients-track{
-  animation-play-state:paused;
-}
-
-@keyframes conveyor{
-  from{transform:translateX(0)}
-  to{transform:translateX(-50%)}
+.client-card span{
+  font-size:13px;
+  font-weight:600;
+  color:var(--muted);
 }
 
 .clients-caption{
   text-align:center;
-  margin-top:25px;
+  margin-top:28px;
   color:var(--muted);
   font-size:13px;
 }
@@ -702,8 +687,7 @@ footer{
   .modal-card{padding:25px 18px}
   .search-row{flex-direction:column}
   .whatsapp{right:12px;bottom:12px}
-  .client-logo{width:180px;height:110px}
-  .clients-group{gap:18px;padding-right:18px}
+  .client-card{min-height:190px;padding:28px}
 }
 
 @media(prefers-reduced-motion:reduce){
@@ -711,8 +695,10 @@ footer{
     scroll-behavior:auto!important;
     transition:none!important;
   }
-  .clients-track{animation:none}
-  .clients-window{overflow-x:auto}
+  .client-card{
+    opacity:1;
+    transform:none;
+  }
 }
 </style>
 </head>
@@ -729,10 +715,14 @@ footer{
     </a>
 
     <div class="nav-actions">
-      <a href="#prueba" class="btn primary nav-trial">Solicita tu prueba</a>
+      <a href="#prueba" class="btn primary nav-trial">
+        Solicita tu prueba
+      </a>
 
       <div class="menu-wrap">
-        <button class="menu-btn" id="menuButton" aria-expanded="false">
+        <button class="menu-btn"
+                id="menuButton"
+                aria-expanded="false">
           ☰ Menú
         </button>
 
@@ -755,7 +745,9 @@ footer{
 <!-- INICIO -->
 <section class="hero" id="inicio">
   <div class="container hero-inner">
-    <span class="eyebrow">Tecnología flexible para empresas</span>
+    <span class="eyebrow">
+      Tecnología flexible para empresas
+    </span>
 
     <h1>
       Más visibilidad.<br>
@@ -839,53 +831,73 @@ footer{
     </div>
 
     <div class="cards">
+
       <button class="feature-card" data-feature="real">
         <div class="icon-box">▦</div>
         <h3>Información en tiempo real</h3>
-        <p>Dashboards e indicadores conectados con la información de tu negocio.</p>
+        <p>
+          Dashboards e indicadores conectados
+          con la información de tu negocio.
+        </p>
         <span class="more">Ver demostración →</span>
       </button>
 
       <button class="feature-card" data-feature="ubicacion">
         <div class="icon-box">⌖</div>
         <h3>Ubicación visual</h3>
-        <p>Localiza productos, materiales y recursos dentro de un layout digital.</p>
+        <p>
+          Localiza productos, materiales y recursos
+          dentro de un layout digital.
+        </p>
         <span class="more">Ver demostración →</span>
       </button>
 
       <button class="feature-card" data-feature="consultas">
         <div class="icon-box">⌘</div>
         <h3>Consultas de información</h3>
-        <p>Accede a datos de tus sistemas para analizar tu operación.</p>
+        <p>
+          Accede a datos de tus sistemas
+          para analizar tu operación.
+        </p>
         <span class="more">Conocer más →</span>
       </button>
 
       <button class="feature-card" data-feature="ordenes">
         <div class="icon-box">⇄</div>
         <h3>Seguimiento de órdenes</h3>
-        <p>Consulta órdenes de compra, venta y pedidos.</p>
+        <p>
+          Consulta órdenes de compra, venta y pedidos.
+        </p>
         <span class="more">Conocer más →</span>
       </button>
 
       <button class="feature-card" data-feature="alertas">
         <div class="icon-box">◎</div>
         <h3>Alertas y notificaciones</h3>
-        <p>Configura avisos para comunicar situaciones importantes.</p>
+        <p>
+          Configura avisos para comunicar situaciones importantes.
+        </p>
         <span class="more">Conocer más →</span>
       </button>
 
       <button class="feature-card" data-feature="medida">
         <div class="icon-box">↗</div>
         <h3>Soluciones a tu medida</h3>
-        <p>Personaliza herramientas de acuerdo con tus necesidades.</p>
+        <p>
+          Personaliza herramientas de acuerdo
+          con tus necesidades.
+        </p>
         <span class="more">Conocer más →</span>
       </button>
+
     </div>
 
     <p class="feature-note">
-      <strong>Estas son solo algunas de nuestras funcionalidades, no todas.</strong>
-      ATZE puede evaluar nuevas herramientas, integraciones y personalizaciones
-      según los requerimientos de cada empresa.
+      <strong>
+        Estas son solo algunas de nuestras funcionalidades, no todas.
+      </strong>
+      ATZE puede evaluar nuevas herramientas, integraciones y
+      personalizaciones según los requerimientos de cada empresa.
     </p>
   </div>
 </section>
@@ -944,69 +956,38 @@ footer{
   </div>
 </section>
 
-<!-- CLIENTES: CARRUSEL HORIZONTAL -->
+<!-- CLIENTES: UNA SOLA TARJETA -->
 <section class="clients-section" id="clientes">
-  <div class="container clients-heading">
-    <span class="eyebrow">Nuestros clientes</span>
+  <div class="container">
+    <div class="clients-heading">
+      <span class="eyebrow">Nuestros clientes</span>
 
-    <h2>
-      Empresas que confían en
-      <span class="accent">ATZE</span>
-    </h2>
+      <h2>
+        Empresas que confían en
+        <span class="accent">ATZE</span>
+      </h2>
 
-    <p>
-      Negocios que han elegido nuestras soluciones
-      para mejorar la visibilidad y el control de sus operaciones.
+      <p>
+        La confianza de nuestros clientes impulsa
+        nuestra innovación y el desarrollo de nuevas soluciones.
+      </p>
+    </div>
+
+    <div class="client-showcase">
+      <div class="client-card" id="clientCard">
+        <img
+          src="IMG_8195.jpeg"
+          alt="Logotipo de Kloeckner Metals"
+          loading="lazy">
+
+        <span>Cliente de ATZE</span>
+      </div>
+    </div>
+
+    <p class="clients-caption">
+      Tecnología adaptable a diferentes sectores y necesidades.
     </p>
   </div>
-
-  <div class="clients-window">
-    <div class="clients-track">
-
-      <!-- PRIMER GRUPO -->
-      <div class="clients-group">
-        <div class="client-logo">
-          <img src="IMG_8195.jpeg" alt="Logotipo de cliente de ATZE">
-        </div>
-
-        <div class="client-logo">
-          <img src="IMG_8195.jpeg" alt="Logotipo de cliente de ATZE">
-        </div>
-
-        <div class="client-logo">
-          <img src="IMG_8195.jpeg" alt="Logotipo de cliente de ATZE">
-        </div>
-
-        <div class="client-logo">
-          <img src="IMG_8195.jpeg" alt="Logotipo de cliente de ATZE">
-        </div>
-      </div>
-
-      <!-- SEGUNDO GRUPO PARA MOVIMIENTO INFINITO -->
-      <div class="clients-group" aria-hidden="true">
-        <div class="client-logo">
-          <img src="IMG_8195.jpeg" alt="">
-        </div>
-
-        <div class="client-logo">
-          <img src="IMG_8195.jpeg" alt="">
-        </div>
-
-        <div class="client-logo">
-          <img src="IMG_8195.jpeg" alt="">
-        </div>
-
-        <div class="client-logo">
-          <img src="IMG_8195.jpeg" alt="">
-        </div>
-      </div>
-
-    </div>
-  </div>
-
-  <p class="clients-caption">
-    Soluciones tecnológicas para negocios de diferentes sectores.
-  </p>
 </section>
 
 <!-- CONTACTO -->
@@ -1024,6 +1005,7 @@ footer{
     </div>
 
     <div class="contact-grid">
+
       <div class="contact-info">
         <h3>Construyamos una solución a tu medida</h3>
 
@@ -1050,6 +1032,7 @@ footer{
       </div>
 
       <form id="contactForm" class="contact-form">
+
         <div class="field">
           <label for="nombre">Nombre</label>
           <input id="nombre" required>
@@ -1125,6 +1108,7 @@ footer{
           Este formulario no almacena información en la página.
         </p>
       </form>
+
     </div>
   </div>
 </section>
@@ -1206,7 +1190,8 @@ footer{
 
       <p class="small">
         Datos ficticios para ilustrar un posible dashboard.
-        La información real requiere integración con los sistemas del negocio.
+        La información real requiere integración
+        con los sistemas del negocio.
       </p>
     </div>
 
@@ -1320,6 +1305,24 @@ document.addEventListener("click", e => {
     menuButton.setAttribute("aria-expanded", "false");
   }
 });
+
+// ANIMACIÓN DEL LOGO DEL CLIENTE
+const clientCard = document.getElementById("clientCard");
+
+if ("IntersectionObserver" in window) {
+  const clientObserver = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        clientCard.classList.add("visible");
+        clientObserver.unobserve(clientCard);
+      }
+    });
+  }, {threshold:0.15});
+
+  clientObserver.observe(clientCard);
+} else {
+  clientCard.classList.add("visible");
+}
 
 // FUNCIONALIDADES
 const features = {
