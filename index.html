@@ -1,10 +1,11 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">i
+<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#ffffff">
-<meta name="description" content="ATZE: tecnología flexible para empresas. Implementamos y adaptamos nuestro sistema a tu negocio durante 30 días sin costo, con un alcance acordado.">
+<meta name="description" content="ATZE ofrece soluciones tecnológicas flexibles para empresas. Implementamos y adaptamos nuestro sistema a tu negocio durante 30 días sin costo, conforme a un alcance acordado.">
 <title>ATZE | Tecnología para tu negocio</title>
 
 <style>
@@ -18,7 +19,11 @@
 }
 
 *{box-sizing:border-box}
-html{scroll-behavior:smooth;scroll-padding-top:90px}
+
+html{
+  scroll-behavior:smooth;
+  scroll-padding-top:90px;
+}
 
 body{
   margin:0;
@@ -52,7 +57,11 @@ section{padding:82px 0}
 .btn:hover{transform:translateY(-2px)}
 .primary{background:var(--blue);color:white}
 .primary:hover{background:#1d4ed8}
-.outline{background:white;border-color:var(--line);color:var(--navy)}
+.outline{
+  background:white;
+  border-color:var(--line);
+  color:var(--navy);
+}
 .accent{color:var(--blue)}
 .soft{background:var(--soft)}
 
@@ -285,14 +294,14 @@ h1{
 }
 
 .pricing-tags span{
-  padding:8px 10px;
+  padding:8px 12px;
   border-radius:9px;
   background:#eff6ff;
   color:#1d4ed8;
   font-size:13px;
 }
 
-/* IMPLEMENTACIÓN */
+/* IMPLEMENTACIÓN GRATUITA */
 
 .trial{
   background:linear-gradient(135deg,#edf5ff,#f8fbff);
@@ -303,9 +312,7 @@ h1{
   margin:0 auto 28px;
 }
 
-.trial-intro strong{
-  color:var(--navy);
-}
+.trial-intro strong{color:var(--navy)}
 
 .trial-steps{
   display:grid;
@@ -356,7 +363,7 @@ h1{
 
 .trial-note strong{color:var(--navy)}
 
-/* CLIENTES */
+/* CLIENTES - CONVEYOR HORIZONTAL */
 
 .clients-section{
   padding:85px 0;
@@ -380,52 +387,93 @@ h1{
   margin:auto;
 }
 
-.client-showcase{
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  padding:15px 0 35px;
+/* VENTANA DEL CARRUSEL */
+
+.clients-carousel{
+  width:100%;
+  overflow:hidden;
+  padding:20px 0 40px;
+
+  -webkit-mask-image:linear-gradient(
+    to right,
+    transparent,
+    black 8%,
+    black 92%,
+    transparent
+  );
+
+  mask-image:linear-gradient(
+    to right,
+    transparent,
+    black 8%,
+    black 92%,
+    transparent
+  );
 }
 
-.client-card{
-  width:min(390px,100%);
-  min-height:225px;
-  padding:35px;
+/* BANDA EN MOVIMIENTO */
+
+.clients-track{
   display:flex;
-  align-items:center;
+  width:max-content;
+  animation:clientsScroll 22s linear infinite;
+}
+
+.clients-group{
+  display:flex;
+  flex-shrink:0;
+  gap:24px;
+  padding-right:24px;
+}
+
+/* TARJETAS DE LOGOS */
+
+.client-logo{
+  width:330px;
+  height:175px;
+  display:flex;
   justify-content:center;
+  align-items:center;
+  padding:28px;
   background:white;
   border:1px solid var(--line);
-  border-radius:22px;
-  box-shadow:0 15px 35px #14213d12;
-  opacity:0;
-  transform:translateY(30px);
-  transition:opacity .9s ease,transform .9s ease;
+  border-radius:20px;
+  box-shadow:0 10px 30px #14213d0d;
+  transition:
+    transform .3s ease,
+    box-shadow .3s ease;
 }
 
-.client-card.visible{
-  opacity:1;
-  transform:translateY(0);
-  animation:clientFloat 4s ease-in-out .9s infinite;
-}
-
-.client-card img{
+.client-logo img{
   display:block;
   width:100%;
-  max-width:300px;
-  max-height:140px;
+  max-width:275px;
+  max-height:110px;
   object-fit:contain;
 }
 
-@keyframes clientFloat{
-  0%,100%{
-    transform:translateY(0);
-    box-shadow:0 15px 35px #14213d12;
+/* ANIMACIÓN CONTINUA */
+
+@keyframes clientsScroll{
+  from{
+    transform:translateX(0);
   }
-  50%{
-    transform:translateY(-12px);
-    box-shadow:0 28px 50px #2563eb25;
+
+  to{
+    transform:translateX(-50%);
   }
+}
+
+/* PAUSA AL PASAR EL CURSOR */
+
+.clients-carousel:hover .clients-track,
+.clients-carousel:focus-within .clients-track{
+  animation-play-state:paused;
+}
+
+.client-logo:hover{
+  transform:translateY(-5px);
+  box-shadow:0 18px 40px #2563eb1a;
 }
 
 /* CONTACTO */
@@ -741,7 +789,25 @@ footer{
   .modal-card{padding:25px 18px}
   .search-row{flex-direction:column}
   .whatsapp{right:12px;bottom:12px}
-  .client-card{min-height:190px;padding:28px}
+
+  .clients-section{padding:60px 0}
+  .clients-track{animation-duration:18s}
+
+  .clients-group{
+    gap:15px;
+    padding-right:15px;
+  }
+
+  .client-logo{
+    width:250px;
+    height:145px;
+    padding:22px;
+  }
+
+  .client-logo img{
+    max-width:210px;
+    max-height:95px;
+  }
 }
 
 @media(prefers-reduced-motion:reduce){
@@ -750,13 +816,12 @@ footer{
     transition:none!important;
   }
 
-  .client-card{
-    opacity:1;
-    transform:none;
-  }
+  .clients-track{animation:none}
 
-  .client-card.visible{
-    animation:none;
+  .clients-carousel{
+    overflow-x:auto;
+    mask-image:none;
+    -webkit-mask-image:none;
   }
 }
 </style>
@@ -778,7 +843,7 @@ footer{
     <div class="nav-actions">
 
       <a href="#prueba" class="btn primary nav-trial">
-        Implementación
+        Implementación gratuita
       </a>
 
       <div class="menu-wrap">
@@ -1012,7 +1077,7 @@ footer{
   </div>
 </section>
 
-<!-- IMPLEMENTACIÓN GRATUITA DE 30 DÍAS -->
+<!-- IMPLEMENTACIÓN GRATUITA -->
 <section class="trial" id="prueba">
   <div class="container">
 
@@ -1105,6 +1170,7 @@ footer{
           30 días para conocer, implementar y adaptar
           ATZE a tu negocio.
         </strong>
+
         <p style="margin:8px 0 0">
           La implementación, los cambios y las integraciones
           se realizan conforme a un alcance inicial
@@ -1121,8 +1187,9 @@ footer{
   </div>
 </section>
 
-<!-- CLIENTES -->
+<!-- CLIENTES - CONVEYOR -->
 <section class="clients-section" id="clientes">
+
   <div class="container">
 
     <div class="clients-heading">
@@ -1141,18 +1208,56 @@ footer{
 
     </div>
 
-    <div class="client-showcase">
+  </div>
 
-      <div class="client-card" id="clientCard">
-        <img
-          src="IMG_8195.jpeg"
-          alt="Logotipo de Kloeckner Metals"
-          loading="lazy">
+  <div class="clients-carousel">
+
+    <div class="clients-track">
+
+      <!-- PRIMER GRUPO -->
+      <div class="clients-group">
+
+        <div class="client-logo">
+          <img
+            src="https://raw.githubusercontent.com/ATZE-ERP/ATZE/main/INTELI1.png"
+            alt="InteliAire">
+        </div>
+
+        <div class="client-logo">
+          <img
+            src="https://raw.githubusercontent.com/ATZE-ERP/ATZE/main/CORE1.png"
+            alt="CoreEfficient">
+        </div>
+
+      </div>
+
+      <!-- SEGUNDO GRUPO PARA ANIMACIÓN INFINITA -->
+      <div class="clients-group" aria-hidden="true">
+
+        <div class="client-logo">
+          <img
+            src="https://raw.githubusercontent.com/ATZE-ERP/ATZE/main/ONEAL1.png"
+            alt="">
+        </div>
+
+        <div class="client-logo">
+          <img
+            src="https://raw.githubusercontent.com/ATZE-ERP/ATZE/main/INTELI1.png"
+            alt="">
+        </div>
+
+        <div class="client-logo">
+          <img
+            src="https://raw.githubusercontent.com/ATZE-ERP/ATZE/main/CORE1.png"
+            alt="">
+        </div>
+
       </div>
 
     </div>
 
   </div>
+
 </section>
 
 <!-- CONTACTO -->
@@ -1177,9 +1282,7 @@ footer{
 
       <div class="contact-info">
 
-        <h3>
-          Construyamos una solución a tu medida
-        </h3>
+        <h3>Construyamos una solución a tu medida</h3>
 
         <p>
           Comparte tus objetivos, las herramientas que te interesan
@@ -1247,9 +1350,7 @@ footer{
         <div class="field">
           <label for="interes">¿Qué te interesa?</label>
           <select id="interes">
-            <option>
-              Implementación gratuita de 30 días
-            </option>
+            <option>Implementación gratuita de 30 días</option>
             <option>Información en tiempo real</option>
             <option>Ubicación visual</option>
             <option>Consultas de información</option>
@@ -1276,10 +1377,7 @@ footer{
         </div>
 
         <div class="field">
-          <label for="mensaje">
-            ¿Qué necesitas resolver?
-          </label>
-
+          <label for="mensaje">¿Qué necesitas resolver?</label>
           <textarea
             id="mensaje"
             placeholder="Cuéntanos qué procesos te gustaría mejorar o qué funcionalidades necesitas..."></textarea>
@@ -1306,16 +1404,12 @@ footer{
 <!-- FOOTER -->
 <footer>
   <div class="container footer-inner">
-
     <strong>ATZE</strong>
-
     <span>
       © <span id="year"></span> ATZE.
       Todos los derechos reservados.
     </span>
-
     <a href="#contacto">Contacto</a>
-
   </div>
 </footer>
 
@@ -1348,21 +1442,15 @@ footer{
     <span class="eyebrow">Funcionalidad ATZE</span>
 
     <h2 id="modalTitle"></h2>
-
     <p id="modalDescription"></p>
-
     <ul id="modalList"></ul>
 
     <!-- DASHBOARD -->
-    <div
-      class="modal-demo"
-      id="dashboardDemo"
-      hidden>
+    <div class="modal-demo" id="dashboardDemo" hidden>
 
       <h3>Panel de control ilustrativo</h3>
 
       <div class="dashboard-grid">
-
         <div class="metric">
           <span>Órdenes registradas</span>
           <strong>248</strong>
@@ -1382,7 +1470,6 @@ footer{
           <span>Indicadores</span>
           <strong>12</strong>
         </div>
-
       </div>
 
       <div class="chart">
@@ -1403,11 +1490,8 @@ footer{
 
     </div>
 
-    <!-- LAYOUT INTERACTIVO -->
-    <div
-      class="modal-demo"
-      id="layoutDemo"
-      hidden>
+    <!-- LAYOUT -->
+    <div class="modal-demo" id="layoutDemo" hidden>
 
       <h3>Prueba la búsqueda visual</h3>
 
@@ -1417,7 +1501,6 @@ footer{
       </p>
 
       <form class="search-row" id="searchForm">
-
         <input
           id="partInput"
           placeholder="Ej. 607-7435"
@@ -1426,11 +1509,9 @@ footer{
         <button class="btn primary" type="submit">
           Buscar
         </button>
-
       </form>
 
       <div class="samples">
-
         Prueba con:
 
         <button type="button" data-part="607-7435">
@@ -1444,7 +1525,6 @@ footer{
         <button type="button" data-part="COMP-001">
           COMP-001
         </button>
-
       </div>
 
       <div class="layout">
@@ -1458,7 +1538,6 @@ footer{
       </div>
 
       <div class="legend">
-
         <span>
           <i class="legend-dot"></i>
           Disponible
@@ -1468,7 +1547,6 @@ footer{
           <i class="legend-dot red"></i>
           Requiere atención
         </span>
-
       </div>
 
       <div
@@ -1478,9 +1556,8 @@ footer{
       </div>
 
       <p class="small">
-        El layout es ilustrativo y puede adaptarse
-        a ferreterías, almacenes, comercios,
-        oficinas o áreas de producción.
+        El layout es ilustrativo y puede adaptarse a ferreterías,
+        almacenes, comercios, oficinas o áreas de producción.
         Los datos de esta demostración son ficticios.
       </p>
 
@@ -1494,20 +1571,15 @@ footer{
     </div>
 
     <div class="modal-actions">
-
-      <button
-        class="btn outline"
-        id="modalDone">
+      <button class="btn outline" id="modalDone">
         Cerrar
       </button>
 
-      <a
-        href="#contacto"
-        class="btn primary"
-        id="modalContact">
+      <a href="#contacto"
+         class="btn primary"
+         id="modalContact">
         Solicitar información →
       </a>
-
     </div>
 
   </div>
@@ -1541,24 +1613,6 @@ document.addEventListener("click", e => {
     menuButton.setAttribute("aria-expanded", "false");
   }
 });
-
-/* ANIMACIÓN CLIENTE */
-const clientCard = document.getElementById("clientCard");
-
-if ("IntersectionObserver" in window) {
-  const clientObserver = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        clientCard.classList.add("visible");
-        clientObserver.unobserve(clientCard);
-      }
-    });
-  }, {threshold:0.15});
-
-  clientObserver.observe(clientCard);
-} else {
-  clientCard.classList.add("visible");
-}
 
 /* FUNCIONALIDADES */
 const features = {
