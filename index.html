@@ -295,7 +295,7 @@ h1{
   background:linear-gradient(135deg,#edf5ff,#f8fbff);
 }
 
-/* CLIENTES: LOGO ÚNICO */
+/* CLIENTES */
 
 .clients-section{
   padding:85px 0;
@@ -305,7 +305,7 @@ h1{
 
 .clients-heading{
   text-align:center;
-  margin-bottom:40px;
+  margin-bottom:45px;
 }
 
 .clients-heading h2{
@@ -323,57 +323,64 @@ h1{
   display:flex;
   justify-content:center;
   align-items:center;
+  padding:15px 0 35px;
 }
+
+/* TARJETA CENTRADA */
 
 .client-card{
   width:min(390px,100%);
   min-height:225px;
-  padding:38px 30px;
+  padding:35px;
+
   display:flex;
-  flex-direction:column;
   align-items:center;
   justify-content:center;
-  gap:20px;
+
+  background:white;
   border:1px solid var(--line);
   border-radius:22px;
-  background:white;
-  box-shadow:0 15px 45px #14213d0d;
+
+  box-shadow:0 15px 35px #14213d12;
+
   opacity:0;
-  transform:translateY(25px);
+  transform:translateY(30px);
+
   transition:
-    opacity .8s ease,
-    transform .8s ease,
-    box-shadow .3s ease;
+    opacity .9s ease,
+    transform .9s ease;
 }
+
+/* ENTRADA Y FLOTACIÓN */
 
 .client-card.visible{
   opacity:1;
   transform:translateY(0);
+  animation:clientFloat 4s ease-in-out .9s infinite;
 }
 
-.client-card:hover{
-  box-shadow:0 20px 50px #14213d18;
-}
+/* LOGO CENTRADO */
 
 .client-card img{
   display:block;
   width:100%;
-  max-width:285px;
-  max-height:125px;
+  max-width:300px;
+  max-height:140px;
   object-fit:contain;
 }
 
-.client-card span{
-  font-size:13px;
-  font-weight:600;
-  color:var(--muted);
-}
+/* ANIMACIÓN CONTINUA */
 
-.clients-caption{
-  text-align:center;
-  margin-top:28px;
-  color:var(--muted);
-  font-size:13px;
+@keyframes clientFloat{
+  0%,100%{
+    transform:translateY(0);
+    box-shadow:0 15px 35px #14213d12;
+  }
+
+  50%{
+    transform:translateY(-12px);
+    box-shadow:0 28px 50px #2563eb25;
+  }
 }
 
 /* CONTACTO */
@@ -695,9 +702,14 @@ footer{
     scroll-behavior:auto!important;
     transition:none!important;
   }
+
   .client-card{
     opacity:1;
     transform:none;
+  }
+
+  .client-card.visible{
+    animation:none;
   }
 }
 </style>
@@ -956,7 +968,7 @@ footer{
   </div>
 </section>
 
-<!-- CLIENTES: UNA SOLA TARJETA -->
+<!-- CLIENTES: LOGO ÚNICO ANIMADO -->
 <section class="clients-section" id="clientes">
   <div class="container">
     <div class="clients-heading">
@@ -979,14 +991,8 @@ footer{
           src="IMG_8195.jpeg"
           alt="Logotipo de Kloeckner Metals"
           loading="lazy">
-
-        <span>Cliente de ATZE</span>
       </div>
     </div>
-
-    <p class="clients-caption">
-      Tecnología adaptable a diferentes sectores y necesidades.
-    </p>
   </div>
 </section>
 
