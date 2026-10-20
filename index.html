@@ -1,11 +1,10 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#ffffff">
-<meta name="description" content="ATZE ofrece soluciones tecnológicas flexibles para empresas. Implementamos y adaptamos nuestro sistema a tu negocio durante 30 días sin costo, conforme a un alcance acordado.">
+<meta name="description" content="ATZE ofrece soluciones tecnológicas flexibles para empresas. Implementamos y adaptamos nuestro sistema durante 30 días sin costo, conforme a un alcance acordado.">
 <title>ATZE | Tecnología para tu negocio</title>
 
 <style>
@@ -17,22 +16,15 @@
   --line:#dce5f1;
   --soft:#f6f9ff;
 }
-
 *{box-sizing:border-box}
-
-html{
-  scroll-behavior:smooth;
-  scroll-padding-top:90px;
-}
-
+html{scroll-behavior:smooth;scroll-padding-top:90px}
 body{
   margin:0;
   font-family:Inter,"Segoe UI",Arial,sans-serif;
   color:var(--text);
-  background:white;
+  background:#fff;
   line-height:1.7;
 }
-
 body.modal-open{overflow:hidden}
 a{text-decoration:none;color:inherit}
 button,input,select,textarea{font:inherit}
@@ -41,122 +33,24 @@ button{cursor:pointer}
 h1,h2,h3{color:var(--navy);line-height:1.2}
 p{margin:0 0 18px}
 section{padding:82px 0}
+.accent{color:var(--blue)}
+.soft{background:var(--soft)}
 
 .btn{
   display:inline-flex;
-  justify-content:center;
   align-items:center;
+  justify-content:center;
   padding:13px 22px;
   border-radius:11px;
   border:1px solid transparent;
   font-weight:700;
+  text-align:center;
   transition:.2s;
-  text-align:center;
 }
-
 .btn:hover{transform:translateY(-2px)}
-.primary{background:var(--blue);color:white}
+.primary{background:var(--blue);color:#fff}
 .primary:hover{background:#1d4ed8}
-.outline{
-  background:white;
-  border-color:var(--line);
-  color:var(--navy);
-}
-.accent{color:var(--blue)}
-.soft{background:var(--soft)}
-
-/* HEADER */
-
-header{
-  position:sticky;
-  top:0;
-  z-index:100;
-  background:#ffffffef;
-  border-bottom:1px solid var(--line);
-  backdrop-filter:blur(14px);
-}
-
-.nav{
-  min-height:78px;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  gap:20px;
-}
-
-.brand{
-  display:flex;
-  align-items:center;
-  gap:10px;
-  color:var(--navy);
-  font-size:27px;
-  font-weight:900;
-  letter-spacing:2px;
-}
-
-.brand img{
-  width:53px;
-  height:53px;
-  object-fit:contain;
-}
-
-.nav-actions{
-  display:flex;
-  align-items:center;
-  gap:12px;
-}
-
-.menu-wrap{position:relative}
-
-.menu-btn{
-  padding:11px 16px;
-  border:1px solid var(--line);
-  border-radius:10px;
-  background:white;
-  color:var(--navy);
-  font-weight:700;
-}
-
-.dropdown{
-  display:none;
-  position:absolute;
-  right:0;
-  top:calc(100% + 12px);
-  width:270px;
-  padding:10px;
-  background:white;
-  border:1px solid var(--line);
-  border-radius:14px;
-  box-shadow:0 20px 50px #14213d25;
-}
-
-.dropdown.open{display:block}
-
-.dropdown a{
-  display:block;
-  padding:11px 12px;
-  border-radius:8px;
-}
-
-.dropdown a:hover{
-  background:#eff6ff;
-  color:var(--blue);
-}
-
-/* INICIO */
-
-.hero{
-  padding:110px 0;
-  background:
-    radial-gradient(circle at 85% 20%,#dbeafe,transparent 45%),
-    linear-gradient(135deg,#fff,#f5f9ff);
-}
-
-.hero-inner{
-  max-width:900px;
-  margin:auto;
-  text-align:center;
-}
+.outline{background:#fff;border-color:var(--line);color:var(--navy)}
 
 .eyebrow{
   display:inline-block;
@@ -170,19 +64,87 @@ header{
   text-transform:uppercase;
 }
 
+/* HEADER */
+
+header{
+  position:sticky;
+  top:0;
+  z-index:100;
+  background:#ffffffef;
+  border-bottom:1px solid var(--line);
+  backdrop-filter:blur(14px);
+}
+.nav{
+  min-height:78px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:20px;
+}
+.brand{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  color:var(--navy);
+  font-size:27px;
+  font-weight:900;
+  letter-spacing:2px;
+}
+.brand img{
+  width:53px;
+  height:53px;
+  object-fit:contain;
+}
+.nav-actions{display:flex;align-items:center;gap:12px}
+.menu-wrap{position:relative}
+.menu-btn{
+  padding:11px 16px;
+  border:1px solid var(--line);
+  border-radius:10px;
+  background:#fff;
+  color:var(--navy);
+  font-weight:700;
+}
+.dropdown{
+  display:none;
+  position:absolute;
+  right:0;
+  top:calc(100% + 12px);
+  width:270px;
+  padding:10px;
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:14px;
+  box-shadow:0 20px 50px #14213d25;
+}
+.dropdown.open{display:block}
+.dropdown a{display:block;padding:11px 12px;border-radius:8px}
+.dropdown a:hover{background:#eff6ff;color:var(--blue)}
+
+/* HERO */
+
+.hero{
+  padding:110px 0;
+  background:
+    radial-gradient(circle at 85% 20%,#dbeafe,transparent 45%),
+    linear-gradient(135deg,#fff,#f5f9ff);
+}
+.hero-inner{
+  max-width:900px;
+  margin:auto;
+  text-align:center;
+}
 h1{
   margin:24px 0;
   font-size:clamp(40px,6vw,72px);
   letter-spacing:-2px;
 }
-
 .hero p{
   max-width:760px;
   margin:0 auto 27px;
   font-size:19px;
   color:var(--muted);
 }
-
 .hero-actions{
   display:flex;
   justify-content:center;
@@ -190,56 +152,42 @@ h1{
   gap:13px;
 }
 
-/* SECCIONES */
+/* SECCIONES Y TARJETAS */
 
 .section-heading{
   max-width:780px;
   margin:0 auto 42px;
   text-align:center;
 }
-
 .section-heading h2{
   font-size:clamp(29px,4vw,42px);
   margin:0 0 15px;
 }
-
 .section-heading p{color:var(--muted)}
-
 .cards{
   display:grid;
   grid-template-columns:repeat(3,1fr);
   gap:20px;
 }
-
 .feature-card{
   width:100%;
   min-height:240px;
   padding:26px;
-  background:white;
+  background:#fff;
   border:1px solid var(--line);
   border-radius:16px;
   text-align:left;
   transition:.2s;
   box-shadow:0 5px 20px #14213d07;
 }
-
 .feature-card:hover,
 .feature-card:focus-visible{
   transform:translateY(-5px);
   border-color:#93b9ff;
   box-shadow:0 15px 35px #2563eb17;
 }
-
-.feature-card h3{
-  font-size:19px;
-  margin:16px 0 12px;
-}
-
-.feature-card p{
-  font-size:14px;
-  color:var(--muted);
-}
-
+.feature-card h3{font-size:19px;margin:16px 0 12px}
+.feature-card p{font-size:14px;color:var(--muted)}
 .icon-box{
   display:grid;
   place-items:center;
@@ -251,13 +199,7 @@ h1{
   color:var(--blue);
   font-size:24px;
 }
-
-.more{
-  font-size:13px;
-  font-weight:700;
-  color:var(--blue);
-}
-
+.more{font-size:13px;font-weight:700;color:var(--blue)}
 .feature-note{
   max-width:790px;
   margin:30px auto 0;
@@ -273,18 +215,15 @@ h1{
   padding:45px;
   border:1px solid var(--line);
   border-radius:22px;
-  background:white;
+  background:#fff;
   box-shadow:0 12px 35px #14213d0a;
   text-align:center;
 }
-
 .box h2{
   font-size:clamp(29px,4vw,41px);
   margin:15px 0;
 }
-
 .box p{color:var(--muted)}
-
 .pricing-tags{
   display:flex;
   justify-content:center;
@@ -292,7 +231,6 @@ h1{
   gap:10px;
   margin:24px 0;
 }
-
 .pricing-tags span{
   padding:8px 12px;
   border-radius:9px;
@@ -303,17 +241,9 @@ h1{
 
 /* IMPLEMENTACIÓN GRATUITA */
 
-.trial{
-  background:linear-gradient(135deg,#edf5ff,#f8fbff);
-}
-
-.trial-intro{
-  max-width:750px;
-  margin:0 auto 28px;
-}
-
+.trial{background:linear-gradient(135deg,#edf5ff,#f8fbff)}
+.trial-intro{max-width:750px;margin:0 auto 28px}
 .trial-intro strong{color:var(--navy)}
-
 .trial-steps{
   display:grid;
   grid-template-columns:repeat(2,1fr);
@@ -321,7 +251,6 @@ h1{
   margin:30px 0;
   text-align:left;
 }
-
 .trial-step{
   display:flex;
   gap:14px;
@@ -330,7 +259,6 @@ h1{
   border-radius:15px;
   background:#f8fbff;
 }
-
 .step-number{
   display:grid;
   place-items:center;
@@ -342,17 +270,8 @@ h1{
   color:var(--blue);
   font-weight:900;
 }
-
-.trial-step h3{
-  font-size:17px;
-  margin:0 0 8px;
-}
-
-.trial-step p{
-  margin:0;
-  font-size:14px;
-}
-
+.trial-step h3{font-size:17px;margin:0 0 8px}
+.trial-step p{margin:0;font-size:14px}
 .trial-note{
   padding:17px;
   margin:22px 0 27px;
@@ -360,90 +279,60 @@ h1{
   border-radius:12px;
   font-size:14px;
 }
-
 .trial-note strong{color:var(--navy)}
 
-/* CLIENTES - CONVEYOR HORIZONTAL */
+/* CLIENTES - CONVEYOR */
 
 .clients-section{
   padding:85px 0;
   background:#f6f9ff;
   overflow:hidden;
 }
-
-.clients-heading{
-  text-align:center;
-  margin-bottom:45px;
-}
-
+.clients-heading{text-align:center;margin-bottom:45px}
 .clients-heading h2{
   font-size:clamp(30px,4vw,42px);
   margin:15px 0;
 }
-
 .clients-heading p{
   color:var(--muted);
   max-width:650px;
   margin:auto;
 }
-
-/* VENTANA DEL CARRUSEL */
-
 .clients-carousel{
   width:100%;
   overflow:hidden;
   padding:20px 0 40px;
-
   -webkit-mask-image:linear-gradient(
-    to right,
-    transparent,
-    black 8%,
-    black 92%,
-    transparent
+    to right,transparent,black 8%,black 92%,transparent
   );
-
   mask-image:linear-gradient(
-    to right,
-    transparent,
-    black 8%,
-    black 92%,
-    transparent
+    to right,transparent,black 8%,black 92%,transparent
   );
 }
-
-/* BANDA EN MOVIMIENTO */
-
 .clients-track{
   display:flex;
   width:max-content;
-  animation:clientsScroll 22s linear infinite;
+  animation:clientsScroll 15s linear infinite;
 }
-
 .clients-group{
   display:flex;
   flex-shrink:0;
   gap:24px;
   padding-right:24px;
 }
-
-/* TARJETAS DE LOGOS */
-
 .client-logo{
   width:330px;
   height:175px;
   display:flex;
-  justify-content:center;
   align-items:center;
+  justify-content:center;
   padding:28px;
-  background:white;
+  background:#fff;
   border:1px solid var(--line);
   border-radius:20px;
   box-shadow:0 10px 30px #14213d0d;
-  transition:
-    transform .3s ease,
-    box-shadow .3s ease;
+  transition:transform .3s ease,box-shadow .3s ease;
 }
-
 .client-logo img{
   display:block;
   width:100%;
@@ -451,29 +340,18 @@ h1{
   max-height:110px;
   object-fit:contain;
 }
-
-/* ANIMACIÓN CONTINUA */
-
 @keyframes clientsScroll{
-  from{
-    transform:translateX(0);
-  }
-
-  to{
-    transform:translateX(-50%);
-  }
+  from{transform:translateX(0)}
+  to{transform:translateX(-50%)}
 }
-
-/* PAUSA AL PASAR EL CURSOR */
-
-.clients-carousel:hover .clients-track,
-.clients-carousel:focus-within .clients-track{
-  animation-play-state:paused;
-}
-
-.client-logo:hover{
-  transform:translateY(-5px);
-  box-shadow:0 18px 40px #2563eb1a;
+@media(hover:hover){
+  .clients-carousel:hover .clients-track{
+    animation-play-state:paused;
+  }
+  .client-logo:hover{
+    transform:translateY(-5px);
+    box-shadow:0 18px 40px #2563eb1a;
+  }
 }
 
 /* CONTACTO */
@@ -483,53 +361,36 @@ h1{
   grid-template-columns:.85fr 1.15fr;
   gap:35px;
 }
-
 .contact-info h3{font-size:27px}
-
 .contact-detail{
   padding:16px;
   margin:13px 0;
   border:1px solid var(--line);
   border-radius:12px;
 }
-
-.contact-detail strong{
-  display:block;
-  color:var(--blue);
-}
-
+.contact-detail strong{display:block;color:var(--blue)}
 .contact-form{
   padding:28px;
   border:1px solid var(--line);
   border-radius:18px;
-  background:white;
+  background:#fff;
   box-shadow:0 10px 30px #14213d0a;
 }
-
 .field{margin-bottom:17px}
-
 .field label{
   display:block;
   font-size:14px;
   font-weight:700;
   margin-bottom:6px;
 }
-
-.field input,
-.field select,
-.field textarea{
+.field input,.field select,.field textarea{
   width:100%;
   padding:12px;
   border:1px solid #cbd5e1;
   border-radius:9px;
-  background:white;
+  background:#fff;
 }
-
-.field textarea{
-  min-height:115px;
-  resize:vertical;
-}
-
+.field textarea{min-height:115px;resize:vertical}
 .contact-form .btn{width:100%}
 .small{font-size:12px;color:var(--muted)}
 
@@ -542,14 +403,12 @@ footer{
   color:var(--muted);
   font-size:13px;
 }
-
 .footer-inner{
   display:flex;
   justify-content:space-between;
   gap:15px;
   flex-wrap:wrap;
 }
-
 .whatsapp{
   position:fixed;
   right:20px;
@@ -558,12 +417,12 @@ footer{
   padding:12px 18px;
   border-radius:40px;
   background:#22c55e;
-  color:white;
+  color:#fff;
   font-weight:800;
   box-shadow:0 10px 25px #16a34a35;
 }
 
-/* POP-UPS */
+/* VENTANAS EMERGENTES */
 
 .modal{
   display:none;
@@ -575,31 +434,21 @@ footer{
   justify-content:center;
   background:#0f172ac0;
 }
-
 .modal.open{display:flex}
-
 .modal-card{
   position:relative;
   width:min(760px,100%);
   max-height:90vh;
   overflow-y:auto;
   padding:35px;
-  background:white;
+  background:#fff;
   border-radius:22px;
   box-shadow:0 30px 90px #0004;
 }
-
-.modal-card h2{
-  font-size:30px;
-  margin:15px 35px 15px 0;
-}
-
-.modal-card p,
-.modal-card li{color:var(--muted)}
-
+.modal-card h2{font-size:30px;margin:15px 35px 15px 0}
+.modal-card p,.modal-card li{color:var(--muted)}
 .modal-card ul{padding-left:22px}
 .modal-card li{margin-bottom:9px}
-
 .close{
   position:absolute;
   right:17px;
@@ -611,7 +460,6 @@ footer{
   background:#f1f5f9;
   font-size:24px;
 }
-
 .modal-demo{
   margin-top:25px;
   padding:22px;
@@ -619,44 +467,25 @@ footer{
   border-radius:16px;
   background:#f8fbff;
 }
-
 .modal-demo[hidden]{display:none!important}
 .modal-demo h3{margin:0 0 13px}
+.modal-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:24px}
 
-.modal-actions{
-  display:flex;
-  flex-wrap:wrap;
-  gap:10px;
-  margin-top:24px;
-}
-
-/* DASHBOARD POP-UP */
+/* DASHBOARD */
 
 .dashboard-grid{
   display:grid;
   grid-template-columns:repeat(2,1fr);
   gap:12px;
 }
-
 .metric{
   padding:17px;
   border:1px solid var(--line);
   border-radius:13px;
-  background:white;
+  background:#fff;
 }
-
-.metric span{
-  display:block;
-  font-size:13px;
-  color:var(--muted);
-}
-
-.metric strong{
-  display:block;
-  font-size:25px;
-  color:var(--navy);
-}
-
+.metric span{display:block;font-size:13px;color:var(--muted)}
+.metric strong{display:block;font-size:25px;color:var(--navy)}
 .chart{
   display:flex;
   align-items:end;
@@ -664,24 +493,18 @@ footer{
   height:145px;
   margin-top:17px;
   padding:15px;
-  background:white;
+  background:#fff;
   border-radius:13px;
 }
-
 .chart span{
   flex:1;
   border-radius:5px 5px 0 0;
   background:linear-gradient(#60a5fa,#2563eb);
 }
 
-/* LAYOUT POP-UP */
+/* LAYOUT INTERACTIVO */
 
-.search-row{
-  display:flex;
-  gap:10px;
-  margin:16px 0;
-}
-
+.search-row{display:flex;gap:10px;margin:16px 0}
 .search-row input{
   flex:1;
   min-width:0;
@@ -689,22 +512,15 @@ footer{
   border:1px solid var(--line);
   border-radius:9px;
 }
-
-.samples{
-  font-size:13px;
-  color:var(--muted);
-  margin-bottom:15px;
-}
-
+.samples{font-size:13px;color:var(--muted);margin-bottom:15px}
 .samples button{
   padding:6px 10px;
   margin:4px;
   border:1px solid #dbeafe;
   border-radius:7px;
-  background:white;
+  background:#fff;
   color:var(--blue);
 }
-
 .layout{
   position:relative;
   overflow:hidden;
@@ -712,49 +528,28 @@ footer{
   border-radius:12px;
   background:#edf2f7;
 }
-
-.layout img{
-  display:block;
-  width:100%;
-  height:auto;
-}
-
+.layout img{display:block;width:100%;height:auto}
 .light{
   display:none;
   position:absolute;
   width:15px;
   height:15px;
   transform:translate(-50%,-50%);
-  border:2px solid white;
+  border:2px solid #fff;
   border-radius:50%;
   pointer-events:none;
 }
-
 .light.visible{display:block}
-
 .light.green{
   background:#22c55e;
   box-shadow:0 0 0 3px #22c55e35,0 0 10px #22c55e;
 }
-
 .light.red{
   background:#ef4444;
   box-shadow:0 0 0 3px #ef444435,0 0 10px #ef4444;
 }
-
-.search-result{
-  font-size:14px;
-  margin:12px 0;
-}
-
-.legend{
-  display:flex;
-  gap:20px;
-  margin:12px 0;
-  font-size:13px;
-  color:var(--muted);
-}
-
+.search-result{font-size:14px;margin:12px 0}
+.legend{display:flex;gap:20px;margin:12px 0;font-size:13px;color:var(--muted)}
 .legend-dot{
   display:inline-block;
   width:10px;
@@ -763,15 +558,16 @@ footer{
   margin-right:5px;
   background:#22c55e;
 }
-
 .legend-dot.red{background:#ef4444}
 
-/* RESPONSIVE */
+/* TABLETS */
 
 @media(max-width:850px){
   .cards{grid-template-columns:repeat(2,1fr)}
   .contact-grid{grid-template-columns:1fr}
 }
+
+/* CELULARES */
 
 @media(max-width:600px){
   section{padding:58px 0}
@@ -790,24 +586,36 @@ footer{
   .search-row{flex-direction:column}
   .whatsapp{right:12px;bottom:12px}
 
+  /* CLIENTES: DESLIZAR CON EL DEDO */
+
   .clients-section{padding:60px 0}
-  .clients-track{animation-duration:18s}
-
-  .clients-group{
-    gap:15px;
-    padding-right:15px;
+  .clients-carousel{
+    overflow-x:auto;
+    overflow-y:hidden;
+    padding:20px 16px 35px;
+    touch-action:pan-x;
+    scroll-snap-type:x mandatory;
+    scroll-padding-inline:16px;
+    -webkit-overflow-scrolling:touch;
+    mask-image:none;
+    -webkit-mask-image:none;
+    scrollbar-width:none;
   }
-
+  .clients-carousel::-webkit-scrollbar{display:none}
+  .clients-track{
+    animation:none;
+    transform:none;
+  }
+  .clients-group{gap:15px;padding-right:15px}
+  .clients-group[aria-hidden="true"]{display:none}
   .client-logo{
     width:250px;
     height:145px;
     padding:22px;
+    flex-shrink:0;
+    scroll-snap-align:start;
   }
-
-  .client-logo img{
-    max-width:210px;
-    max-height:95px;
-  }
+  .client-logo img{max-width:210px;max-height:95px}
 }
 
 @media(prefers-reduced-motion:reduce){
@@ -815,9 +623,7 @@ footer{
     scroll-behavior:auto!important;
     transition:none!important;
   }
-
   .clients-track{animation:none}
-
   .clients-carousel{
     overflow-x:auto;
     mask-image:none;
@@ -832,7 +638,6 @@ footer{
 <!-- HEADER -->
 <header>
   <div class="container nav">
-
     <a href="#inicio" class="brand">
       <img
         src="https://raw.githubusercontent.com/ATZE-ERP/ATZE-ERP.github.io/main/Logotipo%20A%20de%20cintas%20met%C3%A1licas%20negras.png"
@@ -841,18 +646,13 @@ footer{
     </a>
 
     <div class="nav-actions">
-
       <a href="#prueba" class="btn primary nav-trial">
         Implementación gratuita
       </a>
 
       <div class="menu-wrap">
-
-        <button
-          class="menu-btn"
-          id="menuButton"
-          aria-expanded="false"
-          aria-controls="dropdown">
+        <button class="menu-btn" id="menuButton"
+                aria-expanded="false" aria-controls="dropdown">
           ☰ Menú
         </button>
 
@@ -865,7 +665,6 @@ footer{
           <a href="#clientes">Nuestros clientes</a>
           <a href="#contacto">Contacto</a>
         </nav>
-
       </div>
     </div>
   </div>
@@ -876,10 +675,7 @@ footer{
 <!-- INICIO -->
 <section class="hero" id="inicio">
   <div class="container hero-inner">
-
-    <span class="eyebrow">
-      Tecnología flexible para empresas
-    </span>
+    <span class="eyebrow">Tecnología flexible para empresas</span>
 
     <h1>
       Más visibilidad.<br>
@@ -899,30 +695,23 @@ footer{
     </p>
 
     <div class="hero-actions">
-
       <a href="#prueba" class="btn primary">
         Implementa ATZE gratis por 30 días →
       </a>
-
       <a href="#funcionalidades" class="btn outline">
         Explorar funcionalidades
       </a>
-
     </div>
-
   </div>
 </section>
 
 <!-- BENEFICIOS -->
 <section id="beneficios">
   <div class="container">
-
     <div class="section-heading">
       <h2>
-        Más claridad para
-        <span class="accent">tomar decisiones</span>
+        Más claridad para <span class="accent">tomar decisiones</span>
       </h2>
-
       <p>
         Organiza la información de tu negocio y conviértela
         en una herramienta para trabajar con mayor visibilidad y control.
@@ -930,7 +719,6 @@ footer{
     </div>
 
     <div class="cards">
-
       <article class="feature-card">
         <div class="icon-box">◉</div>
         <h3>Mayor visibilidad</h3>
@@ -948,22 +736,18 @@ footer{
         <h3>Flexibilidad</h3>
         <p>Adapta la solución a las necesidades de tu empresa.</p>
       </article>
-
     </div>
-
   </div>
 </section>
 
 <!-- FUNCIONALIDADES -->
 <section class="soft" id="funcionalidades">
   <div class="container">
-
     <div class="section-heading">
       <h2>
         Conoce algunas de nuestras
         <span class="accent">funcionalidades</span>
       </h2>
-
       <p>
         Selecciona un cuadro para conocer más y explorar
         las demostraciones disponibles.
@@ -975,58 +759,42 @@ footer{
       <button class="feature-card" data-feature="real">
         <div class="icon-box">▦</div>
         <h3>Información en tiempo real</h3>
-        <p>
-          Dashboards e indicadores conectados
-          con la información de tu negocio.
-        </p>
+        <p>Dashboards e indicadores conectados con la información de tu negocio.</p>
         <span class="more">Ver demostración →</span>
       </button>
 
       <button class="feature-card" data-feature="ubicacion">
         <div class="icon-box">⌖</div>
         <h3>Ubicación visual</h3>
-        <p>
-          Localiza productos, materiales y recursos
-          dentro de un layout digital.
-        </p>
+        <p>Localiza productos, materiales y recursos dentro de un layout digital.</p>
         <span class="more">Ver demostración →</span>
       </button>
 
       <button class="feature-card" data-feature="consultas">
         <div class="icon-box">⌘</div>
         <h3>Consultas de información</h3>
-        <p>
-          Accede a datos de tus sistemas
-          para analizar tu operación.
-        </p>
+        <p>Accede a datos de tus sistemas para analizar tu operación.</p>
         <span class="more">Conocer más →</span>
       </button>
 
       <button class="feature-card" data-feature="ordenes">
         <div class="icon-box">⇄</div>
         <h3>Seguimiento de órdenes</h3>
-        <p>
-          Consulta órdenes de compra, venta y pedidos.
-        </p>
+        <p>Consulta órdenes de compra, venta y pedidos.</p>
         <span class="more">Conocer más →</span>
       </button>
 
       <button class="feature-card" data-feature="alertas">
         <div class="icon-box">◎</div>
         <h3>Alertas y notificaciones</h3>
-        <p>
-          Configura avisos para comunicar situaciones importantes.
-        </p>
+        <p>Configura avisos para comunicar situaciones importantes.</p>
         <span class="more">Conocer más →</span>
       </button>
 
       <button class="feature-card" data-feature="medida">
         <div class="icon-box">↗</div>
         <h3>Soluciones a tu medida</h3>
-        <p>
-          Personaliza herramientas de acuerdo
-          con tus necesidades.
-        </p>
+        <p>Personaliza herramientas de acuerdo con tus necesidades.</p>
         <span class="more">Conocer más →</span>
       </button>
 
@@ -1039,16 +807,13 @@ footer{
       ATZE puede evaluar nuevas herramientas, integraciones y
       personalizaciones según los requerimientos de cada empresa.
     </p>
-
   </div>
 </section>
 
 <!-- PRESUPUESTO -->
 <section id="precios">
   <div class="container">
-
     <div class="box">
-
       <span class="eyebrow">Soluciones flexibles</span>
 
       <h2>
@@ -1071,29 +836,24 @@ footer{
       <a href="#contacto" class="btn primary">
         Solicitar propuesta
       </a>
-
     </div>
-
   </div>
 </section>
 
 <!-- IMPLEMENTACIÓN GRATUITA -->
 <section class="trial" id="prueba">
   <div class="container">
-
     <div class="box">
-
       <span class="eyebrow">
         30 días de implementación gratuita
       </span>
 
       <h2>
-        Implementamos ATZE en tu empresa
-        durante <span class="accent">30 días sin costo</span>
+        Implementamos ATZE en tu empresa durante
+        <span class="accent">30 días sin costo</span>
       </h2>
 
       <div class="trial-intro">
-
         <p>
           <strong>
             No es solo una prueba.
@@ -1112,7 +872,6 @@ footer{
           dentro de tu operación, evaluar sus beneficios
           y descubrir cómo puede ayudarte a mejorar tus procesos.
         </p>
-
       </div>
 
       <div class="trial-steps">
@@ -1170,7 +929,6 @@ footer{
           30 días para conocer, implementar y adaptar
           ATZE a tu negocio.
         </strong>
-
         <p style="margin:8px 0 0">
           La implementación, los cambios y las integraciones
           se realizan conforme a un alcance inicial
@@ -1181,18 +939,15 @@ footer{
       <a href="#contacto" class="btn primary">
         Solicita tu mes de implementación gratuita →
       </a>
-
     </div>
-
   </div>
 </section>
 
-<!-- CLIENTES - CONVEYOR -->
+<!-- CLIENTES: ANIMACIÓN EN PC / DESLIZAR EN CELULAR -->
 <section class="clients-section" id="clientes">
 
   <div class="container">
     <div class="clients-heading">
-
       <span class="eyebrow">Nuestros clientes</span>
 
       <h2>
@@ -1204,31 +959,27 @@ footer{
         La confianza de nuestros clientes impulsa
         nuestra innovación y el desarrollo de nuevas soluciones.
       </p>
-
     </div>
   </div>
 
-  <div class="clients-carousel">
+  <div class="clients-carousel" aria-label="Logotipos de clientes">
     <div class="clients-track">
 
-      <!-- GRUPO PRINCIPAL -->
+      <!-- LOGOTIPOS ORIGINALES -->
       <div class="clients-group">
 
-        <!-- INTELIAIRE -->
         <div class="client-logo">
           <img
             src="https://raw.githubusercontent.com/ATZE-ERP/ATZE/main/INTELI1.png"
             alt="InteliAire">
         </div>
 
-        <!-- COREEFFICIENT -->
         <div class="client-logo">
           <img
             src="https://raw.githubusercontent.com/ATZE-ERP/ATZE/main/CORE1.png"
             alt="CoreEfficient">
         </div>
 
-        <!-- KLOECKNER METALS -->
         <div class="client-logo">
           <img
             src="https://raw.githubusercontent.com/ATZE-ERP/ATZE/main/IMG_8195.jpeg"
@@ -1237,7 +988,7 @@ footer{
 
       </div>
 
-      <!-- COPIA PARA ANIMACIÓN INFINITA -->
+      <!-- COPIA SOLO PARA MOVIMIENTO INFINITO EN PC -->
       <div class="clients-group" aria-hidden="true">
 
         <div class="client-logo">
@@ -1262,7 +1013,6 @@ footer{
 
     </div>
   </div>
-
 </section>
 
 <!-- CONTACTO -->
@@ -1270,7 +1020,6 @@ footer{
   <div class="container">
 
     <div class="section-heading">
-
       <h2>
         Cuéntanos sobre
         <span class="accent">tu negocio</span>
@@ -1280,13 +1029,11 @@ footer{
         Hablemos de tus necesidades y cómo podemos
         implementar ATZE en tu empresa.
       </p>
-
     </div>
 
     <div class="contact-grid">
 
       <div class="contact-info">
-
         <h3>Construyamos una solución a tu medida</h3>
 
         <p>
@@ -1310,14 +1057,11 @@ footer{
 
         <div class="contact-detail">
           <strong>WhatsApp</strong>
-          <a
-            href="https://wa.me/528448588733"
-            target="_blank"
-            rel="noopener noreferrer">
+          <a href="https://wa.me/528448588733"
+             target="_blank" rel="noopener noreferrer">
             844 858 8733
           </a>
         </div>
-
       </div>
 
       <form id="contactForm" class="contact-form">
@@ -1370,7 +1114,6 @@ footer{
           <label for="presupuestoCliente">
             Presupuesto estimado (opcional)
           </label>
-
           <select id="presupuestoCliente">
             <option value="">Prefiero conversarlo</option>
             <option>Menos de $5,000 MXN</option>
@@ -1400,7 +1143,6 @@ footer{
       </form>
 
     </div>
-
   </div>
 </section>
 
@@ -1418,41 +1160,28 @@ footer{
   </div>
 </footer>
 
-<a
-  class="whatsapp"
-  href="https://wa.me/528448588733"
-  target="_blank"
-  rel="noopener noreferrer">
+<a class="whatsapp"
+   href="https://wa.me/528448588733"
+   target="_blank" rel="noopener noreferrer">
   WhatsApp
 </a>
 
 <!-- POP-UP DE FUNCIONALIDADES -->
-<div
-  class="modal"
-  id="modal"
-  role="dialog"
-  aria-modal="true"
-  aria-labelledby="modalTitle"
-  aria-hidden="true">
+<div class="modal" id="modal"
+     role="dialog" aria-modal="true"
+     aria-labelledby="modalTitle" aria-hidden="true">
 
   <div class="modal-card">
-
-    <button
-      class="close"
-      id="closeModal"
-      aria-label="Cerrar">
-      ×
-    </button>
+    <button class="close" id="closeModal"
+            aria-label="Cerrar">×</button>
 
     <span class="eyebrow">Funcionalidad ATZE</span>
-
     <h2 id="modalTitle"></h2>
     <p id="modalDescription"></p>
     <ul id="modalList"></ul>
 
-    <!-- DASHBOARD -->
+    <!-- DASHBOARD SOLO EN SU POP-UP -->
     <div class="modal-demo" id="dashboardDemo" hidden>
-
       <h3>Panel de control ilustrativo</h3>
 
       <div class="dashboard-grid">
@@ -1460,17 +1189,14 @@ footer{
           <span>Órdenes registradas</span>
           <strong>248</strong>
         </div>
-
         <div class="metric">
           <span>En seguimiento</span>
           <strong>36</strong>
         </div>
-
         <div class="metric">
           <span>Consultas</span>
           <strong>1,284</strong>
         </div>
-
         <div class="metric">
           <span>Indicadores</span>
           <strong>12</strong>
@@ -1492,12 +1218,10 @@ footer{
         La información real requiere integración
         con los sistemas del negocio.
       </p>
-
     </div>
 
-    <!-- LAYOUT -->
+    <!-- LAYOUT SOLO EN SU POP-UP -->
     <div class="modal-demo" id="layoutDemo" hidden>
-
       <h3>Prueba la búsqueda visual</h3>
 
       <p>
@@ -1506,11 +1230,7 @@ footer{
       </p>
 
       <form class="search-row" id="searchForm">
-        <input
-          id="partInput"
-          placeholder="Ej. 607-7435"
-          required>
-
+        <input id="partInput" placeholder="Ej. 607-7435" required>
         <button class="btn primary" type="submit">
           Buscar
         </button>
@@ -1518,47 +1238,25 @@ footer{
 
       <div class="samples">
         Prueba con:
-
-        <button type="button" data-part="607-7435">
-          607-7435
-        </button>
-
-        <button type="button" data-part="9310300">
-          9310300
-        </button>
-
-        <button type="button" data-part="COMP-001">
-          COMP-001
-        </button>
+        <button type="button" data-part="607-7435">607-7435</button>
+        <button type="button" data-part="9310300">9310300</button>
+        <button type="button" data-part="COMP-001">COMP-001</button>
       </div>
 
       <div class="layout">
-
         <img
           src="https://raw.githubusercontent.com/ATZE-ERP/ATZE-ERP.github.io/main/UBI2.png"
           alt="Layout ilustrativo adaptable a distintos negocios">
-
         <span id="locationLight" class="light"></span>
-
       </div>
 
       <div class="legend">
-        <span>
-          <i class="legend-dot"></i>
-          Disponible
-        </span>
-
-        <span>
-          <i class="legend-dot red"></i>
-          Requiere atención
-        </span>
+        <span><i class="legend-dot"></i>Disponible</span>
+        <span><i class="legend-dot red"></i>Requiere atención</span>
       </div>
 
-      <div
-        class="search-result"
-        id="searchResult"
-        aria-live="polite">
-      </div>
+      <div class="search-result" id="searchResult"
+           aria-live="polite"></div>
 
       <p class="small">
         El layout es ilustrativo y puede adaptarse a ferreterías,
@@ -1566,27 +1264,17 @@ footer{
         Los datos de esta demostración son ficticios.
       </p>
 
-      <button
-        type="button"
-        class="btn outline"
-        id="resetSearch">
+      <button type="button" class="btn outline" id="resetSearch">
         Limpiar búsqueda
       </button>
-
     </div>
 
     <div class="modal-actions">
-      <button class="btn outline" id="modalDone">
-        Cerrar
-      </button>
-
-      <a href="#contacto"
-         class="btn primary"
-         id="modalContact">
+      <button class="btn outline" id="modalDone">Cerrar</button>
+      <a href="#contacto" class="btn primary" id="modalContact">
         Solicitar información →
       </a>
     </div>
-
   </div>
 </div>
 
@@ -1621,7 +1309,6 @@ document.addEventListener("click", e => {
 
 /* FUNCIONALIDADES */
 const features = {
-
   real: {
     title: "Información en tiempo real",
     description:
@@ -1633,7 +1320,6 @@ const features = {
       "Personaliza paneles para diferentes áreas."
     ]
   },
-
   ubicacion: {
     title: "Ubicación visual",
     description:
@@ -1645,7 +1331,6 @@ const features = {
       "Adapta el layout a distintos tipos de negocios."
     ]
   },
-
   consultas: {
     title: "Consultas de información",
     description:
@@ -1657,7 +1342,6 @@ const features = {
       "Análisis de datos comerciales y operativos."
     ]
   },
-
   ordenes: {
     title: "Seguimiento de órdenes",
     description:
@@ -1669,7 +1353,6 @@ const features = {
       "Visualización de estados, prioridades y pendientes."
     ]
   },
-
   alertas: {
     title: "Alertas y notificaciones",
     description:
@@ -1681,7 +1364,6 @@ const features = {
       "Escalamiento según reglas configuradas."
     ]
   },
-
   medida: {
     title: "Soluciones a tu medida",
     description:
@@ -1693,25 +1375,19 @@ const features = {
       "Posibilidad de ampliar la solución."
     ]
   }
-
 };
 
 const modal = document.getElementById("modal");
 const dashboardDemo = document.getElementById("dashboardDemo");
 const layoutDemo = document.getElementById("layoutDemo");
-
 let previousFocus = null;
 
 function openModal(key) {
   const feature = features[key];
-
   if (!feature) return;
 
   previousFocus = document.activeElement;
-
-  document.getElementById("modalTitle").textContent =
-    feature.title;
-
+  document.getElementById("modalTitle").textContent = feature.title;
   document.getElementById("modalDescription").textContent =
     feature.description;
 
@@ -1730,7 +1406,6 @@ function openModal(key) {
   modal.classList.add("open");
   modal.setAttribute("aria-hidden", "false");
   document.body.classList.add("modal-open");
-
   document.getElementById("closeModal").focus();
 }
 
@@ -1738,22 +1413,17 @@ function closeModal() {
   modal.classList.remove("open");
   modal.setAttribute("aria-hidden", "true");
   document.body.classList.remove("modal-open");
-
   if (previousFocus) previousFocus.focus();
 }
 
 document.querySelectorAll("[data-feature]").forEach(card => {
-  card.addEventListener("click", () => {
-    openModal(card.dataset.feature);
-  });
+  card.addEventListener("click", () => openModal(card.dataset.feature));
 });
 
 document.getElementById("closeModal")
   .addEventListener("click", closeModal);
-
 document.getElementById("modalDone")
   .addEventListener("click", closeModal);
-
 document.getElementById("modalContact")
   .addEventListener("click", closeModal);
 
@@ -1762,20 +1432,15 @@ modal.addEventListener("click", e => {
 });
 
 document.addEventListener("keydown", e => {
-
   if (e.key === "Escape") {
     if (modal.classList.contains("open")) closeModal();
-
     dropdown.classList.remove("open");
     menuButton.setAttribute("aria-expanded", "false");
   }
 
   if (e.key === "Tab" && modal.classList.contains("open")) {
-
     const focusable = [
-      ...modal.querySelectorAll(
-        "button:not([hidden]),a[href],input"
-      )
+      ...modal.querySelectorAll("button,a[href],input")
     ].filter(el => el.getClientRects().length);
 
     const first = focusable[0];
@@ -1793,28 +1458,21 @@ document.addEventListener("keydown", e => {
 
 /* LAYOUT DEMOSTRATIVO */
 const demoParts = {
-
   "607-7435": {
-    x:24,
-    y:32,
+    x:24, y:32,
     location:"Zona de ejemplo A",
     available:true
   },
-
   "9310300": {
-    x:68,
-    y:42,
+    x:68, y:42,
     location:"Zona de ejemplo B",
     available:false
   },
-
   "COMP-001": {
-    x:45,
-    y:72,
+    x:45, y:72,
     location:"Zona de ejemplo C",
     available:true
   }
-
 };
 
 const partInput = document.getElementById("partInput");
@@ -1822,7 +1480,6 @@ const locationLight = document.getElementById("locationLight");
 const searchResult = document.getElementById("searchResult");
 
 function searchPart(code) {
-
   const id = code.trim().toUpperCase();
   const part = demoParts[id];
 
@@ -1835,7 +1492,6 @@ function searchPart(code) {
 
   locationLight.style.left = part.x + "%";
   locationLight.style.top = part.y + "%";
-
   locationLight.className =
     "light visible " + (part.available ? "green" : "red");
 
@@ -1844,11 +1500,10 @@ function searchPart(code) {
     (part.available ? "Disponible" : "Requiere atención");
 }
 
-document.getElementById("searchForm")
-  .addEventListener("submit", e => {
-    e.preventDefault();
-    searchPart(partInput.value);
-  });
+document.getElementById("searchForm").addEventListener("submit", e => {
+  e.preventDefault();
+  searchPart(partInput.value);
+});
 
 document.querySelectorAll("[data-part]").forEach(button => {
   button.addEventListener("click", () => {
@@ -1857,66 +1512,45 @@ document.querySelectorAll("[data-part]").forEach(button => {
   });
 });
 
-document.getElementById("resetSearch")
-  .addEventListener("click", () => {
-    partInput.value = "";
-    locationLight.className = "light";
-    searchResult.textContent = "";
-  });
+document.getElementById("resetSearch").addEventListener("click", () => {
+  partInput.value = "";
+  locationLight.className = "light";
+  searchResult.textContent = "";
+});
 
 /* FORMULARIO DE CONTACTO */
-document.getElementById("contactForm")
-  .addEventListener("submit", e => {
+document.getElementById("contactForm").addEventListener("submit", e => {
+  e.preventDefault();
 
-    e.preventDefault();
+  const nombre = document.getElementById("nombre").value.trim();
+  const empresa = document.getElementById("empresa").value.trim();
+  const correo = document.getElementById("correo").value.trim();
+  const tipo = document.getElementById("tipoNegocio").value;
+  const interes = document.getElementById("interes").value;
+  const presupuesto = document.getElementById("presupuestoCliente").value;
+  const mensaje = document.getElementById("mensaje").value.trim();
 
-    const nombre =
-      document.getElementById("nombre").value.trim();
+  const texto = [
+    "Hola, me interesa conocer ATZE.",
+    "",
+    "Quisiera información sobre la implementación gratuita de 30 días, incluyendo configuración inicial, adecuaciones y acompañamiento conforme al alcance acordado.",
+    "",
+    "Nombre: " + nombre,
+    "Empresa: " + empresa,
+    "Correo: " + correo,
+    "Tipo de negocio: " + tipo,
+    "Interés: " + interes,
+    "Presupuesto: " + (presupuesto || "Prefiero conversarlo"),
+    "Mensaje: " + (mensaje || "Sin mensaje adicional")
+  ].join("\n");
 
-    const empresa =
-      document.getElementById("empresa").value.trim();
-
-    const correo =
-      document.getElementById("correo").value.trim();
-
-    const tipo =
-      document.getElementById("tipoNegocio").value;
-
-    const interes =
-      document.getElementById("interes").value;
-
-    const presupuesto =
-      document.getElementById("presupuestoCliente").value;
-
-    const mensaje =
-      document.getElementById("mensaje").value.trim();
-
-    const texto = [
-      "Hola, me interesa implementar ATZE en mi empresa.",
-      "",
-      "Me gustaría conocer el programa de implementación gratuita de 30 días, incluyendo la configuración inicial, las adecuaciones y el acompañamiento conforme al alcance acordado.",
-      "",
-      "Nombre: " + nombre,
-      "Empresa: " + empresa,
-      "Correo: " + correo,
-      "Tipo de negocio: " + tipo,
-      "Interés: " + interes,
-      "Presupuesto: " +
-        (presupuesto || "Prefiero conversarlo"),
-      "Mensaje: " +
-        (mensaje || "Sin mensaje adicional")
-    ].join("\n");
-
-    window.open(
-      "https://wa.me/528448588733?text=" +
-        encodeURIComponent(texto),
-      "_blank",
-      "noopener,noreferrer"
-    );
-
-  });
+  window.open(
+    "https://wa.me/528448588733?text=" + encodeURIComponent(texto),
+    "_blank",
+    "noopener,noreferrer"
+  );
+});
 
 </script>
-
 </body>
 </html>
