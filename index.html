@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#ffffff">
-<meta name="description" content="ATZE conecta información, procesos y herramientas digitales para negocios de todos los tamaños.">
+<meta name="description" content="ATZE: tecnología flexible para empresas. Implementamos y adaptamos nuestro sistema a tu negocio durante 30 días sin costo, con un alcance acordado.">
 <title>ATZE | Tecnología para tu negocio</title>
 
 <style>
@@ -46,6 +46,7 @@ section{padding:82px 0}
   border:1px solid transparent;
   font-weight:700;
   transition:.2s;
+  text-align:center;
 }
 
 .btn:hover{transform:translateY(-2px)}
@@ -255,7 +256,7 @@ h1{
   color:var(--muted);
 }
 
-/* PRESUPUESTO Y PRUEBA */
+/* PRESUPUESTO */
 
 .box{
   max-width:900px;
@@ -291,9 +292,69 @@ h1{
   font-size:13px;
 }
 
+/* IMPLEMENTACIÓN GRATUITA */
+
 .trial{
   background:linear-gradient(135deg,#edf5ff,#f8fbff);
 }
+
+.trial-intro{
+  max-width:750px;
+  margin:0 auto 28px;
+}
+
+.trial-intro strong{
+  color:var(--navy);
+}
+
+.trial-steps{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:15px;
+  margin:30px 0;
+  text-align:left;
+}
+
+.trial-step{
+  display:flex;
+  gap:14px;
+  padding:22px;
+  border:1px solid var(--line);
+  border-radius:15px;
+  background:#f8fbff;
+}
+
+.step-number{
+  display:grid;
+  place-items:center;
+  flex-shrink:0;
+  width:37px;
+  height:37px;
+  border-radius:11px;
+  background:#e5efff;
+  color:var(--blue);
+  font-weight:900;
+}
+
+.trial-step h3{
+  font-size:17px;
+  margin:0 0 8px;
+}
+
+.trial-step p{
+  margin:0;
+  font-size:14px;
+}
+
+.trial-note{
+  padding:17px;
+  margin:22px 0 27px;
+  background:#eff6ff;
+  border-radius:12px;
+  font-size:14px;
+}
+
+.trial-note strong{color:var(--navy)}
 
 /* CLIENTES */
 
@@ -326,40 +387,27 @@ h1{
   padding:15px 0 35px;
 }
 
-/* TARJETA CENTRADA */
-
 .client-card{
   width:min(390px,100%);
   min-height:225px;
   padding:35px;
-
   display:flex;
   align-items:center;
   justify-content:center;
-
   background:white;
   border:1px solid var(--line);
   border-radius:22px;
-
   box-shadow:0 15px 35px #14213d12;
-
   opacity:0;
   transform:translateY(30px);
-
-  transition:
-    opacity .9s ease,
-    transform .9s ease;
+  transition:opacity .9s ease,transform .9s ease;
 }
-
-/* ENTRADA Y FLOTACIÓN */
 
 .client-card.visible{
   opacity:1;
   transform:translateY(0);
   animation:clientFloat 4s ease-in-out .9s infinite;
 }
-
-/* LOGO CENTRADO */
 
 .client-card img{
   display:block;
@@ -369,14 +417,11 @@ h1{
   object-fit:contain;
 }
 
-/* ANIMACIÓN CONTINUA */
-
 @keyframes clientFloat{
   0%,100%{
     transform:translateY(0);
     box-shadow:0 15px 35px #14213d12;
   }
-
   50%{
     transform:translateY(-12px);
     box-shadow:0 28px 50px #2563eb25;
@@ -537,7 +582,7 @@ footer{
   margin-top:24px;
 }
 
-/* DASHBOARD DEL POP-UP */
+/* DASHBOARD POP-UP */
 
 .dashboard-grid{
   display:grid;
@@ -581,7 +626,7 @@ footer{
   background:linear-gradient(#60a5fa,#2563eb);
 }
 
-/* LAYOUT DEL POP-UP */
+/* LAYOUT POP-UP */
 
 .search-row{
   display:flex;
@@ -691,6 +736,8 @@ footer{
   .brand{font-size:22px}
   .brand img{width:43px;height:43px}
   .box{padding:28px 20px}
+  .trial-steps{grid-template-columns:1fr}
+  .trial-step{padding:18px}
   .modal-card{padding:25px 18px}
   .search-row{flex-direction:column}
   .whatsapp{right:12px;bottom:12px}
@@ -717,8 +764,10 @@ footer{
 
 <body>
 
+<!-- HEADER -->
 <header>
   <div class="container nav">
+
     <a href="#inicio" class="brand">
       <img
         src="https://raw.githubusercontent.com/ATZE-ERP/ATZE-ERP.github.io/main/Logotipo%20A%20de%20cintas%20met%C3%A1licas%20negras.png"
@@ -727,14 +776,18 @@ footer{
     </a>
 
     <div class="nav-actions">
+
       <a href="#prueba" class="btn primary nav-trial">
-        Solicita tu prueba
+        Implementación gratuita
       </a>
 
       <div class="menu-wrap">
-        <button class="menu-btn"
-                id="menuButton"
-                aria-expanded="false">
+
+        <button
+          class="menu-btn"
+          id="menuButton"
+          aria-expanded="false"
+          aria-controls="dropdown">
           ☰ Menú
         </button>
 
@@ -743,10 +796,11 @@ footer{
           <a href="#beneficios">Beneficios</a>
           <a href="#funcionalidades">Funcionalidades</a>
           <a href="#precios">Presupuesto</a>
-          <a href="#prueba">Prueba gratuita</a>
+          <a href="#prueba">Implementación gratuita</a>
           <a href="#clientes">Nuestros clientes</a>
           <a href="#contacto">Contacto</a>
         </nav>
+
       </div>
     </div>
   </div>
@@ -757,6 +811,7 @@ footer{
 <!-- INICIO -->
 <section class="hero" id="inicio">
   <div class="container hero-inner">
+
     <span class="eyebrow">
       Tecnología flexible para empresas
     </span>
@@ -779,20 +834,24 @@ footer{
     </p>
 
     <div class="hero-actions">
+
       <a href="#prueba" class="btn primary">
-        Prueba ATZE gratis 30 días →
+        Implementa ATZE gratis por 30 días →
       </a>
 
       <a href="#funcionalidades" class="btn outline">
         Explorar funcionalidades
       </a>
+
     </div>
+
   </div>
 </section>
 
 <!-- BENEFICIOS -->
 <section id="beneficios">
   <div class="container">
+
     <div class="section-heading">
       <h2>
         Más claridad para
@@ -806,6 +865,7 @@ footer{
     </div>
 
     <div class="cards">
+
       <article class="feature-card">
         <div class="icon-box">◉</div>
         <h3>Mayor visibilidad</h3>
@@ -823,13 +883,16 @@ footer{
         <h3>Flexibilidad</h3>
         <p>Adapta la solución a las necesidades de tu empresa.</p>
       </article>
+
     </div>
+
   </div>
 </section>
 
 <!-- FUNCIONALIDADES -->
 <section class="soft" id="funcionalidades">
   <div class="container">
+
     <div class="section-heading">
       <h2>
         Conoce algunas de nuestras
@@ -911,13 +974,16 @@ footer{
       ATZE puede evaluar nuevas herramientas, integraciones y
       personalizaciones según los requerimientos de cada empresa.
     </p>
+
   </div>
 </section>
 
 <!-- PRESUPUESTO -->
 <section id="precios">
   <div class="container">
+
     <div class="box">
+
       <span class="eyebrow">Soluciones flexibles</span>
 
       <h2>
@@ -940,38 +1006,127 @@ footer{
       <a href="#contacto" class="btn primary">
         Solicitar propuesta
       </a>
+
     </div>
+
   </div>
 </section>
 
-<!-- PRUEBA GRATUITA -->
+<!-- IMPLEMENTACIÓN GRATUITA DE 30 DÍAS -->
 <section class="trial" id="prueba">
   <div class="container">
+
     <div class="box">
-      <span class="eyebrow">Conoce ATZE</span>
+
+      <span class="eyebrow">
+        30 días de implementación gratuita
+      </span>
 
       <h2>
-        Prueba ATZE gratis durante
-        <span class="accent">30 días</span>
+        Implementamos ATZE en tu empresa
+        durante <span class="accent">30 días sin costo</span>
       </h2>
 
-      <p>
-        Explora las funcionalidades acordadas para tu negocio.
-        Durante el periodo de prueba podemos conocer tus necesidades
-        y evaluar posibles personalizaciones.
-      </p>
+      <div class="trial-intro">
+
+        <p>
+          <strong>
+            No es solo una prueba.
+            Es el primer paso para transformar tu negocio.
+          </strong>
+        </p>
+
+        <p>
+          Durante un mes trabajamos contigo para implementar ATZE
+          en tu empresa, conocer tus operaciones y adaptar
+          el sistema a tus necesidades reales.
+        </p>
+
+        <p>
+          Nuestro objetivo es que puedas utilizar ATZE
+          dentro de tu operación, evaluar sus beneficios
+          y descubrir cómo puede ayudarte a mejorar tus procesos.
+        </p>
+
+      </div>
+
+      <div class="trial-steps">
+
+        <div class="trial-step">
+          <span class="step-number">01</span>
+          <div>
+            <h3>Implementación inicial</h3>
+            <p>
+              Configuramos ATZE para comenzar a utilizarlo
+              en tu empresa con las funcionalidades acordadas.
+            </p>
+          </div>
+        </div>
+
+        <div class="trial-step">
+          <span class="step-number">02</span>
+          <div>
+            <h3>Personalización y adecuaciones</h3>
+            <p>
+              Realizamos cambios, configuraciones y ajustes
+              de acuerdo con tus procesos y requerimientos.
+            </p>
+          </div>
+        </div>
+
+        <div class="trial-step">
+          <span class="step-number">03</span>
+          <div>
+            <h3>Acompañamiento y mejoras</h3>
+            <p>
+              Trabajamos contigo, recibimos retroalimentación,
+              resolvemos dudas e identificamos oportunidades
+              de mejora durante el periodo.
+            </p>
+          </div>
+        </div>
+
+        <div class="trial-step">
+          <span class="step-number">04</span>
+          <div>
+            <h3>Tú decides si continuar</h3>
+            <p>
+              Al finalizar los 30 días, evaluamos los resultados
+              y te presentamos una propuesta adaptada
+              a tus necesidades y presupuesto.
+            </p>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="trial-note">
+        <strong>
+          30 días para conocer, implementar y adaptar
+          ATZE a tu negocio.
+        </strong>
+        <p style="margin:8px 0 0">
+          La implementación, los cambios y las integraciones
+          se realizan conforme a un alcance inicial
+          acordado con cada empresa.
+        </p>
+      </div>
 
       <a href="#contacto" class="btn primary">
-        Solicita tu prueba
+        Solicita tu mes de implementación gratuita →
       </a>
+
     </div>
+
   </div>
 </section>
 
-<!-- CLIENTES: LOGO ÚNICO ANIMADO -->
+<!-- CLIENTES -->
 <section class="clients-section" id="clientes">
   <div class="container">
+
     <div class="clients-heading">
+
       <span class="eyebrow">Nuestros clientes</span>
 
       <h2>
@@ -983,41 +1138,59 @@ footer{
         La confianza de nuestros clientes impulsa
         nuestra innovación y el desarrollo de nuevas soluciones.
       </p>
+
     </div>
 
     <div class="client-showcase">
+
       <div class="client-card" id="clientCard">
         <img
           src="IMG_8195.jpeg"
           alt="Logotipo de Kloeckner Metals"
           loading="lazy">
       </div>
+
     </div>
+
   </div>
 </section>
 
 <!-- CONTACTO -->
 <section id="contacto">
   <div class="container">
+
     <div class="section-heading">
+
       <h2>
         Cuéntanos sobre
         <span class="accent">tu negocio</span>
       </h2>
 
       <p>
-        Hablemos de tus necesidades y cómo ATZE puede ayudarte.
+        Hablemos de tus necesidades y cómo podemos
+        implementar ATZE en tu empresa.
       </p>
+
     </div>
 
     <div class="contact-grid">
 
       <div class="contact-info">
-        <h3>Construyamos una solución a tu medida</h3>
+
+        <h3>
+          Construyamos una solución a tu medida
+        </h3>
 
         <p>
           Comparte tus objetivos, las herramientas que te interesan
           y los procesos que quieres mejorar.
+        </p>
+
+        <p>
+          Podemos comenzar con una implementación gratuita
+          de 30 días, durante la cual configuramos
+          y adaptamos ATZE a las necesidades acordadas
+          para tu negocio.
         </p>
 
         <div class="contact-detail">
@@ -1029,12 +1202,14 @@ footer{
 
         <div class="contact-detail">
           <strong>WhatsApp</strong>
-          <a href="https://wa.me/528448588733"
-             target="_blank"
-             rel="noopener noreferrer">
+          <a
+            href="https://wa.me/528448588733"
+            target="_blank"
+            rel="noopener noreferrer">
             844 858 8733
           </a>
         </div>
+
       </div>
 
       <form id="contactForm" class="contact-form">
@@ -1072,7 +1247,9 @@ footer{
         <div class="field">
           <label for="interes">¿Qué te interesa?</label>
           <select id="interes">
-            <option>Prueba gratuita de 30 días</option>
+            <option>
+              Implementación gratuita de 30 días
+            </option>
             <option>Información en tiempo real</option>
             <option>Ubicación visual</option>
             <option>Consultas de información</option>
@@ -1099,70 +1276,93 @@ footer{
         </div>
 
         <div class="field">
-          <label for="mensaje">¿Qué necesitas resolver?</label>
+          <label for="mensaje">
+            ¿Qué necesitas resolver?
+          </label>
+
           <textarea
             id="mensaje"
-            placeholder="Cuéntanos qué buscas mejorar..."></textarea>
+            placeholder="Cuéntanos qué procesos te gustaría mejorar o qué funcionalidades necesitas..."></textarea>
         </div>
 
         <button class="btn primary" type="submit">
-          Solicitar propuesta por WhatsApp →
+          Enviar solicitud por WhatsApp →
         </button>
 
         <p class="small">
           Se abrirá WhatsApp con tu solicitud preparada.
           Este formulario no almacena información en la página.
         </p>
+
       </form>
 
     </div>
+
   </div>
 </section>
 
 </main>
 
+<!-- FOOTER -->
 <footer>
   <div class="container footer-inner">
+
     <strong>ATZE</strong>
+
     <span>
       © <span id="year"></span> ATZE.
       Todos los derechos reservados.
     </span>
+
     <a href="#contacto">Contacto</a>
+
   </div>
 </footer>
 
-<a class="whatsapp"
-   href="https://wa.me/528448588733"
-   target="_blank"
-   rel="noopener noreferrer">
+<a
+  class="whatsapp"
+  href="https://wa.me/528448588733"
+  target="_blank"
+  rel="noopener noreferrer">
   WhatsApp
 </a>
 
 <!-- POP-UP DE FUNCIONALIDADES -->
-<div class="modal"
-     id="modal"
-     role="dialog"
-     aria-modal="true"
-     aria-labelledby="modalTitle"
-     aria-hidden="true">
+<div
+  class="modal"
+  id="modal"
+  role="dialog"
+  aria-modal="true"
+  aria-labelledby="modalTitle"
+  aria-hidden="true">
 
   <div class="modal-card">
-    <button class="close"
-            id="closeModal"
-            aria-label="Cerrar">×</button>
+
+    <button
+      class="close"
+      id="closeModal"
+      aria-label="Cerrar">
+      ×
+    </button>
 
     <span class="eyebrow">Funcionalidad ATZE</span>
 
     <h2 id="modalTitle"></h2>
+
     <p id="modalDescription"></p>
+
     <ul id="modalList"></ul>
 
-    <!-- DASHBOARD SOLO EN POP-UP -->
-    <div class="modal-demo" id="dashboardDemo" hidden>
+    <!-- DASHBOARD -->
+    <div
+      class="modal-demo"
+      id="dashboardDemo"
+      hidden>
+
       <h3>Panel de control ilustrativo</h3>
 
       <div class="dashboard-grid">
+
         <div class="metric">
           <span>Órdenes registradas</span>
           <strong>248</strong>
@@ -1182,6 +1382,7 @@ footer{
           <span>Indicadores</span>
           <strong>12</strong>
         </div>
+
       </div>
 
       <div class="chart">
@@ -1199,10 +1400,15 @@ footer{
         La información real requiere integración
         con los sistemas del negocio.
       </p>
+
     </div>
 
-    <!-- LAYOUT SOLO EN POP-UP -->
-    <div class="modal-demo" id="layoutDemo" hidden>
+    <!-- LAYOUT INTERACTIVO -->
+    <div
+      class="modal-demo"
+      id="layoutDemo"
+      hidden>
+
       <h3>Prueba la búsqueda visual</h3>
 
       <p>
@@ -1211,36 +1417,48 @@ footer{
       </p>
 
       <form class="search-row" id="searchForm">
-        <input id="partInput"
-               placeholder="Ej. 607-7435"
-               required>
+
+        <input
+          id="partInput"
+          placeholder="Ej. 607-7435"
+          required>
+
         <button class="btn primary" type="submit">
           Buscar
         </button>
+
       </form>
 
       <div class="samples">
+
         Prueba con:
+
         <button type="button" data-part="607-7435">
           607-7435
         </button>
+
         <button type="button" data-part="9310300">
           9310300
         </button>
+
         <button type="button" data-part="COMP-001">
           COMP-001
         </button>
+
       </div>
 
       <div class="layout">
+
         <img
           src="https://raw.githubusercontent.com/ATZE-ERP/ATZE-ERP.github.io/main/UBI2.png"
           alt="Layout ilustrativo adaptable a distintos negocios">
 
         <span id="locationLight" class="light"></span>
+
       </div>
 
       <div class="legend">
+
         <span>
           <i class="legend-dot"></i>
           Disponible
@@ -1250,46 +1468,58 @@ footer{
           <i class="legend-dot red"></i>
           Requiere atención
         </span>
+
       </div>
 
-      <div class="search-result"
-           id="searchResult"
-           aria-live="polite"></div>
+      <div
+        class="search-result"
+        id="searchResult"
+        aria-live="polite">
+      </div>
 
       <p class="small">
-        El layout es ilustrativo y puede adaptarse a ferreterías,
-        almacenes, comercios, oficinas o áreas de producción.
+        El layout es ilustrativo y puede adaptarse
+        a ferreterías, almacenes, comercios,
+        oficinas o áreas de producción.
         Los datos de esta demostración son ficticios.
       </p>
 
-      <button type="button"
-              class="btn outline"
-              id="resetSearch">
+      <button
+        type="button"
+        class="btn outline"
+        id="resetSearch">
         Limpiar búsqueda
       </button>
+
     </div>
 
     <div class="modal-actions">
-      <button class="btn outline" id="modalDone">
+
+      <button
+        class="btn outline"
+        id="modalDone">
         Cerrar
       </button>
 
-      <a href="#contacto"
-         class="btn primary"
-         id="modalContact">
+      <a
+        href="#contacto"
+        class="btn primary"
+        id="modalContact">
         Solicitar información →
       </a>
+
     </div>
+
   </div>
 </div>
 
 <script>
 
-// AÑO
+/* AÑO */
 document.getElementById("year").textContent =
   new Date().getFullYear();
 
-// MENÚ
+/* MENÚ */
 const menuButton = document.getElementById("menuButton");
 const dropdown = document.getElementById("dropdown");
 
@@ -1312,7 +1542,7 @@ document.addEventListener("click", e => {
   }
 });
 
-// ANIMACIÓN DEL LOGO DEL CLIENTE
+/* ANIMACIÓN CLIENTE */
 const clientCard = document.getElementById("clientCard");
 
 if ("IntersectionObserver" in window) {
@@ -1330,8 +1560,9 @@ if ("IntersectionObserver" in window) {
   clientCard.classList.add("visible");
 }
 
-// FUNCIONALIDADES
+/* FUNCIONALIDADES */
 const features = {
+
   real: {
     title: "Información en tiempo real",
     description:
@@ -1403,6 +1634,7 @@ const features = {
       "Posibilidad de ampliar la solución."
     ]
   }
+
 };
 
 const modal = document.getElementById("modal");
@@ -1413,6 +1645,7 @@ let previousFocus = null;
 
 function openModal(key) {
   const feature = features[key];
+
   if (!feature) return;
 
   previousFocus = document.activeElement;
@@ -1470,13 +1703,16 @@ modal.addEventListener("click", e => {
 });
 
 document.addEventListener("keydown", e => {
+
   if (e.key === "Escape") {
     if (modal.classList.contains("open")) closeModal();
+
     dropdown.classList.remove("open");
     menuButton.setAttribute("aria-expanded", "false");
   }
 
   if (e.key === "Tab" && modal.classList.contains("open")) {
+
     const focusable = [
       ...modal.querySelectorAll(
         "button:not([hidden]),a[href],input"
@@ -1496,28 +1732,30 @@ document.addEventListener("keydown", e => {
   }
 });
 
-// LAYOUT DEMOSTRATIVO
+/* LAYOUT DEMOSTRATIVO */
 const demoParts = {
+
   "607-7435": {
-    x: 24,
-    y: 32,
-    location: "Zona de ejemplo A",
-    available: true
+    x:24,
+    y:32,
+    location:"Zona de ejemplo A",
+    available:true
   },
 
   "9310300": {
-    x: 68,
-    y: 42,
-    location: "Zona de ejemplo B",
-    available: false
+    x:68,
+    y:42,
+    location:"Zona de ejemplo B",
+    available:false
   },
 
   "COMP-001": {
-    x: 45,
-    y: 72,
-    location: "Zona de ejemplo C",
-    available: true
+    x:45,
+    y:72,
+    location:"Zona de ejemplo C",
+    available:true
   }
+
 };
 
 const partInput = document.getElementById("partInput");
@@ -1525,6 +1763,7 @@ const locationLight = document.getElementById("locationLight");
 const searchResult = document.getElementById("searchResult");
 
 function searchPart(code) {
+
   const id = code.trim().toUpperCase();
   const part = demoParts[id];
 
@@ -1566,9 +1805,10 @@ document.getElementById("resetSearch")
     searchResult.textContent = "";
   });
 
-// FORMULARIO DE CONTACTO
+/* FORMULARIO DE CONTACTO */
 document.getElementById("contactForm")
   .addEventListener("submit", e => {
+
     e.preventDefault();
 
     const nombre =
@@ -1593,7 +1833,9 @@ document.getElementById("contactForm")
       document.getElementById("mensaje").value.trim();
 
     const texto = [
-      "Hola, me interesa conocer ATZE.",
+      "Hola, me interesa implementar ATZE en mi empresa.",
+      "",
+      "Me gustaría conocer el programa de implementación gratuita de 30 días, incluyendo la configuración inicial, las adecuaciones y el acompañamiento conforme al alcance acordado.",
       "",
       "Nombre: " + nombre,
       "Empresa: " + empresa,
@@ -1612,6 +1854,7 @@ document.getElementById("contactForm")
       "_blank",
       "noopener,noreferrer"
     );
+
   });
 
 </script>
