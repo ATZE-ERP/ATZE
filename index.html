@@ -831,12 +831,9 @@ footer{
 
     <div class="nav-actions">
 
-      <button
-        type="button"
-        class="btn primary nav-btn"
-        id="openDiagnosticNav">
-        Diagnóstico
-      </button>
+      <a href="#diagnostico" class="btn primary nav-btn">
+  Diagnóstico
+</a>
 
       <a href="#contacto" class="btn primary nav-btn">
         Contáctanos
@@ -2079,10 +2076,6 @@ function validateStep(number){
 
 /* AMBOS BOTONES ABREN EL MISMO DIAGNÓSTICO */
 document.getElementById("openDiagnostic").addEventListener(
-  "click",openDiagnostic
-);
-
-document.getElementById("openDiagnosticNav").addEventListener(
   "click",openDiagnostic
 );
 
