@@ -1,1389 +1,277 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="theme-color" content="#ffffff">
-
-<meta name="description"
-content="ATZE ofrece soluciones de gestión e integración empresarial. Complementa tu ERP y descubre oportunidades con nuestro diagnóstico gratuito.">
-
+<meta name="description" content="ATZE ofrece soluciones de gestión, visualización e integración empresarial. Complementa tu ERP o implementa herramientas adaptadas a tu negocio.">
 <title>ATZE | Tecnología que se adapta a tu empresa</title>
 
 <style>
-
-/* =====================================
-   CONFIGURACIÓN GENERAL
-===================================== */
-
-:root {
-  --blue: #2563eb;
-  --navy: #14213d;
-  --text: #334155;
-  --muted: #64748b;
-  --line: #dce5f1;
-  --soft: #f6f9ff;
-}
-
-* {
-  box-sizing: border-box;
-}
-
-html {
-  scroll-behavior: smooth;
-  scroll-padding-top: 85px;
-}
-
-body {
-  margin: 0;
-  font-family: "Segoe UI", Arial, sans-serif;
-  color: var(--text);
-  background: #fff;
-  line-height: 1.65;
-}
-
-body.modal-open {
-  overflow: hidden;
-}
-
-a {
-  text-decoration: none;
-  color: inherit;
-}
-
-button,
-input,
-select,
-textarea {
-  font: inherit;
-}
-
-button {
-  cursor: pointer;
-}
-
-.container {
-  width: min(1140px, 92%);
-  margin: auto;
-}
-
-section {
-  padding: 80px 0;
-}
-
-h1,
-h2,
-h3 {
-  color: var(--navy);
-  line-height: 1.2;
-}
-
-p {
-  margin: 0 0 18px;
-}
-
-.accent {
-  color: var(--blue);
-}
-
-.soft {
-  background: var(--soft);
-}
-
-.eyebrow {
-  display: inline-block;
-  padding: 7px 14px;
-  border-radius: 30px;
-  background: #eaf2ff;
-  color: #1d4ed8;
-  font-size: 12px;
-  font-weight: 800;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-}
-
-.btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 13px 22px;
-  border: 1px solid transparent;
-  border-radius: 11px;
-  font-weight: 700;
-  text-align: center;
-  transition: 0.2s;
-}
-
-.btn:hover {
-  transform: translateY(-2px);
-}
-
-.primary {
-  background: var(--blue);
-  color: white;
-}
-
-.primary:hover {
-  background: #1d4ed8;
-}
-
-.outline {
-  background: white;
-  border-color: var(--line);
-  color: var(--navy);
-}
-
-.section-heading {
-  max-width: 780px;
-  margin: 0 auto 42px;
-  text-align: center;
-}
-
-.section-heading h2 {
-  font-size: clamp(29px, 4vw, 42px);
-  margin: 0 0 15px;
-}
-
-.section-heading p {
-  color: var(--muted);
-}
-
-/* =====================================
-   HEADER
-===================================== */
-
-header {
-  position: sticky;
-  top: 0;
-  z-index: 100;
-  background: #ffffffef;
-  border-bottom: 1px solid var(--line);
-  backdrop-filter: blur(14px);
-}
-
-.nav {
-  min-height: 78px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 15px;
-}
-
-.brand {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  color: var(--navy);
-  font-size: 27px;
-  font-weight: 900;
-  letter-spacing: 2px;
-}
-
-.brand img {
-  width: 53px;
-  height: 53px;
-  object-fit: contain;
-}
-
-.nav-actions {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-
-.menu-wrap {
-  position: relative;
-}
-
-.menu-btn {
-  padding: 11px 16px;
-  border: 1px solid var(--line);
-  border-radius: 10px;
-  background: white;
-  color: var(--navy);
-  font-weight: 700;
-}
-
-.dropdown {
-  display: none;
-  position: absolute;
-  right: 0;
-  top: calc(100% + 12px);
-  width: 270px;
-  padding: 10px;
-  background: white;
-  border: 1px solid var(--line);
-  border-radius: 14px;
-  box-shadow: 0 20px 50px #14213d25;
-}
-
-.dropdown.open {
-  display: block;
-}
-
-.dropdown a {
-  display: block;
-  padding: 10px 12px;
-  border-radius: 8px;
-}
-
-.dropdown a:hover {
-  background: #eff6ff;
-  color: var(--blue);
-}
-
-/* =====================================
-   HERO / INICIO
-===================================== */
-
-.hero {
-  padding: 110px 0;
-  background:
-    radial-gradient(
-      circle at 85% 20%,
-      #dbeafe,
-      transparent 45%
-    ),
-    linear-gradient(
-      135deg,
-      #ffffff,
-      #f5f9ff
-    );
-}
-
-.hero-inner {
-  max-width: 900px;
-  margin: auto;
-  text-align: center;
-}
-
-h1 {
-  margin: 24px 0;
-  font-size: clamp(40px, 6vw, 72px);
-  letter-spacing: -2px;
-}
-
-.hero p {
-  max-width: 760px;
-  margin: 0 auto 25px;
-  font-size: 19px;
-  color: var(--muted);
-}
-
-.hero-caption {
-  margin-top: 22px !important;
-  font-size: 14px !important;
-}
-
-/* =====================================
-   TARJETAS
-===================================== */
-
-.cards {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-}
-
-.feature-card {
-  width: 100%;
-  min-height: 220px;
-  padding: 26px;
-  background: white;
-  border: 1px solid var(--line);
-  border-radius: 16px;
-  text-align: left;
-  transition: 0.2s;
-  box-shadow: 0 5px 20px #14213d07;
-}
-
-.feature-card:hover,
-.feature-card:focus-visible {
-  transform: translateY(-5px);
-  border-color: #93b9ff;
-  box-shadow: 0 15px 35px #2563eb17;
-}
-
-.feature-card h3 {
-  font-size: 19px;
-  margin: 16px 0 12px;
-}
-
-.feature-card p {
-  font-size: 14px;
-  color: var(--muted);
-}
-
-.icon-box {
-  display: grid;
-  place-items: center;
-  width: 49px;
-  height: 49px;
-  border-radius: 13px;
-  background: #eff6ff;
-  border: 1px solid #dbeafe;
-  color: var(--blue);
-  font-size: 24px;
-}
-
-.more {
-  font-size: 13px;
-  font-weight: 700;
-  color: var(--blue);
-}
-
-.feature-note {
-  max-width: 790px;
-  margin: 30px auto 0;
-  text-align: center;
-  color: var(--muted);
-}
-
-/* =====================================
-   INTEGRACIÓN ERP
-===================================== */
-
-.integration-section {
-  background: linear-gradient(
-    135deg,
-    #ffffff,
-    #f1f7ff
-  );
-}
-
-.integration-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 22px;
-}
-
-.integration-card {
-  padding: 32px;
-  border: 1px solid var(--line);
-  border-radius: 20px;
-  background: white;
-  box-shadow: 0 12px 32px #14213d0a;
-}
-
-.integration-card h3 {
-  font-size: 23px;
-  margin: 15px 0;
-}
-
-.integration-card p {
-  color: var(--muted);
-}
-
-.integration-card li {
-  margin: 8px 0;
-}
-
-.integration-foot {
-  max-width: 850px;
-  margin: 32px auto 0;
-  text-align: center;
-}
-
-.integration-foot strong {
-  display: block;
-  font-size: 21px;
-  color: var(--navy);
-  margin-bottom: 12px;
-}
-
-.integration-foot p {
-  font-size: 13px;
-  color: var(--muted);
-}
-
-/* =====================================
-   DIAGNÓSTICO EMPRESARIAL
-===================================== */
-
-.diagnostic-section {
-  background: linear-gradient(
-    135deg,
-    #eaf3ff,
-    #f9fbff
-  );
-}
-
-.diagnostic-shell {
-  max-width: 930px;
-  margin: auto;
-  padding: 34px;
-  background: white;
-  border: 1px solid var(--line);
-  border-radius: 24px;
-  box-shadow: 0 20px 55px #14213d10;
-}
-
-.diagnostic-header {
-  text-align: center;
-  margin-bottom: 25px;
-}
-
-.diagnostic-header h2 {
-  font-size: clamp(28px, 4vw, 39px);
-  margin: 16px 0;
-}
-
-.diagnostic-header p {
-  color: var(--muted);
-}
-
-.diagnostic-meta {
-  display: flex;
-  justify-content: center;
-  gap: 10px;
-  flex-wrap: wrap;
-}
-
-.diagnostic-meta span {
-  padding: 6px 12px;
-  border-radius: 25px;
-  background: #eff6ff;
-  color: #1d4ed8;
-  font-size: 12px;
-  font-weight: 700;
-}
-
-.progress-label {
-  display: flex;
-  justify-content: space-between;
-  gap: 10px;
-  font-size: 13px;
-  font-weight: 700;
-  margin: 25px 0 10px;
-}
-
-.progress-track {
-  height: 8px;
-  border-radius: 20px;
-  background: #e2e8f0;
-  overflow: hidden;
-}
-
-.progress-fill {
-  height: 100%;
-  width: 20%;
-  background: var(--blue);
-  border-radius: 20px;
-  transition: width 0.25s;
-}
-
-.diagnostic-step {
-  display: none;
-  animation: stepFade 0.2s ease;
-}
-
-.diagnostic-step.active {
-  display: block;
-}
-
-@keyframes stepFade {
-  from {
-    opacity: 0.4;
-    transform: translateY(5px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.diagnostic-step h3 {
-  font-size: 24px;
-  margin: 28px 0 8px;
-}
-
-.step-description {
-  color: var(--muted);
-  font-size: 14px;
-  margin-bottom: 25px;
-}
-
-.question {
-  margin-bottom: 23px;
-}
-
-.question > label,
-.question > legend {
-  display: block;
-  width: 100%;
-  margin-bottom: 9px;
-  font-size: 14px;
-  font-weight: 700;
-  color: var(--navy);
-}
-
-.question input[type=text],
-.question input[type=email],
-.question input[type=tel],
-.question select,
-.question textarea {
-  display: block;
-  width: 100%;
-  padding: 12px;
-  border: 1px solid #cbd5e1;
-  border-radius: 10px;
-  background: white;
-  color: var(--text);
-}
-
-.question textarea {
-  min-height: 105px;
-  resize: vertical;
-}
-
-.question fieldset {
-  border: 0;
-  padding: 0;
-  margin: 0;
-  min-width: 0;
-}
-
-.question fieldset legend {
-  margin-bottom: 9px;
-  font-size: 14px;
-  font-weight: 700;
-  color: var(--navy);
-}
-
-.choice-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 10px;
-}
-
-.choice {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  padding: 12px;
-  border: 1px solid var(--line);
-  border-radius: 11px;
-  background: #fafcff;
-  font-size: 14px;
-  cursor: pointer;
-}
-
-.choice:hover {
-  border-color: #93b9ff;
-}
-
-.choice input {
-  accent-color: var(--blue);
-  width: 17px;
-  height: 17px;
-  flex-shrink: 0;
-}
-
-.diagnostic-actions {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 12px;
-  margin-top: 25px;
-  padding-top: 22px;
-  border-top: 1px solid var(--line);
-}
-
-.diagnostic-actions .btn {
-  min-width: 135px;
-}
-
-.form-error {
-  color: #b91c1c;
-  font-size: 13px;
-  margin-top: 10px;
-}
-
-.form-note {
-  color: var(--muted);
-  font-size: 12px;
-  margin-top: 18px;
-}
-
-.consent {
-  display: flex;
-  align-items: flex-start;
-  gap: 10px;
-  font-size: 13px;
-  color: var(--text);
-  margin: 20px 0;
-}
-
-.consent input {
-  width: 18px;
-  height: 18px;
-  flex-shrink: 0;
-  accent-color: var(--blue);
-}
-
-.conditional[hidden] {
-  display: none;
-}
-
-.honeypot {
-  position: absolute;
-  left: -9999px;
-  opacity: 0;
+:root{
+  --blue:#2563eb;
+  --navy:#14213d;
+  --text:#334155;
+  --muted:#64748b;
+  --line:#dce5f1;
+  --soft:#f6f9ff;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:85px}
+body{margin:0;font-family:"Segoe UI",Arial,sans-serif;color:var(--text);background:white;line-height:1.65}
+body.modal-open{overflow:hidden}
+a{text-decoration:none;color:inherit}
+button,input,select,textarea{font:inherit}
+button{cursor:pointer}
+.container{width:min(1140px,92%);margin:auto}
+section{padding:80px 0}
+h1,h2,h3{color:var(--navy);line-height:1.2}
+p{margin:0 0 18px}
+.accent{color:var(--blue)}
+.soft{background:var(--soft)}
+.eyebrow{display:inline-block;padding:7px 14px;border-radius:30px;background:#eaf2ff;color:#1d4ed8;font-size:12px;font-weight:800;letter-spacing:1px;text-transform:uppercase}
+.btn{display:inline-flex;align-items:center;justify-content:center;padding:13px 22px;border:1px solid transparent;border-radius:11px;font-weight:700;text-align:center;transition:.2s}
+.btn:hover{transform:translateY(-2px)}
+.primary{background:var(--blue);color:white}
+.primary:hover{background:#1d4ed8}
+.outline{background:white;border-color:var(--line);color:var(--navy)}
+.section-heading{max-width:780px;margin:0 auto 42px;text-align:center}
+.section-heading h2{font-size:clamp(29px,4vw,42px);margin:0 0 15px}
+.section-heading p{color:var(--muted)}
+
+/* HEADER */
+header{position:sticky;top:0;z-index:100;background:#ffffffef;border-bottom:1px solid var(--line);backdrop-filter:blur(14px)}
+.nav{min-height:78px;display:flex;justify-content:space-between;align-items:center;gap:15px}
+.brand{display:flex;align-items:center;gap:10px;color:var(--navy);font-size:27px;font-weight:900;letter-spacing:2px}
+.brand img{width:53px;height:53px;object-fit:contain}
+.nav-actions{display:flex;align-items:center;gap:12px}
+.menu-wrap{position:relative}
+.menu-btn{padding:11px 16px;border:1px solid var(--line);border-radius:10px;background:white;color:var(--navy);font-weight:700}
+.dropdown{display:none;position:absolute;right:0;top:calc(100% + 12px);width:270px;max-height:75vh;overflow-y:auto;padding:10px;background:white;border:1px solid var(--line);border-radius:14px;box-shadow:0 20px 50px #14213d25}
+.dropdown.open{display:block}
+.dropdown a{display:block;padding:10px 12px;border-radius:8px}
+.dropdown a:hover{background:#eff6ff;color:var(--blue)}
+
+/* INICIO */
+.hero{padding:110px 0;background:radial-gradient(circle at 85% 20%,#dbeafe,transparent 45%),linear-gradient(135deg,#fff,#f5f9ff)}
+.hero-inner{max-width:900px;margin:auto;text-align:center}
+h1{margin:24px 0;font-size:clamp(40px,6vw,72px);letter-spacing:-2px}
+.hero p{max-width:760px;margin:0 auto 25px;font-size:19px;color:var(--muted)}
+.hero-caption{margin-top:22px!important;font-size:14px!important}
+
+/* TARJETAS */
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.feature-card{width:100%;min-height:220px;padding:26px;background:white;border:1px solid var(--line);border-radius:16px;text-align:left;transition:.2s;box-shadow:0 5px 20px #14213d07}
+.feature-card:hover,.feature-card:focus-visible{transform:translateY(-5px);border-color:#93b9ff;box-shadow:0 15px 35px #2563eb17}
+.feature-card h3{font-size:19px;margin:16px 0 12px}
+.feature-card p{font-size:14px;color:var(--muted)}
+.icon-box{display:grid;place-items:center;width:49px;height:49px;border-radius:13px;background:#eff6ff;border:1px solid #dbeafe;color:var(--blue);font-size:24px}
+.more{font-size:13px;font-weight:700;color:var(--blue)}
+.feature-note{max-width:790px;margin:30px auto 0;text-align:center;color:var(--muted)}
+
+/* INTEGRACIÓN */
+.integration-section{background:linear-gradient(135deg,#fff,#f1f7ff)}
+.integration-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
+.integration-card{padding:32px;border:1px solid var(--line);border-radius:20px;background:white;box-shadow:0 12px 32px #14213d0a}
+.integration-card h3{font-size:23px;margin:15px 0}
+.integration-card p{color:var(--muted)}
+.integration-card li{margin:8px 0}
+.integration-foot{max-width:850px;margin:32px auto 0;text-align:center}
+.integration-foot strong{display:block;font-size:21px;color:var(--navy);margin-bottom:12px}
+.integration-foot p{font-size:13px;color:var(--muted)}
+
+/* DIAGNÓSTICO */
+.diagnostic-section{background:linear-gradient(135deg,#eaf3ff,#f9fbff)}
+.diagnostic-shell{max-width:930px;margin:auto;padding:34px;background:white;border:1px solid var(--line);border-radius:24px;box-shadow:0 20px 55px #14213d10}
+.diagnostic-header{text-align:center;margin-bottom:25px}
+.diagnostic-header h2{font-size:clamp(28px,4vw,39px);margin:16px 0}
+.diagnostic-header p{color:var(--muted)}
+.diagnostic-meta{display:flex;justify-content:center;gap:10px;flex-wrap:wrap}
+.diagnostic-meta span{padding:6px 12px;border-radius:25px;background:#eff6ff;color:#1d4ed8;font-size:12px;font-weight:700}
+.progress-label{display:flex;justify-content:space-between;gap:10px;font-size:13px;font-weight:700;margin:25px 0 10px}
+.progress-track{height:8px;border-radius:20px;background:#e2e8f0;overflow:hidden}
+.progress-fill{height:100%;width:20%;background:var(--blue);border-radius:20px;transition:width .25s}
+.diagnostic-step{display:none;animation:stepFade .2s ease}
+.diagnostic-step.active{display:block}
+@keyframes stepFade{from{opacity:.4;transform:translateY(5px)}to{opacity:1;transform:translateY(0)}}
+.diagnostic-step h3{font-size:24px;margin:28px 0 8px}
+.step-description{color:var(--muted);font-size:14px;margin-bottom:25px}
+.question{margin-bottom:23px}
+.question>label,.question>legend{display:block;width:100%;margin-bottom:9px;font-size:14px;font-weight:700;color:var(--navy)}
+.question input[type=text],.question input[type=email],.question input[type=tel],.question select,.question textarea{display:block;width:100%;padding:12px;border:1px solid #cbd5e1;border-radius:10px;background:white;color:var(--text)}
+.question textarea{min-height:105px;resize:vertical}
+.question fieldset{border:0;padding:0;margin:0;min-width:0}
+.question fieldset legend{margin-bottom:9px;font-size:14px;font-weight:700;color:var(--navy)}
+.choice-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+.choice{display:flex;align-items:center;gap:10px;padding:12px;border:1px solid var(--line);border-radius:11px;background:#fafcff;font-size:14px;cursor:pointer}
+.choice:hover{border-color:#93b9ff}
+.choice input{accent-color:var(--blue);width:17px;height:17px;flex-shrink:0}
+.diagnostic-actions{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:25px;padding-top:22px;border-top:1px solid var(--line)}
+.diagnostic-actions .btn{min-width:135px}
+.form-error{color:#b91c1c;font-size:13px;margin-top:10px}
+.form-note{color:var(--muted);font-size:12px;margin-top:18px}
+.consent{display:flex;align-items:flex-start;gap:10px;font-size:13px;color:var(--text);margin:20px 0}
+.consent input{width:18px;height:18px;flex-shrink:0;accent-color:var(--blue)}
+.conditional[hidden]{display:none}
+.honeypot{position:absolute;left:-9999px;opacity:0}
+
+/* PRESUPUESTO Y PRUEBA */
+.box{max-width:900px;margin:auto;padding:45px;border:1px solid var(--line);border-radius:22px;background:white;box-shadow:0 12px 35px #14213d0a;text-align:center}
+.box h2{font-size:clamp(29px,4vw,41px);margin:15px 0}
+.box p{color:var(--muted)}
+.pricing-tags{display:flex;justify-content:center;flex-wrap:wrap;gap:10px;margin:24px 0}
+.pricing-tags span{padding:8px 12px;border-radius:9px;background:#eff6ff;color:#1d4ed8;font-size:13px}
+.trial{background:linear-gradient(135deg,#edf5ff,#f8fbff)}
+.trial-intro{max-width:750px;margin:0 auto 28px}
+.trial-intro strong{color:var(--navy)}
+.trial-steps{display:grid;grid-template-columns:repeat(2,1fr);gap:15px;margin:30px 0;text-align:left}
+.trial-step{display:flex;gap:14px;padding:22px;border:1px solid var(--line);border-radius:15px;background:#f8fbff}
+.step-number{display:grid;place-items:center;flex-shrink:0;width:37px;height:37px;border-radius:11px;background:#e5efff;color:var(--blue);font-weight:900}
+.trial-step h3{font-size:17px;margin:0 0 8px}
+.trial-step p{margin:0;font-size:14px}
+.trial-note{padding:17px;margin:22px 0 27px;background:#eff6ff;border-radius:12px;font-size:14px}
+.trial-note strong{color:var(--navy)}
+
+/* CLIENTES */
+.clients-section{padding:85px 0;background:#f6f9ff;overflow:hidden}
+.clients-carousel{width:100%;overflow:hidden;padding:20px 0 40px;-webkit-mask-image:linear-gradient(to right,transparent,black 8%,black 92%,transparent);mask-image:linear-gradient(to right,transparent,black 8%,black 92%,transparent)}
+.clients-track{display:flex;width:max-content;animation:clientsScroll 15s linear infinite}
+.clients-group{display:flex;flex-shrink:0;gap:24px;padding-right:24px}
+.client-logo{width:330px;height:175px;display:flex;align-items:center;justify-content:center;padding:28px;background:white;border:1px solid var(--line);border-radius:20px;box-shadow:0 10px 30px #14213d0d;transition:.3s}
+.client-logo img{display:block;width:100%;max-width:275px;max-height:110px;object-fit:contain}
+@keyframes clientsScroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@media(hover:hover){
+.clients-carousel:hover .clients-track{animation-play-state:paused}
+.client-logo:hover{transform:translateY(-5px)}
+}
+
+/* CONTACTO */
+.contact-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:35px}
+.contact-info h3{font-size:27px}
+.contact-detail{padding:16px;margin:13px 0;border:1px solid var(--line);border-radius:12px}
+.contact-detail strong{display:block;color:var(--blue)}
+.contact-form{padding:28px;border:1px solid var(--line);border-radius:18px;background:white;box-shadow:0 10px 30px #14213d0a}
+.field{margin-bottom:17px}
+.field label{display:block;font-size:14px;font-weight:700;margin-bottom:6px}
+.field input,.field select,.field textarea{width:100%;padding:12px;border:1px solid #cbd5e1;border-radius:9px;background:white}
+.field textarea{min-height:115px;resize:vertical}
+.contact-form .btn{width:100%}
+.small{font-size:12px;color:var(--muted)}
+
+/* FOOTER */
+footer{padding:28px 0;border-top:1px solid var(--line);background:#f8fafc;color:var(--muted);font-size:13px}
+.footer-inner{display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap}
+.whatsapp{position:fixed;right:20px;bottom:20px;z-index:80;padding:12px 18px;border-radius:40px;background:#22c55e;color:white;font-weight:800;box-shadow:0 10px 25px #16a34a35}
+
+/* MODALES */
+.modal{display:none;position:fixed;inset:0;z-index:200;padding:20px;align-items:center;justify-content:center;background:#0f172ac0}
+.modal.open{display:flex}
+.modal-card{position:relative;width:min(760px,100%);max-height:90vh;overflow-y:auto;padding:35px;background:white;border-radius:22px;box-shadow:0 30px 90px #0004}
+.modal-card h2{font-size:30px;margin:15px 35px 15px 0}
+.modal-card p,.modal-card li{color:var(--muted)}
+.modal-card li{margin-bottom:9px}
+.close{position:absolute;right:17px;top:15px;width:38px;height:38px;border:0;border-radius:50%;background:#f1f5f9;font-size:24px}
+.modal-demo{margin-top:25px;padding:22px;border:1px solid var(--line);border-radius:16px;background:#f8fbff}
+.modal-demo[hidden]{display:none!important}
+.modal-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:24px}
+.dashboard-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+.metric{padding:17px;border:1px solid var(--line);border-radius:13px;background:white}
+.metric span{display:block;font-size:13px;color:var(--muted)}
+.metric strong{display:block;font-size:25px;color:var(--navy)}
+.chart{display:flex;align-items:end;gap:10px;height:145px;margin-top:17px;padding:15px;background:white;border-radius:13px}
+.chart span{flex:1;border-radius:5px 5px 0 0;background:linear-gradient(#60a5fa,#2563eb)}
+.search-row{display:flex;gap:10px;margin:16px 0}
+.search-row input{flex:1;min-width:0;padding:12px;border:1px solid var(--line);border-radius:9px}
+.samples{font-size:13px;color:var(--muted);margin-bottom:15px}
+.samples button{padding:6px 10px;margin:4px;border:1px solid #dbeafe;border-radius:7px;background:white;color:var(--blue)}
+.layout{position:relative;overflow:hidden;border:1px solid var(--line);border-radius:12px;background:#edf2f7}
+.layout img{display:block;width:100%;height:auto}
+.light{display:none;position:absolute;width:15px;height:15px;transform:translate(-50%,-50%);border:2px solid white;border-radius:50%;pointer-events:none}
+.light.visible{display:block}
+.light.green{background:#22c55e;box-shadow:0 0 0 3px #22c55e35,0 0 10px #22c55e}
+.light.red{background:#ef4444;box-shadow:0 0 0 3px #ef444435,0 0 10px #ef4444}
+.search-result{font-size:14px;margin:12px 0}
+.legend{display:flex;gap:20px;margin:12px 0;font-size:13px;color:var(--muted)}
+.legend-dot{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:5px;background:#22c55e}
+.legend-dot.red{background:#ef4444}
+
+@media(max-width:850px){
+.cards{grid-template-columns:repeat(2,1fr)}
+.integration-grid,.contact-grid{grid-template-columns:1fr}
+}
+@media(max-width:600px){
+section{padding:58px 0}
+.cards,.choice-grid{grid-template-columns:1fr}
+.hero{padding:70px 0}
+.hero p{font-size:16px}
+.nav-trial{display:none}
+.brand{font-size:22px}
+.brand img{width:43px;height:43px}
+.integration-card,.diagnostic-shell{padding:22px}
+.box{padding:28px 20px}
+.trial-steps{grid-template-columns:1fr}
+.trial-step{padding:18px}
+.modal-card{padding:25px 18px}
+.search-row{flex-direction:column}
+.diagnostic-actions .btn{min-width:0;padding:12px 16px}
+.whatsapp{right:12px;bottom:12px}
+.clients-section{padding:60px 0}
+.clients-carousel{overflow-x:auto;overflow-y:hidden;padding:20px 16px 35px;touch-action:pan-x;scroll-snap-type:x mandatory;scroll-padding-inline:16px;-webkit-overflow-scrolling:touch;mask-image:none;-webkit-mask-image:none;scrollbar-width:none}
+.clients-carousel::-webkit-scrollbar{display:none}
+.clients-track{animation:none;transform:none}
+.clients-group{gap:15px;padding-right:15px}
+.clients-group[aria-hidden=true]{display:none}
+.client-logo{width:250px;height:145px;padding:22px;flex-shrink:0;scroll-snap-align:start}
+.client-logo img{max-width:210px;max-height:95px}
+}
+@media(prefers-reduced-motion:reduce){
+*,*::before,*::after{scroll-behavior:auto!important;transition:none!important}
+.clients-track{animation:none}
+.clients-carousel{overflow-x:auto;mask-image:none;-webkit-mask-image:none}
 }
-
-/* =====================================
-   PRESUPUESTO E IMPLEMENTACIÓN
-===================================== */
-
-.box {
-  max-width: 900px;
-  margin: auto;
-  padding: 45px;
-  border: 1px solid var(--line);
-  border-radius: 22px;
-  background: white;
-  box-shadow: 0 12px 35px #14213d0a;
-  text-align: center;
-}
-
-.box h2 {
-  font-size: clamp(29px, 4vw, 41px);
-  margin: 15px 0;
-}
-
-.box p {
-  color: var(--muted);
-}
-
-.pricing-tags {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin: 24px 0;
-}
-
-.pricing-tags span {
-  padding: 8px 12px;
-  border-radius: 9px;
-  background: #eff6ff;
-  color: #1d4ed8;
-  font-size: 13px;
-}
-
-.trial {
-  background: linear-gradient(
-    135deg,
-    #edf5ff,
-    #f8fbff
-  );
-}
-
-.trial-intro {
-  max-width: 750px;
-  margin: 0 auto 28px;
-}
-
-.trial-intro strong {
-  color: var(--navy);
-}
-
-.trial-steps {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 15px;
-  margin: 30px 0;
-  text-align: left;
-}
-
-.trial-step {
-  display: flex;
-  gap: 14px;
-  padding: 22px;
-  border: 1px solid var(--line);
-  border-radius: 15px;
-  background: #f8fbff;
-}
-
-.step-number {
-  display: grid;
-  place-items: center;
-  flex-shrink: 0;
-  width: 37px;
-  height: 37px;
-  border-radius: 11px;
-  background: #e5efff;
-  color: var(--blue);
-  font-weight: 900;
-}
-
-.trial-step h3 {
-  font-size: 17px;
-  margin: 0 0 8px;
-}
-
-.trial-step p {
-  margin: 0;
-  font-size: 14px;
-}
-
-.trial-note {
-  padding: 17px;
-  margin: 22px 0 27px;
-  background: #eff6ff;
-  border-radius: 12px;
-  font-size: 14px;
-}
-
-.trial-note strong {
-  color: var(--navy);
-}
-
-/* =====================================
-   CLIENTES
-===================================== */
-
-.clients-section {
-  padding: 85px 0;
-  background: #f6f9ff;
-  overflow: hidden;
-}
-
-.clients-carousel {
-  width: 100%;
-  overflow: hidden;
-  padding: 20px 0 40px;
-
-  -webkit-mask-image: linear-gradient(
-    to right,
-    transparent,
-    black 8%,
-    black 92%,
-    transparent
-  );
-
-  mask-image: linear-gradient(
-    to right,
-    transparent,
-    black 8%,
-    black 92%,
-    transparent
-  );
-}
-
-.clients-track {
-  display: flex;
-  width: max-content;
-  animation: clientsScroll 15s linear infinite;
-}
-
-.clients-group {
-  display: flex;
-  flex-shrink: 0;
-  gap: 24px;
-  padding-right: 24px;
-}
-
-.client-logo {
-  width: 330px;
-  height: 175px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 28px;
-  background: white;
-  border: 1px solid var(--line);
-  border-radius: 20px;
-  box-shadow: 0 10px 30px #14213d0d;
-  transition: 0.3s;
-}
-
-.client-logo img {
-  display: block;
-  width: 100%;
-  max-width: 275px;
-  max-height: 110px;
-  object-fit: contain;
-}
-
-@keyframes clientsScroll {
-  from {
-    transform: translateX(0);
-  }
-
-  to {
-    transform: translateX(-50%);
-  }
-}
-
-@media (hover:hover) {
-
-  .clients-carousel:hover .clients-track {
-    animation-play-state: paused;
-  }
-
-  .client-logo:hover {
-    transform: translateY(-5px);
-  }
-}
-
-/* =====================================
-   CONTACTO
-===================================== */
-
-.contact-grid {
-  display: grid;
-  grid-template-columns: 0.85fr 1.15fr;
-  gap: 35px;
-}
-
-.contact-info h3 {
-  font-size: 27px;
-}
-
-.contact-detail {
-  padding: 16px;
-  margin: 13px 0;
-  border: 1px solid var(--line);
-  border-radius: 12px;
-}
-
-.contact-detail strong {
-  display: block;
-  color: var(--blue);
-}
-
-.contact-form {
-  padding: 28px;
-  border: 1px solid var(--line);
-  border-radius: 18px;
-  background: white;
-  box-shadow: 0 10px 30px #14213d0a;
-}
-
-.field {
-  margin-bottom: 17px;
-}
-
-.field label {
-  display: block;
-  font-size: 14px;
-  font-weight: 700;
-  margin-bottom: 6px;
-}
-
-.field input,
-.field select,
-.field textarea {
-  width: 100%;
-  padding: 12px;
-  border: 1px solid #cbd5e1;
-  border-radius: 9px;
-  background: white;
-}
-
-.field textarea {
-  min-height: 115px;
-  resize: vertical;
-}
-
-.contact-form .btn {
-  width: 100%;
-}
-
-.small {
-  font-size: 12px;
-  color: var(--muted);
-}
-
-/* =====================================
-   FOOTER
-===================================== */
-
-footer {
-  padding: 28px 0;
-  border-top: 1px solid var(--line);
-  background: #f8fafc;
-  color: var(--muted);
-  font-size: 13px;
-}
-
-.footer-inner {
-  display: flex;
-  justify-content: space-between;
-  gap: 15px;
-  flex-wrap: wrap;
-}
-
-.whatsapp {
-  position: fixed;
-  right: 20px;
-  bottom: 20px;
-  z-index: 80;
-  padding: 12px 18px;
-  border-radius: 40px;
-  background: #22c55e;
-  color: white;
-  font-weight: 800;
-  box-shadow: 0 10px 25px #16a34a35;
-}
-
-/* =====================================
-   MODALES
-===================================== */
-
-.modal {
-  display: none;
-  position: fixed;
-  inset: 0;
-  z-index: 200;
-  padding: 20px;
-  align-items: center;
-  justify-content: center;
-  background: #0f172ac0;
-}
-
-.modal.open {
-  display: flex;
-}
-
-.modal-card {
-  position: relative;
-  width: min(760px, 100%);
-  max-height: 90vh;
-  overflow-y: auto;
-  padding: 35px;
-  background: white;
-  border-radius: 22px;
-  box-shadow: 0 30px 90px #0004;
-}
-
-.modal-card h2 {
-  font-size: 30px;
-  margin: 15px 35px 15px 0;
-}
-
-.modal-card p,
-.modal-card li {
-  color: var(--muted);
-}
-
-.modal-card li {
-  margin-bottom: 9px;
-}
-
-.close {
-  position: absolute;
-  right: 17px;
-  top: 15px;
-  width: 38px;
-  height: 38px;
-  border: 0;
-  border-radius: 50%;
-  background: #f1f5f9;
-  font-size: 24px;
-}
-
-.modal-demo {
-  margin-top: 25px;
-  padding: 22px;
-  border: 1px solid var(--line);
-  border-radius: 16px;
-  background: #f8fbff;
-}
-
-.modal-demo[hidden] {
-  display: none !important;
-}
-
-.modal-actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin-top: 24px;
-}
-
-.dashboard-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 12px;
-}
-
-.metric {
-  padding: 17px;
-  border: 1px solid var(--line);
-  border-radius: 13px;
-  background: white;
-}
-
-.metric span {
-  display: block;
-  font-size: 13px;
-  color: var(--muted);
-}
-
-.metric strong {
-  display: block;
-  font-size: 25px;
-  color: var(--navy);
-}
-
-.chart {
-  display: flex;
-  align-items: end;
-  gap: 10px;
-  height: 145px;
-  margin-top: 17px;
-  padding: 15px;
-  background: white;
-  border-radius: 13px;
-}
-
-.chart span {
-  flex: 1;
-  border-radius: 5px 5px 0 0;
-  background: linear-gradient(#60a5fa,#2563eb);
-}
-
-.search-row {
-  display: flex;
-  gap: 10px;
-  margin: 16px 0;
-}
-
-.search-row input {
-  flex: 1;
-  min-width: 0;
-  padding: 12px;
-  border: 1px solid var(--line);
-  border-radius: 9px;
-}
-
-.samples {
-  font-size: 13px;
-  color: var(--muted);
-  margin-bottom: 15px;
-}
-
-.samples button {
-  padding: 6px 10px;
-  margin: 4px;
-  border: 1px solid #dbeafe;
-  border-radius: 7px;
-  background: white;
-  color: var(--blue);
-}
-
-.layout {
-  position: relative;
-  overflow: hidden;
-  border: 1px solid var(--line);
-  border-radius: 12px;
-  background: #edf2f7;
-}
-
-.layout img {
-  display: block;
-  width: 100%;
-  height: auto;
-}
-
-.light {
-  display: none;
-  position: absolute;
-  width: 15px;
-  height: 15px;
-  transform: translate(-50%,-50%);
-  border: 2px solid white;
-  border-radius: 50%;
-  pointer-events: none;
-}
-
-.light.visible {
-  display: block;
-}
-
-.light.green {
-  background: #22c55e;
-  box-shadow:
-    0 0 0 3px #22c55e35,
-    0 0 10px #22c55e;
-}
-
-.light.red {
-  background: #ef4444;
-  box-shadow:
-    0 0 0 3px #ef444435,
-    0 0 10px #ef4444;
-}
-
-.search-result {
-  font-size: 14px;
-  margin: 12px 0;
-}
-
-.legend {
-  display: flex;
-  gap: 20px;
-  margin: 12px 0;
-  font-size: 13px;
-  color: var(--muted);
-}
-
-.legend-dot {
-  display: inline-block;
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  margin-right: 5px;
-  background: #22c55e;
-}
-
-.legend-dot.red {
-  background: #ef4444;
-}
-
-/* =====================================
-   TABLETS
-===================================== */
-
-@media (max-width:850px) {
-
-  .cards {
-    grid-template-columns: repeat(2,1fr);
-  }
-
-  .integration-grid,
-  .contact-grid {
-    grid-template-columns: 1fr;
-  }
-
-}
-
-/* =====================================
-   CELULARES
-===================================== */
-
-@media (max-width:600px) {
-
-  section {
-    padding: 58px 0;
-  }
-
-  .cards,
-  .choice-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .hero {
-    padding: 70px 0;
-  }
-
-  .hero p {
-    font-size: 16px;
-  }
-
-  .nav-trial {
-    display: none;
-  }
-
-  .brand {
-    font-size: 22px;
-  }
-
-  .brand img {
-    width: 43px;
-    height: 43px;
-  }
-
-  .integration-card,
-  .diagnostic-shell {
-    padding: 22px;
-  }
-
-  .box {
-    padding: 28px 20px;
-  }
-
-  .trial-steps {
-    grid-template-columns: 1fr;
-  }
-
-  .trial-step {
-    padding: 18px;
-  }
-
-  .modal-card {
-    padding: 25px 18px;
-  }
-
-  .search-row {
-    flex-direction: column;
-  }
-
-  .diagnostic-actions .btn {
-    min-width: 0;
-    padding: 12px 16px;
-  }
-
-  .whatsapp {
-    right: 12px;
-    bottom: 12px;
-  }
-
-  .clients-section {
-    padding: 60px 0;
-  }
-
-  .clients-carousel {
-    overflow-x: auto;
-    overflow-y: hidden;
-    padding: 20px 16px 35px;
-    touch-action: pan-x;
-    scroll-snap-type: x mandatory;
-    scroll-padding-inline: 16px;
-    -webkit-overflow-scrolling: touch;
-    mask-image: none;
-    -webkit-mask-image: none;
-    scrollbar-width: none;
-  }
-
-  .clients-carousel::-webkit-scrollbar {
-    display: none;
-  }
-
-  .clients-track {
-    animation: none;
-    transform: none;
-  }
-
-  .clients-group {
-    gap: 15px;
-    padding-right: 15px;
-  }
-
-  .clients-group[aria-hidden=true] {
-    display: none;
-  }
-
-  .client-logo {
-    width: 250px;
-    height: 145px;
-    padding: 22px;
-    flex-shrink: 0;
-    scroll-snap-align: start;
-  }
-
-  .client-logo img {
-    max-width: 210px;
-    max-height: 95px;
-  }
-
-}
-
-/* =====================================
-   ACCESIBILIDAD
-===================================== */
-
-@media (prefers-reduced-motion:reduce) {
-
-  *,
-  *::before,
-  *::after {
-    scroll-behavior: auto !important;
-    transition: none !important;
-  }
-
-  .clients-track {
-    animation: none;
-  }
-
-  .clients-carousel {
-    overflow-x: auto;
-    mask-image: none;
-    -webkit-mask-image: none;
-  }
-
-}
-
 </style>
-
 </head>
 
 <body>
 
-<!-- =====================================
-     HEADER
-===================================== -->
-
+<!-- HEADER -->
 <header>
-
 <div class="container nav">
 
 <a href="#inicio" class="brand">
-
-<img
-src="https://raw.githubusercontent.com/ATZE-ERP/ATZE-ERP.github.io/main/Logotipo%20A%20de%20cintas%20met%C3%A1licas%20negras.png"
-alt="ATZE">
-
+<img src="https://raw.githubusercontent.com/ATZE-ERP/ATZE-ERP.github.io/main/Logotipo%20A%20de%20cintas%20met%C3%A1licas%20negras.png" alt="ATZE">
 ATZE
-
 </a>
 
 <div class="nav-actions">
-
-<a href="#diagnostico" class="btn primary nav-trial">
-Diagnóstico gratuito
-</a>
+<a href="#diagnostico" class="btn primary nav-trial">Diagnóstico gratuito</a>
 
 <div class="menu-wrap">
-
-<button
-class="menu-btn"
-id="menuButton"
-aria-expanded="false"
-aria-controls="dropdown">
-☰ Menú
-</button>
+<button class="menu-btn" id="menuButton" aria-expanded="false" aria-controls="dropdown">☰ Menú</button>
 
 <nav class="dropdown" id="dropdown">
-
 <a href="#inicio">Inicio</a>
 <a href="#beneficios">Beneficios</a>
 <a href="#integracion">Integración con ERP</a>
-<a href="#diagnostico">Diagnóstico gratuito</a>
 <a href="#funcionalidades">Funcionalidades</a>
+<a href="#diagnostico">Diagnóstico gratuito</a>
 <a href="#precios">Presupuesto</a>
 <a href="#prueba">Implementación gratuita</a>
 <a href="#clientes">Nuestros clientes</a>
 <a href="#contacto">Contacto</a>
-
 </nav>
-
 </div>
-
 </div>
-
 </div>
-
 </header>
 
 <main>
 
-<!-- =====================================
-     INICIO SIN BOTONES
-===================================== -->
-
+<!-- INICIO -->
 <section class="hero" id="inicio">
-
 <div class="container hero-inner">
 
-<span class="eyebrow">
-Tecnología flexible para empresas
-</span>
+<span class="eyebrow">Tecnología flexible para empresas</span>
 
 <h1>
 Más visibilidad.<br>
@@ -1411,325 +299,211 @@ de diferentes sectores.
 </p>
 
 </div>
-
 </section>
 
-<!-- =====================================
-     BENEFICIOS
-===================================== -->
-
+<!-- BENEFICIOS -->
 <section id="beneficios">
-
 <div class="container">
 
 <div class="section-heading">
-
-<h2>
-Más claridad para
-<span class="accent">tomar decisiones</span>
-</h2>
-
-<p>
-Organiza la información de tu negocio
-y conviértela en una herramienta
-para trabajar con mayor visibilidad y control.
-</p>
-
+<h2>Más claridad para <span class="accent">tomar decisiones</span></h2>
+<p>Organiza la información de tu negocio y conviértela en una herramienta para trabajar con mayor visibilidad y control.</p>
 </div>
 
 <div class="cards">
 
 <article class="feature-card">
-
 <div class="icon-box">◉</div>
-
 <h3>Mayor visibilidad</h3>
-
-<p>
-Consulta información importante
-desde un solo lugar.
-</p>
-
+<p>Consulta información importante desde un solo lugar.</p>
 </article>
 
 <article class="feature-card">
-
 <div class="icon-box">↗</div>
-
 <h3>Mejores decisiones</h3>
-
-<p>
-Identifica prioridades mediante
-información relevante.
-</p>
-
+<p>Identifica prioridades mediante información relevante.</p>
 </article>
 
 <article class="feature-card">
-
 <div class="icon-box">⚙</div>
-
 <h3>Flexibilidad</h3>
-
-<p>
-Adapta la solución a las necesidades
-y sistemas de tu empresa.
-</p>
-
+<p>Adapta la solución a las necesidades y sistemas de tu empresa.</p>
 </article>
 
 </div>
-
 </div>
-
 </section>
 
-<!-- =====================================
-     INTEGRACIÓN CON ERP
-===================================== -->
-
+<!-- INTEGRACIÓN CON ERP -->
 <section class="integration-section" id="integracion">
-
 <div class="container">
 
 <div class="section-heading">
-
-<span class="eyebrow">
-Se adapta a tu infraestructura
-</span>
-
-<h2 style="margin-top:17px">
-¿Ya tienes un ERP?<br>
-<span class="accent">ATZE lo complementa.</span>
-</h2>
-
-<p>
-No necesitas reemplazar tus sistemas actuales
-para incorporar nuevas herramientas,
-visualizar información y mejorar tus operaciones.
-</p>
-
+<span class="eyebrow">Se adapta a tu infraestructura</span>
+<h2 style="margin-top:17px">¿Ya tienes un ERP?<br><span class="accent">ATZE lo complementa.</span></h2>
+<p>No necesitas reemplazar tus sistemas actuales para incorporar nuevas herramientas, visualizar información y mejorar tus operaciones.</p>
 </div>
 
 <div class="integration-grid">
 
 <article class="integration-card">
-
 <div class="icon-box">▦</div>
-
 <h3>Si ya tienes un ERP</h3>
-
-<p>
-ATZE puede complementar tu sistema actual
-mediante herramientas personalizadas.
-</p>
-
+<p>ATZE puede complementar tu sistema actual mediante herramientas personalizadas.</p>
 <ul>
-
 <li>Dashboards e indicadores operativos.</li>
 <li>Consultas de información.</li>
 <li>Seguimiento de órdenes y procesos.</li>
 <li>Visualización de materiales y recursos.</li>
 <li>Automatización de reportes y alertas.</li>
 <li>Integraciones con sistemas compatibles.</li>
-
 </ul>
-
-<p>
-Podemos evaluar conexiones con Epicor,
-SAP, Microsoft Dynamics
-y otras plataformas empresariales.
-</p>
-
+<p>Podemos evaluar conexiones con Epicor, SAP, Microsoft Dynamics y otras plataformas empresariales.</p>
 </article>
 
 <article class="integration-card">
-
 <div class="icon-box">⚙</div>
-
 <h3>Si todavía no tienes un ERP</h3>
-
-<p>
-ATZE también puede funcionar como
-solución de gestión independiente,
-adaptada a tu negocio.
-</p>
-
+<p>ATZE también puede funcionar como solución de gestión independiente, adaptada a tu negocio.</p>
 <ul>
-
 <li>Organización de información empresarial.</li>
 <li>Gestión y consulta de registros.</li>
 <li>Seguimiento de pedidos y operaciones.</li>
 <li>Reportes e indicadores.</li>
 <li>Herramientas personalizadas.</li>
 <li>Posibilidad de incorporar nuevas funciones.</li>
-
 </ul>
-
-<p>
-Comienza con las herramientas que necesitas
-y amplía la solución conforme crece tu empresa.
-</p>
-
+<p>Comienza con las herramientas que necesitas y amplía la solución conforme crece tu empresa.</p>
 </article>
 
 </div>
 
 <div class="integration-foot">
-
-<strong>
-ATZE se adapta a tu empresa,
-no tu empresa a ATZE.
-</strong>
-
-<p>
-La viabilidad de las integraciones depende
-de la compatibilidad técnica,
-los permisos disponibles
-y el alcance acordado.
-</p>
-
-<a href="#diagnostico" class="btn primary">
-Cuéntanos cómo funciona tu empresa →
-</a>
-
+<strong>ATZE se adapta a tu empresa, no tu empresa a ATZE.</strong>
+<p>La viabilidad de las integraciones depende de la compatibilidad técnica, los permisos disponibles y el alcance acordado.</p>
+<a href="#diagnostico" class="btn primary">Cuéntanos cómo funciona tu empresa →</a>
 </div>
 
 </div>
-
 </section>
 
-<!-- =====================================
-     DIAGNÓSTICO EMPRESARIAL
-===================================== -->
-
-<section class="diagnostic-section" id="diagnostico">
-
+<!-- ==========================================
+     FUNCIONALIDADES
+     AHORA ANTES DEL DIAGNÓSTICO
+========================================== -->
+<section class="soft" id="funcionalidades">
 <div class="container">
 
+<div class="section-heading">
+<h2>Conoce algunas de nuestras <span class="accent">funcionalidades</span></h2>
+<p>Selecciona un cuadro para conocer más y explorar las demostraciones disponibles.</p>
+</div>
+
+<div class="cards">
+
+<button class="feature-card" data-feature="real">
+<div class="icon-box">▦</div>
+<h3>Información en tiempo real</h3>
+<p>Dashboards e indicadores conectados con la información de tu negocio.</p>
+<span class="more">Ver demostración →</span>
+</button>
+
+<button class="feature-card" data-feature="ubicacion">
+<div class="icon-box">⌖</div>
+<h3>Ubicación visual</h3>
+<p>Localiza productos, materiales y recursos dentro de un layout digital.</p>
+<span class="more">Ver demostración →</span>
+</button>
+
+<button class="feature-card" data-feature="consultas">
+<div class="icon-box">⌘</div>
+<h3>Consultas de información</h3>
+<p>Accede a datos de tus sistemas para analizar tu operación.</p>
+<span class="more">Conocer más →</span>
+</button>
+
+<button class="feature-card" data-feature="ordenes">
+<div class="icon-box">⇄</div>
+<h3>Seguimiento de órdenes</h3>
+<p>Consulta órdenes de compra, venta y pedidos.</p>
+<span class="more">Conocer más →</span>
+</button>
+
+<button class="feature-card" data-feature="alertas">
+<div class="icon-box">◎</div>
+<h3>Alertas y notificaciones</h3>
+<p>Configura avisos para comunicar situaciones importantes.</p>
+<span class="more">Conocer más →</span>
+</button>
+
+<button class="feature-card" data-feature="medida">
+<div class="icon-box">↗</div>
+<h3>Soluciones a tu medida</h3>
+<p>Personaliza herramientas de acuerdo con tus necesidades.</p>
+<span class="more">Conocer más →</span>
+</button>
+
+</div>
+
+<p class="feature-note">
+<strong>Estas son solo algunas de nuestras funcionalidades, no todas.</strong>
+ATZE puede evaluar nuevas herramientas, integraciones y personalizaciones según los requerimientos de cada empresa.
+</p>
+
+</div>
+</section>
+
+<!-- ==========================================
+     DIAGNÓSTICO EMPRESARIAL
+     AHORA DESPUÉS DE FUNCIONALIDADES
+========================================== -->
+<section class="diagnostic-section" id="diagnostico">
+<div class="container">
 <div class="diagnostic-shell">
 
 <div class="diagnostic-header">
-
-<span class="eyebrow">
-Diagnóstico empresarial ATZE
-</span>
-
-<h2>
-Descubre cómo ATZE puede
-<span class="accent">ayudar a tu empresa</span>
-</h2>
-
-<p>
-Cuéntanos cómo opera tu negocio,
-qué sistemas utilizas
-y qué procesos te gustaría mejorar.
-Revisaremos tus respuestas para evaluar
-una solución personalizada.
-</p>
+<span class="eyebrow">Diagnóstico empresarial ATZE</span>
+<h2>Descubre cómo ATZE puede <span class="accent">ayudar a tu empresa</span></h2>
+<p>Cuéntanos cómo opera tu negocio, qué sistemas utilizas y qué procesos te gustaría mejorar. Revisaremos tus respuestas para evaluar una solución personalizada.</p>
 
 <div class="diagnostic-meta">
-
 <span>✓ Gratuito</span>
 <span>✓ 5–8 minutos</span>
 <span>✓ Sin compromiso</span>
-
+</div>
 </div>
 
-</div>
-
-<!-- FORMULARIO CON ENVÍO POR CORREO -->
-
-<form
-id="diagnosticForm"
+<form id="diagnosticForm"
 action="https://formsubmit.co/juanpasolisc@gmail.com"
 method="POST">
 
-<input
-type="hidden"
-name="_subject"
-value="ATZE - Nuevo Diagnóstico Empresarial">
-
-<input
-type="hidden"
-name="_template"
-value="table">
-
-<input
-type="hidden"
-name="_captcha"
-value="true">
-
-<input
-type="text"
-name="_honey"
-class="honeypot"
-tabindex="-1"
-autocomplete="off">
+<input type="hidden" name="_subject" value="ATZE - Nuevo Diagnóstico Empresarial">
+<input type="hidden" name="_template" value="table">
+<input type="hidden" name="_captcha" value="true">
+<input type="text" name="_honey" class="honeypot" tabindex="-1" autocomplete="off">
 
 <div class="progress-label">
-
-<span id="progressLabel">
-Etapa 1 de 5
-</span>
-
-<span id="progressPercent">
-20%
-</span>
-
+<span id="progressLabel">Etapa 1 de 5</span>
+<span id="progressPercent">20%</span>
 </div>
-
 <div class="progress-track">
-
-<div
-class="progress-fill"
-id="progressFill">
-</div>
-
+<div class="progress-fill" id="progressFill"></div>
 </div>
 
 <!-- ETAPA 1 -->
-
 <div class="diagnostic-step active">
-
 <h3>01. Conoce tu empresa</h3>
-
-<p class="step-description">
-Primero queremos entender
-a qué se dedica tu negocio.
-</p>
+<p class="step-description">Primero queremos entender a qué se dedica tu negocio.</p>
 
 <div class="question">
-
-<label for="diagEmpresa">
-Nombre de la empresa *
-</label>
-
-<input
-type="text"
-id="diagEmpresa"
-name="Empresa"
-required
-maxlength="120"
-placeholder="Nombre comercial">
-
+<label for="diagEmpresa">Nombre de la empresa *</label>
+<input type="text" id="diagEmpresa" name="Empresa" required maxlength="120" placeholder="Nombre comercial">
 </div>
 
 <div class="question">
-
-<label for="diagGiro">
-¿Cuál es el giro de tu negocio? *
-</label>
-
-<select
-id="diagGiro"
-name="Giro de negocio"
-required>
-
-<option value="">
-Selecciona una opción
-</option>
-
+<label for="diagGiro">¿Cuál es el giro de tu negocio? *</label>
+<select id="diagGiro" name="Giro de negocio" required>
+<option value="">Selecciona una opción</option>
 <option>Manufactura / industria</option>
 <option>Distribución / logística</option>
 <option>Ferretería / materiales</option>
@@ -1738,976 +512,303 @@ Selecciona una opción
 <option>Construcción</option>
 <option>Startup / tecnología</option>
 <option>Otro</option>
-
 </select>
-
 </div>
 
 <div class="question">
-
-<label for="diagActividad">
-¿A qué se dedica tu empresa? *
-</label>
-
-<textarea
-id="diagActividad"
-name="Actividad principal"
-required
-maxlength="1200"
-placeholder="Describe brevemente qué productos fabrican, venden o qué servicios ofrecen."></textarea>
-
+<label for="diagActividad">¿A qué se dedica tu empresa? *</label>
+<textarea id="diagActividad" name="Actividad principal" required maxlength="1200" placeholder="Describe brevemente qué productos fabrican, venden o qué servicios ofrecen."></textarea>
 </div>
 
 <div class="question">
-
-<label for="diagEmpleados">
-¿Cuántos empleados tiene aproximadamente? *
-</label>
-
-<select
-id="diagEmpleados"
-name="Cantidad de empleados"
-required>
-
-<option value="">
-Selecciona una opción
-</option>
-
+<label for="diagEmpleados">¿Cuántos empleados tiene aproximadamente? *</label>
+<select id="diagEmpleados" name="Cantidad de empleados" required>
+<option value="">Selecciona una opción</option>
 <option>1 a 10</option>
 <option>11 a 50</option>
 <option>51 a 200</option>
 <option>Más de 200</option>
-
 </select>
-
 </div>
 
 <div class="question">
-
-<label for="diagUbicaciones">
-¿Cuántas plantas o sucursales tienen?
-</label>
-
-<select
-id="diagUbicaciones"
-name="Plantas o sucursales">
-
-<option value="">
-Selecciona una opción
-</option>
-
+<label for="diagUbicaciones">¿Cuántas plantas o sucursales tienen?</label>
+<select id="diagUbicaciones" name="Plantas o sucursales">
+<option value="">Selecciona una opción</option>
 <option>1</option>
 <option>2 a 5</option>
 <option>6 a 10</option>
 <option>Más de 10</option>
-
 </select>
-
 </div>
-
 </div>
 
 <!-- ETAPA 2 -->
-
 <div class="diagnostic-step">
-
 <h3>02. ¿Cómo operan actualmente?</h3>
-
-<p class="step-description">
-Selecciona las actividades
-y herramientas que utilizan.
-</p>
+<p class="step-description">Selecciona las actividades y herramientas que utilizan.</p>
 
 <div class="question">
-
 <fieldset>
-
-<legend>
-¿Qué procesos realiza tu empresa? *
-</legend>
-
+<legend>¿Qué procesos realiza tu empresa? *</legend>
 <div class="choice-grid">
-
-<label class="choice">
-<input type="checkbox" name="Procesos[]" value="Compras y proveedores">
-Compras y proveedores
-</label>
-
-<label class="choice">
-<input type="checkbox" name="Procesos[]" value="Ventas y pedidos">
-Ventas y pedidos
-</label>
-
-<label class="choice">
-<input type="checkbox" name="Procesos[]" value="Inventarios y almacenes">
-Inventarios y almacenes
-</label>
-
-<label class="choice">
-<input type="checkbox" name="Procesos[]" value="Producción">
-Producción
-</label>
-
-<label class="choice">
-<input type="checkbox" name="Procesos[]" value="Logística y entregas">
-Logística y entregas
-</label>
-
-<label class="choice">
-<input type="checkbox" name="Procesos[]" value="Finanzas y facturación">
-Finanzas y facturación
-</label>
-
-<label class="choice">
-<input type="checkbox" name="Procesos[]" value="Servicio al cliente">
-Servicio al cliente
-</label>
-
-<label class="choice">
-<input type="checkbox" name="Procesos[]" value="Otros">
-Otros
-</label>
-
+<label class="choice"><input type="checkbox" name="Procesos[]" value="Compras y proveedores">Compras y proveedores</label>
+<label class="choice"><input type="checkbox" name="Procesos[]" value="Ventas y pedidos">Ventas y pedidos</label>
+<label class="choice"><input type="checkbox" name="Procesos[]" value="Inventarios y almacenes">Inventarios y almacenes</label>
+<label class="choice"><input type="checkbox" name="Procesos[]" value="Producción">Producción</label>
+<label class="choice"><input type="checkbox" name="Procesos[]" value="Logística y entregas">Logística y entregas</label>
+<label class="choice"><input type="checkbox" name="Procesos[]" value="Finanzas y facturación">Finanzas y facturación</label>
+<label class="choice"><input type="checkbox" name="Procesos[]" value="Servicio al cliente">Servicio al cliente</label>
+<label class="choice"><input type="checkbox" name="Procesos[]" value="Otros">Otros</label>
 </div>
-
 </fieldset>
-
 </div>
 
 <div class="question">
-
 <fieldset>
-
-<legend>
-¿Cómo registran sus operaciones? *
-</legend>
-
+<legend>¿Cómo registran sus operaciones? *</legend>
 <div class="choice-grid">
-
-<label class="choice">
-<input type="checkbox" name="Registro actual[]" value="Excel">
-Excel
-</label>
-
-<label class="choice">
-<input type="checkbox" name="Registro actual[]" value="ERP">
-ERP
-</label>
-
-<label class="choice">
-<input type="checkbox" name="Registro actual[]" value="Papel">
-Papel / manual
-</label>
-
-<label class="choice">
-<input type="checkbox" name="Registro actual[]" value="Software especializado">
-Software especializado
-</label>
-
-<label class="choice">
-<input type="checkbox" name="Registro actual[]" value="Aplicaciones propias">
-Aplicaciones propias
-</label>
-
-<label class="choice">
-<input type="checkbox" name="Registro actual[]" value="Otros">
-Otros
-</label>
-
+<label class="choice"><input type="checkbox" name="Registro actual[]" value="Excel">Excel</label>
+<label class="choice"><input type="checkbox" name="Registro actual[]" value="ERP">ERP</label>
+<label class="choice"><input type="checkbox" name="Registro actual[]" value="Papel">Papel / manual</label>
+<label class="choice"><input type="checkbox" name="Registro actual[]" value="Software especializado">Software especializado</label>
+<label class="choice"><input type="checkbox" name="Registro actual[]" value="Aplicaciones propias">Aplicaciones propias</label>
+<label class="choice"><input type="checkbox" name="Registro actual[]" value="Otros">Otros</label>
 </div>
-
 </fieldset>
-
 </div>
 
 <div class="question">
-
-<label for="diagProcesoCritico">
-¿Cuál es el proceso más importante
-o crítico para tu negocio?
-</label>
-
-<textarea
-id="diagProcesoCritico"
-name="Proceso crítico"
-maxlength="1200"
-placeholder="Por ejemplo: seguimiento de producción, surtido de pedidos, control de inventarios..."></textarea>
-
+<label for="diagProcesoCritico">¿Cuál es el proceso más importante o crítico para tu negocio?</label>
+<textarea id="diagProcesoCritico" name="Proceso crítico" maxlength="1200" placeholder="Por ejemplo: seguimiento de producción, surtido de pedidos, control de inventarios..."></textarea>
 </div>
-
 </div>
 
 <!-- ETAPA 3 -->
-
 <div class="diagnostic-step">
-
 <h3>03. Sistemas y tecnología</h3>
-
-<p class="step-description">
-Queremos saber qué herramientas utilizan
-y cómo podríamos complementarlas.
-</p>
+<p class="step-description">Queremos saber qué herramientas utilizan y cómo podríamos complementarlas.</p>
 
 <div class="question">
-
-<label for="diagERP">
-¿Utilizan actualmente un ERP? *
-</label>
-
-<select
-id="diagERP"
-name="ERP actual"
-required>
-
-<option value="">
-Selecciona una opción
-</option>
-
-<option value="No">
-No utilizamos ERP
-</option>
-
-<option value="Epicor">
-Epicor
-</option>
-
-<option value="SAP">
-SAP
-</option>
-
-<option value="Microsoft Dynamics">
-Microsoft Dynamics
-</option>
-
-<option value="Oracle">
-Oracle
-</option>
-
-<option value="Odoo">
-Odoo
-</option>
-
-<option value="Otro ERP">
-Otro ERP
-</option>
-
-<option value="Evaluando">
-Estamos evaluando implementar uno
-</option>
-
+<label for="diagERP">¿Utilizan actualmente un ERP? *</label>
+<select id="diagERP" name="ERP actual" required>
+<option value="">Selecciona una opción</option>
+<option value="No">No utilizamos ERP</option>
+<option value="Epicor">Epicor</option>
+<option value="SAP">SAP</option>
+<option value="Microsoft Dynamics">Microsoft Dynamics</option>
+<option value="Oracle">Oracle</option>
+<option value="Odoo">Odoo</option>
+<option value="Otro ERP">Otro ERP</option>
+<option value="Evaluando">Estamos evaluando implementar uno</option>
 </select>
-
 </div>
 
-<div
-class="question conditional"
-id="erpDetails"
-hidden>
-
-<label for="diagERPDetalle">
-¿Qué versión o sistema específico utilizan?
-(Opcional)
-</label>
-
-<input
-type="text"
-id="diagERPDetalle"
-name="Detalle del ERP"
-maxlength="150"
-placeholder="Ej. Epicor Kinetic, SAP Business One...">
-
+<div class="question conditional" id="erpDetails" hidden>
+<label for="diagERPDetalle">¿Qué versión o sistema específico utilizan? (Opcional)</label>
+<input type="text" id="diagERPDetalle" name="Detalle del ERP" maxlength="150" placeholder="Ej. Epicor Kinetic, SAP Business One...">
 </div>
 
 <div class="question">
-
 <fieldset>
-
-<legend>
-¿Qué herramientas utilizan
-para reportes e indicadores?
-</legend>
-
+<legend>¿Qué herramientas utilizan para reportes e indicadores?</legend>
 <div class="choice-grid">
-
-<label class="choice">
-<input type="checkbox" name="Herramientas de reportes[]" value="Excel">
-Excel
-</label>
-
-<label class="choice">
-<input type="checkbox" name="Herramientas de reportes[]" value="Power BI">
-Power BI
-</label>
-
-<label class="choice">
-<input type="checkbox" name="Herramientas de reportes[]" value="Reportes del ERP">
-Reportes del ERP
-</label>
-
-<label class="choice">
-<input type="checkbox" name="Herramientas de reportes[]" value="Software propio">
-Software propio
-</label>
-
-<label class="choice">
-<input type="checkbox" name="Herramientas de reportes[]" value="No contamos con reportes">
-No contamos con reportes
-</label>
-
+<label class="choice"><input type="checkbox" name="Herramientas de reportes[]" value="Excel">Excel</label>
+<label class="choice"><input type="checkbox" name="Herramientas de reportes[]" value="Power BI">Power BI</label>
+<label class="choice"><input type="checkbox" name="Herramientas de reportes[]" value="Reportes del ERP">Reportes del ERP</label>
+<label class="choice"><input type="checkbox" name="Herramientas de reportes[]" value="Software propio">Software propio</label>
+<label class="choice"><input type="checkbox" name="Herramientas de reportes[]" value="No contamos con reportes">No contamos con reportes</label>
 </div>
-
 </fieldset>
-
 </div>
 
 <div class="question">
-
-<label for="diagCobertura">
-¿Sus sistemas actuales cubren sus necesidades?
-</label>
-
-<select
-id="diagCobertura"
-name="Cobertura de sistemas">
-
-<option value="">
-Selecciona una opción
-</option>
-
+<label for="diagCobertura">¿Sus sistemas actuales cubren sus necesidades?</label>
+<select id="diagCobertura" name="Cobertura de sistemas">
+<option value="">Selecciona una opción</option>
 <option>Sí, completamente</option>
 <option>Parcialmente</option>
 <option>No</option>
 <option>No estoy seguro</option>
-
 </select>
-
 </div>
 
 <div class="question">
-
-<label for="diagLimitaciones">
-¿Qué información o funcionalidad les hace falta?
-</label>
-
-<textarea
-id="diagLimitaciones"
-name="Limitaciones tecnológicas"
-maxlength="1200"
-placeholder="Por ejemplo: reportes, consultas, seguimiento de pedidos, integración entre áreas..."></textarea>
-
+<label for="diagLimitaciones">¿Qué información o funcionalidad les hace falta?</label>
+<textarea id="diagLimitaciones" name="Limitaciones tecnológicas" maxlength="1200" placeholder="Por ejemplo: reportes, consultas, seguimiento de pedidos, integración entre áreas..."></textarea>
 </div>
-
 </div>
 
 <!-- ETAPA 4 -->
-
 <div class="diagnostic-step">
-
 <h3>04. Problemas y oportunidades</h3>
-
-<p class="step-description">
-Esta es la parte más importante
-para identificar cómo podemos ayudarte.
-</p>
+<p class="step-description">Esta es la parte más importante para identificar cómo podemos ayudarte.</p>
 
 <div class="question">
-
 <fieldset>
-
-<legend>
-¿Cuáles son sus principales dificultades? *
-</legend>
-
+<legend>¿Cuáles son sus principales dificultades? *</legend>
 <div class="choice-grid">
-
-<label class="choice">
-<input type="checkbox" name="Problemas[]" value="Información dispersa">
-Información dispersa
-</label>
-
-<label class="choice">
-<input type="checkbox" name="Problemas[]" value="Captura manual">
-Captura manual repetitiva
-</label>
-
-<label class="choice">
-<input type="checkbox" name="Problemas[]" value="Falta de visibilidad">
-Falta de visibilidad
-</label>
-
-<label class="choice">
-<input type="checkbox" name="Problemas[]" value="Inventario difícil de localizar">
-Inventario difícil de localizar
-</label>
-
-<label class="choice">
-<input type="checkbox" name="Problemas[]" value="Retrasos en órdenes">
-Retrasos en órdenes
-</label>
-
-<label class="choice">
-<input type="checkbox" name="Problemas[]" value="Reportes complicados">
-Reportes complicados
-</label>
-
-<label class="choice">
-<input type="checkbox" name="Problemas[]" value="Comunicación entre áreas">
-Comunicación entre áreas
-</label>
-
-<label class="choice">
-<input type="checkbox" name="Problemas[]" value="Otros">
-Otros
-</label>
-
+<label class="choice"><input type="checkbox" name="Problemas[]" value="Información dispersa">Información dispersa</label>
+<label class="choice"><input type="checkbox" name="Problemas[]" value="Captura manual">Captura manual repetitiva</label>
+<label class="choice"><input type="checkbox" name="Problemas[]" value="Falta de visibilidad">Falta de visibilidad</label>
+<label class="choice"><input type="checkbox" name="Problemas[]" value="Inventario difícil de localizar">Inventario difícil de localizar</label>
+<label class="choice"><input type="checkbox" name="Problemas[]" value="Retrasos en órdenes">Retrasos en órdenes</label>
+<label class="choice"><input type="checkbox" name="Problemas[]" value="Reportes complicados">Reportes complicados</label>
+<label class="choice"><input type="checkbox" name="Problemas[]" value="Comunicación entre áreas">Comunicación entre áreas</label>
+<label class="choice"><input type="checkbox" name="Problemas[]" value="Otros">Otros</label>
 </div>
-
 </fieldset>
-
 </div>
 
 <div class="question">
-
-<label for="diagProblema">
-¿Cuál es el principal problema
-que les gustaría resolver? *
-</label>
-
-<textarea
-id="diagProblema"
-name="Problema principal"
-required
-maxlength="1500"
-placeholder="Describe la situación, qué ocurre y cómo afecta a tu empresa."></textarea>
-
+<label for="diagProblema">¿Cuál es el principal problema que les gustaría resolver? *</label>
+<textarea id="diagProblema" name="Problema principal" required maxlength="1500" placeholder="Describe la situación, qué ocurre y cómo afecta a tu empresa."></textarea>
 </div>
 
 <div class="question">
-
-<label for="diagFrecuencia">
-¿Con qué frecuencia ocurre?
-</label>
-
-<select
-id="diagFrecuencia"
-name="Frecuencia del problema">
-
-<option value="">
-Selecciona una opción
-</option>
-
+<label for="diagFrecuencia">¿Con qué frecuencia ocurre?</label>
+<select id="diagFrecuencia" name="Frecuencia del problema">
+<option value="">Selecciona una opción</option>
 <option>Diariamente</option>
 <option>Varias veces por semana</option>
 <option>Ocasionalmente</option>
 <option>En situaciones específicas</option>
-
 </select>
-
 </div>
 
 <div class="question">
-
 <fieldset>
-
-<legend>
-¿Qué impacto tiene en la empresa?
-</legend>
-
+<legend>¿Qué impacto tiene en la empresa?</legend>
 <div class="choice-grid">
-
-<label class="choice">
-<input type="checkbox" name="Impacto[]" value="Pérdida de tiempo">
-Pérdida de tiempo
-</label>
-
-<label class="choice">
-<input type="checkbox" name="Impacto[]" value="Costos adicionales">
-Costos adicionales
-</label>
-
-<label class="choice">
-<input type="checkbox" name="Impacto[]" value="Retrasos">
-Retrasos
-</label>
-
-<label class="choice">
-<input type="checkbox" name="Impacto[]" value="Errores y retrabajos">
-Errores y retrabajos
-</label>
-
-<label class="choice">
-<input type="checkbox" name="Impacto[]" value="Problemas con clientes">
-Problemas con clientes
-</label>
-
-<label class="choice">
-<input type="checkbox" name="Impacto[]" value="Decisiones sin información">
-Decisiones sin información
-</label>
-
+<label class="choice"><input type="checkbox" name="Impacto[]" value="Pérdida de tiempo">Pérdida de tiempo</label>
+<label class="choice"><input type="checkbox" name="Impacto[]" value="Costos adicionales">Costos adicionales</label>
+<label class="choice"><input type="checkbox" name="Impacto[]" value="Retrasos">Retrasos</label>
+<label class="choice"><input type="checkbox" name="Impacto[]" value="Errores y retrabajos">Errores y retrabajos</label>
+<label class="choice"><input type="checkbox" name="Impacto[]" value="Problemas con clientes">Problemas con clientes</label>
+<label class="choice"><input type="checkbox" name="Impacto[]" value="Decisiones sin información">Decisiones sin información</label>
 </div>
-
 </fieldset>
-
 </div>
 
 <div class="question">
-
 <fieldset>
-
-<legend>
-¿Qué funcionalidades de ATZE les interesan? *
-</legend>
-
+<legend>¿Qué funcionalidades de ATZE les interesan? *</legend>
 <div class="choice-grid">
-
-<label class="choice">
-<input type="checkbox" name="Funcionalidades deseadas[]" value="Dashboards">
-Dashboards
-</label>
-
-<label class="choice">
-<input type="checkbox" name="Funcionalidades deseadas[]" value="Consultas">
-Consultas de información
-</label>
-
-<label class="choice">
-<input type="checkbox" name="Funcionalidades deseadas[]" value="Ubicación visual">
-Ubicación visual
-</label>
-
-<label class="choice">
-<input type="checkbox" name="Funcionalidades deseadas[]" value="Seguimiento de órdenes">
-Seguimiento de órdenes
-</label>
-
-<label class="choice">
-<input type="checkbox" name="Funcionalidades deseadas[]" value="Alertas">
-Alertas
-</label>
-
-<label class="choice">
-<input type="checkbox" name="Funcionalidades deseadas[]" value="Integraciones">
-Integraciones con ERP
-</label>
-
-<label class="choice">
-<input type="checkbox" name="Funcionalidades deseadas[]" value="Gestión empresarial">
-Sistema de gestión
-</label>
-
-<label class="choice">
-<input type="checkbox" name="Funcionalidades deseadas[]" value="Personalización">
-Solución personalizada
-</label>
-
+<label class="choice"><input type="checkbox" name="Funcionalidades deseadas[]" value="Dashboards">Dashboards</label>
+<label class="choice"><input type="checkbox" name="Funcionalidades deseadas[]" value="Consultas">Consultas de información</label>
+<label class="choice"><input type="checkbox" name="Funcionalidades deseadas[]" value="Ubicación visual">Ubicación visual</label>
+<label class="choice"><input type="checkbox" name="Funcionalidades deseadas[]" value="Seguimiento de órdenes">Seguimiento de órdenes</label>
+<label class="choice"><input type="checkbox" name="Funcionalidades deseadas[]" value="Alertas">Alertas</label>
+<label class="choice"><input type="checkbox" name="Funcionalidades deseadas[]" value="Integraciones">Integraciones con ERP</label>
+<label class="choice"><input type="checkbox" name="Funcionalidades deseadas[]" value="Gestión empresarial">Sistema de gestión</label>
+<label class="choice"><input type="checkbox" name="Funcionalidades deseadas[]" value="Personalización">Solución personalizada</label>
 </div>
-
 </fieldset>
-
 </div>
-
 </div>
 
 <!-- ETAPA 5 -->
-
 <div class="diagnostic-step">
-
 <h3>05. Objetivos y contacto</h3>
-
-<p class="step-description">
-Para finalizar, cuéntanos qué esperas conseguir
-y cómo podemos comunicarnos contigo.
-</p>
+<p class="step-description">Para finalizar, cuéntanos qué esperas conseguir y cómo podemos comunicarnos contigo.</p>
 
 <div class="question">
-
-<label for="diagObjetivo">
-¿Qué resultado te gustaría conseguir con ATZE?
-</label>
-
-<textarea
-id="diagObjetivo"
-name="Resultado esperado"
-maxlength="1200"
-placeholder="Por ejemplo: reducir tiempos de captura, consultar indicadores en tiempo real, mejorar el control de inventario..."></textarea>
-
+<label for="diagObjetivo">¿Qué resultado te gustaría conseguir con ATZE?</label>
+<textarea id="diagObjetivo" name="Resultado esperado" maxlength="1200" placeholder="Por ejemplo: reducir tiempos de captura, consultar indicadores en tiempo real, mejorar el control de inventario..."></textarea>
 </div>
 
 <div class="question">
-
-<label for="diagInicio">
-¿Cuándo les gustaría comenzar?
-</label>
-
-<select
-id="diagInicio"
-name="Fecha estimada de inicio">
-
-<option value="">
-Selecciona una opción
-</option>
-
+<label for="diagInicio">¿Cuándo les gustaría comenzar?</label>
+<select id="diagInicio" name="Fecha estimada de inicio">
+<option value="">Selecciona una opción</option>
 <option>Lo antes posible</option>
 <option>Dentro de un mes</option>
 <option>En 2 a 3 meses</option>
 <option>Solo estamos explorando</option>
-
 </select>
-
 </div>
 
 <div class="question">
-
-<label for="diagNombre">
-Nombre de contacto *
-</label>
-
-<input
-type="text"
-id="diagNombre"
-name="Nombre de contacto"
-required
-maxlength="120"
-autocomplete="name">
-
+<label for="diagNombre">Nombre de contacto *</label>
+<input type="text" id="diagNombre" name="Nombre de contacto" required maxlength="120" autocomplete="name">
 </div>
 
 <div class="question">
-
-<label for="diagPuesto">
-Puesto en la empresa
-</label>
-
-<input
-type="text"
-id="diagPuesto"
-name="Puesto"
-maxlength="120">
-
+<label for="diagPuesto">Puesto en la empresa</label>
+<input type="text" id="diagPuesto" name="Puesto" maxlength="120">
 </div>
 
 <div class="question">
-
-<label for="diagEmail">
-Correo electrónico *
-</label>
-
-<input
-type="email"
-id="diagEmail"
-name="email"
-required
-autocomplete="email"
-placeholder="correo@empresa.com">
-
+<label for="diagEmail">Correo electrónico *</label>
+<input type="email" id="diagEmail" name="email" required autocomplete="email" placeholder="correo@empresa.com">
 </div>
 
 <div class="question">
-
-<label for="diagTelefono">
-Teléfono / WhatsApp (opcional)
-</label>
-
-<input
-type="tel"
-id="diagTelefono"
-name="Teléfono"
-maxlength="35"
-autocomplete="tel">
-
+<label for="diagTelefono">Teléfono / WhatsApp (opcional)</label>
+<input type="tel" id="diagTelefono" name="Teléfono" maxlength="35" autocomplete="tel">
 </div>
 
 <div class="question">
-
-<label for="diagExtra">
-Comentarios adicionales
-</label>
-
-<textarea
-id="diagExtra"
-name="Comentarios adicionales"
-maxlength="1200"
-placeholder="Cualquier otra información que debamos conocer. No incluyas contraseñas ni información confidencial."></textarea>
-
+<label for="diagExtra">Comentarios adicionales</label>
+<textarea id="diagExtra" name="Comentarios adicionales" maxlength="1200" placeholder="Cualquier otra información que debamos conocer. No incluyas contraseñas ni información confidencial."></textarea>
 </div>
 
 <label class="consent">
-
-<input
-type="checkbox"
-id="diagConsent"
-name="Autorización de contacto"
-value="Aceptada"
-required>
-
-<span>
-Autorizo que ATZE utilice los datos proporcionados
-para revisar mi solicitud y contactarme sobre
-posibles soluciones. Entiendo que las respuestas
-serán procesadas por un proveedor externo
-de formularios.
-</span>
-
+<input type="checkbox" id="diagConsent" name="Autorización de contacto" value="Aceptada" required>
+<span>Autorizo que ATZE utilice los datos proporcionados para revisar mi solicitud y contactarme sobre posibles soluciones. Entiendo que las respuestas serán procesadas por un proveedor externo de formularios.</span>
 </label>
-
 </div>
 
-<p
-class="form-error"
-id="diagnosticError"
-role="alert"
-aria-live="polite"
-hidden>
-</p>
+<p class="form-error" id="diagnosticError" role="alert" aria-live="polite" hidden></p>
 
 <div class="diagnostic-actions">
-
-<button
-type="button"
-class="btn outline"
-id="diagPrevious"
-disabled>
-← Anterior
-</button>
-
-<button
-type="button"
-class="btn primary"
-id="diagNext">
-Siguiente →
-</button>
-
-<button
-type="submit"
-class="btn primary"
-id="diagSubmit"
-hidden>
-Enviar diagnóstico →
-</button>
-
+<button type="button" class="btn outline" id="diagPrevious" disabled>← Anterior</button>
+<button type="button" class="btn primary" id="diagNext">Siguiente →</button>
+<button type="submit" class="btn primary" id="diagSubmit" hidden>Enviar diagnóstico →</button>
 </div>
 
 <p class="form-note">
-Las respuestas se enviarán por correo electrónico
-a ATZE. No solicitamos contraseñas ni acceso
-a tus sistemas en este formulario.
+Las respuestas se enviarán por correo electrónico a ATZE. No solicitamos contraseñas ni acceso a tus sistemas en este formulario.
 </p>
 
 </form>
-
 </div>
-
 </div>
-
 </section>
 
-<!-- =====================================
-     FUNCIONALIDADES
-===================================== -->
-
-<section class="soft" id="funcionalidades">
-
-<div class="container">
-
-<div class="section-heading">
-
-<h2>
-Conoce algunas de nuestras
-<span class="accent">funcionalidades</span>
-</h2>
-
-<p>
-Selecciona un cuadro para conocer más
-y explorar las demostraciones disponibles.
-</p>
-
-</div>
-
-<div class="cards">
-
-<button class="feature-card" data-feature="real">
-
-<div class="icon-box">▦</div>
-
-<h3>Información en tiempo real</h3>
-
-<p>
-Dashboards e indicadores conectados
-con la información de tu negocio.
-</p>
-
-<span class="more">
-Ver demostración →
-</span>
-
-</button>
-
-<button class="feature-card" data-feature="ubicacion">
-
-<div class="icon-box">⌖</div>
-
-<h3>Ubicación visual</h3>
-
-<p>
-Localiza productos, materiales y recursos
-dentro de un layout digital.
-</p>
-
-<span class="more">
-Ver demostración →
-</span>
-
-</button>
-
-<button class="feature-card" data-feature="consultas">
-
-<div class="icon-box">⌘</div>
-
-<h3>Consultas de información</h3>
-
-<p>
-Accede a datos de tus sistemas
-para analizar tu operación.
-</p>
-
-<span class="more">
-Conocer más →
-</span>
-
-</button>
-
-<button class="feature-card" data-feature="ordenes">
-
-<div class="icon-box">⇄</div>
-
-<h3>Seguimiento de órdenes</h3>
-
-<p>
-Consulta órdenes de compra,
-venta y pedidos.
-</p>
-
-<span class="more">
-Conocer más →
-</span>
-
-</button>
-
-<button class="feature-card" data-feature="alertas">
-
-<div class="icon-box">◎</div>
-
-<h3>Alertas y notificaciones</h3>
-
-<p>
-Configura avisos para comunicar
-situaciones importantes.
-</p>
-
-<span class="more">
-Conocer más →
-</span>
-
-</button>
-
-<button class="feature-card" data-feature="medida">
-
-<div class="icon-box">↗</div>
-
-<h3>Soluciones a tu medida</h3>
-
-<p>
-Personaliza herramientas
-de acuerdo con tus necesidades.
-</p>
-
-<span class="more">
-Conocer más →
-</span>
-
-</button>
-
-</div>
-
-<p class="feature-note">
-
-<strong>
-Estas son solo algunas de nuestras funcionalidades,
-no todas.
-</strong>
-
-ATZE puede evaluar nuevas herramientas,
-integraciones y personalizaciones
-según los requerimientos de cada empresa.
-
-</p>
-
-</div>
-
-</section>
-
-<!-- =====================================
-     PRESUPUESTO
-===================================== -->
-
+<!-- PRESUPUESTO -->
 <section id="precios">
-
 <div class="container">
-
 <div class="box">
 
-<span class="eyebrow">
-Soluciones flexibles
-</span>
+<span class="eyebrow">Soluciones flexibles</span>
 
-<h2>
-La tecnología adecuada para
-<span class="accent">tu negocio</span>
-</h2>
+<h2>La tecnología adecuada para <span class="accent">tu negocio</span></h2>
 
 <p>
 No todos los negocios necesitan lo mismo.
-Definimos contigo las funcionalidades,
-integraciones y alcance del proyecto.
-Nos ajustamos a tu presupuesto.
+Definimos contigo las funcionalidades, integraciones
+y alcance del proyecto. Nos ajustamos a tu presupuesto.
 </p>
 
 <div class="pricing-tags">
-
 <span>✓ Propuesta personalizada</span>
-
 <span>✓ Alcance flexible</span>
-
-<span>
-✓ Complemento de ERP o solución independiente
-</span>
-
+<span>✓ Complemento de ERP o solución independiente</span>
 </div>
 
-<a href="#diagnostico" class="btn primary">
-Solicitar diagnóstico gratuito
-</a>
+<a href="#diagnostico" class="btn primary">Solicitar diagnóstico gratuito</a>
 
 </div>
-
 </div>
-
 </section>
 
-<!-- =====================================
-     IMPLEMENTACIÓN GRATUITA
-===================================== -->
-
+<!-- IMPLEMENTACIÓN GRATUITA -->
 <section class="trial" id="prueba">
-
 <div class="container">
-
 <div class="box">
 
-<span class="eyebrow">
-30 días de implementación gratuita
-</span>
+<span class="eyebrow">30 días de implementación gratuita</span>
 
 <h2>
 Implementamos ATZE en tu empresa durante
@@ -2715,351 +816,139 @@ Implementamos ATZE en tu empresa durante
 </h2>
 
 <div class="trial-intro">
-
-<p>
-<strong>
-No es solo una prueba.
-Es el primer paso para transformar tu negocio.
-</strong>
-</p>
-
-<p>
-Durante un mes trabajamos contigo
-para conocer tus operaciones,
-evaluar los sistemas que ya utilizas
-e implementar ATZE conforme al alcance acordado.
-</p>
-
-<p>
-Podemos comenzar con una solución independiente
-o evaluar cómo ATZE puede complementar
-tu ERP actual.
-</p>
-
+<p><strong>No es solo una prueba. Es el primer paso para transformar tu negocio.</strong></p>
+<p>Durante un mes trabajamos contigo para conocer tus operaciones, evaluar los sistemas que ya utilizas e implementar ATZE conforme al alcance acordado.</p>
+<p>Podemos comenzar con una solución independiente o evaluar cómo ATZE puede complementar tu ERP actual.</p>
 </div>
 
 <div class="trial-steps">
 
 <div class="trial-step">
-
 <span class="step-number">01</span>
-
 <div>
-
 <h3>Conocemos tu empresa</h3>
-
-<p>
-Revisamos tus necesidades,
-procesos y sistemas actuales
-para definir el alcance inicial.
-</p>
-
+<p>Revisamos tus necesidades, procesos y sistemas actuales para definir el alcance inicial.</p>
 </div>
-
 </div>
 
 <div class="trial-step">
-
 <span class="step-number">02</span>
-
 <div>
-
 <h3>Implementación y adecuaciones</h3>
-
-<p>
-Configuramos ATZE y realizamos
-los ajustes acordados para tu operación.
-</p>
-
+<p>Configuramos ATZE y realizamos los ajustes acordados para tu operación.</p>
 </div>
-
 </div>
 
 <div class="trial-step">
-
 <span class="step-number">03</span>
-
 <div>
-
 <h3>Acompañamiento y mejoras</h3>
-
-<p>
-Recibimos retroalimentación,
-resolvemos dudas e identificamos
-oportunidades de mejora.
-</p>
-
+<p>Recibimos retroalimentación, resolvemos dudas e identificamos oportunidades de mejora.</p>
 </div>
-
 </div>
 
 <div class="trial-step">
-
 <span class="step-number">04</span>
-
 <div>
-
 <h3>Tú decides si continuar</h3>
-
-<p>
-Al finalizar los 30 días,
-evaluamos los resultados
-y presentamos una propuesta personalizada.
-</p>
-
+<p>Al finalizar los 30 días, evaluamos los resultados y presentamos una propuesta personalizada.</p>
 </div>
-
 </div>
 
 </div>
 
 <div class="trial-note">
-
-<strong>
-30 días para conocer, implementar
-y adaptar ATZE a tu negocio.
-</strong>
-
-<p style="margin:8px 0 0">
-La implementación, los cambios y las integraciones
-se realizan conforme a un alcance inicial
-acordado con cada empresa.
-</p>
-
+<strong>30 días para conocer, implementar y adaptar ATZE a tu negocio.</strong>
+<p style="margin:8px 0 0">La implementación, los cambios y las integraciones se realizan conforme a un alcance inicial acordado con cada empresa.</p>
 </div>
 
-<a href="#diagnostico" class="btn primary">
-Comenzar diagnóstico empresarial →
-</a>
+<a href="#diagnostico" class="btn primary">Comenzar diagnóstico empresarial →</a>
 
 </div>
-
 </div>
-
 </section>
 
-<!-- =====================================
-     CLIENTES
-===================================== -->
-
+<!-- CLIENTES -->
 <section class="clients-section" id="clientes">
-
 <div class="container">
 
 <div class="section-heading">
-
-<span class="eyebrow">
-Nuestros clientes
-</span>
-
-<h2 style="margin-top:16px">
-Empresas que confían en
-<span class="accent">ATZE</span>
-</h2>
-
-<p>
-La confianza de nuestros clientes impulsa
-nuestra innovación y el desarrollo
-de nuevas soluciones.
-</p>
-
+<span class="eyebrow">Nuestros clientes</span>
+<h2 style="margin-top:16px">Empresas que confían en <span class="accent">ATZE</span></h2>
+<p>La confianza de nuestros clientes impulsa nuestra innovación y el desarrollo de nuevas soluciones.</p>
 </div>
 
 </div>
 
-<div
-class="clients-carousel"
-aria-label="Logotipos de clientes">
-
+<div class="clients-carousel" aria-label="Logotipos de clientes">
 <div class="clients-track">
 
 <div class="clients-group">
-
-<div class="client-logo">
-
-<img
-src="https://raw.githubusercontent.com/ATZE-ERP/ATZE/main/INTELI1.png"
-alt="InteliAire">
-
+<div class="client-logo"><img src="https://raw.githubusercontent.com/ATZE-ERP/ATZE/main/INTELI1.png" alt="InteliAire"></div>
+<div class="client-logo"><img src="https://raw.githubusercontent.com/ATZE-ERP/ATZE/main/CORE1.png" alt="CoreEfficient"></div>
+<div class="client-logo"><img src="https://raw.githubusercontent.com/ATZE-ERP/ATZE/main/IMG_8195.jpeg" alt="Kloeckner Metals"></div>
 </div>
-
-<div class="client-logo">
-
-<img
-src="https://raw.githubusercontent.com/ATZE-ERP/ATZE/main/CORE1.png"
-alt="CoreEfficient">
-
-</div>
-
-<div class="client-logo">
-
-<img
-src="https://raw.githubusercontent.com/ATZE-ERP/ATZE/main/IMG_8195.jpeg"
-alt="Kloeckner Metals">
-
-</div>
-
-</div>
-
-<!-- DUPLICADO PARA CARRUSEL -->
 
 <div class="clients-group" aria-hidden="true">
-
-<div class="client-logo">
-
-<img
-src="https://raw.githubusercontent.com/ATZE-ERP/ATZE/main/INTELI1.png"
-alt="">
-
-</div>
-
-<div class="client-logo">
-
-<img
-src="https://raw.githubusercontent.com/ATZE-ERP/ATZE/main/CORE1.png"
-alt="">
-
-</div>
-
-<div class="client-logo">
-
-<img
-src="https://raw.githubusercontent.com/ATZE-ERP/ATZE/main/IMG_8195.jpeg"
-alt="">
-
+<div class="client-logo"><img src="https://raw.githubusercontent.com/ATZE-ERP/ATZE/main/INTELI1.png" alt=""></div>
+<div class="client-logo"><img src="https://raw.githubusercontent.com/ATZE-ERP/ATZE/main/CORE1.png" alt=""></div>
+<div class="client-logo"><img src="https://raw.githubusercontent.com/ATZE-ERP/ATZE/main/IMG_8195.jpeg" alt=""></div>
 </div>
 
 </div>
-
 </div>
-
-</div>
-
 </section>
 
-<!-- =====================================
-     CONTACTO
-===================================== -->
-
+<!-- CONTACTO -->
 <section id="contacto">
-
 <div class="container">
 
 <div class="section-heading">
-
-<h2>
-Cuéntanos sobre
-<span class="accent">tu negocio</span>
-</h2>
-
-<p>
-Hablemos de tus necesidades
-y cómo podemos implementar ATZE
-o complementar tu sistema actual.
-</p>
-
+<h2>Cuéntanos sobre <span class="accent">tu negocio</span></h2>
+<p>Hablemos de tus necesidades y cómo podemos implementar ATZE o complementar tu sistema actual.</p>
 </div>
 
 <div class="contact-grid">
 
 <div class="contact-info">
+<h3>Construyamos una solución a tu medida</h3>
+<p>Comparte tus objetivos, las herramientas que te interesan y los procesos que quieres mejorar.</p>
+<p>También puedes completar nuestro diagnóstico empresarial gratuito para ayudarnos a conocer mejor tu operación.</p>
 
-<h3>
-Construyamos una solución a tu medida
-</h3>
-
-<p>
-Comparte tus objetivos,
-las herramientas que te interesan
-y los procesos que quieres mejorar.
-</p>
-
-<p>
-También puedes completar nuestro
-diagnóstico empresarial gratuito
-para ayudarnos a conocer mejor tu operación.
-</p>
-
-<a href="#diagnostico" class="btn outline">
-Realizar diagnóstico
-</a>
+<a href="#diagnostico" class="btn outline">Realizar diagnóstico</a>
 
 <div class="contact-detail">
-
-<strong>
-Correo electrónico
-</strong>
-
-<a href="mailto:juanpasolisc@gmail.com">
-juanpasolisc@gmail.com
-</a>
-
+<strong>Correo electrónico</strong>
+<a href="mailto:juanpasolisc@gmail.com">juanpasolisc@gmail.com</a>
 </div>
 
 <div class="contact-detail">
-
-<strong>
-WhatsApp
-</strong>
-
-<a
-href="https://wa.me/528448588733"
-target="_blank"
-rel="noopener noreferrer">
-844 858 8733
-</a>
-
+<strong>WhatsApp</strong>
+<a href="https://wa.me/528448588733" target="_blank" rel="noopener noreferrer">844 858 8733</a>
 </div>
-
 </div>
 
 <form id="contactForm" class="contact-form">
 
 <div class="field">
-
-<label for="nombre">
-Nombre
-</label>
-
+<label for="nombre">Nombre</label>
 <input id="nombre" required>
-
 </div>
 
 <div class="field">
-
-<label for="empresa">
-Negocio o empresa
-</label>
-
+<label for="empresa">Negocio o empresa</label>
 <input id="empresa" required>
-
 </div>
 
 <div class="field">
-
-<label for="correo">
-Correo electrónico
-</label>
-
-<input
-id="correo"
-type="email"
-required>
-
+<label for="correo">Correo electrónico</label>
+<input id="correo" type="email" required>
 </div>
 
 <div class="field">
-
-<label for="tipoNegocio">
-Tipo de negocio
-</label>
-
+<label for="tipoNegocio">Tipo de negocio</label>
 <select id="tipoNegocio" required>
-
-<option value="">
-Selecciona una opción
-</option>
-
+<option value="">Selecciona una opción</option>
 <option>Startup o emprendimiento</option>
 <option>PYME</option>
 <option>Comercio o tienda</option>
@@ -3068,23 +957,13 @@ Selecciona una opción
 <option>Servicios</option>
 <option>Empresa grande</option>
 <option>Otro</option>
-
 </select>
-
 </div>
 
 <div class="field">
-
-<label for="erpActual">
-¿Tu empresa utiliza algún ERP?
-</label>
-
+<label for="erpActual">¿Tu empresa utiliza algún ERP?</label>
 <select id="erpActual">
-
-<option value="">
-Selecciona una opción
-</option>
-
+<option value="">Selecciona una opción</option>
 <option>No utilizamos ERP</option>
 <option>Epicor</option>
 <option>SAP</option>
@@ -3093,19 +972,12 @@ Selecciona una opción
 <option>Odoo</option>
 <option>Otro ERP</option>
 <option>Utilizamos Excel u otras herramientas</option>
-
 </select>
-
 </div>
 
 <div class="field">
-
-<label for="interes">
-¿Qué te interesa?
-</label>
-
+<label for="interes">¿Qué te interesa?</label>
 <select id="interes">
-
 <option>Implementación gratuita de 30 días</option>
 <option>Complementar nuestro ERP actual</option>
 <option>Implementar un sistema de gestión</option>
@@ -3116,183 +988,70 @@ Selecciona una opción
 <option>Alertas y notificaciones</option>
 <option>Solución personalizada</option>
 <option>Varias funcionalidades</option>
-
 </select>
-
 </div>
 
 <div class="field">
-
-<label for="presupuestoCliente">
-Presupuesto estimado (opcional)
-</label>
-
+<label for="presupuestoCliente">Presupuesto estimado (opcional)</label>
 <select id="presupuestoCliente">
-
-<option value="">
-Prefiero conversarlo
-</option>
-
+<option value="">Prefiero conversarlo</option>
 <option>Menos de $5,000 MXN</option>
 <option>$5,000 a $15,000 MXN</option>
 <option>$15,000 a $30,000 MXN</option>
 <option>Más de $30,000 MXN</option>
 <option>Necesito orientación</option>
-
 </select>
-
 </div>
 
 <div class="field">
-
-<label for="mensaje">
-¿Qué necesitas resolver?
-</label>
-
-<textarea
-id="mensaje"
-placeholder="Cuéntanos qué procesos quieres mejorar..."></textarea>
-
+<label for="mensaje">¿Qué necesitas resolver?</label>
+<textarea id="mensaje" placeholder="Cuéntanos qué procesos quieres mejorar..."></textarea>
 </div>
 
-<button
-class="btn primary"
-type="submit">
+<button class="btn primary" type="submit">Enviar solicitud por WhatsApp →</button>
 
-Enviar solicitud por WhatsApp →
-
-</button>
-
-<p class="small">
-Se abrirá WhatsApp con tu solicitud preparada.
-Este formulario no almacena información en la página.
-</p>
+<p class="small">Se abrirá WhatsApp con tu solicitud preparada. Este formulario no almacena información en la página.</p>
 
 </form>
-
 </div>
-
 </div>
-
 </section>
 
 </main>
 
-<!-- =====================================
-     FOOTER
-===================================== -->
-
+<!-- FOOTER -->
 <footer>
-
 <div class="container footer-inner">
-
 <strong>ATZE</strong>
-
-<span>
-© <span id="year"></span> ATZE.
-Todos los derechos reservados.
-</span>
-
-<a href="#contacto">
-Contacto
-</a>
-
+<span>© <span id="year"></span> ATZE. Todos los derechos reservados.</span>
+<a href="#contacto">Contacto</a>
 </div>
-
 </footer>
 
-<a
-class="whatsapp"
-href="https://wa.me/528448588733"
-target="_blank"
-rel="noopener noreferrer">
+<a class="whatsapp" href="https://wa.me/528448588733" target="_blank" rel="noopener noreferrer">WhatsApp</a>
 
-WhatsApp
-
-</a>
-
-<!-- =====================================
-     MODAL DE FUNCIONALIDADES
-===================================== -->
-
-<div
-class="modal"
-id="modal"
-role="dialog"
-aria-modal="true"
-aria-labelledby="modalTitle"
-aria-hidden="true">
-
+<!-- MODAL DE FUNCIONALIDADES -->
+<div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" aria-hidden="true">
 <div class="modal-card">
 
-<button
-class="close"
-id="closeModal"
-aria-label="Cerrar">
+<button class="close" id="closeModal" aria-label="Cerrar">×</button>
 
-×
-
-</button>
-
-<span class="eyebrow">
-Funcionalidad ATZE
-</span>
-
+<span class="eyebrow">Funcionalidad ATZE</span>
 <h2 id="modalTitle"></h2>
-
 <p id="modalDescription"></p>
-
 <ul id="modalList"></ul>
 
-<!-- DASHBOARD -->
-
-<div
-class="modal-demo"
-id="dashboardDemo"
-hidden>
-
-<h3>
-Panel de control ilustrativo
-</h3>
+<div class="modal-demo" id="dashboardDemo" hidden>
+<h3>Panel de control ilustrativo</h3>
 
 <div class="dashboard-grid">
-
-<div class="metric">
-
-<span>Órdenes registradas</span>
-
-<strong>248</strong>
-
-</div>
-
-<div class="metric">
-
-<span>En seguimiento</span>
-
-<strong>36</strong>
-
-</div>
-
-<div class="metric">
-
-<span>Consultas</span>
-
-<strong>1,284</strong>
-
-</div>
-
-<div class="metric">
-
-<span>Indicadores</span>
-
-<strong>12</strong>
-
-</div>
-
+<div class="metric"><span>Órdenes registradas</span><strong>248</strong></div>
+<div class="metric"><span>En seguimiento</span><strong>36</strong></div>
+<div class="metric"><span>Consultas</span><strong>1,284</strong></div>
+<div class="metric"><span>Indicadores</span><strong>12</strong></div>
 </div>
 
 <div class="chart">
-
 <span style="height:35%"></span>
 <span style="height:58%"></span>
 <span style="height:43%"></span>
@@ -3300,1069 +1059,400 @@ Panel de control ilustrativo
 <span style="height:60%"></span>
 <span style="height:93%"></span>
 <span style="height:74%"></span>
-
 </div>
 
-<p class="small">
-Datos ficticios para ilustrar un dashboard.
-La información real requiere integración
-con los sistemas del negocio.
-</p>
-
+<p class="small">Datos ficticios para ilustrar un dashboard. La información real requiere integración con los sistemas del negocio.</p>
 </div>
 
-<!-- LAYOUT INTERACTIVO -->
-
-<div
-class="modal-demo"
-id="layoutDemo"
-hidden>
-
-<h3>
-Prueba la búsqueda visual
-</h3>
-
-<p>
-Introduce un identificador de ejemplo
-para localizarlo dentro del layout digital.
-</p>
+<div class="modal-demo" id="layoutDemo" hidden>
+<h3>Prueba la búsqueda visual</h3>
+<p>Introduce un identificador de ejemplo para localizarlo dentro del layout digital.</p>
 
 <form class="search-row" id="searchForm">
-
-<input
-id="partInput"
-placeholder="Ej. 607-7435"
-required>
-
-<button
-class="btn primary"
-type="submit">
-
-Buscar
-
-</button>
-
+<input id="partInput" placeholder="Ej. 607-7435" required>
+<button class="btn primary" type="submit">Buscar</button>
 </form>
 
 <div class="samples">
-
 Prueba con:
-
-<button
-type="button"
-data-part="607-7435">
-607-7435
-</button>
-
-<button
-type="button"
-data-part="9310300">
-9310300
-</button>
-
-<button
-type="button"
-data-part="COMP-001">
-COMP-001
-</button>
-
+<button type="button" data-part="607-7435">607-7435</button>
+<button type="button" data-part="9310300">9310300</button>
+<button type="button" data-part="COMP-001">COMP-001</button>
 </div>
 
 <div class="layout">
-
-<img
-src="https://raw.githubusercontent.com/ATZE-ERP/ATZE-ERP.github.io/main/UBI2.png"
-alt="Layout ilustrativo adaptable a distintos negocios">
-
-<span
-id="locationLight"
-class="light">
-</span>
-
+<img src="https://raw.githubusercontent.com/ATZE-ERP/ATZE-ERP.github.io/main/UBI2.png" alt="Layout ilustrativo adaptable a distintos negocios">
+<span id="locationLight" class="light"></span>
 </div>
 
 <div class="legend">
-
-<span>
-<i class="legend-dot"></i>
-Disponible
-</span>
-
-<span>
-<i class="legend-dot red"></i>
-Requiere atención
-</span>
-
+<span><i class="legend-dot"></i> Disponible</span>
+<span><i class="legend-dot red"></i> Requiere atención</span>
 </div>
 
-<div
-class="search-result"
-id="searchResult"
-aria-live="polite">
-</div>
+<div class="search-result" id="searchResult" aria-live="polite"></div>
 
-<p class="small">
-Demostración ilustrativa con datos ficticios.
-El layout puede adaptarse a diferentes negocios.
-</p>
+<p class="small">Demostración ilustrativa con datos ficticios. El layout puede adaptarse a diferentes negocios.</p>
 
-<button
-type="button"
-class="btn outline"
-id="resetSearch">
-
-Limpiar búsqueda
-
-</button>
-
+<button type="button" class="btn outline" id="resetSearch">Limpiar búsqueda</button>
 </div>
 
 <div class="modal-actions">
-
-<button
-class="btn outline"
-id="modalDone">
-
-Cerrar
-
-</button>
-
-<a
-href="#contacto"
-class="btn primary"
-id="modalContact">
-
-Solicitar información →
-
-</a>
-
+<button class="btn outline" id="modalDone">Cerrar</button>
+<a href="#contacto" class="btn primary" id="modalContact">Solicitar información →</a>
 </div>
 
 </div>
-
 </div>
-
-<!-- =====================================
-     JAVASCRIPT
-===================================== -->
 
 <script>
 
-/* =====================================
-   AÑO ACTUAL
-===================================== */
+/* AÑO */
+document.getElementById("year").textContent = new Date().getFullYear();
 
-document.getElementById("year").textContent =
-  new Date().getFullYear();
+/* MENÚ */
+const menuButton=document.getElementById("menuButton");
+const dropdown=document.getElementById("dropdown");
 
-/* =====================================
-   MENÚ
-===================================== */
-
-const menuButton =
-  document.getElementById("menuButton");
-
-const dropdown =
-  document.getElementById("dropdown");
-
-menuButton.addEventListener("click", () => {
-
-  const open =
-    dropdown.classList.toggle("open");
-
-  menuButton.setAttribute(
-    "aria-expanded",
-    String(open)
-  );
-
+menuButton.addEventListener("click",()=>{
+  const open=dropdown.classList.toggle("open");
+  menuButton.setAttribute("aria-expanded",String(open));
 });
 
-dropdown.querySelectorAll("a").forEach(link => {
-
-  link.addEventListener("click", () => {
-
+dropdown.querySelectorAll("a").forEach(link=>{
+  link.addEventListener("click",()=>{
     dropdown.classList.remove("open");
-
-    menuButton.setAttribute(
-      "aria-expanded",
-      "false"
-    );
-
+    menuButton.setAttribute("aria-expanded","false");
   });
-
 });
 
-document.addEventListener("click", e => {
-
-  if (!e.target.closest(".menu-wrap")) {
-
+document.addEventListener("click",e=>{
+  if(!e.target.closest(".menu-wrap")){
     dropdown.classList.remove("open");
-
-    menuButton.setAttribute(
-      "aria-expanded",
-      "false"
-    );
-
+    menuButton.setAttribute("aria-expanded","false");
   }
-
 });
 
-/* =====================================
-   DIAGNÓSTICO EMPRESARIAL
-===================================== */
+/* DIAGNÓSTICO */
+const diagnosticForm=document.getElementById("diagnosticForm");
+const diagnosticSteps=[...document.querySelectorAll(".diagnostic-step")];
+const diagPrevious=document.getElementById("diagPrevious");
+const diagNext=document.getElementById("diagNext");
+const diagSubmit=document.getElementById("diagSubmit");
+const diagnosticError=document.getElementById("diagnosticError");
+let diagnosticIndex=0;
 
-const diagnosticForm =
-  document.getElementById("diagnosticForm");
+function showDiagnosticStep(index){
+  diagnosticIndex=index;
 
-const diagnosticSteps = [
-  ...document.querySelectorAll(".diagnostic-step")
-];
-
-const diagPrevious =
-  document.getElementById("diagPrevious");
-
-const diagNext =
-  document.getElementById("diagNext");
-
-const diagSubmit =
-  document.getElementById("diagSubmit");
-
-const diagnosticError =
-  document.getElementById("diagnosticError");
-
-let diagnosticIndex = 0;
-
-function showDiagnosticStep(index) {
-
-  diagnosticIndex = index;
-
-  diagnosticSteps.forEach((step, i) => {
-
-    step.classList.toggle(
-      "active",
-      i === index
-    );
-
+  diagnosticSteps.forEach((step,i)=>{
+    step.classList.toggle("active",i===index);
   });
 
-  const percent = Math.round(
-    (index + 1) / diagnosticSteps.length * 100
-  );
+  const percent=Math.round((index+1)/diagnosticSteps.length*100);
 
-  document.getElementById(
-    "progressLabel"
-  ).textContent =
-    "Etapa " +
-    (index + 1) +
-    " de " +
-    diagnosticSteps.length;
+  document.getElementById("progressLabel").textContent=
+    "Etapa "+(index+1)+" de "+diagnosticSteps.length;
 
-  document.getElementById(
-    "progressPercent"
-  ).textContent =
-    percent + "%";
+  document.getElementById("progressPercent").textContent=percent+"%";
+  document.getElementById("progressFill").style.width=percent+"%";
 
-  document.getElementById(
-    "progressFill"
-  ).style.width =
-    percent + "%";
-
-  diagPrevious.disabled =
-    index === 0;
-
-  diagNext.hidden =
-    index === diagnosticSteps.length - 1;
-
-  diagSubmit.hidden =
-    index !== diagnosticSteps.length - 1;
-
-  diagnosticError.hidden = true;
-
+  diagPrevious.disabled=index===0;
+  diagNext.hidden=index===diagnosticSteps.length-1;
+  diagSubmit.hidden=index!==diagnosticSteps.length-1;
+  diagnosticError.hidden=true;
 }
 
-function validateDiagnosticStep(index) {
+function validateDiagnosticStep(index){
+  const step=diagnosticSteps[index];
 
-  const step = diagnosticSteps[index];
+  const inputs=[...step.querySelectorAll("input,select,textarea")].filter(el=>
+    !el.disabled&&!el.closest("[hidden]")&&el.type!=="hidden"
+  );
 
-  const inputs = [
-    ...step.querySelectorAll(
-      "input,select,textarea"
-    )
-  ].filter(el => {
-
-    return (
-      !el.disabled &&
-      !el.closest("[hidden]") &&
-      el.type !== "hidden"
-    );
-
-  });
-
-  for (const input of inputs) {
-
-    if (!input.checkValidity()) {
-
+  for(const input of inputs){
+    if(!input.checkValidity()){
       input.reportValidity();
       input.focus();
-
       return false;
-
     }
-
   }
 
-  const mandatoryGroups = {
-
-    1: [
-      "Procesos[]",
-      "Registro actual[]"
-    ],
-
-    3: [
-      "Problemas[]",
-      "Funcionalidades deseadas[]"
-    ]
-
+  const mandatoryGroups={
+    1:["Procesos[]","Registro actual[]"],
+    3:["Problemas[]","Funcionalidades deseadas[]"]
   };
 
-  for (
-    const group of mandatoryGroups[index] || []
-  ) {
-
-    const selector =
-      'input[name="' + group + '"]:checked';
-
-    if (!step.querySelector(selector)) {
-
-      diagnosticError.textContent =
-        "Selecciona al menos una opción " +
-        "en cada pregunta marcada con *.";
-
-      diagnosticError.hidden = false;
-
+  for(const group of mandatoryGroups[index]||[]){
+    if(!step.querySelector('input[name="'+group+'"]:checked')){
+      diagnosticError.textContent=
+        "Selecciona al menos una opción en cada pregunta marcada con *.";
+      diagnosticError.hidden=false;
       return false;
-
     }
-
   }
 
-  diagnosticError.hidden = true;
-
+  diagnosticError.hidden=true;
   return true;
-
 }
 
-diagNext.addEventListener("click", () => {
+diagNext.addEventListener("click",()=>{
+  if(!validateDiagnosticStep(diagnosticIndex))return;
 
-  if (
-    !validateDiagnosticStep(diagnosticIndex)
-  ) {
-    return;
-  }
-
-  showDiagnosticStep(
-    diagnosticIndex + 1
-  );
-
-  document.getElementById(
-    "diagnostico"
-  ).scrollIntoView({
-    behavior: "smooth"
-  });
-
+  showDiagnosticStep(diagnosticIndex+1);
+  document.getElementById("diagnostico").scrollIntoView({behavior:"smooth"});
 });
 
-diagPrevious.addEventListener("click", () => {
-
-  if (diagnosticIndex > 0) {
-
-    showDiagnosticStep(
-      diagnosticIndex - 1
-    );
-
-  }
-
-  document.getElementById(
-    "diagnostico"
-  ).scrollIntoView({
-    behavior: "smooth"
-  });
-
+diagPrevious.addEventListener("click",()=>{
+  if(diagnosticIndex>0)showDiagnosticStep(diagnosticIndex-1);
+  document.getElementById("diagnostico").scrollIntoView({behavior:"smooth"});
 });
 
-/* CAMPO ERP DINÁMICO */
+const diagERP=document.getElementById("diagERP");
+const erpDetails=document.getElementById("erpDetails");
+const diagERPDetalle=document.getElementById("diagERPDetalle");
 
-const diagERP =
-  document.getElementById("diagERP");
-
-const erpDetails =
-  document.getElementById("erpDetails");
-
-diagERP.addEventListener("change", () => {
-
-  const value = diagERP.value;
-
-  const hasERP =
-    value &&
-    value !== "No" &&
-    value !== "Evaluando";
-
-  erpDetails.hidden = !hasERP;
-
-  document.getElementById(
-    "diagERPDetalle"
-  ).disabled = !hasERP;
-
-  if (!hasERP) {
-
-    document.getElementById(
-      "diagERPDetalle"
-    ).value = "";
-
-  }
-
+diagERP.addEventListener("change",()=>{
+  const value=diagERP.value;
+  const hasERP=Boolean(value&&value!=="No"&&value!=="Evaluando");
+  erpDetails.hidden=!hasERP;
+  diagERPDetalle.disabled=!hasERP;
+  if(!hasERP)diagERPDetalle.value="";
 });
 
-document.getElementById(
-  "diagERPDetalle"
-).disabled = true;
+diagERPDetalle.disabled=true;
 
-/* ENVÍO DEL DIAGNÓSTICO */
-
-diagnosticForm.addEventListener(
-  "submit",
-  e => {
-
-    if (
-      !validateDiagnosticStep(diagnosticIndex)
-    ) {
-
+/* VALIDACIÓN DE TODAS LAS ETAPAS ANTES DE ENVIAR */
+diagnosticForm.addEventListener("submit",e=>{
+  for(let i=0;i<diagnosticSteps.length;i++){
+    if(!validateDiagnosticStep(i)){
       e.preventDefault();
+      showDiagnosticStep(i);
+      validateDiagnosticStep(i);
+      document.getElementById("diagnostico").scrollIntoView({behavior:"smooth"});
       return;
-
     }
-
-    for (
-      let i = 0;
-      i < diagnosticSteps.length;
-      i++
-    ) {
-
-      if (!validateDiagnosticStep(i)) {
-
-        e.preventDefault();
-
-        showDiagnosticStep(i);
-
-        document.getElementById(
-          "diagnostico"
-        ).scrollIntoView({
-          behavior: "smooth"
-        });
-
-        return;
-
-      }
-
-    }
-
   }
-);
+});
 
-/* =====================================
-   FUNCIONALIDADES
-===================================== */
-
-const features = {
-
-  real: {
-
-    title:
-      "Información en tiempo real",
-
-    description:
-      "Visualiza información de tu negocio " +
-      "mediante dashboards e indicadores " +
-      "configurados según tus necesidades.",
-
-    points: [
-
-      "Consulta indicadores relevantes " +
-      "desde una sola pantalla.",
-
-      "Monitorea información " +
-      "de sistemas conectados.",
-
-      "Identifica tendencias, " +
-      "atrasos y prioridades.",
-
-      "Personaliza paneles " +
-      "para diferentes áreas."
-
+/* FUNCIONALIDADES */
+const features={
+  real:{
+    title:"Información en tiempo real",
+    description:"Visualiza información de tu negocio mediante dashboards e indicadores configurados según tus necesidades.",
+    points:[
+      "Consulta indicadores relevantes desde una sola pantalla.",
+      "Monitorea información de sistemas conectados.",
+      "Identifica tendencias, atrasos y prioridades.",
+      "Personaliza paneles para diferentes áreas."
     ]
-
   },
-
-  ubicacion: {
-
-    title:
-      "Ubicación visual",
-
-    description:
-      "Localiza productos, materiales, " +
-      "herramientas o recursos mediante " +
-      "un layout digital adaptado " +
-      "a tu operación.",
-
-    points: [
-
+  ubicacion:{
+    title:"Ubicación visual",
+    description:"Localiza productos, materiales, herramientas o recursos mediante un layout digital adaptado a tu operación.",
+    points:[
       "Busca recursos por su identificador.",
-
-      "Visualiza su ubicación " +
-      "dentro de un plano.",
-
-      "Utiliza indicadores " +
-      "sencillos de estado.",
-
-      "Adapta el layout " +
-      "a distintos tipos de negocios."
-
+      "Visualiza su ubicación dentro de un plano.",
+      "Utiliza indicadores sencillos de estado.",
+      "Adapta el layout a distintos tipos de negocios."
     ]
-
   },
-
-  consultas: {
-
-    title:
-      "Consultas de información",
-
-    description:
-      "Accede a información relevante " +
-      "de tus sistemas mediante consultas " +
-      "e integraciones autorizadas.",
-
-    points: [
-
-      "Consultas SQL cuando " +
-      "la fuente de datos lo permite.",
-
+  consultas:{
+    title:"Consultas de información",
+    description:"Accede a información relevante de tus sistemas mediante consultas e integraciones autorizadas.",
+    points:[
+      "Consultas SQL cuando la fuente de datos lo permite.",
       "Búsqueda y filtrado de información.",
-
       "Reportes y vistas personalizadas.",
-
-      "Análisis de datos " +
-      "comerciales y operativos."
-
+      "Análisis de datos comerciales y operativos."
     ]
-
   },
-
-  ordenes: {
-
-    title:
-      "Seguimiento de órdenes",
-
-    description:
-      "Facilita la consulta y el seguimiento " +
-      "de órdenes de compra, ventas y pedidos.",
-
-    points: [
-
+  ordenes:{
+    title:"Seguimiento de órdenes",
+    description:"Facilita la consulta y el seguimiento de órdenes de compra, ventas y pedidos.",
+    points:[
       "Consulta de órdenes de compra.",
-
       "Seguimiento de pedidos a proveedores.",
-
       "Consulta de órdenes de venta.",
-
-      "Visualización de estados, " +
-      "prioridades y pendientes."
-
+      "Visualización de estados, prioridades y pendientes."
     ]
-
   },
-
-  alertas: {
-
-    title:
-      "Alertas y notificaciones",
-
-    description:
-      "Comunica eventos importantes " +
-      "a las personas responsables " +
-      "mediante avisos configurables.",
-
-    points: [
-
-      "Notificaciones ante " +
-      "situaciones importantes.",
-
+  alertas:{
+    title:"Alertas y notificaciones",
+    description:"Comunica eventos importantes a las personas responsables mediante avisos configurables.",
+    points:[
+      "Notificaciones ante situaciones importantes.",
       "Alertas dirigidas a responsables.",
-
       "Posible integración con WhatsApp.",
-
-      "Escalamiento según " +
-      "reglas configuradas."
-
+      "Escalamiento según reglas configuradas."
     ]
-
   },
-
-  medida: {
-
-    title:
-      "Soluciones a tu medida",
-
-    description:
-      "ATZE puede adaptarse a los objetivos " +
-      "y procesos específicos de cada empresa, " +
-      "incluso como complemento " +
-      "de un ERP existente.",
-
-    points: [
-
-      "Evaluación de necesidades " +
-      "y sistemas actuales.",
-
+  medida:{
+    title:"Soluciones a tu medida",
+    description:"ATZE puede adaptarse a los objetivos y procesos específicos de cada empresa, incluso como complemento de un ERP existente.",
+    points:[
+      "Evaluación de necesidades y sistemas actuales.",
       "Personalización de funcionalidades.",
-
-      "Integración con sistemas " +
-      "compatibles y autorizados.",
-
+      "Integración con sistemas compatibles y autorizados.",
       "Posibilidad de ampliar la solución."
-
     ]
-
   }
-
 };
 
-/* =====================================
-   MODALES
-===================================== */
+/* MODALES */
+const modal=document.getElementById("modal");
+const dashboardDemo=document.getElementById("dashboardDemo");
+const layoutDemo=document.getElementById("layoutDemo");
+let previousFocus=null;
 
-const modal =
-  document.getElementById("modal");
+function openModal(key){
+  const feature=features[key];
+  if(!feature)return;
 
-const dashboardDemo =
-  document.getElementById("dashboardDemo");
+  previousFocus=document.activeElement;
 
-const layoutDemo =
-  document.getElementById("layoutDemo");
+  document.getElementById("modalTitle").textContent=feature.title;
+  document.getElementById("modalDescription").textContent=feature.description;
 
-let previousFocus = null;
-
-function openModal(key) {
-
-  const feature = features[key];
-
-  if (!feature) return;
-
-  previousFocus =
-    document.activeElement;
-
-  document.getElementById(
-    "modalTitle"
-  ).textContent =
-    feature.title;
-
-  document.getElementById(
-    "modalDescription"
-  ).textContent =
-    feature.description;
-
-  const list =
-    document.getElementById("modalList");
-
+  const list=document.getElementById("modalList");
   list.replaceChildren();
 
-  feature.points.forEach(point => {
-
-    const li =
-      document.createElement("li");
-
-    li.textContent = point;
-
+  feature.points.forEach(point=>{
+    const li=document.createElement("li");
+    li.textContent=point;
     list.appendChild(li);
-
   });
 
-  dashboardDemo.hidden =
-    key !== "real";
-
-  layoutDemo.hidden =
-    key !== "ubicacion";
+  dashboardDemo.hidden=key!=="real";
+  layoutDemo.hidden=key!=="ubicacion";
 
   modal.classList.add("open");
-
-  modal.setAttribute(
-    "aria-hidden",
-    "false"
-  );
-
-  document.body.classList.add(
-    "modal-open"
-  );
-
-  document.getElementById(
-    "closeModal"
-  ).focus();
-
+  modal.setAttribute("aria-hidden","false");
+  document.body.classList.add("modal-open");
+  document.getElementById("closeModal").focus();
 }
 
-function closeModal() {
-
+function closeModal(){
   modal.classList.remove("open");
-
-  modal.setAttribute(
-    "aria-hidden",
-    "true"
-  );
-
-  document.body.classList.remove(
-    "modal-open"
-  );
-
-  if (previousFocus) {
-
-    previousFocus.focus();
-
-  }
-
+  modal.setAttribute("aria-hidden","true");
+  document.body.classList.remove("modal-open");
+  if(previousFocus)previousFocus.focus();
 }
 
-document.querySelectorAll(
-  "[data-feature]"
-).forEach(card => {
-
-  card.addEventListener(
-    "click",
-    () => {
-
-      openModal(
-        card.dataset.feature
-      );
-
-    }
-  );
-
+document.querySelectorAll("[data-feature]").forEach(card=>{
+  card.addEventListener("click",()=>openModal(card.dataset.feature));
 });
 
-document.getElementById(
-  "closeModal"
-).addEventListener(
-  "click",
-  closeModal
-);
+document.getElementById("closeModal").addEventListener("click",closeModal);
+document.getElementById("modalDone").addEventListener("click",closeModal);
+document.getElementById("modalContact").addEventListener("click",closeModal);
 
-document.getElementById(
-  "modalDone"
-).addEventListener(
-  "click",
-  closeModal
-);
-
-document.getElementById(
-  "modalContact"
-).addEventListener(
-  "click",
-  closeModal
-);
-
-modal.addEventListener("click", e => {
-
-  if (e.target === modal) {
-
-    closeModal();
-
-  }
-
+modal.addEventListener("click",e=>{
+  if(e.target===modal)closeModal();
 });
 
-document.addEventListener(
-  "keydown",
-  e => {
-
-    if (e.key === "Escape") {
-
-      if (
-        modal.classList.contains("open")
-      ) {
-
-        closeModal();
-
-      }
-
-      dropdown.classList.remove("open");
-
-      menuButton.setAttribute(
-        "aria-expanded",
-        "false"
-      );
-
-    }
-
-    if (
-      e.key === "Tab" &&
-      modal.classList.contains("open")
-    ) {
-
-      const focusable = [
-        ...modal.querySelectorAll(
-          "button,a[href],input"
-        )
-      ].filter(
-        el => el.getClientRects().length
-      );
-
-      const first = focusable[0];
-
-      const last =
-        focusable[focusable.length - 1];
-
-      if (
-        e.shiftKey &&
-        document.activeElement === first
-      ) {
-
-        e.preventDefault();
-
-        last.focus();
-
-      } else if (
-        !e.shiftKey &&
-        document.activeElement === last
-      ) {
-
-        e.preventDefault();
-
-        first.focus();
-
-      }
-
-    }
-
-  }
-);
-
-/* =====================================
-   LAYOUT INTERACTIVO
-===================================== */
-
-const demoParts = {
-
-  "607-7435": {
-
-    x: 24,
-    y: 32,
-    location: "Zona de ejemplo A",
-    available: true
-
-  },
-
-  "9310300": {
-
-    x: 68,
-    y: 42,
-    location: "Zona de ejemplo B",
-    available: false
-
-  },
-
-  "COMP-001": {
-
-    x: 45,
-    y: 72,
-    location: "Zona de ejemplo C",
-    available: true
-
+document.addEventListener("keydown",e=>{
+  if(e.key==="Escape"){
+    if(modal.classList.contains("open"))closeModal();
+    dropdown.classList.remove("open");
+    menuButton.setAttribute("aria-expanded","false");
   }
 
+  if(e.key==="Tab"&&modal.classList.contains("open")){
+    const focusable=[...modal.querySelectorAll("button,a[href],input")].filter(el=>
+      el.getClientRects().length
+    );
+
+    const first=focusable[0];
+    const last=focusable[focusable.length-1];
+
+    if(e.shiftKey&&document.activeElement===first){
+      e.preventDefault();
+      last.focus();
+    }else if(!e.shiftKey&&document.activeElement===last){
+      e.preventDefault();
+      first.focus();
+    }
+  }
+});
+
+/* DEMOSTRACIÓN DE UBICACIÓN */
+const demoParts={
+  "607-7435":{x:24,y:32,location:"Zona de ejemplo A",available:true},
+  "9310300":{x:68,y:42,location:"Zona de ejemplo B",available:false},
+  "COMP-001":{x:45,y:72,location:"Zona de ejemplo C",available:true}
 };
 
-const partInput =
-  document.getElementById("partInput");
+const partInput=document.getElementById("partInput");
+const locationLight=document.getElementById("locationLight");
+const searchResult=document.getElementById("searchResult");
 
-const locationLight =
-  document.getElementById(
-    "locationLight"
-  );
+function searchPart(code){
+  const id=code.trim().toUpperCase();
+  const part=demoParts[id];
 
-const searchResult =
-  document.getElementById(
-    "searchResult"
-  );
-
-function searchPart(code) {
-
-  const id =
-    code.trim().toUpperCase();
-
-  const part =
-    demoParts[id];
-
-  if (!part) {
-
-    locationLight.className =
-      "light";
-
-    searchResult.textContent =
-      "No se encontró el identificador. " +
-      "Prueba con los códigos de ejemplo.";
-
+  if(!part){
+    locationLight.className="light";
+    searchResult.textContent=
+      "No se encontró el identificador. Prueba con los códigos de ejemplo.";
     return;
-
   }
 
-  locationLight.style.left =
-    part.x + "%";
+  locationLight.style.left=part.x+"%";
+  locationLight.style.top=part.y+"%";
+  locationLight.className="light visible "+(part.available?"green":"red");
 
-  locationLight.style.top =
-    part.y + "%";
-
-  locationLight.className =
-    "light visible " +
-    (part.available ? "green" : "red");
-
-  searchResult.textContent =
-    id + " — " +
-    part.location + " — " +
-    (
-      part.available
-        ? "Disponible"
-        : "Requiere atención"
-    );
-
+  searchResult.textContent=
+    id+" — "+part.location+" — "+
+    (part.available?"Disponible":"Requiere atención");
 }
 
-document.getElementById(
-  "searchForm"
-).addEventListener(
-  "submit",
-  e => {
-
-    e.preventDefault();
-
-    searchPart(
-      partInput.value
-    );
-
-  }
-);
-
-document.querySelectorAll(
-  "[data-part]"
-).forEach(button => {
-
-  button.addEventListener(
-    "click",
-    () => {
-
-      partInput.value =
-        button.dataset.part;
-
-      searchPart(
-        button.dataset.part
-      );
-
-    }
-  );
-
+document.getElementById("searchForm").addEventListener("submit",e=>{
+  e.preventDefault();
+  searchPart(partInput.value);
 });
 
-document.getElementById(
-  "resetSearch"
-).addEventListener(
-  "click",
-  () => {
+document.querySelectorAll("[data-part]").forEach(button=>{
+  button.addEventListener("click",()=>{
+    partInput.value=button.dataset.part;
+    searchPart(button.dataset.part);
+  });
+});
 
-    partInput.value = "";
+document.getElementById("resetSearch").addEventListener("click",()=>{
+  partInput.value="";
+  locationLight.className="light";
+  searchResult.textContent="";
+});
 
-    locationLight.className =
-      "light";
+/* CONTACTO POR WHATSAPP */
+document.getElementById("contactForm").addEventListener("submit",e=>{
+  e.preventDefault();
 
-    searchResult.textContent = "";
+  const getValue=id=>document.getElementById(id).value.trim();
 
-  }
-);
+  const texto=[
+    "Hola, me interesa conocer ATZE.",
+    "",
+    "Quisiera información sobre la implementación gratuita de 30 días.",
+    "",
+    "Nombre: "+getValue("nombre"),
+    "Empresa: "+getValue("empresa"),
+    "Correo: "+getValue("correo"),
+    "Tipo de negocio: "+getValue("tipoNegocio"),
+    "ERP actual: "+(getValue("erpActual")||"No especificado"),
+    "Interés: "+getValue("interes"),
+    "Presupuesto: "+(getValue("presupuestoCliente")||"Prefiero conversarlo"),
+    "Mensaje: "+(getValue("mensaje")||"Sin mensaje adicional")
+  ].join("\n");
 
-/* =====================================
-   CONTACTO POR WHATSAPP
-===================================== */
-
-document.getElementById(
-  "contactForm"
-).addEventListener(
-  "submit",
-  e => {
-
-    e.preventDefault();
-
-    const getValue = id =>
-      document.getElementById(
-        id
-      ).value.trim();
-
-    const texto = [
-
-      "Hola, me interesa conocer ATZE.",
-
-      "",
-
-      "Quisiera información sobre " +
-      "la implementación gratuita de 30 días.",
-
-      "",
-
-      "Nombre: " +
-      getValue("nombre"),
-
-      "Empresa: " +
-      getValue("empresa"),
-
-      "Correo: " +
-      getValue("correo"),
-
-      "Tipo de negocio: " +
-      getValue("tipoNegocio"),
-
-      "ERP actual: " +
-      (
-        getValue("erpActual") ||
-        "No especificado"
-      ),
-
-      "Interés: " +
-      getValue("interes"),
-
-      "Presupuesto: " +
-      (
-        getValue("presupuestoCliente") ||
-        "Prefiero conversarlo"
-      ),
-
-      "Mensaje: " +
-      (
-        getValue("mensaje") ||
-        "Sin mensaje adicional"
-      )
-
-    ].join("\n");
-
-    window.open(
-
-      "https://wa.me/528448588733?text=" +
-      encodeURIComponent(texto),
-
-      "_blank",
-
-      "noopener,noreferrer"
-
-    );
-
-  }
-);
+  window.open(
+    "https://wa.me/528448588733?text="+encodeURIComponent(texto),
+    "_blank",
+    "noopener,noreferrer"
+  );
+});
 
 </script>
-
 </body>
 </html>
