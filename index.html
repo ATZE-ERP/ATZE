@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -204,7 +205,6 @@ section{padding:58px 0}
 .cards,.choice-grid{grid-template-columns:1fr}
 .hero{padding:70px 0}
 .hero p{font-size:16px}
-.nav-trial{display:none}
 .brand{font-size:22px}
 .brand img{width:43px;height:43px}
 .integration-card,.diagnostic-shell{padding:22px}
@@ -244,8 +244,6 @@ ATZE
 </a>
 
 <div class="nav-actions">
-<a href="#diagnostico" class="btn primary nav-trial">Diagnóstico gratuito</a>
-
 <div class="menu-wrap">
 <button class="menu-btn" id="menuButton" aria-expanded="false" aria-controls="dropdown">☰ Menú</button>
 
@@ -254,7 +252,7 @@ ATZE
 <a href="#beneficios">Beneficios</a>
 <a href="#integracion">Integración con ERP</a>
 <a href="#funcionalidades">Funcionalidades</a>
-<a href="#diagnostico">Diagnóstico gratuito</a>
+<a href="#diagnostico">Diagnóstico empresarial (opcional)</a>
 <a href="#precios">Presupuesto</a>
 <a href="#prueba">Implementación gratuita</a>
 <a href="#clientes">Nuestros clientes</a>
@@ -381,16 +379,12 @@ de diferentes sectores.
 <div class="integration-foot">
 <strong>ATZE se adapta a tu empresa, no tu empresa a ATZE.</strong>
 <p>La viabilidad de las integraciones depende de la compatibilidad técnica, los permisos disponibles y el alcance acordado.</p>
-<a href="#diagnostico" class="btn primary">Cuéntanos cómo funciona tu empresa →</a>
 </div>
 
 </div>
 </section>
 
-<!-- ==========================================
-     FUNCIONALIDADES
-     AHORA ANTES DEL DIAGNÓSTICO
-========================================== -->
+<!-- FUNCIONALIDADES -->
 <section class="soft" id="funcionalidades">
 <div class="container">
 
@@ -453,23 +447,26 @@ ATZE puede evaluar nuevas herramientas, integraciones y personalizaciones según
 </div>
 </section>
 
-<!-- ==========================================
-     DIAGNÓSTICO EMPRESARIAL
-     AHORA DESPUÉS DE FUNCIONALIDADES
-========================================== -->
+<!-- DIAGNÓSTICO EMPRESARIAL OPCIONAL -->
 <section class="diagnostic-section" id="diagnostico">
 <div class="container">
 <div class="diagnostic-shell">
 
 <div class="diagnostic-header">
-<span class="eyebrow">Diagnóstico empresarial ATZE</span>
-<h2>Descubre cómo ATZE puede <span class="accent">ayudar a tu empresa</span></h2>
-<p>Cuéntanos cómo opera tu negocio, qué sistemas utilizas y qué procesos te gustaría mejorar. Revisaremos tus respuestas para evaluar una solución personalizada.</p>
+<span class="eyebrow">Diagnóstico empresarial opcional</span>
+<h2>Conozcamos mejor <span class="accent">tu empresa</span></h2>
+<p>
+Este diagnóstico gratuito nos ayuda a entender tus procesos,
+los sistemas que utilizas y las oportunidades de mejora.
+Puedes completarlo si deseas una evaluación más detallada,
+pero no es necesario para solicitar información sobre ATZE.
+</p>
 
 <div class="diagnostic-meta">
 <span>✓ Gratuito</span>
 <span>✓ 5–8 minutos</span>
 <span>✓ Sin compromiso</span>
+<span>✓ Opcional</span>
 </div>
 </div>
 
@@ -480,6 +477,7 @@ method="POST">
 <input type="hidden" name="_subject" value="ATZE - Nuevo Diagnóstico Empresarial">
 <input type="hidden" name="_template" value="table">
 <input type="hidden" name="_captcha" value="true">
+<input type="hidden" name="_next" value="https://atze-erp.github.io/ATZE/#contacto">
 <input type="text" name="_honey" class="honeypot" tabindex="-1" autocomplete="off">
 
 <div class="progress-label">
@@ -642,7 +640,7 @@ method="POST">
 <!-- ETAPA 4 -->
 <div class="diagnostic-step">
 <h3>04. Problemas y oportunidades</h3>
-<p class="step-description">Esta es la parte más importante para identificar cómo podemos ayudarte.</p>
+<p class="step-description">Esta información nos ayuda a identificar cómo podemos ayudarte.</p>
 
 <div class="question">
 <fieldset>
@@ -797,8 +795,6 @@ y alcance del proyecto. Nos ajustamos a tu presupuesto.
 <span>✓ Complemento de ERP o solución independiente</span>
 </div>
 
-<a href="#diagnostico" class="btn primary">Solicitar diagnóstico gratuito</a>
-
 </div>
 </div>
 </section>
@@ -816,7 +812,7 @@ Implementamos ATZE en tu empresa durante
 </h2>
 
 <div class="trial-intro">
-<p><strong>No es solo una prueba. Es el primer paso para transformar tu negocio.</strong></p>
+<p><strong>No es solo una prueba. Es una oportunidad para evaluar ATZE en tu operación.</strong></p>
 <p>Durante un mes trabajamos contigo para conocer tus operaciones, evaluar los sistemas que ya utilizas e implementar ATZE conforme al alcance acordado.</p>
 <p>Podemos comenzar con una solución independiente o evaluar cómo ATZE puede complementar tu ERP actual.</p>
 </div>
@@ -862,8 +858,6 @@ Implementamos ATZE en tu empresa durante
 <p style="margin:8px 0 0">La implementación, los cambios y las integraciones se realizan conforme a un alcance inicial acordado con cada empresa.</p>
 </div>
 
-<a href="#diagnostico" class="btn primary">Comenzar diagnóstico empresarial →</a>
-
 </div>
 </div>
 </section>
@@ -905,7 +899,11 @@ Implementamos ATZE en tu empresa durante
 
 <div class="section-heading">
 <h2>Cuéntanos sobre <span class="accent">tu negocio</span></h2>
-<p>Hablemos de tus necesidades y cómo podemos implementar ATZE o complementar tu sistema actual.</p>
+<p>
+Hablemos de tus necesidades y cómo podemos implementar ATZE
+o complementar tu sistema actual.
+No necesitas completar el diagnóstico empresarial para contactarnos.
+</p>
 </div>
 
 <div class="contact-grid">
@@ -913,9 +911,11 @@ Implementamos ATZE en tu empresa durante
 <div class="contact-info">
 <h3>Construyamos una solución a tu medida</h3>
 <p>Comparte tus objetivos, las herramientas que te interesan y los procesos que quieres mejorar.</p>
-<p>También puedes completar nuestro diagnóstico empresarial gratuito para ayudarnos a conocer mejor tu operación.</p>
-
-<a href="#diagnostico" class="btn outline">Realizar diagnóstico</a>
+<p>
+Puedes solicitar información, resolver tus dudas
+o conocer las opciones de implementación de ATZE
+directamente a través de nuestros canales de contacto.
+</p>
 
 <div class="contact-detail">
 <strong>Correo electrónico</strong>
