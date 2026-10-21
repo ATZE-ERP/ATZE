@@ -715,41 +715,53 @@ footer{
   border:1px solid var(--line);
   border-radius:9px;
 }
+
+/* NUEVO LAYOUT: IMAGEN UBI2.PNG */
 .demo-layout{
   position:relative;
-  min-height:210px;
-  margin:12px 0;
-  border:1px solid #b9cbe7;
+  width:100%;
+  margin:14px 0;
+  border:1px solid #dce5f1;
   border-radius:12px;
   overflow:hidden;
-  background:
-    linear-gradient(90deg,transparent 48%,#cbd5e1 49%,#cbd5e1 51%,transparent 52%),
-    repeating-linear-gradient(0deg,#f1f5f9 0 39px,#e2e8f0 40px);
+  background:#f8fafc;
 }
-.demo-layout::before{
-  content:"ÁREA A                    ÁREA B";
-  position:absolute;
-  top:10px;
-  left:10px;
-  font-size:12px;
-  font-weight:800;
-  color:#64748b;
+.demo-layout-image{
+  display:block;
+  width:100%;
+  height:auto;
+  object-fit:contain;
 }
 .demo-marker{
   display:none;
   position:absolute;
-  width:24px;
-  height:24px;
+  z-index:2;
+  width:17px;
+  height:17px;
   border-radius:50%;
   background:#22c55e;
-  border:4px solid white;
-  box-shadow:0 0 0 5px #22c55e55;
+  border:2px solid #fff;
+  box-shadow:
+    0 0 0 4px #22c55e45,
+    0 0 13px 5px #22c55e8c;
   transform:translate(-50%,-50%);
+  pointer-events:none;
 }
-.demo-marker.visible{display:block}
-.demo-marker.warning{
-  background:#ef4444;
-  box-shadow:0 0 0 5px #ef444455;
+.demo-marker.visible{
+  display:block;
+  animation:greenPulse 1.7s ease-in-out infinite;
+}
+@keyframes greenPulse{
+  0%,100%{
+    box-shadow:
+      0 0 0 4px #22c55e45,
+      0 0 12px 4px #22c55e85;
+  }
+  50%{
+    box-shadow:
+      0 0 0 7px #22c55e22,
+      0 0 19px 8px #22c55e95;
+  }
 }
 .demo-samples{font-size:12px;color:var(--muted)}
 .demo-samples button{
@@ -758,6 +770,19 @@ footer{
   border:1px solid var(--line);
   border-radius:7px;
   background:white;
+}
+.demo-result{
+  padding:10px 12px;
+  margin-top:12px;
+  border:1px solid #dce5f1;
+  border-radius:9px;
+  background:#f8fbff;
+  font-size:13px;
+}
+.demo-result.found{
+  background:#f0fdf4;
+  border-color:#bbf7d0;
+  color:#166534;
 }
 
 /* RESPONSIVE */
@@ -831,9 +856,10 @@ footer{
 
     <div class="nav-actions">
 
+      <!-- LLEVA A LA SECCIÓN, NO ABRE EL MODAL -->
       <a href="#diagnostico" class="btn primary nav-btn">
-  Diagnóstico
-</a>
+        Diagnóstico
+      </a>
 
       <a href="#contacto" class="btn primary nav-btn">
         Contáctanos
@@ -1032,7 +1058,7 @@ footer{
   </div>
 </section>
 
-<!-- DIAGNÓSTICO COMPACTO -->
+<!-- DIAGNÓSTICO -->
 <section class="diagnostic-section" id="diagnostico">
   <div class="container">
     <div class="diagnostic-card">
@@ -1203,7 +1229,7 @@ footer{
         </p>
         <div class="contact-detail">
           <strong>Correo electrónico</strong>
-          <a href="mailto:juanpasolisc@gmail.com">juanpasolisc@gmail.com</a>
+          <a href="mailto:informacion@atze.cloud">informacion@atze.cloud</a>
         </div>
         <div class="contact-detail">
           <strong>WhatsApp</strong>
@@ -1338,7 +1364,7 @@ footer{
 
     <form
       id="diagForm"
-      action="https://formsubmit.co/juanpasolisc@gmail.com"
+      action="https://formsubmit.co/informacion@atze.cloud"
       method="POST"
       novalidate
     >
@@ -1772,7 +1798,7 @@ const featureData={
     points:[
       "Búsqueda por identificador.",
       "Visualización de ubicaciones.",
-      "Indicadores de estado.",
+      "Identificación con un foco verde.",
       "Layouts adaptados a tu operación."
     ]
   },
@@ -1863,50 +1889,100 @@ function openFeature(key){
     featureDemo.appendChild(demo);
   }
 
+  /* DEMOSTRACIÓN DE UBICACIÓN CON UBI2.PNG */
   if(key==="ubicacion"){
     const demo=document.createElement("div");
+
     demo.innerHTML=`
-      <p style="font-size:12px"><strong>Ubicaciones ficticias de demostración</strong></p>
+      <p style="font-size:12px">
+        <strong>Demostración con ubicaciones ilustrativas</strong>
+      </p>
+
       <form class="demo-search" id="demoSearchForm">
-        <input id="demoPartInput" placeholder="Buscar identificador..." aria-label="Identificador">
+        <input
+          id="demoPartInput"
+          placeholder="Buscar número de parte..."
+          aria-label="Número de parte"
+        >
         <button type="submit" class="btn primary">Buscar</button>
       </form>
+
       <div class="demo-samples">
         Ejemplos:
         <button type="button" data-sample="607-7435">607-7435</button>
         <button type="button" data-sample="9310300">9310300</button>
         <button type="button" data-sample="COMP-001">COMP-001</button>
       </div>
+
       <div class="demo-layout">
+        <img
+          class="demo-layout-image"
+          src="UBI2.png"
+          alt="Layout visual de las instalaciones"
+          id="demoLayoutImage"
+        >
         <div class="demo-marker" id="demoMarker"></div>
       </div>
-      <p id="demoResult" style="font-size:13px"></p>
+
+      <p class="demo-result" id="demoResult">
+        Selecciona un número de parte para mostrar su ubicación.
+      </p>
     `;
+
     featureDemo.appendChild(demo);
 
+    /*
+      POSICIONES DE EJEMPLO SOBRE UBI2.PNG
+
+      x = porcentaje horizontal desde la izquierda.
+      y = porcentaje vertical desde arriba.
+
+      Las coordenadas son ilustrativas y pueden ajustarse
+      a las ubicaciones reales de la imagen UBI2.png.
+
+      SOLO EXISTE UN FOCO VERDE EN EL LAYOUT.
+    */
     const parts={
-      "607-7435":{x:24,y:38,zone:"Zona A",warning:false},
-      "9310300":{x:68,y:48,zone:"Zona B",warning:true},
-      "COMP-001":{x:42,y:75,zone:"Zona C",warning:false}
+      "607-7435":{
+        x:24,
+        y:38,
+        zone:"Ubicación A"
+      },
+      "9310300":{
+        x:68,
+        y:48,
+        zone:"Ubicación B"
+      },
+      "COMP-001":{
+        x:42,
+        y:75,
+        zone:"Ubicación C"
+      }
     };
 
     function searchPart(value){
       const code=value.trim().toUpperCase();
       const part=parts[code];
+
       const marker=document.getElementById("demoMarker");
       const result=document.getElementById("demoResult");
 
       if(!part){
-        marker.className="demo-marker";
-        result.textContent="No se encontró. Prueba con uno de los ejemplos.";
+        marker.classList.remove("visible");
+        result.classList.remove("found");
+        result.textContent=
+          "No se encontró el material. Prueba con uno de los ejemplos.";
         return;
       }
 
+      /* MOVER EL MISMO FOCO VERDE */
       marker.style.left=part.x+"%";
       marker.style.top=part.y+"%";
-      marker.className="demo-marker visible"+(part.warning?" warning":"");
-      result.textContent=code+" — "+part.zone+" — "+
-        (part.warning?"Requiere atención":"Disponible");
+      marker.classList.add("visible");
+
+      result.classList.add("found");
+      result.textContent=
+        "✓ Material "+code+" localizado — "+part.zone;
     }
 
     document.getElementById("demoSearchForm").addEventListener("submit",e=>{
@@ -1919,6 +1995,13 @@ function openFeature(key){
         document.getElementById("demoPartInput").value=button.dataset.sample;
         searchPart(button.dataset.sample);
       });
+    });
+
+    const layoutImage=document.getElementById("demoLayoutImage");
+
+    layoutImage.addEventListener("error",()=>{
+      document.getElementById("demoResult").textContent=
+        "No se pudo cargar UBI2.png. Verifica que el archivo esté publicado junto a index.html.";
     });
   }
 
@@ -2074,7 +2157,7 @@ function validateStep(number){
   return true;
 }
 
-/* AMBOS BOTONES ABREN EL MISMO DIAGNÓSTICO */
+/* SOLO EL BOTÓN DE LA SECCIÓN ABRE EL FORMULARIO */
 document.getElementById("openDiagnostic").addEventListener(
   "click",openDiagnostic
 );
@@ -2101,7 +2184,7 @@ diagNext.addEventListener("click",()=>{
   }
 });
 
-/* ENVÍO A FORMSUBMIT */
+/* ENVÍO DEL DIAGNÓSTICO AL NUEVO CORREO */
 diagForm.addEventListener("submit",e=>{
   if(submitting){
     e.preventDefault();
@@ -2138,10 +2221,6 @@ diagForm.addEventListener("submit",e=>{
     el.disabled=true;
   });
 
-  /*
-    El navegador envía directamente a FormSubmit.
-    No se utiliza fetch para evitar problemas de CORS.
-  */
   submitting=true;
   diagSubmit.textContent="Abriendo confirmación...";
   diagSubmit.disabled=true;
