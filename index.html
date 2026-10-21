@@ -31,6 +31,7 @@ body.modal-open{overflow:hidden}
 a{text-decoration:none;color:inherit}
 button,input,select,textarea{font:inherit}
 button{cursor:pointer}
+button[hidden]{display:none!important}
 .container{width:min(1120px,92%);margin:auto}
 section{padding:75px 0}
 h1,h2,h3{color:var(--navy);line-height:1.2}
@@ -52,11 +53,13 @@ p{margin:0 0 16px}
   display:inline-flex;
   align-items:center;
   justify-content:center;
-  gap:8px;
-  padding:12px 21px;
+  gap:7px;
+  padding:9px 16px;
   border:1px solid transparent;
-  border-radius:11px;
+  border-radius:9px;
+  font-size:14px;
   font-weight:700;
+  line-height:1.4;
   transition:.2s;
 }
 .btn:hover{transform:translateY(-2px)}
@@ -84,7 +87,7 @@ header{
   backdrop-filter:blur(14px);
 }
 .nav{
-  min-height:76px;
+  min-height:68px;
   display:flex;
   justify-content:space-between;
   align-items:center;
@@ -95,20 +98,33 @@ header{
   align-items:center;
   gap:10px;
   color:var(--navy);
-  font-size:26px;
+  font-size:25px;
   font-weight:900;
   letter-spacing:2px;
 }
-.brand img{width:49px;height:49px;object-fit:contain}
-.nav-actions{display:flex;align-items:center;gap:10px}
+.brand img{width:45px;height:45px;object-fit:contain}
+.nav-actions{
+  display:flex;
+  align-items:center;
+  gap:9px;
+}
+.nav-btn{
+  padding:9px 15px;
+  font-size:14px;
+  font-weight:600;
+  white-space:nowrap;
+}
 .menu-wrap{position:relative}
 .menu-btn{
-  padding:10px 15px;
+  padding:9px 14px;
   border:1px solid var(--line);
-  border-radius:10px;
+  border-radius:9px;
   background:white;
   color:var(--navy);
+  font-size:14px;
   font-weight:700;
+  line-height:1.4;
+  white-space:nowrap;
 }
 .dropdown{
   display:none;
@@ -252,7 +268,7 @@ header{
   color:var(--muted);
 }
 
-/* TARJETA COMPACTA DE DIAGNÓSTICO */
+/* TARJETA DE DIAGNÓSTICO */
 .diagnostic-section{
   padding:32px 0;
   background:#f8fbff;
@@ -753,10 +769,16 @@ footer{
   section{padding:54px 0}
   .hero{padding:75px 0}
   .hero p{font-size:16px}
-  .nav{min-height:69px}
-  .brand{font-size:22px}
-  .brand img{width:42px;height:42px}
-  .nav-actions>.btn{display:none}
+  .nav{min-height:63px;gap:6px}
+  .brand{font-size:20px;gap:5px}
+  .brand img{width:36px;height:36px}
+  .nav-actions{gap:5px}
+  .nav-actions>.nav-btn{
+    display:inline-flex;
+    padding:8px 10px;
+    font-size:12px;
+  }
+  .menu-btn{padding:8px 10px;font-size:12px}
   .cards,.benefits,.trial-steps{grid-template-columns:1fr}
   .feature-card{min-height:auto}
   .box{padding:25px 18px}
@@ -782,6 +804,12 @@ footer{
   .client-logo{width:245px;height:140px}
   .whatsapp{font-size:13px;padding:10px 13px}
 }
+@media(max-width:390px){
+  .brand{font-size:18px;letter-spacing:0}
+  .brand img{width:29px;height:29px}
+  .nav-actions>.nav-btn{padding:7px 7px;font-size:11px}
+  .menu-btn{padding:7px;font-size:11px}
+}
 @media(prefers-reduced-motion:reduce){
   *,*::before,*::after{
     animation-duration:.01ms!important;
@@ -800,12 +828,29 @@ footer{
       <img src="https://raw.githubusercontent.com/ATZE-ERP/ATZE/main/logo.png" alt="Logo ATZE">
       <span>ATZE</span>
     </a>
+
     <div class="nav-actions">
-      <a href="#contacto" class="btn primary">Contáctanos</a>
+
+      <button
+        type="button"
+        class="btn primary nav-btn"
+        id="openDiagnosticNav">
+        Diagnóstico
+      </button>
+
+      <a href="#contacto" class="btn primary nav-btn">
+        Contáctanos
+      </a>
+
       <div class="menu-wrap">
-        <button class="menu-btn" id="menuButton" aria-expanded="false" aria-controls="dropdown">
+        <button
+          class="menu-btn"
+          id="menuButton"
+          aria-expanded="false"
+          aria-controls="dropdown">
           ☰ Menú
         </button>
+
         <nav class="dropdown" id="dropdown">
           <a href="#inicio">Inicio</a>
           <a href="#beneficios">Beneficios</a>
@@ -818,6 +863,7 @@ footer{
           <a href="#contacto">Contacto</a>
         </nav>
       </div>
+
     </div>
   </div>
 </header>
@@ -2031,7 +2077,12 @@ function validateStep(number){
   return true;
 }
 
+/* AMBOS BOTONES ABREN EL MISMO DIAGNÓSTICO */
 document.getElementById("openDiagnostic").addEventListener(
+  "click",openDiagnostic
+);
+
+document.getElementById("openDiagnosticNav").addEventListener(
   "click",openDiagnostic
 );
 
@@ -2057,7 +2108,7 @@ diagNext.addEventListener("click",()=>{
   }
 });
 
-/* ENVÍO NATIVO A FORMSUBMIT */
+/* ENVÍO A FORMSUBMIT */
 diagForm.addEventListener("submit",e=>{
   if(submitting){
     e.preventDefault();
@@ -2073,7 +2124,6 @@ diagForm.addEventListener("submit",e=>{
     }
   }
 
-  /* Consolidar las selecciones múltiples para el correo */
   diagForm.querySelectorAll('input[data-summary]').forEach(el=>el.remove());
 
   const multiNames=["Áreas de interés","Funcionalidades deseadas"];
@@ -2091,27 +2141,25 @@ diagForm.addEventListener("submit",e=>{
     diagForm.appendChild(hidden);
   });
 
-  /* Evitar valores repetidos de los checkboxes */
   diagForm.querySelectorAll('input[type="checkbox"]').forEach(el=>{
     el.disabled=true;
   });
 
   /*
-    No usamos fetch ni form.submit().
-    El navegador enviará el formulario directamente a FormSubmit.
-    Esto permite que FormSubmit muestre su respuesta
-    o realice la redirección configurada.
+    El navegador envía directamente a FormSubmit.
+    No se utiliza fetch para evitar problemas de CORS.
   */
   submitting=true;
   diagSubmit.textContent="Abriendo confirmación...";
   diagSubmit.disabled=true;
 });
 
-/* Restaurar botón si se vuelve a la página desde el navegador */
+/* RESTAURAR EL BOTÓN AL REGRESAR */
 window.addEventListener("pageshow",()=>{
   submitting=false;
   diagSubmit.disabled=false;
   diagSubmit.textContent="Enviar diagnóstico →";
+
   diagForm.querySelectorAll('input[type="checkbox"]').forEach(el=>{
     el.disabled=false;
   });
@@ -2125,6 +2173,7 @@ document.addEventListener("keydown",e=>{
     }else if(featureOverlay.classList.contains("open")){
       closeFeature();
     }
+
     dropdown.classList.remove("open");
     menuButton.setAttribute("aria-expanded","false");
   }
