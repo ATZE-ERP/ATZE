@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -66,6 +67,10 @@ p{margin:0 0 15px}
 .btn.primary:hover{background:#1d4ed8}
 .btn.outline{border-color:var(--line)}
 .btn.outline:hover{background:#eff6ff}
+.btn:disabled{
+  opacity:.55;
+  cursor:not-allowed;
+}
 .section-heading{
   max-width:750px;
   margin:0 auto 36px;
@@ -103,8 +108,16 @@ header{
   letter-spacing:1px;
   white-space:nowrap;
 }
-.brand img{width:38px;height:38px;object-fit:contain}
-.nav-actions{display:flex;align-items:center;gap:6px}
+.brand img{
+  width:38px;
+  height:38px;
+  object-fit:contain;
+}
+.nav-actions{
+  display:flex;
+  align-items:center;
+  gap:6px;
+}
 .nav-btn{
   padding:7px 12px;
   border-radius:7px;
@@ -143,7 +156,10 @@ header{
   border-radius:7px;
   font-size:13px;
 }
-.dropdown a:hover{background:#eff6ff;color:var(--blue)}
+.dropdown a:hover{
+  background:#eff6ff;
+  color:var(--blue);
+}
 
 /* HERO */
 .hero{
@@ -152,7 +168,11 @@ header{
     radial-gradient(circle at 85% 15%,#dbeafe,transparent 45%),
     linear-gradient(135deg,#fff,#f5f9ff);
 }
-.hero-inner{max-width:850px;margin:auto;text-align:center}
+.hero-inner{
+  max-width:850px;
+  margin:auto;
+  text-align:center;
+}
 .hero h1{
   font-size:clamp(38px,6vw,68px);
   letter-spacing:-2px;
@@ -171,7 +191,6 @@ header{
   gap:10px;
   margin:24px 0;
 }
-.hero-caption{font-size:13px!important}
 
 /* BENEFICIOS */
 .benefits,.cards{
@@ -221,7 +240,8 @@ header{
   background:white;
 }
 .integration-card h3{font-size:21px}
-.integration-card p,.integration-card li{color:var(--muted)}
+.integration-card p,
+.integration-card li{color:var(--muted)}
 .integration-card ul{padding-left:20px}
 .integration-card li{margin:7px 0}
 .integration-note{
@@ -274,7 +294,11 @@ header{
   border-radius:15px;
   background:white;
 }
-.diagnostic-left{display:flex;align-items:center;gap:14px}
+.diagnostic-left{
+  display:flex;
+  align-items:center;
+  gap:14px;
+}
 .diagnostic-icon{
   display:grid;
   place-items:center;
@@ -286,8 +310,15 @@ header{
   color:var(--blue);
   font-size:24px;
 }
-.diagnostic-card h2{font-size:20px;margin:0 0 5px}
-.diagnostic-card p{font-size:13px;color:var(--muted);margin:0}
+.diagnostic-card h2{
+  font-size:20px;
+  margin:0 0 5px;
+}
+.diagnostic-card p{
+  font-size:13px;
+  color:var(--muted);
+  margin:0;
+}
 
 /* MODALES */
 .modal-overlay{
@@ -326,10 +357,13 @@ header{
   color:var(--navy);
   font-size:23px;
 }
-.modal-box h2{font-size:25px;margin:12px 38px 9px 0}
+.modal-box h2{
+  font-size:25px;
+  margin:12px 38px 9px 0;
+}
 .modal-box p{color:var(--muted)}
 
-/* DIAGNÓSTICO RÁPIDO */
+/* DIAGNÓSTICO DE 5 PASOS */
 .diag-top{
   display:flex;
   align-items:center;
@@ -357,8 +391,14 @@ header{
 }
 .diag-step{display:none}
 .diag-step.active{display:block}
-.diag-step h3{font-size:21px;margin:0 0 7px}
-.diag-help{font-size:12px;margin-bottom:13px}
+.diag-step h3{
+  font-size:21px;
+  margin:0 0 7px;
+}
+.diag-help{
+  font-size:12px;
+  margin-bottom:13px;
+}
 .question-label{
   display:block;
   margin:15px 0 7px;
@@ -423,7 +463,10 @@ header{
   color:var(--text);
   font-size:13px;
 }
-.diag-field textarea{min-height:75px;resize:vertical}
+.diag-field textarea{
+  min-height:75px;
+  resize:vertical;
+}
 .diag-fields-2{
   display:grid;
   grid-template-columns:1fr 1fr;
@@ -451,7 +494,46 @@ header{
   color:var(--muted);
 }
 .diag-actions .btn{min-width:100px}
-.diag-actions .btn:disabled{opacity:.6}
+
+/* ACEPTACIÓN DE PRIVACIDAD Y TÉRMINOS */
+.legal-consent{
+  margin:15px 0;
+  padding:13px 14px;
+  border:1px solid var(--line);
+  border-radius:10px;
+  background:#f8fbff;
+}
+.legal-consent-row{
+  display:flex;
+  align-items:flex-start;
+  gap:10px;
+  cursor:pointer;
+  font-size:12px;
+  line-height:1.6;
+  color:var(--text);
+}
+.legal-consent-row input{
+  flex:0 0 auto;
+  width:17px;
+  height:17px;
+  margin:2px 0 0;
+  accent-color:var(--blue);
+  cursor:pointer;
+}
+.legal-consent a{
+  color:var(--blue);
+  text-decoration:underline;
+  text-underline-offset:2px;
+}
+.legal-consent a:focus-visible{
+  outline:2px solid var(--blue);
+  outline-offset:2px;
+}
+.legal-consent-error{
+  margin:6px 0 0;
+  color:#b91c1c;
+  font-size:12px;
+}
 
 /* PRECIOS */
 .box{
@@ -464,7 +546,10 @@ header{
   text-align:center;
   box-shadow:0 10px 30px #14213d0a;
 }
-.box h2{font-size:clamp(28px,4vw,39px);margin:15px 0}
+.box h2{
+  font-size:clamp(28px,4vw,39px);
+  margin:15px 0;
+}
 .box p{color:var(--muted)}
 .pricing-tags{
   display:flex;
@@ -480,8 +565,13 @@ header{
   color:#1d4ed8;
   font-size:12px;
 }
-.trial{background:linear-gradient(135deg,#edf5ff,#f8fbff)}
-.trial-intro{max-width:750px;margin:0 auto 25px}
+.trial{
+  background:linear-gradient(135deg,#edf5ff,#f8fbff);
+}
+.trial-intro{
+  max-width:750px;
+  margin:0 auto 25px;
+}
 .trial-steps{
   display:grid;
   grid-template-columns:repeat(2,1fr);
@@ -508,8 +598,14 @@ header{
   color:var(--blue);
   font-weight:900;
 }
-.trial-step h3{font-size:16px;margin:0 0 7px}
-.trial-step p{font-size:13px;margin:0}
+.trial-step h3{
+  font-size:16px;
+  margin:0 0 7px;
+}
+.trial-step p{
+  font-size:13px;
+  margin:0;
+}
 .trial-note{
   padding:17px;
   margin:20px 0 24px;
@@ -518,17 +614,11 @@ header{
   font-size:13px;
 }
 
-/* ============================================
-   CARRUSEL DE CLIENTES
-   COMPUTADORA: MOVIMIENTO AUTOMÁTICO
-   CELULAR: DESLIZAMIENTO CON EL DEDO
-   ============================================ */
-
+/* CARRUSEL DE CLIENTES */
 .clients-section{
   overflow:hidden;
   background:#f6f9ff;
 }
-
 .clients-carousel{
   overflow:hidden;
   width:100%;
@@ -541,20 +631,17 @@ header{
     transparent
   );
 }
-
 .clients-track{
   display:flex;
   width:max-content;
   animation:clientsScroll 24s linear infinite;
 }
-
 .clients-group{
   display:flex;
   flex-shrink:0;
   gap:22px;
   padding-right:22px;
 }
-
 .client-logo{
   width:290px;
   height:155px;
@@ -567,12 +654,10 @@ header{
   background:white;
   transition:transform .2s,box-shadow .2s;
 }
-
 .client-logo:hover{
   transform:translateY(-3px);
   box-shadow:0 12px 30px #14213d12;
 }
-
 .client-logo img{
   max-width:100%;
   max-height:105px;
@@ -580,27 +665,16 @@ header{
   user-select:none;
   -webkit-user-drag:none;
 }
-
 @keyframes clientsScroll{
   from{transform:translateX(0)}
   to{transform:translateX(-50%)}
 }
-
 .clients-carousel:hover .clients-track{
   animation-play-state:paused;
 }
+.clients-hint{display:none}
 
-.clients-hint{
-  display:none;
-}
-
-/* CARRUSEL TÁCTIL EN CELULAR */
 @media(max-width:767px){
-
-  .clients-section{
-    overflow:hidden;
-  }
-
   .clients-carousel{
     overflow-x:auto;
     overflow-y:hidden;
@@ -614,29 +688,21 @@ header{
     mask-image:none;
     -webkit-mask-image:none;
   }
-
   .clients-carousel::-webkit-scrollbar{
     display:none;
   }
-
   .clients-track{
     width:max-content;
     animation:none!important;
     transform:none!important;
   }
-
   .clients-group{
     gap:14px;
     padding-right:14px;
   }
-
-  /* Ocultamos las copias usadas para la animación
-     de computadora. En celular solo se muestran
-     los cuatro logotipos originales. */
   .clients-group[aria-hidden="true"]{
     display:none;
   }
-
   .client-logo{
     width:min(76vw,290px);
     height:145px;
@@ -646,12 +712,10 @@ header{
     scroll-snap-stop:always;
     transform:none!important;
   }
-
   .client-logo img{
     max-height:100px;
     pointer-events:none;
   }
-
   .clients-hint{
     display:flex;
     align-items:center;
@@ -662,7 +726,6 @@ header{
     font-size:12px;
     font-weight:600;
   }
-
   .clients-hint span{
     color:var(--blue);
     font-size:19px;
@@ -682,7 +745,10 @@ header{
   border:1px solid var(--line);
   border-radius:11px;
 }
-.contact-detail strong{display:block;color:var(--blue)}
+.contact-detail strong{
+  display:block;
+  color:var(--blue);
+}
 .contact-form{
   padding:25px;
   border:1px solid var(--line);
@@ -696,7 +762,9 @@ header{
   font-size:12px;
   font-weight:700;
 }
-.field input,.field select,.field textarea{
+.field input,
+.field select,
+.field textarea{
   width:100%;
   padding:10px 11px;
   border:1px solid #cbd5e1;
@@ -704,7 +772,10 @@ header{
   background:white;
   color:var(--text);
 }
-.field textarea{min-height:80px;resize:vertical}
+.field textarea{
+  min-height:80px;
+  resize:vertical;
+}
 .contact-form .btn{width:100%}
 
 /* FOOTER */
@@ -767,7 +838,10 @@ footer{
   border-radius:11px;
   background:#f8fbff;
 }
-.demo-metric small{display:block;color:var(--muted)}
+.demo-metric small{
+  display:block;
+  color:var(--muted);
+}
 .demo-metric strong{
   display:block;
   font-size:24px;
@@ -787,7 +861,11 @@ footer{
   border-radius:5px 5px 0 0;
   background:linear-gradient(#60a5fa,#2563eb);
 }
-.demo-search{display:flex;gap:8px;margin:14px 0}
+.demo-search{
+  display:flex;
+  gap:8px;
+  margin:14px 0;
+}
 .demo-search input{
   min-width:0;
   flex:1;
@@ -823,7 +901,10 @@ footer{
   pointer-events:none;
 }
 .demo-marker.visible{display:block}
-.demo-samples{font-size:12px;color:var(--muted)}
+.demo-samples{
+  font-size:12px;
+  color:var(--muted);
+}
 .demo-samples button{
   margin:3px;
   padding:5px 8px;
@@ -846,29 +927,40 @@ footer{
 
 /* RESPONSIVE */
 @media(max-width:850px){
-  .benefits,.cards{grid-template-columns:repeat(2,1fr)}
-  .integration-grid,.contact-grid{grid-template-columns:1fr}
+  .benefits,.cards{
+    grid-template-columns:repeat(2,1fr);
+  }
+  .integration-grid,.contact-grid{
+    grid-template-columns:1fr;
+  }
 }
 @media(max-width:600px){
   html{scroll-padding-top:65px}
   section{padding:50px 0}
   .hero{padding:70px 0}
   .hero p{font-size:15px}
-  .nav{min-height:54px;gap:5px}
-  .brand{font-size:18px;gap:4px;letter-spacing:.3px}
-  .brand img{width:30px;height:30px}
+  .nav{
+    min-height:54px;
+    gap:5px;
+  }
+  .brand{
+    font-size:18px;
+    gap:4px;
+    letter-spacing:.3px;
+  }
+  .brand img{
+    width:30px;
+    height:30px;
+  }
   .nav-actions{gap:4px}
-  .nav-btn{
+  .nav-btn,.menu-btn{
     padding:6px 8px;
     font-size:10px;
     border-radius:6px;
   }
-  .menu-btn{
-    padding:6px 8px;
-    font-size:10px;
-    border-radius:6px;
+  .benefits,.cards,.trial-steps{
+    grid-template-columns:1fr;
   }
-  .benefits,.cards,.trial-steps{grid-template-columns:1fr}
   .feature-card{min-height:auto}
   .box{padding:24px 17px}
   .integration-card{padding:22px}
@@ -888,13 +980,25 @@ footer{
     font-size:11px;
     min-height:42px;
   }
-  .diag-fields-2{grid-template-columns:1fr;gap:0}
-  .whatsapp{padding:9px 12px;font-size:12px}
+  .diag-fields-2{
+    grid-template-columns:1fr;
+    gap:0;
+  }
+  .whatsapp{
+    padding:9px 12px;
+    font-size:12px;
+  }
 }
 @media(max-width:365px){
   .brand{font-size:16px}
-  .brand img{width:26px;height:26px}
-  .nav-btn,.menu-btn{padding:6px;font-size:9px}
+  .brand img{
+    width:26px;
+    height:26px;
+  }
+  .nav-btn,.menu-btn{
+    padding:6px;
+    font-size:9px;
+  }
 }
 @media(prefers-reduced-motion:reduce){
   *,*::before,*::after{
@@ -977,20 +1081,24 @@ footer{
       <a href="#prueba" class="btn primary">
         Implementa ATZE gratis por 30 días →
       </a>
+
       <a href="#integracion" class="btn outline">
         ¿Ya tienes un ERP?
       </a>
     </div>
-    
   </div>
 </section>
 
 <!-- BENEFICIOS -->
 <section id="beneficios">
   <div class="container">
+
     <div class="section-heading">
       <span class="eyebrow">¿Por qué ATZE?</span>
-      <h2>Tu operación, <span class="accent">más conectada.</span></h2>
+      <h2>
+        Tu operación,
+        <span class="accent">más conectada.</span>
+      </h2>
       <p>
         Creamos soluciones prácticas para ayudarte a
         trabajar con mayor claridad y control.
@@ -1028,6 +1136,7 @@ footer{
 <!-- INTEGRACIÓN -->
 <section class="integration" id="integracion">
   <div class="container">
+
     <div class="section-heading">
       <span class="eyebrow">Flexibilidad empresarial</span>
       <h2>
@@ -1084,10 +1193,12 @@ footer{
 <!-- FUNCIONALIDADES -->
 <section id="funcionalidades">
   <div class="container">
+
     <div class="section-heading">
       <span class="eyebrow">Funcionalidades</span>
       <h2>
-        Descubre lo que <span class="accent">ATZE puede hacer.</span>
+        Descubre lo que
+        <span class="accent">ATZE puede hacer.</span>
       </h2>
       <p>
         Explora herramientas que podemos implementar y personalizar.
@@ -1095,6 +1206,7 @@ footer{
     </div>
 
     <div class="cards">
+
       <button type="button" class="feature-card" data-feature="dashboard">
         <div class="icon-box">▥</div>
         <h3>Información en tiempo real</h3>
@@ -1136,6 +1248,7 @@ footer{
         <p>Personaliza herramientas según tus necesidades.</p>
         <span class="more">Conocer más →</span>
       </button>
+
     </div>
 
     <p class="feature-note">
@@ -1177,7 +1290,6 @@ footer{
         La tecnología adecuada para
         <span class="accent">tu negocio.</span>
       </h2>
-
       <p>
         Definimos contigo las funcionalidades, integraciones
         y alcance del proyecto. Nos ajustamos a tu presupuesto.
@@ -1233,7 +1345,8 @@ footer{
           <div>
             <h3>Diagnóstico e implementación</h3>
             <p>
-              Conocemos tus procesos y configuramos las funcionalidades iniciales.
+              Conocemos tus procesos y configuramos
+              las funcionalidades iniciales.
             </p>
           </div>
         </div>
@@ -1243,7 +1356,8 @@ footer{
           <div>
             <h3>Personalización y adecuaciones</h3>
             <p>
-              Realizamos ajustes según tus necesidades y el alcance definido.
+              Realizamos ajustes según tus necesidades
+              y el alcance definido.
             </p>
           </div>
         </div>
@@ -1253,7 +1367,8 @@ footer{
           <div>
             <h3>Acompañamiento y mejoras</h3>
             <p>
-              Recibimos comentarios, resolvemos dudas e identificamos mejoras.
+              Recibimos comentarios, resolvemos dudas
+              e identificamos mejoras.
             </p>
           </div>
         </div>
@@ -1263,7 +1378,8 @@ footer{
           <div>
             <h3>Tú decides si continuar</h3>
             <p>
-              Evaluamos los resultados y presentamos una propuesta personalizada.
+              Evaluamos los resultados y presentamos
+              una propuesta personalizada.
             </p>
           </div>
         </div>
@@ -1274,8 +1390,9 @@ footer{
           Un mes para implementar, conocer y adaptar ATZE.
         </strong>
         <p style="margin:8px 0 0">
-          La implementación se realiza conforme a un alcance inicial acordado.
-          Las integraciones dependen de su viabilidad técnica.
+          La implementación se realiza conforme a un alcance
+          inicial acordado. Las integraciones dependen
+          de su viabilidad técnica.
         </p>
       </div>
 
@@ -1311,7 +1428,6 @@ footer{
 
     <div class="clients-track">
 
-      <!-- PRIMER GRUPO -->
       <div class="clients-group">
 
         <div class="client-logo">
@@ -1348,7 +1464,6 @@ footer{
 
       </div>
 
-      <!-- COPIA PARA ANIMACIÓN EN COMPUTADORA -->
       <div class="clients-group" aria-hidden="true">
 
         <div class="client-logo">
@@ -1368,7 +1483,6 @@ footer{
         </div>
 
       </div>
-
     </div>
   </div>
 
@@ -1382,9 +1496,11 @@ footer{
 <!-- CONTACTO -->
 <section id="contacto">
   <div class="container">
+
     <div class="section-heading">
       <h2>
-        Cuéntanos sobre <span class="accent">tu negocio.</span>
+        Cuéntanos sobre
+        <span class="accent">tu negocio.</span>
       </h2>
       <p>
         Hablemos de tus necesidades y cómo ATZE puede ayudarte.
@@ -1392,6 +1508,7 @@ footer{
     </div>
 
     <div class="contact-grid">
+
       <div class="contact-info">
         <h3>Construyamos una solución a tu medida</h3>
         <p>
@@ -1453,7 +1570,9 @@ footer{
         </div>
 
         <div class="field">
-          <label for="erpActual">¿Utilizas un ERP u otro sistema?</label>
+          <label for="erpActual">
+            ¿Utilizas un ERP u otro sistema?
+          </label>
           <select id="erpActual">
             <option value="">Selecciona una opción</option>
             <option>No utilizamos un ERP</option>
@@ -1496,15 +1615,61 @@ footer{
         </div>
 
         <div class="field">
-          <label for="mensaje">Cuéntanos qué necesitas</label>
+          <label for="mensaje">
+            Cuéntanos qué necesitas
+          </label>
           <textarea
             id="mensaje"
             placeholder="Describe brevemente tu proyecto..."></textarea>
         </div>
 
-        <button class="btn primary" type="submit">
+        <!-- ACEPTACIÓN OBLIGATORIA EN CONTACTO -->
+        <div class="legal-consent">
+          <div class="legal-consent-row">
+            <input
+              type="checkbox"
+              id="contactConsent"
+              required
+              aria-label="He leído el Aviso de Privacidad y acepto los Términos y Condiciones">
+
+            <div>
+              <label for="contactConsent">
+                He leído el
+              </label>
+              <a
+                href="privacidad.html"
+                target="_blank"
+                rel="noopener noreferrer">
+                Aviso de Privacidad
+              </a>
+              y acepto los
+              <a
+                href="terminos.html"
+                target="_blank"
+                rel="noopener noreferrer">
+                Términos y Condiciones
+              </a>
+              de ATZE.
+            </div>
+          </div>
+
+          <p
+            class="legal-consent-error"
+            id="contactConsentError"
+            role="alert"
+            hidden>
+            Debes aceptar las condiciones para continuar.
+          </p>
+        </div>
+
+        <button
+          class="btn primary"
+          type="submit"
+          id="contactSubmit"
+          disabled>
           Enviar mensaje por WhatsApp →
         </button>
+
       </form>
     </div>
   </div>
@@ -1517,20 +1682,24 @@ footer{
   <div class="container">
 
     <div class="atze-legal">
-      <a href="terminos.html">Términos y Condiciones</a>
+      <a href="terminos.html">
+        Términos y Condiciones
+      </a>
       <span>·</span>
-      <a href="privacidad.html">Aviso de Privacidad</a>
+      <a href="privacidad.html">
+        Aviso de Privacidad
+      </a>
     </div>
 
     <div class="footer-inner">
       <span>
-        © <span id="year"></span> ATZE. Todos los derechos reservados.
+        © <span id="year"></span>
+        ATZE. Todos los derechos reservados.
       </span>
       <span>
         Tecnología que se adapta a tu empresa.
       </span>
     </div>
-
   </div>
 </footer>
 
@@ -1566,18 +1735,24 @@ footer{
     <div id="featureDemo"></div>
 
     <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:18px">
-      <button type="button" class="btn outline" id="featureDone">
+      <button
+        type="button"
+        class="btn outline"
+        id="featureDone">
         Cerrar
       </button>
 
-      <a href="#contacto" class="btn primary" id="featureContact">
+      <a
+        href="#contacto"
+        class="btn primary"
+        id="featureContact">
         Solicitar información →
       </a>
     </div>
   </div>
 </div>
 
-<!-- DIAGNÓSTICO EMPRESARIAL DE 5 PASOS -->
+<!-- DIAGNÓSTICO EMPRESARIAL -->
 <div class="modal-overlay" id="diagOverlay" aria-hidden="true">
   <div
     class="modal-box"
@@ -1649,12 +1824,15 @@ footer{
         </span>
 
         <div class="choice-grid" data-required-group>
+
           <label class="choice">
             <input
               type="radio"
               name="Giro del negocio"
               value="Manufactura">
-            <span class="choice-content">⚙ Manufactura</span>
+            <span class="choice-content">
+              ⚙ Manufactura
+            </span>
           </label>
 
           <label class="choice">
@@ -1662,7 +1840,9 @@ footer{
               type="radio"
               name="Giro del negocio"
               value="Distribución">
-            <span class="choice-content">▤ Distribución</span>
+            <span class="choice-content">
+              ▤ Distribución
+            </span>
           </label>
 
           <label class="choice">
@@ -1670,7 +1850,9 @@ footer{
               type="radio"
               name="Giro del negocio"
               value="Comercio">
-            <span class="choice-content">▣ Comercio o ferretería</span>
+            <span class="choice-content">
+              ▣ Comercio o ferretería
+            </span>
           </label>
 
           <label class="choice">
@@ -1678,8 +1860,11 @@ footer{
               type="radio"
               name="Giro del negocio"
               value="Servicios u otro">
-            <span class="choice-content">◈ Servicios u otro</span>
+            <span class="choice-content">
+              ◈ Servicios u otro
+            </span>
           </label>
+
         </div>
 
         <span class="question-label">
@@ -1687,12 +1872,15 @@ footer{
         </span>
 
         <div class="choice-grid" data-required-group>
+
           <label class="choice">
             <input
               type="radio"
               name="Tamaño de empresa"
               value="1 a 10 empleados">
-            <span class="choice-content">1 a 10 empleados</span>
+            <span class="choice-content">
+              1 a 10 empleados
+            </span>
           </label>
 
           <label class="choice">
@@ -1700,7 +1888,9 @@ footer{
               type="radio"
               name="Tamaño de empresa"
               value="11 a 50 empleados">
-            <span class="choice-content">11 a 50 empleados</span>
+            <span class="choice-content">
+              11 a 50 empleados
+            </span>
           </label>
 
           <label class="choice">
@@ -1708,7 +1898,9 @@ footer{
               type="radio"
               name="Tamaño de empresa"
               value="51 a 250 empleados">
-            <span class="choice-content">51 a 250 empleados</span>
+            <span class="choice-content">
+              51 a 250 empleados
+            </span>
           </label>
 
           <label class="choice">
@@ -1716,8 +1908,11 @@ footer{
               type="radio"
               name="Tamaño de empresa"
               value="Más de 250 empleados">
-            <span class="choice-content">Más de 250 empleados</span>
+            <span class="choice-content">
+              Más de 250 empleados
+            </span>
           </label>
+
         </div>
       </div>
 
@@ -1733,12 +1928,15 @@ footer{
         </span>
 
         <div class="choice-grid" data-required-group>
+
           <label class="choice">
             <input
               type="radio"
               name="Herramienta actual"
               value="Excel">
-            <span class="choice-content">Principalmente Excel</span>
+            <span class="choice-content">
+              Principalmente Excel
+            </span>
           </label>
 
           <label class="choice">
@@ -1746,7 +1944,9 @@ footer{
               type="radio"
               name="Herramienta actual"
               value="ERP">
-            <span class="choice-content">Tenemos un ERP</span>
+            <span class="choice-content">
+              Tenemos un ERP
+            </span>
           </label>
 
           <label class="choice">
@@ -1754,7 +1954,9 @@ footer{
               type="radio"
               name="Herramienta actual"
               value="Varios sistemas">
-            <span class="choice-content">Varios sistemas</span>
+            <span class="choice-content">
+              Varios sistemas
+            </span>
           </label>
 
           <label class="choice">
@@ -1762,14 +1964,18 @@ footer{
               type="radio"
               name="Herramienta actual"
               value="Procesos manuales">
-            <span class="choice-content">Procesos manuales</span>
+            <span class="choice-content">
+              Procesos manuales
+            </span>
           </label>
+
         </div>
 
         <div class="diag-field">
           <label for="diagERP">
             4. ¿Qué ERP utilizan? (opcional)
           </label>
+
           <select id="diagERP" name="ERP o sistema actual">
             <option value="">Seleccionar o no aplica</option>
             <option>Epicor</option>
@@ -1788,12 +1994,15 @@ footer{
         </span>
 
         <div class="choice-grid" data-required-group>
+
           <label class="choice">
             <input
               type="radio"
               name="Problema principal"
               value="Información dispersa">
-            <span class="choice-content">Información dispersa</span>
+            <span class="choice-content">
+              Información dispersa
+            </span>
           </label>
 
           <label class="choice">
@@ -1801,7 +2010,9 @@ footer{
               type="radio"
               name="Problema principal"
               value="Trabajo manual">
-            <span class="choice-content">Demasiado trabajo manual</span>
+            <span class="choice-content">
+              Demasiado trabajo manual
+            </span>
           </label>
 
           <label class="choice">
@@ -1809,7 +2020,9 @@ footer{
               type="radio"
               name="Problema principal"
               value="Poca visibilidad">
-            <span class="choice-content">Poca visibilidad</span>
+            <span class="choice-content">
+              Poca visibilidad
+            </span>
           </label>
 
           <label class="choice">
@@ -1817,7 +2030,9 @@ footer{
               type="radio"
               name="Problema principal"
               value="Falta de control">
-            <span class="choice-content">Falta de control</span>
+            <span class="choice-content">
+              Falta de control
+            </span>
           </label>
 
           <label class="choice">
@@ -1825,7 +2040,9 @@ footer{
               type="radio"
               name="Problema principal"
               value="Sistemas desconectados">
-            <span class="choice-content">Sistemas desconectados</span>
+            <span class="choice-content">
+              Sistemas desconectados
+            </span>
           </label>
 
           <label class="choice">
@@ -1833,8 +2050,11 @@ footer{
               type="radio"
               name="Problema principal"
               value="Otro problema">
-            <span class="choice-content">Otro problema</span>
+            <span class="choice-content">
+              Otro problema
+            </span>
           </label>
+
         </div>
 
         <span class="question-label">
@@ -1842,12 +2062,15 @@ footer{
         </span>
 
         <div class="choice-grid" data-required-group>
+
           <label class="choice">
             <input
               type="radio"
               name="Impacto principal"
               value="Pérdida de tiempo">
-            <span class="choice-content">Pérdida de tiempo</span>
+            <span class="choice-content">
+              Pérdida de tiempo
+            </span>
           </label>
 
           <label class="choice">
@@ -1855,7 +2078,9 @@ footer{
               type="radio"
               name="Impacto principal"
               value="Errores frecuentes">
-            <span class="choice-content">Errores frecuentes</span>
+            <span class="choice-content">
+              Errores frecuentes
+            </span>
           </label>
 
           <label class="choice">
@@ -1863,7 +2088,9 @@ footer{
               type="radio"
               name="Impacto principal"
               value="Costos adicionales">
-            <span class="choice-content">Costos adicionales</span>
+            <span class="choice-content">
+              Costos adicionales
+            </span>
           </label>
 
           <label class="choice">
@@ -1871,8 +2098,11 @@ footer{
               type="radio"
               name="Impacto principal"
               value="Decisiones lentas">
-            <span class="choice-content">Decisiones lentas</span>
+            <span class="choice-content">
+              Decisiones lentas
+            </span>
           </label>
+
         </div>
       </div>
 
@@ -1888,6 +2118,7 @@ footer{
         </span>
 
         <div class="choice-grid" data-required-checks>
+
           <label class="choice">
             <input
               type="checkbox"
@@ -1951,6 +2182,7 @@ footer{
               value="Toda la empresa">
             <span class="choice-content">Toda la empresa</span>
           </label>
+
         </div>
 
         <span class="question-label">
@@ -1958,12 +2190,15 @@ footer{
         </span>
 
         <div class="choice-grid" data-required-checks>
+
           <label class="choice">
             <input
               type="checkbox"
               name="Funcionalidades deseadas"
               value="Dashboards">
-            <span class="choice-content">Dashboards y reportes</span>
+            <span class="choice-content">
+              Dashboards y reportes
+            </span>
           </label>
 
           <label class="choice">
@@ -1971,7 +2206,9 @@ footer{
               type="checkbox"
               name="Funcionalidades deseadas"
               value="Integraciones">
-            <span class="choice-content">Integración de sistemas</span>
+            <span class="choice-content">
+              Integración de sistemas
+            </span>
           </label>
 
           <label class="choice">
@@ -1979,7 +2216,9 @@ footer{
               type="checkbox"
               name="Funcionalidades deseadas"
               value="Automatización">
-            <span class="choice-content">Automatización</span>
+            <span class="choice-content">
+              Automatización
+            </span>
           </label>
 
           <label class="choice">
@@ -1987,7 +2226,9 @@ footer{
               type="checkbox"
               name="Funcionalidades deseadas"
               value="Inventarios">
-            <span class="choice-content">Control de inventarios</span>
+            <span class="choice-content">
+              Control de inventarios
+            </span>
           </label>
 
           <label class="choice">
@@ -1995,7 +2236,9 @@ footer{
               type="checkbox"
               name="Funcionalidades deseadas"
               value="Órdenes">
-            <span class="choice-content">Seguimiento de órdenes</span>
+            <span class="choice-content">
+              Seguimiento de órdenes
+            </span>
           </label>
 
           <label class="choice">
@@ -2003,7 +2246,9 @@ footer{
               type="checkbox"
               name="Funcionalidades deseadas"
               value="Ubicación visual">
-            <span class="choice-content">Ubicación visual</span>
+            <span class="choice-content">
+              Ubicación visual
+            </span>
           </label>
 
           <label class="choice">
@@ -2011,7 +2256,9 @@ footer{
               type="checkbox"
               name="Funcionalidades deseadas"
               value="Alertas">
-            <span class="choice-content">Alertas y notificaciones</span>
+            <span class="choice-content">
+              Alertas y notificaciones
+            </span>
           </label>
 
           <label class="choice">
@@ -2019,27 +2266,35 @@ footer{
               type="checkbox"
               name="Funcionalidades deseadas"
               value="Orientación">
-            <span class="choice-content">Necesito orientación</span>
+            <span class="choice-content">
+              Necesito orientación
+            </span>
           </label>
+
         </div>
       </div>
 
       <!-- PASO 4 -->
       <div class="diag-step">
         <h3>Hablemos del proyecto</h3>
-        <p class="diag-help">Ya casi terminamos.</p>
+        <p class="diag-help">
+          Ya casi terminamos.
+        </p>
 
         <span class="question-label">
           9. ¿Cuándo te gustaría comenzar?
         </span>
 
         <div class="choice-grid" data-required-group>
+
           <label class="choice">
             <input
               type="radio"
               name="Plazo deseado"
               value="Lo antes posible">
-            <span class="choice-content">Lo antes posible</span>
+            <span class="choice-content">
+              Lo antes posible
+            </span>
           </label>
 
           <label class="choice">
@@ -2047,7 +2302,9 @@ footer{
               type="radio"
               name="Plazo deseado"
               value="1 a 3 meses">
-            <span class="choice-content">En 1 a 3 meses</span>
+            <span class="choice-content">
+              En 1 a 3 meses
+            </span>
           </label>
 
           <label class="choice">
@@ -2055,7 +2312,9 @@ footer{
               type="radio"
               name="Plazo deseado"
               value="Más adelante">
-            <span class="choice-content">Más adelante</span>
+            <span class="choice-content">
+              Más adelante
+            </span>
           </label>
 
           <label class="choice">
@@ -2063,8 +2322,11 @@ footer{
               type="radio"
               name="Plazo deseado"
               value="Solo explorando">
-            <span class="choice-content">Solo estoy explorando</span>
+            <span class="choice-content">
+              Solo estoy explorando
+            </span>
           </label>
+
         </div>
 
         <div class="diag-field">
@@ -2086,12 +2348,15 @@ footer{
         </span>
 
         <div class="choice-grid" data-required-group>
+
           <label class="choice">
             <input
               type="radio"
               name="Tipo de proyecto"
               value="Implementación gratuita">
-            <span class="choice-content">Probar ATZE 30 días</span>
+            <span class="choice-content">
+              Probar ATZE 30 días
+            </span>
           </label>
 
           <label class="choice">
@@ -2099,7 +2364,9 @@ footer{
               type="radio"
               name="Tipo de proyecto"
               value="Complementar ERP">
-            <span class="choice-content">Complementar mi ERP</span>
+            <span class="choice-content">
+              Complementar mi ERP
+            </span>
           </label>
 
           <label class="choice">
@@ -2107,7 +2374,9 @@ footer{
               type="radio"
               name="Tipo de proyecto"
               value="Nuevo sistema">
-            <span class="choice-content">Implementar un sistema</span>
+            <span class="choice-content">
+              Implementar un sistema
+            </span>
           </label>
 
           <label class="choice">
@@ -2115,8 +2384,11 @@ footer{
               type="radio"
               name="Tipo de proyecto"
               value="Solución personalizada">
-            <span class="choice-content">Solución personalizada</span>
+            <span class="choice-content">
+              Solución personalizada
+            </span>
           </label>
+
         </div>
 
         <div class="diag-field">
@@ -2187,23 +2459,62 @@ footer{
           </div>
         </div>
 
+        <!-- ACEPTACIÓN OBLIGATORIA DEL DIAGNÓSTICO -->
+        <div class="legal-consent">
+          <div class="legal-consent-row">
+            <input
+              type="checkbox"
+              id="diagConsent"
+              required
+              aria-label="He leído el Aviso de Privacidad y acepto los Términos y Condiciones">
+
+            <div>
+              <label for="diagConsent">
+                He leído el
+              </label>
+              <a
+                href="privacidad.html"
+                target="_blank"
+                rel="noopener noreferrer">
+                Aviso de Privacidad
+              </a>
+              y acepto los
+              <a
+                href="terminos.html"
+                target="_blank"
+                rel="noopener noreferrer">
+                Términos y Condiciones
+              </a>
+              de ATZE.
+            </div>
+          </div>
+        </div>
+
         <p style="font-size:12px">
-          Utilizaremos tus datos únicamente para responder
-          a tu solicitud.
-          Consulta nuestro
-          <a
-            href="privacidad.html"
-            target="_blank"
-            rel="noopener noreferrer"
-            style="color:#2563eb;text-decoration:underline">
-            Aviso de Privacidad
-          </a>.
+          Utilizaremos tus datos para responder a tu solicitud,
+          conforme al Aviso de Privacidad.
         </p>
+
+        <input
+          type="hidden"
+          name="Confirmación de lectura y aceptación"
+          id="diagConsentRecord">
+
+        <input
+          type="hidden"
+          name="Fecha de aceptación (UTC)"
+          id="diagConsentDate">
+
       </div>
 
-      <p class="diag-error" id="diagError" role="alert"></p>
+      <p
+        class="diag-error"
+        id="diagError"
+        role="alert">
+      </p>
 
       <div class="diag-actions">
+
         <button
           type="button"
           class="btn outline"
@@ -2222,9 +2533,11 @@ footer{
           type="submit"
           class="btn primary"
           id="diagSubmit"
+          disabled
           hidden>
           Enviar diagnóstico →
         </button>
+
       </div>
 
       <p class="diag-mini">
@@ -2236,8 +2549,8 @@ footer{
 </div>
 
 <script>
-/* AÑO ACTUAL */
-document.getElementById("year").textContent=
+/* AÑO */
+document.getElementById("year").textContent =
   new Date().getFullYear();
 
 /* MENÚ */
@@ -2329,6 +2642,7 @@ const featureData={
 
 const featureOverlay=document.getElementById("featureOverlay");
 const featureDemo=document.getElementById("featureDemo");
+
 let featurePreviousFocus=null;
 
 function openFeature(key){
@@ -2353,7 +2667,6 @@ function openFeature(key){
 
   featureDemo.appendChild(list);
 
-  /* DEMOSTRACIÓN DE DASHBOARD */
   if(key==="dashboard"){
     const demo=document.createElement("div");
 
@@ -2363,17 +2676,14 @@ function openFeature(key){
           <small>Órdenes procesadas</small>
           <strong>248</strong>
         </div>
-
         <div class="demo-metric">
           <small>Cumplimiento</small>
           <strong>94.8%</strong>
         </div>
-
         <div class="demo-metric">
           <small>Órdenes pendientes</small>
           <strong>17</strong>
         </div>
-
         <div class="demo-metric">
           <small>Eficiencia operativa</small>
           <strong>91.2%</strong>
@@ -2398,7 +2708,6 @@ function openFeature(key){
     featureDemo.appendChild(demo);
   }
 
-  /* DEMOSTRACIÓN DE UBICACIÓN VISUAL */
   if(key==="ubicacion"){
     const demo=document.createElement("div");
 
@@ -2408,8 +2717,8 @@ function openFeature(key){
           type="text"
           id="demoPartInput"
           placeholder="Escribe un número de parte"
-          aria-label="Número de parte"
-        >
+          aria-label="Número de parte">
+
         <button type="submit" class="btn primary">
           Buscar
         </button>
@@ -2433,8 +2742,8 @@ function openFeature(key){
           class="demo-layout-image"
           src="UBI2.png"
           alt="Layout visual de las instalaciones"
-          id="demoLayoutImage"
-        >
+          id="demoLayoutImage">
+
         <div class="demo-marker" id="demoMarker"></div>
       </div>
 
@@ -2538,10 +2847,26 @@ featureOverlay.addEventListener("click",e=>{
   }
 });
 
-/* CONTACTO POR WHATSAPP */
+/* ACEPTACIÓN EN CONTACTO */
+const contactConsent=document.getElementById("contactConsent");
+const contactSubmit=document.getElementById("contactSubmit");
+const contactConsentError=document.getElementById("contactConsentError");
+
+contactConsent.addEventListener("change",()=>{
+  contactSubmit.disabled=!contactConsent.checked;
+  contactConsentError.hidden=contactConsent.checked;
+});
+
+/* ENVÍO DE CONTACTO POR WHATSAPP */
 document.getElementById("contactForm").addEventListener(
   "submit",e=>{
     e.preventDefault();
+
+    if(!contactConsent.checked){
+      contactConsentError.hidden=false;
+      contactConsent.focus();
+      return;
+    }
 
     const value=id=>
       document.getElementById(id).value.trim();
@@ -2560,7 +2885,10 @@ document.getElementById("contactForm").addEventListener(
       ),
       "Mensaje: "+(
         value("mensaje")||"Sin mensaje adicional"
-      )
+      ),
+      "",
+      "Confirmación: He leído el Aviso de Privacidad y aceptado los Términos y Condiciones de ATZE.",
+      "Fecha de confirmación (UTC): "+new Date().toISOString()
     ].join("\n");
 
     window.open(
@@ -2578,14 +2906,24 @@ const diagForm=document.getElementById("diagForm");
 const diagSteps=Array.from(
   diagForm.querySelectorAll(".diag-step")
 );
+
 const diagBack=document.getElementById("diagBack");
 const diagNext=document.getElementById("diagNext");
 const diagSubmit=document.getElementById("diagSubmit");
 const diagError=document.getElementById("diagError");
 const diagModalBox=diagOverlay.querySelector(".modal-box");
+const diagConsent=document.getElementById("diagConsent");
 
 let currentStep=0;
 let diagPreviousFocus=null;
+
+diagConsent.addEventListener("change",()=>{
+  diagSubmit.disabled=!diagConsent.checked;
+
+  if(diagConsent.checked){
+    diagError.textContent="";
+  }
+});
 
 function showDiagStep(number){
   diagSteps[currentStep].classList.remove("active");
@@ -2613,6 +2951,8 @@ function showDiagStep(number){
 
   diagSubmit.hidden=
     currentStep!==diagSteps.length-1;
+
+  diagSubmit.disabled=!diagConsent.checked;
 
   diagError.textContent="";
   diagModalBox.scrollTop=0;
@@ -2695,6 +3035,13 @@ function validateStep(number){
       email.focus();
       return false;
     }
+
+    if(!diagConsent.checked){
+      diagError.textContent=
+        "Debes leer el Aviso de Privacidad y aceptar los Términos y Condiciones.";
+      diagConsent.focus();
+      return false;
+    }
   }
 
   return true;
@@ -2735,6 +3082,12 @@ diagForm.addEventListener("submit",e=>{
     return;
   }
 
+  document.getElementById("diagConsentRecord").value=
+    "Sí. Aviso de Privacidad leído y Términos y Condiciones aceptados.";
+
+  document.getElementById("diagConsentDate").value=
+    new Date().toISOString();
+
   diagForm.querySelectorAll("[data-summary]").forEach(
     el=>el.remove()
   );
@@ -2764,7 +3117,7 @@ diagForm.addEventListener("submit",e=>{
   });
 
   diagForm.querySelectorAll(
-    'input[type="checkbox"]'
+    'input[type="checkbox"][name="Áreas de interés"],input[type="checkbox"][name="Funcionalidades deseadas"]'
   ).forEach(el=>{
     el.disabled=true;
   });
@@ -2776,6 +3129,8 @@ window.addEventListener("pageshow",()=>{
   ).forEach(el=>{
     el.disabled=false;
   });
+
+  diagSubmit.disabled=!diagConsent.checked;
 });
 
 /* CERRAR CON ESCAPE */
@@ -2836,9 +3191,7 @@ if(
   },7000);
 }
 
-/* CARRUSEL DE CLIENTES:
-   Permite navegar también con teclado
-   cuando el carrusel está en modo táctil. */
+/* CARRUSEL TÁCTIL */
 const clientsCarousel=document.getElementById("clientsCarousel");
 
 clientsCarousel.addEventListener("keydown",e=>{
