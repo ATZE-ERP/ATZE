@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -255,7 +256,6 @@ header{
   margin:25px auto 0;
   text-align:center;
   color:var(--muted);
-  font-size:14px;
 }
 
 /* DIAGNÓSTICO */
@@ -519,11 +519,17 @@ header{
   font-size:13px;
 }
 
-/* NUESTROS CLIENTES */
+/* ============================================
+   CARRUSEL DE CLIENTES
+   COMPUTADORA: MOVIMIENTO AUTOMÁTICO
+   CELULAR: DESLIZAMIENTO CON EL DEDO
+   ============================================ */
+
 .clients-section{
   overflow:hidden;
   background:#f6f9ff;
 }
+
 .clients-carousel{
   overflow:hidden;
   width:100%;
@@ -536,17 +542,20 @@ header{
     transparent
   );
 }
+
 .clients-track{
   display:flex;
   width:max-content;
   animation:clientsScroll 24s linear infinite;
 }
+
 .clients-group{
   display:flex;
   flex-shrink:0;
   gap:22px;
   padding-right:22px;
 }
+
 .client-logo{
   width:290px;
   height:155px;
@@ -559,21 +568,106 @@ header{
   background:white;
   transition:transform .2s,box-shadow .2s;
 }
+
 .client-logo:hover{
   transform:translateY(-3px);
   box-shadow:0 12px 30px #14213d12;
 }
+
 .client-logo img{
   max-width:100%;
   max-height:105px;
   object-fit:contain;
+  user-select:none;
+  -webkit-user-drag:none;
 }
+
 @keyframes clientsScroll{
   from{transform:translateX(0)}
   to{transform:translateX(-50%)}
 }
+
 .clients-carousel:hover .clients-track{
   animation-play-state:paused;
+}
+
+.clients-hint{
+  display:none;
+}
+
+/* CARRUSEL TÁCTIL EN CELULAR */
+@media(max-width:767px){
+
+  .clients-section{
+    overflow:hidden;
+  }
+
+  .clients-carousel{
+    overflow-x:auto;
+    overflow-y:hidden;
+    padding:10px 16px 20px;
+    -webkit-overflow-scrolling:touch;
+    scroll-snap-type:x mandatory;
+    scroll-padding-inline:16px;
+    overscroll-behavior-x:contain;
+    touch-action:pan-x pan-y;
+    scrollbar-width:none;
+    mask-image:none;
+    -webkit-mask-image:none;
+  }
+
+  .clients-carousel::-webkit-scrollbar{
+    display:none;
+  }
+
+  .clients-track{
+    width:max-content;
+    animation:none!important;
+    transform:none!important;
+  }
+
+  .clients-group{
+    gap:14px;
+    padding-right:14px;
+  }
+
+  /* Ocultamos las copias usadas para la animación
+     de computadora. En celular solo se muestran
+     los cuatro logotipos originales. */
+  .clients-group[aria-hidden="true"]{
+    display:none;
+  }
+
+  .client-logo{
+    width:min(76vw,290px);
+    height:145px;
+    flex-shrink:0;
+    padding:20px;
+    scroll-snap-align:center;
+    scroll-snap-stop:always;
+    transform:none!important;
+  }
+
+  .client-logo img{
+    max-height:100px;
+    pointer-events:none;
+  }
+
+  .clients-hint{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:9px;
+    margin:8px auto 0;
+    color:var(--muted);
+    font-size:12px;
+    font-weight:600;
+  }
+
+  .clients-hint span{
+    color:var(--blue);
+    font-size:19px;
+  }
 }
 
 /* CONTACTO */
@@ -796,7 +890,6 @@ footer{
     min-height:42px;
   }
   .diag-fields-2{grid-template-columns:1fr;gap:0}
-  .client-logo{width:240px;height:135px}
   .whatsapp{padding:9px 12px;font-size:12px}
 }
 @media(max-width:365px){
@@ -815,7 +908,7 @@ footer{
 </head>
 
 <body>
-<!-- ATZE - Actualizacion de publicacion -->
+
 <!-- NAVEGACIÓN -->
 <header>
   <div class="container nav">
@@ -1215,55 +1308,81 @@ footer{
     </div>
   </div>
 
-  <div class="clients-carousel" aria-label="Logotipos de clientes">
+  <div
+    class="clients-carousel"
+    id="clientsCarousel"
+    role="region"
+    aria-roledescription="carrusel"
+    aria-label="Logotipos de clientes"
+    tabindex="0">
+
     <div class="clients-track">
 
       <!-- PRIMER GRUPO -->
       <div class="clients-group">
 
         <div class="client-logo">
-          <img src="INTELI1.png" alt="InteliAire">
+          <img
+            src="INTELI1.png"
+            alt="InteliAire"
+            loading="lazy"
+            draggable="false">
         </div>
 
         <div class="client-logo">
-          <img src="CORE1.png" alt="CoreEfficient">
+          <img
+            src="CORE1.png"
+            alt="CoreEfficient"
+            loading="lazy"
+            draggable="false">
         </div>
 
         <div class="client-logo">
-          <img src="IMG_8195.jpeg" alt="Kloeckner Metals">
+          <img
+            src="IMG_8195.jpeg"
+            alt="Kloeckner Metals"
+            loading="lazy"
+            draggable="false">
         </div>
 
-        <!-- NUEVO CLIENTE: O'NEAL -->
         <div class="client-logo">
           <img
             src="ONEAL1.png"
-            alt="O'Neal Manufacturing Services">
+            alt="O'Neal Manufacturing Services"
+            loading="lazy"
+            draggable="false">
         </div>
 
       </div>
 
-      <!-- SEGUNDO GRUPO PARA ANIMACIÓN CONTINUA -->
+      <!-- COPIA PARA ANIMACIÓN EN COMPUTADORA -->
       <div class="clients-group" aria-hidden="true">
 
         <div class="client-logo">
-          <img src="INTELI1.png" alt="">
+          <img src="INTELI1.png" alt="" draggable="false">
         </div>
 
         <div class="client-logo">
-          <img src="CORE1.png" alt="">
+          <img src="CORE1.png" alt="" draggable="false">
         </div>
 
         <div class="client-logo">
-          <img src="IMG_8195.jpeg" alt="">
+          <img src="IMG_8195.jpeg" alt="" draggable="false">
         </div>
 
         <div class="client-logo">
-          <img src="ONEAL1.png" alt="">
+          <img src="ONEAL1.png" alt="" draggable="false">
         </div>
 
       </div>
 
     </div>
+  </div>
+
+  <div class="clients-hint" aria-hidden="true">
+    <span>←</span>
+    Desliza para conocer nuestros clientes
+    <span>→</span>
   </div>
 </section>
 
@@ -2723,6 +2842,38 @@ if(
     banner.remove();
   },7000);
 }
+
+/* CARRUSEL DE CLIENTES:
+   Permite navegar también con teclado
+   cuando el carrusel está en modo táctil. */
+const clientsCarousel=document.getElementById("clientsCarousel");
+
+clientsCarousel.addEventListener("keydown",e=>{
+  if(window.innerWidth>767)return;
+
+  const firstLogo=clientsCarousel.querySelector(".client-logo");
+  if(!firstLogo)return;
+
+  const group=clientsCarousel.querySelector(".clients-group");
+  const gap=parseFloat(getComputedStyle(group).gap)||14;
+  const step=firstLogo.getBoundingClientRect().width+gap;
+
+  if(e.key==="ArrowRight"){
+    e.preventDefault();
+    clientsCarousel.scrollBy({
+      left:step,
+      behavior:"smooth"
+    });
+  }
+
+  if(e.key==="ArrowLeft"){
+    e.preventDefault();
+    clientsCarousel.scrollBy({
+      left:-step,
+      behavior:"smooth"
+    });
+  }
+});
 </script>
 
 </body>
