@@ -1,9 +1,11 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Términos y Condiciones de ATZE">
+<meta name="theme-color" content="#ffffff">
+<meta name="description" content="Términos y Condiciones de ATZE, soluciones tecnológicas empresariales.">
 <title>Términos y Condiciones | ATZE</title>
 
 <style>
@@ -16,15 +18,32 @@
   --soft: #f6f9ff;
 }
 
-* { box-sizing: border-box; }
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
 
 body {
   margin: 0;
   font-family: "Segoe UI", Arial, sans-serif;
   color: var(--text);
-  background: #fff;
+  background: #ffffff;
   line-height: 1.8;
 }
+
+a {
+  color: var(--blue);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* HEADER */
 
 header {
   padding: 20px 7%;
@@ -32,6 +51,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  background: #ffffff;
 }
 
 .logo {
@@ -41,19 +61,22 @@ header {
   letter-spacing: 1px;
 }
 
-a {
-  color: var(--blue);
-  text-decoration: none;
-}
-
 .back {
   font-size: 14px;
   font-weight: 600;
+  color: var(--blue);
+  transition: color 0.2s;
 }
+
+.back:hover {
+  color: var(--navy);
+}
+
+/* CONTENIDO */
 
 main {
   max-width: 900px;
-  margin: auto;
+  margin: 0 auto;
   padding: 65px 25px 90px;
 }
 
@@ -61,272 +84,562 @@ h1 {
   color: var(--navy);
   font-size: clamp(30px, 5vw, 43px);
   line-height: 1.2;
-  margin-bottom: 10px;
+  margin: 0 0 12px;
+}
+
+.subtitle {
+  color: var(--muted);
+  font-size: 15px;
+  margin-bottom: 45px;
 }
 
 h2 {
   color: var(--navy);
   font-size: 21px;
-  margin-top: 40px;
+  line-height: 1.4;
+  margin-top: 42px;
+  margin-bottom: 14px;
 }
 
-p { margin-bottom: 17px; }
-
-.intro {
-  color: var(--muted);
+p {
+  margin: 0 0 17px;
   font-size: 15px;
 }
 
-.info {
-  background: var(--soft);
-  padding: 24px;
-  border: 1px solid var(--line);
-  border-radius: 14px;
-  margin: 30px 0;
+.intro {
+  font-size: 16px;
+  color: var(--text);
+  margin-bottom: 28px;
 }
+
+section {
+  margin-bottom: 15px;
+}
+
+section + section {
+  border-top: 1px solid #eef2f7;
+  padding-top: 8px;
+}
+
+strong {
+  color: var(--navy);
+}
+
+/* FOOTER */
 
 footer {
   border-top: 1px solid var(--line);
-  padding: 30px;
+  padding: 35px 20px;
   text-align: center;
-  color: var(--muted);
-  font-size: 13px;
+  background: #ffffff;
 }
 
-@media(max-width: 600px) {
-  header { padding: 16px 5%; }
-  main { padding: 40px 20px 65px; }
-  h2 { font-size: 19px; }
+.footer-info {
+  font-size: 12px;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+.footer-info p {
+  font-size: 12px;
+  margin: 4px 0;
+}
+
+.footer-info a {
+  color: var(--muted);
+  text-decoration: none;
+}
+
+.footer-info a:hover {
+  color: var(--blue);
+  text-decoration: underline;
+}
+
+.copyright {
+  font-size: 11px;
+  color: #94a3b8;
+  margin: 16px 0 0;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 600px) {
+  header {
+    padding: 16px 5%;
+  }
+
+  .logo {
+    font-size: 22px;
+  }
+
+  .back {
+    font-size: 12px;
+  }
+
+  main {
+    padding: 40px 20px 65px;
+  }
+
+  h1 {
+    font-size: 30px;
+  }
+
+  h2 {
+    font-size: 19px;
+    margin-top: 32px;
+  }
+
+  p {
+    font-size: 14px;
+  }
+
+  .subtitle {
+    margin-bottom: 32px;
+  }
 }
 </style>
 </head>
 
 <body>
 
+<!-- HEADER -->
+
 <header>
   <div class="logo">ATZE</div>
-  <a class="back" href="./">← Volver al inicio</a>
+
+  <a class="back" href="./">
+    ← Volver al inicio
+  </a>
 </header>
+
+<!-- CONTENIDO PRINCIPAL -->
 
 <main>
 
 <h1>Términos y Condiciones</h1>
-<p class="intro">Última actualización: 22 de octubre de 2026</p>
 
-<div class="info">
-  <strong>ATZE — Soluciones Tecnológicas Empresariales</strong>
-  <p>
-    Cofundadores: Rolando García y Juan Pablo Solis.<br>
-    Modalidad de operación: 100% virtual.<br>
-    Ubicación comercial: Monterrey, Nuevo León, México.<br>
-    Domicilio de contacto legal: Cerro Real 710,
-    Colonia Valle Real, C.P. 25205,
-    Saltillo, Coahuila, México.<br>
-    Correo: informacion@atze.cloud
-  </p>
-</div>
+<p class="subtitle">
+  Última actualización: 22 de octubre de 2026
+</p>
 
+<p class="intro">
+  Bienvenido a ATZE. Los presentes Términos y Condiciones
+  establecen las disposiciones generales relacionadas con
+  el acceso a nuestro sitio web y la prestación de nuestros
+  servicios tecnológicos.
+</p>
+
+<p>
+  Al utilizar nuestro sitio web o solicitar nuestros servicios,
+  el usuario reconoce haber tenido acceso a estos términos.
+  La contratación de servicios específicos estará sujeta a
+  las condiciones expresamente aceptadas por las partes.
+</p>
+
+<!-- SECCION 1 -->
+
+<section>
 <h2>1. Información general</h2>
+
 <p>
-ATZE es un proyecto tecnológico independiente dedicado al
-desarrollo, implementación y personalización de soluciones
-de software para la gestión y optimización de procesos empresariales.
-</p>
-<p>
-ATZE es operado por sus dos cofundadores, Rolando García y
-Juan Pablo Solis, quienes participan en la prestación de
-servicios y suscriben los contratos correspondientes.
-Actualmente, ATZE no está constituida como sociedad mercantil.
+  ATZE es un proyecto tecnológico independiente dedicado al
+  desarrollo, implementación y personalización de soluciones
+  de software para la gestión y optimización de procesos
+  empresariales.
 </p>
 
+<p>
+  ATZE es operado por sus dos cofundadores,
+  <strong>Rolando García y Juan Pablo Solis</strong>,
+  quienes participan en la prestación de los servicios
+  y suscriben los contratos correspondientes.
+</p>
+
+<p>
+  Actualmente, ATZE no está constituida como sociedad
+  mercantil y opera bajo un nombre comercial.
+  Sus servicios se prestan principalmente de manera virtual.
+</p>
+</section>
+
+<!-- SECCION 2 -->
+
+<section>
 <h2>2. Objeto y alcance de los servicios</h2>
+
 <p>
-ATZE ofrece soluciones de gestión empresarial, sistemas ERP
-independientes, herramientas complementarias para ERP existentes,
-dashboards, visualización de inventarios, automatización de procesos,
-integraciones y desarrollos personalizados.
-</p>
-<p>
-Las funcionalidades, condiciones técnicas, entregables y
-alcances específicos serán definidos en cada propuesta
-comercial o contrato.
+  ATZE ofrece soluciones tecnológicas enfocadas en mejorar
+  la administración, productividad y eficiencia operativa
+  de las empresas.
 </p>
 
+<p>
+  Entre nuestros servicios se encuentran sistemas ERP
+  independientes, herramientas complementarias para
+  sistemas ERP existentes, dashboards, indicadores
+  operativos, visualización de inventarios, automatización
+  de procesos, integraciones y desarrollos personalizados.
+</p>
+
+<p>
+  Las funcionalidades, características técnicas,
+  entregables y condiciones específicas de cada proyecto
+  serán definidas mediante propuestas comerciales
+  o contratos acordados con el cliente.
+</p>
+</section>
+
+<!-- SECCION 3 -->
+
+<section>
 <h2>3. Implementación gratuita de 30 días</h2>
+
 <p>
-ATZE podrá ofrecer una implementación inicial gratuita
-durante un periodo de 30 días naturales, previa evaluación
-y aceptación del proyecto.
-</p>
-<p>
-El periodo iniciará en la fecha acordada por escrito entre
-ATZE y el cliente. Las funcionalidades incluidas estarán
-limitadas al alcance previamente autorizado.
-</p>
-<p>
-La implementación gratuita no obliga al cliente a contratar
-posteriormente los servicios de ATZE.
+  ATZE podrá ofrecer una implementación inicial gratuita
+  durante un periodo de <strong>30 días naturales</strong>,
+  sujeto a evaluación técnica y aceptación del proyecto.
 </p>
 
+<p>
+  El periodo de prueba comenzará en la fecha acordada
+  por escrito entre ATZE y el cliente.
+</p>
+
+<p>
+  Durante este periodo podrán realizarse configuraciones,
+  demostraciones, adaptaciones iniciales y acompañamiento
+  técnico, conforme al alcance previamente acordado.
+</p>
+
+<p>
+  La implementación gratuita no incluye necesariamente
+  todas las funcionalidades disponibles ni desarrollos
+  personalizados ilimitados.
+</p>
+
+<p>
+  <strong>
+    La prueba gratuita no genera obligación de contratación
+    posterior ni cargos automáticos.
+  </strong>
+</p>
+</section>
+
+<!-- SECCION 4 -->
+
+<section>
 <h2>4. Contratación posterior</h2>
+
 <p>
-Al finalizar el periodo gratuito, ATZE podrá presentar
-una propuesta comercial para continuar con el servicio
-mediante suscripción mensual, licenciamiento, adquisición
-de software o desarrollo personalizado.
-</p>
-<p>
-Los precios, condiciones de pago, duración y soporte
-se establecerán mediante acuerdos específicos.
-No se realizarán cargos automáticos por la finalización
-del periodo gratuito.
+  Al finalizar el periodo gratuito, ATZE podrá presentar
+  una propuesta comercial para continuar utilizando
+  sus servicios mediante suscripción mensual,
+  licenciamiento, adquisición de software o
+  desarrollo personalizado.
 </p>
 
+<p>
+  Los precios, condiciones de pago, duración del servicio,
+  soporte y demás características serán establecidos
+  en una propuesta o contrato específico.
+</p>
+
+<p>
+  Ningún servicio de pago se considerará contratado
+  sin la aceptación correspondiente del cliente.
+</p>
+</section>
+
+<!-- SECCION 5 -->
+
+<section>
 <h2>5. Integraciones con sistemas externos</h2>
+
 <p>
-Las integraciones con sistemas ERP, bases de datos y
-plataformas de terceros dependerán de su compatibilidad,
-licencias, permisos y viabilidad técnica.
-</p>
-<p>
-ATZE no accederá ni modificará sistemas del cliente sin
-las autorizaciones correspondientes.
+  Las integraciones con sistemas ERP, bases de datos,
+  aplicaciones y plataformas de terceros estarán
+  sujetas a compatibilidad técnica, permisos,
+  licencias y autorizaciones correspondientes.
 </p>
 
+<p>
+  ATZE no realizará accesos no autorizados ni
+  modificaciones a los sistemas del cliente
+  sin su consentimiento.
+</p>
+
+<p>
+  ATZE no controla la disponibilidad, funcionamiento
+  o condiciones comerciales de los sistemas
+  proporcionados por terceros.
+</p>
+</section>
+
+<!-- SECCION 6 -->
+
+<section>
 <h2>6. Responsabilidades del cliente</h2>
+
 <p>
-El cliente deberá proporcionar información veraz,
-designar personal autorizado, gestionar permisos
-necesarios y utilizar los servicios de manera lícita.
-</p>
-<p>
-Cuando corresponda, el cliente deberá mantener
-respaldos adecuados de su información.
+  El cliente será responsable de proporcionar
+  información veraz y suficiente para el
+  desarrollo e implementación de los servicios.
 </p>
 
+<p>
+  También deberá gestionar las autorizaciones
+  necesarias para acceder a sistemas, bases
+  de datos y recursos tecnológicos de su empresa.
+</p>
+
+<p>
+  Cuando corresponda, deberá mantener respaldos
+  adecuados de su información y utilizar
+  las soluciones de manera lícita.
+</p>
+</section>
+
+<!-- SECCION 7 -->
+
+<section>
 <h2>7. Propiedad intelectual</h2>
+
 <p>
-El software, código fuente, diseños y desarrollos
-preexistentes conservarán la titularidad que legalmente
-corresponda a sus respectivos creadores o titulares.
-</p>
-<p>
-La información, documentos y datos proporcionados por
-el cliente continuarán perteneciendo a sus respectivos
-titulares.
-</p>
-<p>
-La entrega de código fuente, licencias, derechos de uso
-o transferencia de propiedad intelectual deberá
-establecerse expresamente en los contratos aplicables.
+  El software, código fuente, diseños, componentes
+  y desarrollos preexistentes de ATZE conservarán
+  la titularidad que legalmente corresponda
+  a sus respectivos creadores o titulares.
 </p>
 
+<p>
+  La información, documentos, bases de datos
+  y materiales proporcionados por el cliente
+  continuarán perteneciendo a sus respectivos titulares.
+</p>
+
+<p>
+  La entrega de código fuente, licencias de uso,
+  derechos de explotación o transferencia de
+  propiedad intelectual deberá establecerse
+  expresamente en los contratos correspondientes.
+</p>
+
+<p>
+  La contratación de un servicio no implica
+  automáticamente la transferencia de los
+  derechos de propiedad intelectual del software.
+</p>
+</section>
+
+<!-- SECCION 8 -->
+
+<section>
 <h2>8. Confidencialidad</h2>
+
 <p>
-ATZE procurará proteger la información empresarial
-recibida durante el análisis, implementación y
-desarrollo de proyectos.
-</p>
-<p>
-Las obligaciones específicas de confidencialidad,
-acceso, almacenamiento y eliminación de información
-podrán establecerse mediante acuerdos adicionales.
+  ATZE se compromete a tratar de manera confidencial
+  la información empresarial no pública recibida
+  durante el análisis, desarrollo e implementación
+  de los proyectos, salvo autorización del titular
+  u obligación legal aplicable.
 </p>
 
+<p>
+  Las condiciones específicas de acceso,
+  almacenamiento, utilización y eliminación
+  de información podrán establecerse mediante
+  acuerdos de confidencialidad adicionales.
+</p>
+</section>
+
+<!-- SECCION 9 -->
+
+<section>
 <h2>9. Protección de datos</h2>
+
 <p>
-Los datos personales serán tratados conforme a la
-legislación mexicana aplicable y al Aviso de Privacidad
-correspondiente.
-</p>
-<p>
-Las responsabilidades relacionadas con el tratamiento
-de datos de clientes, empleados o terceros deberán
-definirse según el tipo de servicio contratado.
+  Los datos personales recabados por ATZE
+  serán tratados conforme a la legislación
+  mexicana aplicable y al Aviso de Privacidad
+  correspondiente.
 </p>
 
-<h2>10. Disponibilidad y soporte</h2>
 <p>
-ATZE prestará sus servicios conforme a las condiciones
-de disponibilidad, soporte y mantenimiento que se
-establezcan con cada cliente.
+  Las responsabilidades relacionadas con
+  el tratamiento de datos personales de
+  empleados, clientes o terceros deberán
+  definirse según el servicio contratado
+  y la función de cada parte.
 </p>
+</section>
+
+<!-- SECCION 10 -->
+
+<section>
+<h2>10. Disponibilidad, soporte y mantenimiento</h2>
+
 <p>
-Salvo compromiso contractual expreso, no se garantiza
-la disponibilidad ininterrumpida de las plataformas.
+  ATZE prestará sus servicios conforme a
+  las condiciones de disponibilidad,
+  mantenimiento y soporte técnico que
+  se establezcan con cada cliente.
 </p>
 
+<p>
+  Los horarios de atención, tiempos de
+  respuesta y niveles de servicio deberán
+  acordarse expresamente.
+</p>
+
+<p>
+  Salvo compromiso contractual específico,
+  no se garantiza la disponibilidad
+  ininterrumpida de las plataformas.
+</p>
+</section>
+
+<!-- SECCION 11 -->
+
+<section>
 <h2>11. Modificaciones y personalizaciones</h2>
+
 <p>
-Las funcionalidades adicionales o modificaciones
-que excedan el alcance originalmente acordado
-podrán requerir evaluación técnica y cotización.
-</p>
-<p>
-Los cambios se implementarán conforme a los acuerdos
-alcanzados con el cliente.
+  Las solicitudes de funcionalidades adicionales,
+  integraciones o modificaciones que excedan
+  el alcance originalmente acordado podrán
+  requerir evaluación técnica y cotización.
 </p>
 
+<p>
+  Ningún desarrollo adicional se considerará
+  contratado sin la aceptación correspondiente.
+</p>
+</section>
+
+<!-- SECCION 12 -->
+
+<section>
 <h2>12. Finalización del servicio</h2>
+
 <p>
-Al finalizar una prueba gratuita o contrato,
-las partes seguirán el procedimiento de cierre
-previamente acordado.
-</p>
-<p>
-Esto podrá incluir suspensión de accesos,
-entrega o exportación de información y eliminación
-de datos, conforme a los acuerdos y obligaciones
-legales aplicables.
+  Al concluir una prueba gratuita o contrato,
+  las partes seguirán el procedimiento de
+  cierre previamente acordado.
 </p>
 
+<p>
+  Dicho procedimiento podrá incluir suspensión
+  de accesos, entrega o exportación de información,
+  devolución de materiales y eliminación de datos,
+  conforme a los acuerdos y obligaciones legales.
+</p>
+
+<p>
+  Los plazos y formatos para recuperar información
+  deberán definirse en las condiciones particulares
+  del servicio.
+</p>
+</section>
+
+<!-- SECCION 13 -->
+
+<section>
 <h2>13. Responsabilidad</h2>
+
 <p>
-ATZE responderá por las obligaciones que legal
-y contractualmente le correspondan.
-</p>
-<p>
-Las garantías, responsabilidades y limitaciones
-específicas de cada implementación deberán
-establecerse por escrito, sin excluir
-responsabilidades que legalmente no puedan limitarse.
+  ATZE responderá por las obligaciones
+  que legal y contractualmente le correspondan.
 </p>
 
-<h2>14. Modificaciones de los términos</h2>
 <p>
-ATZE podrá actualizar estos Términos y Condiciones
-para reflejar cambios en sus servicios o en
-las disposiciones legales aplicables.
-</p>
-<p>
-Las modificaciones se publicarán con su fecha
-de actualización y no alterarán retroactivamente
-las obligaciones previamente acordadas, salvo
-consentimiento válido o disposición legal aplicable.
+  Las garantías, responsabilidades y limitaciones
+  específicas de cada implementación deberán
+  establecerse por escrito.
 </p>
 
+<p>
+  Ninguna disposición de estos términos
+  pretende excluir responsabilidades que
+  legalmente no puedan limitarse ni
+  restringir derechos irrenunciables.
+</p>
+</section>
+
+<!-- SECCION 14 -->
+
+<section>
+<h2>14. Modificaciones a los términos</h2>
+
+<p>
+  ATZE podrá actualizar estos Términos
+  y Condiciones para reflejar cambios
+  en sus servicios, operaciones o en
+  las disposiciones legales aplicables.
+</p>
+
+<p>
+  Las modificaciones serán publicadas
+  en este sitio web con su fecha
+  correspondiente.
+</p>
+
+<p>
+  Las actualizaciones no modificarán
+  retroactivamente las obligaciones
+  previamente acordadas, salvo
+  consentimiento válido o disposición
+  legal aplicable.
+</p>
+</section>
+
+<!-- SECCION 15 -->
+
+<section>
 <h2>15. Legislación aplicable y contacto</h2>
+
 <p>
-Estos términos se interpretarán conforme a la
-legislación mexicana aplicable.
-Las controversias se atenderán mediante los
-mecanismos legales que correspondan.
+  Los presentes términos se interpretarán
+  conforme a la legislación mexicana aplicable.
 </p>
+
 <p>
-Para consultas relacionadas con estos términos,
-puede contactarse a ATZE mediante:
+  Cualquier controversia relacionada con
+  los servicios se atenderá mediante los
+  mecanismos legales que correspondan,
+  sin perjuicio de los derechos de las partes.
 </p>
+
 <p>
-<strong>Correo:</strong>
-<a href="mailto:informacion@atze.cloud">
-informacion@atze.cloud
-</a>
+  Para consultas relacionadas con estos
+  Términos y Condiciones, los usuarios
+  podrán comunicarse mediante los canales
+  oficiales de contacto de ATZE.
 </p>
+</section>
 
 </main>
 
+<!-- FOOTER -->
+
 <footer>
-  © 2026 ATZE · Tecnología que se adapta a tu empresa
+
+  <div class="footer-info">
+    <p>
+      Ubicación comercial: Monterrey, Nuevo León, México
+    </p>
+
+    <p>
+      Correo:
+      <a href="mailto:informacion@atze.cloud">
+        informacion@atze.cloud
+      </a>
+    </p>
+  </div>
+
+  <p class="copyright">
+    © 2026 ATZE · Tecnología que se adapta a tu empresa
+  </p>
+
 </footer>
 
 </body>
