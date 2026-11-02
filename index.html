@@ -342,7 +342,11 @@ header{
   text-align:center;
   font-size:14px;
 }
-
+.industry-icon svg {
+  width: 25px;
+  height: 25px;
+  stroke-width: 1.8;
+}
 /* PRODUCTO */
 .product-section{overflow:hidden}
 .product-row{
@@ -3175,6 +3179,34 @@ if(params.get("diagnostico")==="enviado"){
     if (event.key === "Escape") closeLightbox();
   });
 })();
+</script>
+
+<script src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.min.js"></script>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const industryIcons = [
+    "factory",
+    "store",
+    "truck",
+    "briefcase-business",
+    "shopping-bag",
+    "chart-no-axes-combined"
+  ];
+
+  document.querySelectorAll(".industry-card").forEach((card, index) => {
+    const iconContainer = card.querySelector(".industry-icon");
+
+    if (iconContainer && industryIcons[index]) {
+      iconContainer.innerHTML =
+        '<i data-lucide="' + industryIcons[index] + '"></i>';
+    }
+  });
+
+  if (window.lucide) {
+    lucide.createIcons();
+  }
+});
 </script>
 
 </body>
