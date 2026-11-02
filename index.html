@@ -2813,5 +2813,369 @@ if(params.get("diagnostico")==="enviado"){
 }
 </script>
 
+<!-- ATZE: DEMOSTRACIÓN INTERACTIVA DE PLATAFORMA -->
+<style>
+.atze-demo {
+  display: grid;
+  grid-template-columns: 190px minmax(0, 1fr);
+  overflow: hidden;
+  border-radius: 10px;
+  background: #f7f9fc;
+  text-align: left;
+  min-height: 410px;
+}
+
+.atze-demo-sidebar {
+  background: #1b293e;
+  padding: 22px 12px;
+  color: #fff;
+}
+
+.atze-demo-brand {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  margin-bottom: 32px;
+  padding: 0 10px;
+  font-weight: 800;
+  font-size: 17px;
+}
+
+.atze-demo-brand img {
+  width: 31px;
+  height: 31px;
+  object-fit: cover;
+  border-radius: 7px;
+}
+
+.atze-demo-menu-title {
+  margin: 0 10px 12px;
+  color: #8c9db4;
+  font-size: 9px;
+  letter-spacing: 1.5px;
+}
+
+.atze-demo-tab {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 5px;
+  border: 0;
+  border-radius: 7px;
+  background: transparent;
+  color: #c3d0e0;
+  text-align: left;
+  font-size: 12px;
+  cursor: pointer;
+  transition: background .2s, color .2s;
+}
+
+.atze-demo-tab:hover,
+.atze-demo-tab.active {
+  background: #30425e;
+  color: white;
+}
+
+.atze-demo-tab.active {
+  box-shadow: inset 3px 0 #60a5fa;
+}
+
+.atze-demo-tab:focus-visible {
+  outline: 2px solid #93c5fd;
+  outline-offset: 2px;
+}
+
+.atze-demo-main {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  background: #f7f9fc;
+}
+
+.atze-demo-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 11px 16px;
+  background: white;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.atze-demo-title {
+  font-size: 12px;
+  font-weight: 700;
+  color: #253247;
+}
+
+.atze-demo-expand {
+  padding: 6px 10px;
+  border: 1px solid #dbe4ef;
+  border-radius: 7px;
+  background: white;
+  color: #334155;
+  font-size: 11px;
+  cursor: pointer;
+}
+
+.atze-demo-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  background: #f7f9fc;
+}
+
+.atze-demo-description {
+  padding: 10px 16px;
+  margin-top: auto;
+  border-top: 1px solid #e2e8f0;
+  background: white;
+  color: #64748b;
+  font-size: 11px;
+}
+
+.atze-demo-lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 50px 20px 20px;
+  background: rgba(8, 15, 28, .94);
+}
+
+.atze-demo-lightbox.open {
+  display: flex;
+}
+
+.atze-demo-lightbox img {
+  max-width: 96vw;
+  max-height: 90vh;
+  object-fit: contain;
+}
+
+.atze-demo-close {
+  position: absolute;
+  top: 12px;
+  right: 20px;
+  border: 0;
+  background: transparent;
+  color: white;
+  font-size: 32px;
+  cursor: pointer;
+}
+
+@media (max-width: 700px) {
+  .atze-demo {
+    grid-template-columns: 1fr;
+    min-height: auto;
+  }
+
+  .atze-demo-sidebar {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    overflow-x: auto;
+    padding: 9px;
+  }
+
+  .atze-demo-brand,
+  .atze-demo-menu-title {
+    display: none;
+  }
+
+  .atze-demo-tab {
+    width: auto;
+    flex-shrink: 0;
+    margin: 0;
+    padding: 10px 12px;
+    white-space: nowrap;
+    font-size: 11px;
+  }
+
+  .atze-demo-toolbar {
+    padding: 9px 12px;
+  }
+
+  .atze-demo-description {
+    font-size: 10px;
+  }
+}
+</style>
+
+<script>
+(function () {
+  "use strict";
+
+  const preview = document.querySelector(".hero-preview");
+  if (!preview) return;
+
+  const screens = {
+    inicio: {
+      title: "Inicio",
+      image: "inicio2.png",
+      alt: "Pantalla de inicio de ATZE",
+      description: "Explora los módulos y accesos rápidos de ATZE."
+    },
+    dashboard: {
+      title: "Dashboard general",
+      image: "DASHBOARDS.jpeg",
+      alt: "Dashboard general de ATZE",
+      description: "Visualiza indicadores, resultados y desempeño de tu operación."
+    },
+    produccion: {
+      title: "En producción",
+      image: "PAROS.jpeg",
+      alt: "Monitoreo de producción de ATZE",
+      description: "Consulta el estado de máquinas, procesos y tiempos de paro."
+    }
+  };
+
+  const existingImage = preview.querySelector("img");
+
+  if (existingImage) {
+    existingImage.remove();
+  }
+
+  const demo = document.createElement("div");
+  demo.className = "atze-demo";
+
+  demo.innerHTML = `
+    <aside class="atze-demo-sidebar" aria-label="Navegación de demostración">
+      <div class="atze-demo-brand">
+        <img src="atzelogo.jpg" alt="">
+        <span>ATZE</span>
+      </div>
+
+      <div class="atze-demo-menu-title">NAVEGACIÓN</div>
+
+      <button type="button"
+        class="atze-demo-tab active"
+        data-screen="inicio"
+        aria-pressed="true">
+        ⌂ &nbsp; Inicio
+      </button>
+
+      <button type="button"
+        class="atze-demo-tab"
+        data-screen="dashboard"
+        aria-pressed="false">
+        ▥ &nbsp; Dashboard
+      </button>
+
+      <button type="button"
+        class="atze-demo-tab"
+        data-screen="produccion"
+        aria-pressed="false">
+        ◉ &nbsp; En producción
+      </button>
+    </aside>
+
+    <div class="atze-demo-main">
+      <div class="atze-demo-toolbar">
+        <span class="atze-demo-title" id="atzeDemoTitle">
+          Inicio
+        </span>
+        <button type="button" class="atze-demo-expand"
+          id="atzeDemoExpand">
+          ⛶ Ampliar
+        </button>
+      </div>
+
+      <img
+        class="atze-demo-image"
+        id="atzeDemoImage"
+        src="inicio2.png"
+        alt="Pantalla de inicio de ATZE">
+
+      <div class="atze-demo-description"
+        id="atzeDemoDescription">
+        Explora los módulos y accesos rápidos de ATZE.
+      </div>
+    </div>
+  `;
+
+  preview.appendChild(demo);
+
+  const image = demo.querySelector("#atzeDemoImage");
+  const title = demo.querySelector("#atzeDemoTitle");
+  const description = demo.querySelector("#atzeDemoDescription");
+  const tabs = demo.querySelectorAll("[data-screen]");
+
+  let activeScreen = "inicio";
+
+  function changeScreen(screen) {
+    const data = screens[screen];
+    if (!data) return;
+
+    activeScreen = screen;
+    image.src = data.image;
+    image.alt = data.alt;
+    title.textContent = data.title;
+    description.textContent = data.description;
+
+    tabs.forEach(function (tab) {
+      const active = tab.dataset.screen === screen;
+      tab.classList.toggle("active", active);
+      tab.setAttribute("aria-pressed", String(active));
+    });
+  }
+
+  tabs.forEach(function (tab) {
+    tab.addEventListener("click", function () {
+      changeScreen(tab.dataset.screen);
+    });
+  });
+
+  const lightbox = document.createElement("div");
+  lightbox.className = "atze-demo-lightbox";
+  lightbox.setAttribute("role", "dialog");
+  lightbox.setAttribute("aria-modal", "true");
+  lightbox.setAttribute("aria-label", "Vista ampliada de ATZE");
+
+  lightbox.innerHTML = `
+    <button type="button"
+      class="atze-demo-close"
+      aria-label="Cerrar imagen">×</button>
+    <img src="" alt="">
+  `;
+
+  document.body.appendChild(lightbox);
+
+  const lightboxImage = lightbox.querySelector("img");
+  const closeButton = lightbox.querySelector(".atze-demo-close");
+
+  function closeLightbox() {
+    lightbox.classList.remove("open");
+    lightboxImage.removeAttribute("src");
+    document.body.style.overflow = "";
+  }
+
+  demo.querySelector("#atzeDemoExpand")
+    .addEventListener("click", function () {
+      const data = screens[activeScreen];
+      lightboxImage.src = data.image;
+      lightboxImage.alt = data.alt;
+      lightbox.classList.add("open");
+      document.body.style.overflow = "hidden";
+      closeButton.focus();
+    });
+
+  closeButton.addEventListener("click", closeLightbox);
+
+  lightbox.addEventListener("click", function (event) {
+    if (event.target === lightbox) closeLightbox();
+  });
+
+  document.addEventListener("keydown", function (event) {
+    if (event.key === "Escape") closeLightbox();
+  });
+})();
+</script>
+
 </body>
 </html>
